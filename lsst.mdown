@@ -1,0 +1,2695 @@
+<script>
+function swap(one,two){
+if (document.getElementById(one).style.display == "block"){
+ document.getElementById(one).style.display ="none";}
+else 
+{document.getElementById(one).style.display ="block";
+}
+if (document.getElementById(two).style.display == "block"){
+ document.getElementById(two).style.display ="none";}
+else {
+document.getElementById(two).style.display ="block";}
+}
+</script>
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of lsst Stack</h1>
+<p>
+File generated at 07:42PM on June 07, 2015<br>
+</p>
+</div>
+
+
+___
+## <a name="masterBranchList"></a>List of all branches in the software stack
+Sorted by date of commit with list of whichrepositories contain the branch. A green repository indicates the branch has been merged with the respective master.
+
+* <a href="#originticketsDM2636">``` origin/tickets/DM-2636```</a>[ ``` utils``` ]
+* <a href="#originmaster">``` origin/master```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#originticketsDM2435">``` origin/tickets/DM-2435```</a>[  <span style="color:green">```base```</span> ]
+* <a href="#originticketsDM2642">``` origin/tickets/DM-2642```</a>[ ``` ndarray``` ]
+* <a href="#originticketsDM2635">``` origin/tickets/DM-2635```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originticketsDM2418">``` origin/tickets/DM-2418```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originticketsDM2201">``` origin/tickets/DM-2201```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originticketsDM2379">``` origin/tickets/DM-2379```</a>[ ``` ndarray``` ]
+* <a href="#originticketsDM2389">``` origin/tickets/DM-2389```</a>[ ``` utils``` ]
+* <a href="#originticketsDM2347">``` origin/tickets/DM-2347```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originticketsDM2348">``` origin/tickets/DM-2348```</a>[ ``` utils``` ]
+* <a href="#originticketsDM1802">``` origin/tickets/DM-1802```</a>[  <span style="color:green">```ndarray```</span> ]
+* <a href="#originticketsDM1086">``` origin/tickets/DM-1086```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originurallsmanDM868">``` origin/u/rallsman/DM-868```</a>[  <span style="color:green">```ndarray```</span> <span style="color:green">```utils```</span> ]
+* <a href="#originreleaseSummer2014">``` origin/release/Summer2014```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#originujboschDM827">``` origin/u/jbosch/DM-827```</a>[  <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#originreleasev911">``` origin/release/v9_1_1```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#originticketsDM974">``` origin/tickets/DM-974```</a>[  <span style="color:green">```base```</span> ]
+* <a href="#originticketsDM711">``` origin/tickets/DM-711```</a>[  <span style="color:green">```base```</span> ]
+* <a href="#originticketsDM764">``` origin/tickets/DM-764```</a>[  <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#originurhlmakeunique">``` origin/u/rhl/make_unique```</a>[ ``` base``` ]
+* <a href="#originreleaseWinter2014">``` origin/release/Winter2014```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#originumjuriceupspkg">``` origin/u/mjuric/eupspkg```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#origintickets3148">``` origin/tickets/3148```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#origintickets3120">``` origin/tickets/3120```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originujbosch3081">``` origin/u/jbosch/3081```</a>[  <span style="color:green">```ndarray```</span> ]
+* <a href="#origintickets2965">``` origin/tickets/2965```</a>[  <span style="color:green">```pex_exceptions```</span> ]
+* <a href="#origintickets3054">``` origin/tickets/3054```</a>[  <span style="color:green">```ndarray```</span> ]
+* <a href="#originuprice3054">``` origin/u/price/3054```</a>[ ``` ndarray``` ]
+* <a href="#origintickets3055">``` origin/tickets/3055```</a>[  <span style="color:green">```base```</span> ]
+* <a href="#originujboschs13">``` origin/u/jbosch/s13```</a>[  <span style="color:green">```pex_exceptions```</span> ]
+* <a href="#origintickets2832">``` origin/tickets/2832```</a>[ ``` ndarray``` ]
+* <a href="#originnext">``` origin/next```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#origintickets2824">``` origin/tickets/2824```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originHSC">``` origin/HSC```</a>[ ``` base`````` ndarray`````` pex_exceptions`````` utils``` ]
+* <a href="#origintickets2802">``` origin/tickets/2802```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#origintickets2696">``` origin/tickets/2696```</a>[  <span style="color:green">```base```</span> ]
+* <a href="#origintickets2664">``` origin/tickets/2664```</a>[ ``` utils``` ]
+* <a href="#origintickets1894">``` origin/tickets/1894```</a>[  <span style="color:green">```base```</span> ]
+* <a href="#origintickets2475">``` origin/tickets/2475```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#origintickets2340">``` origin/tickets/2340```</a>[  <span style="color:green">```base```</span> ]
+* <a href="#originreleasesSummer2012">``` origin/releases/Summer2012```</a>[  <span style="color:green">```base```</span>``` ndarray``` <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#origintickets2280">``` origin/tickets/2280```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#origintickets2271">``` origin/tickets/2271```</a>[  <span style="color:green">```ndarray```</span> ]
+* <a href="#origintickets2252">``` origin/tickets/2252```</a>[ ``` base`````` ndarray`````` pex_exceptions`````` utils``` ]
+* <a href="#origintickets2121">``` origin/tickets/2121```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#origintickets1990">``` origin/tickets/1990```</a>[  <span style="color:green">```ndarray```</span> ]
+* <a href="#originWinter2012d">``` origin/Winter2012d```</a>[  <span style="color:green">```base```</span>``` ndarray``` <span style="color:green">```utils```</span> ]
+* <a href="#originWinter2012Release">``` origin/Winter2012/Release```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#origintickets1843">``` origin/tickets/1843```</a>[  <span style="color:green">```ndarray```</span> ]
+* <a href="#origintickets1881">``` origin/tickets/1881```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originWinter2012c">``` origin/Winter2012c```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#origintickets1866">``` origin/tickets/1866```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originWinter2012b">``` origin/Winter2012b```</a>[ ``` base`````` ndarray``` <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#originWinter2012a">``` origin/Winter2012a```</a>[  <span style="color:green">```base```</span>``` ndarray``` <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#origintickets1814">``` origin/tickets/1814```</a>[ ``` pex_exceptions``` ]
+* <a href="#origintickets1780">``` origin/tickets/1780```</a>[  <span style="color:green">```base```</span> <span style="color:green">```ndarray```</span> <span style="color:green">```pex_exceptions```</span> <span style="color:green">```utils```</span> ]
+* <a href="#origintickets4510">``` origin/tickets/4.5.1.0```</a>[ ``` ndarray``` ]
+* <a href="#origintickets1752">``` origin/tickets/1752```</a>[  <span style="color:green">```ndarray```</span> ]
+* <a href="#origintickets1749">``` origin/tickets/1749```</a>[  <span style="color:green">```ndarray```</span> ]
+* <a href="#origintickets1703">``` origin/tickets/1703```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originPT12">``` origin/PT1.2```</a>[ ``` base`````` ndarray`````` pex_exceptions`````` utils``` ]
+* <a href="#origintickets1720">``` origin/tickets/1720```</a>[  <span style="color:green">```ndarray```</span> ]
+* <a href="#originboostpython">``` origin/boost.python```</a>[ ``` base`````` pex_exceptions`````` utils``` ]
+* <a href="#originPT11">``` origin/PT1.1```</a>[ ``` base`````` utils``` ]
+* <a href="#originPT1">``` origin/PT1```</a>[ ``` base`````` pex_exceptions`````` utils``` ]
+* <a href="#origintickets1086">``` origin/tickets/1086```</a>[ ``` utils``` ]
+* <a href="#origintickets768">``` origin/tickets/768```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#origintickets656">``` origin/tickets/656```</a>[  <span style="color:green">```pex_exceptions```</span> ]
+* <a href="#origintickets616">``` origin/tickets/616```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#originktl">``` origin/ktl```</a>[ ``` utils``` ]
+* <a href="#origintickets548">``` origin/tickets/548```</a>[  <span style="color:green">```utils```</span> ]
+* <a href="#origintickets547">``` origin/tickets/547```</a>[ ``` utils``` ]
+* <a href="#origintickets458">``` origin/tickets/458```</a>[ ``` pex_exceptions`````` utils``` ]
+* <a href="#origintickets374">``` origin/tickets/374```</a>[ ``` utils``` ]
+* <a href="#origintickets358">``` origin/tickets/358```</a>[ ``` base``` ]
+* <a href="#origintickets337">``` origin/tickets/337```</a>[ ``` utils``` ]
+
+___
+
+## <a name="originticketsDM2636"></a>Branch origin/tickets/DM-2636
+Found in:
+
+* <a href="#originticketsDM2636utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2636utils"></a>utils</h3>
+<div id="divoriginticketsDM2636utilss" style="display:block">
+<pre>
+commit 9aa8276e3f9e9c3e246464303de7aedae7b02779
+Author: Joshua Hoblitt <josh@hoblitt.com>
+Date:   Fri May 22 15:13:32 2015 -0700
+
+    remove unnecessary imports of eups
+</pre>
+</div>
+<a href="#originticketsDM2636">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originmaster"></a>Branch origin/master
+Found in:
+
+* <a href="#originmasterbase">``` base ```</a>
+* <a href="#originmasterndarray">``` ndarray ```</a>
+* <a href="#originmasterpexexceptions">``` pex_exceptions ```</a>
+* <a href="#originmasterutils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originmasterbase"></a>base</h3>
+<div id="divoriginmasterbases" style="display:block">
+<pre>
+commit 8080078c56ef7b263fa802b99239a3895db748a0
+Merge: 766159b a445737
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu Apr 30 09:05:26 2015 -0400
+
+    Merge branch 'tickets/DM-2435'
+</pre>
+</div>
+<a href="#originmaster">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originmasterndarray"></a>ndarray</h3>
+<div id="divoriginmasterndarrays" style="display:block">
+<pre>
+commit 7408a83a3aa3df1509bb22d61aa4438c65cef2b6
+Merge: 28afc54 8b83317
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu Jan 22 12:09:07 2015 -0500
+
+    Merge branch 'tickets/DM-1802'
+</pre>
+</div>
+<a href="#originmaster">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originmasterpexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginmasterpexexceptionss" style="display:block">
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.
+</pre>
+</div>
+<a href="#originmaster">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originmasterutils"></a>utils</h3>
+<div id="divoriginmasterutilss" style="display:block">
+<pre>
+commit 82883c77f71697b8df9fe15c2956ea5b787b8a11
+Merge: 86f66b5 7a646c5
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Apr 29 11:04:01 2015 -0700
+
+    Merge branch 'tickets/DM-2635'
+</pre>
+</div>
+<a href="#originmaster">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM2435"></a>Branch origin/tickets/DM-2435
+Found in:
+
+* <a href="#originticketsDM2435base">``` base ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2435base"></a>base</h3>
+<div id="divoriginticketsDM2435bases" style="display:block">
+<pre>
+commit a445737c1f27d741399d2e38a77372c34f47fb0d
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Apr 29 16:30:18 2015 -0400
+
+    Clear Python errors when module import fails.
+    
+    Since we're tracking errors due to failure to import
+    via the return value of the function, we shouldn't be
+    leaving the Python global exception state set, as that
+    will cause confusingly unnecessary exceptions
+    downstream.
+</pre>
+</div>
+<a href="#originticketsDM2435">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM2642"></a>Branch origin/tickets/DM-2642
+Found in:
+
+* <a href="#originticketsDM2642ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2642ndarray"></a>ndarray</h3>
+<div id="divoriginticketsDM2642ndarrays" style="display:block">
+<pre>
+commit 87c30622154a3eabde32c9d490c3a266e01564b3
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Apr 29 14:20:04 2015 -0400
+
+    Add scons dependency on m4 headers to tests
+</pre>
+</div>
+<a href="#originticketsDM2642">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM2635"></a>Branch origin/tickets/DM-2635
+Found in:
+
+* <a href="#originticketsDM2635utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2635utils"></a>utils</h3>
+<div id="divoriginticketsDM2635utilss" style="display:block">
+<pre>
+commit 7a646c581a560bde8980f05ea0b0eea335d7b01a
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Apr 28 16:45:06 2015 -0700
+
+    Remove unused functions guessSvnVersion and stringToAny
+</pre>
+</div>
+<a href="#originticketsDM2635">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM2418"></a>Branch origin/tickets/DM-2418
+Found in:
+
+* <a href="#originticketsDM2418utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2418utils"></a>utils</h3>
+<div id="divoriginticketsDM2418utilss" style="display:block">
+<pre>
+commit 6559e97b8e4576b03e5d7fc2f93880c004b00ce8
+Author: Russell Owen <rowen@uw.edu>
+Date:   Thu Apr 9 10:33:37 2015 -0700
+
+    Add lsst.utils.tests.getTempFilePath and improved some documentation
+    
+    I added context manager lsst.utils.tests.getTempFilePath to create temporary
+    file paths based on unit test file path and name of the test function.
+    This is intended to simplify unit tests and reduce the danger of tests
+    using the same file name and thus colliding with each other (a serious problem
+    in afw that has had 3 tickets and one incomplete fixup pass before this one).
+    
+    I removed temporaryFile, an older attempt that was only used in one place
+    before my cleanup of afw unit tests and nowhere afterwards.
+    
+    I also added an overview documentation main.dox and improved the documentation
+    of items in lsst.utils.tests.
+    
+    Add a main.dox file and fix a formatting error in a doc string
+    
+    Document p_lsstSwig.i and fix a few Doxygen errors
+    
+    I have not figured out how to get a live link to p_lsstSwig.i, but it doesn't include
+    doxygen comments anyway.
+    
+    Clean up as per review and remove deprecated temporaryFile.
+</pre>
+</div>
+<a href="#originticketsDM2418">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM2201"></a>Branch origin/tickets/DM-2201
+Found in:
+
+* <a href="#originticketsDM2201utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2201utils"></a>utils</h3>
+<div id="divoriginticketsDM2201utilss" style="display:block">
+<pre>
+commit eb0675d3741bac1f8181a1c98a9422e93669ec0e
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Fri Apr 10 15:33:56 2015 -0400
+
+    Remove unused imports, update copyright, and remove trailing whitespace.
+</pre>
+</div>
+<a href="#originticketsDM2201">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM2379"></a>Branch origin/tickets/DM-2379
+Found in:
+
+* <a href="#originticketsDM2379ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2379ndarray"></a>ndarray</h3>
+<div id="divoriginticketsDM2379ndarrays" style="display:block">
+<pre>
+commit 1d88adc5f9edbefc0773d28ae8367ae8830fabc4
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Mar 31 22:53:35 2015 -0400
+
+    Check for type equivalency, not identity, in matching NumPy arrays.
+    
+    Integer types with the same size and signedness are equivalent (e.g.
+    long and long long when both are 64-bit), and should be treated as
+    such.
+</pre>
+</div>
+<a href="#originticketsDM2379">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM2389"></a>Branch origin/tickets/DM-2389
+Found in:
+
+* <a href="#originticketsDM2389utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2389utils"></a>utils</h3>
+<div id="divoriginticketsDM2389utilss" style="display:block">
+<pre>
+commit ea359401128ea065cc4e3e57b821d54a21bb2257
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Mar 24 10:56:44 2015 -0700
+
+    Remove special bool handling, as the desired behavior is standard in SWIG 3
+</pre>
+</div>
+<a href="#originticketsDM2389">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM2347"></a>Branch origin/tickets/DM-2347
+Found in:
+
+* <a href="#originticketsDM2347utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2347utils"></a>utils</h3>
+<div id="divoriginticketsDM2347utilss" style="display:block">
+<pre>
+commit 7222f26c69aa22f4d8463041c29901228714c056
+Author: John Swinbank <swinbank@princeton.edu>
+Date:   Mon Mar 23 08:34:01 2015 -0400
+
+    Make declareValueEquality delegate to C++'s !=.
+    
+    This forces equality to be semantically equivalent in C++ and Python code.
+    
+    It also means that any C++ which is wrapped with declareValueEquality must
+    provide both an appropriate operator==() and an operator!=().
+</pre>
+</div>
+<a href="#originticketsDM2347">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM2348"></a>Branch origin/tickets/DM-2348
+Found in:
+
+* <a href="#originticketsDM2348utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM2348utils"></a>utils</h3>
+<div id="divoriginticketsDM2348utilss" style="display:block">
+<pre>
+commit 4ea9c4138d3525a70c522edb7d987bc047df5141
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Mon Mar 16 21:08:28 2015 -0400
+
+    swig: fix fail-to-fail in %useValueEquality and %usePointerEquality
+    
+    In the event of an exception from the equality operator, these would
+    return a class (and hence evaluate to True), rather than raise an
+    exception.  Might have had these raise a NotImplemented exception,
+    but I think that it's better to just allow any exception to propagate
+    up, as an exception generated by _eq_impl may not be due to the equality
+    operator not being implemented.
+</pre>
+</div>
+<a href="#originticketsDM2348">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM1802"></a>Branch origin/tickets/DM-1802
+Found in:
+
+* <a href="#originticketsDM1802ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM1802ndarray"></a>ndarray</h3>
+<div id="divoriginticketsDM1802ndarrays" style="display:block">
+<pre>
+commit 8b833175811cbf59c7fe715d900e2048ee503db2
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Jan 21 18:23:57 2015 -0500
+
+    Remove unused local typedef to address gcc warnings
+</pre>
+</div>
+<a href="#originticketsDM1802">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM1086"></a>Branch origin/tickets/DM-1086
+Found in:
+
+* <a href="#originticketsDM1086utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM1086utils"></a>utils</h3>
+<div id="divoriginticketsDM1086utilss" style="display:block">
+<pre>
+commit 8a93d6a2e898049dffc04ecb0a2772ef82a6aec1
+Author: John Swinbank <swinbank@princeton.edu>
+Date:   Wed Jan 21 14:12:08 2015 -0500
+
+    Remove PowFast.
+    
+    This code is unused and has no practical advantage over std::exp. See
+    discussion at DM-1086.
+</pre>
+</div>
+<a href="#originticketsDM1086">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originurallsmanDM868"></a>Branch origin/u/rallsman/DM-868
+Found in:
+
+* <a href="#originurallsmanDM868ndarray">``` ndarray ```</a>
+* <a href="#originurallsmanDM868utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originurallsmanDM868ndarray"></a>ndarray</h3>
+<div id="divoriginurallsmanDM868ndarrays" style="display:block">
+<pre>
+commit 82b9a38f2aabc061dfe06d0971f1c3726f5f7d4c
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:52:45 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.
+</pre>
+</div>
+<a href="#originurallsmanDM868">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originurallsmanDM868utils"></a>utils</h3>
+<div id="divoriginurallsmanDM868utilss" style="display:block">
+<pre>
+commit f707de5e1337de11f89faa467784a5b94775be55
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 21:01:06 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.
+</pre>
+</div>
+<a href="#originurallsmanDM868">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originreleaseSummer2014"></a>Branch origin/release/Summer2014
+Found in:
+
+* <a href="#originreleaseSummer2014base">``` base ```</a>
+* <a href="#originreleaseSummer2014ndarray">``` ndarray ```</a>
+* <a href="#originreleaseSummer2014pexexceptions">``` pex_exceptions ```</a>
+* <a href="#originreleaseSummer2014utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleaseSummer2014base"></a>base</h3>
+<div id="divoriginreleaseSummer2014bases" style="display:block">
+<pre>
+commit 61058740b4ba0d21af6799ad07b3ad6444c296b6
+Merge: f8e3da9 dd170d2
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Aug 1 09:47:25 2014 -0500
+
+    Merge branch 'tickets/DM-711'
+</pre>
+</div>
+<a href="#originreleaseSummer2014">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleaseSummer2014ndarray"></a>ndarray</h3>
+<div id="divoriginreleaseSummer2014ndarrays" style="display:block">
+<pre>
+commit 44be88464c05d4bda75c2e52bc0cfdf0c5928b0e
+Merge: dbc1f3d 6ad128e
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Fri Mar 7 12:53:31 2014 -0600
+
+    Merge branch 'tickets/3148'
+</pre>
+</div>
+<a href="#originreleaseSummer2014">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleaseSummer2014pexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginreleaseSummer2014pexexceptionss" style="display:block">
+<pre>
+commit 3a93a35064c57a40e04760e2e02a3256f18805f5
+Merge: 82f5e1d bba23a8
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu Aug 7 19:25:04 2014 -0700
+
+    Merge branch 'u/jbosch/DM-827'
+</pre>
+</div>
+<a href="#originreleaseSummer2014">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleaseSummer2014utils"></a>utils</h3>
+<div id="divoriginreleaseSummer2014utilss" style="display:block">
+<pre>
+commit 406e1a2078bacffb8c04c0ce499d5ac7ddc5fc59
+Merge: 7e816b2 11212a1
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu Aug 7 19:25:12 2014 -0700
+
+    Merge branch 'u/jbosch/DM-827'
+</pre>
+</div>
+<a href="#originreleaseSummer2014">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originujboschDM827"></a>Branch origin/u/jbosch/DM-827
+Found in:
+
+* <a href="#originujboschDM827pexexceptions">``` pex_exceptions ```</a>
+* <a href="#originujboschDM827utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originujboschDM827pexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginujboschDM827pexexceptionss" style="display:block">
+<pre>
+commit bba23a87b7beb9bc44cfc6343b61b2d1eb50565a
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu Aug 7 19:16:34 2014 -0700
+
+    Improve test coverage of Exception::addMessage()
+</pre>
+</div>
+<a href="#originujboschDM827">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originujboschDM827utils"></a>utils</h3>
+<div id="divoriginujboschDM827utilss" style="display:block">
+<pre>
+commit 11212a1ac96cf9b129302c6a2f7fa46098ba78ad
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu Jul 17 14:12:20 2014 -0400
+
+    Adapt to changes in Python Exception wrappers (DM-827)
+</pre>
+</div>
+<a href="#originujboschDM827">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originreleasev911"></a>Branch origin/release/v9_1_1
+Found in:
+
+* <a href="#originreleasev911base">``` base ```</a>
+* <a href="#originreleasev911ndarray">``` ndarray ```</a>
+* <a href="#originreleasev911pexexceptions">``` pex_exceptions ```</a>
+* <a href="#originreleasev911utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleasev911base"></a>base</h3>
+<div id="divoriginreleasev911bases" style="display:block">
+<pre>
+commit 61058740b4ba0d21af6799ad07b3ad6444c296b6
+Merge: f8e3da9 dd170d2
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Aug 1 09:47:25 2014 -0500
+
+    Merge branch 'tickets/DM-711'
+</pre>
+</div>
+<a href="#originreleasev911">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleasev911ndarray"></a>ndarray</h3>
+<div id="divoriginreleasev911ndarrays" style="display:block">
+<pre>
+commit 44be88464c05d4bda75c2e52bc0cfdf0c5928b0e
+Merge: dbc1f3d 6ad128e
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Fri Mar 7 12:53:31 2014 -0600
+
+    Merge branch 'tickets/3148'
+</pre>
+</div>
+<a href="#originreleasev911">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleasev911pexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginreleasev911pexexceptionss" style="display:block">
+<pre>
+commit 82f5e1da6590481d53d5a26c6b5458c286b0641f
+Merge: 0c17e81 9738f95
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Jun 25 16:56:43 2014 -0700
+
+    Merge branch 'tickets/DM-764'
+</pre>
+</div>
+<a href="#originreleasev911">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleasev911utils"></a>utils</h3>
+<div id="divoriginreleasev911utilss" style="display:block">
+<pre>
+commit 7e816b2b5d6f49c27a5946b92ab099020f31f4d4
+Merge: f29efbd f00dab5
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Jun 25 16:57:31 2014 -0700
+
+    Merge branch 'tickets/DM-764'
+</pre>
+</div>
+<a href="#originreleasev911">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM974"></a>Branch origin/tickets/DM-974
+Found in:
+
+* <a href="#originticketsDM974base">``` base ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM974base"></a>base</h3>
+<div id="divoriginticketsDM974bases" style="display:block">
+<pre>
+commit f352099593ac25bc8d4d949e6bd3d2157dc3214b
+Author: Russell Owen <rowen@uw.edu>
+Date:   Fri Jul 18 09:01:36 2014 -0700
+
+    Disable "references" and "referenced by" sections in Doxygen
+</pre>
+</div>
+<a href="#originticketsDM974">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM711"></a>Branch origin/tickets/DM-711
+Found in:
+
+* <a href="#originticketsDM711base">``` base ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM711base"></a>base</h3>
+<div id="divoriginticketsDM711bases" style="display:block">
+<pre>
+commit dd170d219a8866cb8b0353788a4ac4eac39ce8a8
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Wed Jun 18 17:23:08 2014 -0500
+
+    Updated doxygen 1.8.5 required changes to doxygen configuration file
+</pre>
+</div>
+<a href="#originticketsDM711">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originticketsDM764"></a>Branch origin/tickets/DM-764
+Found in:
+
+* <a href="#originticketsDM764pexexceptions">``` pex_exceptions ```</a>
+* <a href="#originticketsDM764utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM764pexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginticketsDM764pexexceptionss" style="display:block">
+<pre>
+commit 9738f952a9be1c01a40c555e0cf3285115f6f72d
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Jun 18 15:02:36 2014 -0700
+
+    Added missing TimeoutError to exceptionsLib.i
+</pre>
+</div>
+<a href="#originticketsDM764">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originticketsDM764utils"></a>utils</h3>
+<div id="divoriginticketsDM764utilss" style="display:block">
+<pre>
+commit f00dab5d059757cbbb085bb121766146bfb1d3cf
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Jun 17 16:07:05 2014 -0700
+
+    Renamed exceptions.
+</pre>
+</div>
+<a href="#originticketsDM764">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originurhlmakeunique"></a>Branch origin/u/rhl/make_unique
+Found in:
+
+* <a href="#originurhlmakeuniquebase">``` base ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originurhlmakeuniquebase"></a>base</h3>
+<div id="divoriginurhlmakeuniquebases" style="display:block">
+<pre>
+commit 61a21dc968fab82aaf05fec37e5acd38014c7b8e
+Author: Robert Lupton the Good <rhl@astro.princeton.edu>
+Date:   Mon Jun 2 15:29:24 2014 -0400
+
+    Add std::make_unique
+</pre>
+</div>
+<a href="#originurhlmakeunique">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originreleaseWinter2014"></a>Branch origin/release/Winter2014
+Found in:
+
+* <a href="#originreleaseWinter2014base">``` base ```</a>
+* <a href="#originreleaseWinter2014ndarray">``` ndarray ```</a>
+* <a href="#originreleaseWinter2014pexexceptions">``` pex_exceptions ```</a>
+* <a href="#originreleaseWinter2014utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleaseWinter2014base"></a>base</h3>
+<div id="divoriginreleaseWinter2014bases" style="display:block">
+<pre>
+commit 47bec627314ffabab7045a2fa59d242465786c5d
+Merge: b0af66d 9278ce5
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Fri Mar 7 12:53:30 2014 -0600
+
+    Merge branch 'tickets/3148'
+</pre>
+</div>
+<a href="#originreleaseWinter2014">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleaseWinter2014ndarray"></a>ndarray</h3>
+<div id="divoriginreleaseWinter2014ndarrays" style="display:block">
+<pre>
+commit 44be88464c05d4bda75c2e52bc0cfdf0c5928b0e
+Merge: dbc1f3d 6ad128e
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Fri Mar 7 12:53:31 2014 -0600
+
+    Merge branch 'tickets/3148'
+</pre>
+</div>
+<a href="#originreleaseWinter2014">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleaseWinter2014pexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginreleaseWinter2014pexexceptionss" style="display:block">
+<pre>
+commit 0c17e8181a986fa5287de662973a6674a55a9877
+Merge: 60be2e0 766cc9e
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Fri Mar 7 12:53:31 2014 -0600
+
+    Merge branch 'tickets/3148'
+</pre>
+</div>
+<a href="#originreleaseWinter2014">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleaseWinter2014utils"></a>utils</h3>
+<div id="divoriginreleaseWinter2014utilss" style="display:block">
+<pre>
+commit f29efbd9a5169478225951891d7cc8eec7879454
+Merge: 2fb7457 71f2c3d
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Fri Mar 7 12:53:31 2014 -0600
+
+    Merge branch 'tickets/3148'
+</pre>
+</div>
+<a href="#originreleaseWinter2014">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originumjuriceupspkg"></a>Branch origin/u/mjuric/eupspkg
+Found in:
+
+* <a href="#originumjuriceupspkgbase">``` base ```</a>
+* <a href="#originumjuriceupspkgndarray">``` ndarray ```</a>
+* <a href="#originumjuriceupspkgpexexceptions">``` pex_exceptions ```</a>
+* <a href="#originumjuriceupspkgutils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originumjuriceupspkgbase"></a>base</h3>
+<div id="divoriginumjuriceupspkgbases" style="display:block">
+<pre>
+commit 9278ce576a92fe8773cd5117c317c1fcf14388af
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:28:59 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+<a href="#originumjuriceupspkg">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originumjuriceupspkgndarray"></a>ndarray</h3>
+<div id="divoriginumjuriceupspkgndarrays" style="display:block">
+<pre>
+commit 6ad128e5a208d54410538ba298c44fc70fed79c0
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:24 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+<a href="#originumjuriceupspkg">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originumjuriceupspkgpexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginumjuriceupspkgpexexceptionss" style="display:block">
+<pre>
+commit 766cc9e652240139851648460b91a201a23500a1
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:30 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+<a href="#originumjuriceupspkg">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originumjuriceupspkgutils"></a>utils</h3>
+<div id="divoriginumjuriceupspkgutilss" style="display:block">
+<pre>
+commit 71f2c3d77796c9ccc035cce42f5beafa40b8dd96
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:43 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+<a href="#originumjuriceupspkg">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets3148"></a>Branch origin/tickets/3148
+Found in:
+
+* <a href="#origintickets3148base">``` base ```</a>
+* <a href="#origintickets3148ndarray">``` ndarray ```</a>
+* <a href="#origintickets3148pexexceptions">``` pex_exceptions ```</a>
+* <a href="#origintickets3148utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets3148base"></a>base</h3>
+<div id="divorigintickets3148bases" style="display:block">
+<pre>
+commit 9278ce576a92fe8773cd5117c317c1fcf14388af
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:28:59 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+<a href="#origintickets3148">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets3148ndarray"></a>ndarray</h3>
+<div id="divorigintickets3148ndarrays" style="display:block">
+<pre>
+commit 6ad128e5a208d54410538ba298c44fc70fed79c0
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:24 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+<a href="#origintickets3148">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets3148pexexceptions"></a>pex_exceptions</h3>
+<div id="divorigintickets3148pexexceptionss" style="display:block">
+<pre>
+commit 766cc9e652240139851648460b91a201a23500a1
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:30 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+<a href="#origintickets3148">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets3148utils"></a>utils</h3>
+<div id="divorigintickets3148utilss" style="display:block">
+<pre>
+commit 71f2c3d77796c9ccc035cce42f5beafa40b8dd96
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:43 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+<a href="#origintickets3148">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets3120"></a>Branch origin/tickets/3120
+Found in:
+
+* <a href="#origintickets3120utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets3120utils"></a>utils</h3>
+<div id="divorigintickets3120utilss" style="display:block">
+<pre>
+commit fb0135e4235d7cb5e3aa3c096a82834de5498932
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Sun Jan 26 18:00:06 2014 -0500
+
+    Comment to explain usage of cast macro (#3120)
+</pre>
+</div>
+<a href="#origintickets3120">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originujbosch3081"></a>Branch origin/u/jbosch/3081
+Found in:
+
+* <a href="#originujbosch3081ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originujbosch3081ndarray"></a>ndarray</h3>
+<div id="divoriginujbosch3081ndarrays" style="display:block">
+<pre>
+commit 33800a4f53b5a67c85c566a894d81511faf2681d
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Fri Jan 24 15:15:08 2014 -0500
+
+    Fix clang warnings about class/struct mismatches (#3081)
+</pre>
+</div>
+<a href="#originujbosch3081">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2965"></a>Branch origin/tickets/2965
+Found in:
+
+* <a href="#origintickets2965pexexceptions">``` pex_exceptions ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2965pexexceptions"></a>pex_exceptions</h3>
+<div id="divorigintickets2965pexexceptionss" style="display:block">
+<pre>
+commit f0ac0dbe7cde9f600bdf061a0777360631c8abd6
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Mon Jan 20 12:19:53 2014 -0500
+
+    Rename macro, swap last arguments, in response to review for #2965
+</pre>
+</div>
+<a href="#origintickets2965">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets3054"></a>Branch origin/tickets/3054
+Found in:
+
+* <a href="#origintickets3054ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets3054ndarray"></a>ndarray</h3>
+<div id="divorigintickets3054ndarrays" style="display:block">
+<pre>
+commit 49da30f4865082a3168c5a5a4022f832ffd57611
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Nov 19 11:56:59 2013 -0500
+
+    Don't invoke std::fill on NestedIterator; it's not an STL ForwardIterator
+    
+    This should address build failures on Mac OSX 10.9 (#3054)
+</pre>
+</div>
+<a href="#origintickets3054">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originuprice3054"></a>Branch origin/u/price/3054
+Found in:
+
+* <a href="#originuprice3054ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originuprice3054ndarray"></a>ndarray</h3>
+<div id="divoriginuprice3054ndarrays" style="display:block">
+<pre>
+commit 4d71e028effa34cc6c5520c6ad2f17850850c759
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Tue Nov 19 16:04:16 2013 +0000
+
+    ArrayRef: replace std::fill, which doesn't work on MacOS 10.9 (#3054)
+</pre>
+</div>
+<a href="#originuprice3054">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets3055"></a>Branch origin/tickets/3055
+Found in:
+
+* <a href="#origintickets3055base">``` base ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets3055base"></a>base</h3>
+<div id="divorigintickets3055bases" style="display:block">
+<pre>
+commit 14cc1e140fd5affa2c6db847d6f5779430201b9b
+Author: Simon Krughoff <krughoff@uw.edu>
+Date:   Mon Nov 18 11:22:33 2013 -0800
+
+    Responding to review.  Moved setting flags and calling load_module to a separate method.  Made a list of modules to wrap in set/unset block at the module level to handle _lsstcppimport.so.  Made a list at the module level of extensions to check in case LSST is ported to other architectures/operating systems.
+</pre>
+</div>
+<a href="#origintickets3055">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originujboschs13"></a>Branch origin/u/jbosch/s13
+Found in:
+
+* <a href="#originujboschs13pexexceptions">``` pex_exceptions ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originujboschs13pexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginujboschs13pexexceptionss" style="display:block">
+<pre>
+commit 2cb7c7fcefa483f45e52151582d183e4248b26f5
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Fri Jul 19 16:18:03 2013 -0400
+
+    Add convience macro for common equal-or-throw pattern (#2965)
+</pre>
+</div>
+<a href="#originujboschs13">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2832"></a>Branch origin/tickets/2832
+Found in:
+
+* <a href="#origintickets2832ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2832ndarray"></a>ndarray</h3>
+<div id="divorigintickets2832ndarrays" style="display:block">
+<pre>
+commit b7975aecdd1d77476e5c968aa63c71c46002eace
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Mon Apr 29 18:33:12 2013 -0400
+
+    Add function to call PyConverter::toPython without explicit type
+</pre>
+</div>
+<a href="#origintickets2832">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originnext"></a>Branch origin/next
+Found in:
+
+* <a href="#originnextbase">``` base ```</a>
+* <a href="#originnextndarray">``` ndarray ```</a>
+* <a href="#originnextpexexceptions">``` pex_exceptions ```</a>
+* <a href="#originnextutils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originnextbase"></a>base</h3>
+<div id="divoriginnextbases" style="display:block">
+<pre>
+commit a1e3530a0888cbbf0dc2a627c870c7d89d1fe979
+Author: Robert Lupton the Good <rhl@astro.princeton.edu>
+Date:   Wed Apr 3 18:23:56 2013 -0400
+
+    Prepend to LD_LIBRARY_PATH (and DYLD_LIBRARY_PATH too for os/x)
+</pre>
+</div>
+<a href="#originnext">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originnextndarray"></a>ndarray</h3>
+<div id="divoriginnextndarrays" style="display:block">
+<pre>
+commit 0b826336d467ca704e488d15a00c8d114fb3b587
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Fri Dec 7 22:17:23 2012 -0500
+
+    allow Vector to handle non-numeric types by not always setting to zero
+</pre>
+</div>
+<a href="#originnext">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originnextpexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginnextpexexceptionss" style="display:block">
+<pre>
+commit 21b7d3b39a216ab320bd43bce640cd86090f5ceb
+Merge: c802d22 ebd8f01
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Aug 28 18:56:45 2012 -0400
+
+    Merge branch 'tickets/2280'
+</pre>
+</div>
+<a href="#originnext">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originnextutils"></a>utils</h3>
+<div id="divoriginnextutilss" style="display:block">
+<pre>
+commit 21f62dcf2f1a295e7cf43042468ad98fd7d9fbab
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Apr 23 15:24:11 2013 -0400
+
+    Remove confusing relic from documentation for assertClose
+</pre>
+</div>
+<a href="#originnext">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2824"></a>Branch origin/tickets/2824
+Found in:
+
+* <a href="#origintickets2824utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2824utils"></a>utils</h3>
+<div id="divorigintickets2824utilss" style="display:block">
+<pre>
+commit 4aa3a65069b6fe0f89791010e25b0d9aa1f49041
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Apr 23 14:31:05 2013 -0400
+
+    Update to floating-point comparison to reflect #2824 review
+    
+    Added numpy to table file
+    
+    Protected matplotlib import with try block
+    
+    Refactored diff plotting into a separate routine
+    
+    Improved documentation for relTo argument
+    
+    Fixed bugs when only one side of the comparison is an array
+    
+    Improved test coverage
+</pre>
+</div>
+<a href="#origintickets2824">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originHSC"></a>Branch origin/HSC
+Found in:
+
+* <a href="#originHSCbase">``` base ```</a>
+* <a href="#originHSCndarray">``` ndarray ```</a>
+* <a href="#originHSCpexexceptions">``` pex_exceptions ```</a>
+* <a href="#originHSCutils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originHSCbase"></a>base</h3>
+<div id="divoriginHSCbases" style="display:block">
+<pre>
+commit 965a1d18131b08fa2a778120017398c6d0796213
+Merge: 2b88f99 a1e3530
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Apr 3 18:26:57 2013 -0400
+
+    Merge remote-tracking branch 'NCSA/next'
+    
+    Want to pick up table file changes that make bootstrapping base more robust.
+</pre>
+</div>
+<a href="#originHSC">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originHSCndarray"></a>ndarray</h3>
+<div id="divoriginHSCndarrays" style="display:block">
+<pre>
+commit 18dd94c4ca1f256afffe583e684091f45c9fcc5f
+Merge: 0dd5431 0b82633
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 19 21:06:21 2013 +0900
+
+    Merge LSST/next into HSC/stage-ncsa-3
+</pre>
+</div>
+<a href="#originHSC">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originHSCpexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginHSCpexexceptionss" style="display:block">
+<pre>
+commit ff5c0e533b2da7ed5133c0dabe3c6c6568513670
+Merge: bf7f5af 21b7d3b
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 19 21:00:00 2013 +0900
+
+    Merge LSST/next into HSC/stage-ncsa-3
+</pre>
+</div>
+<a href="#originHSC">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originHSCutils"></a>utils</h3>
+<div id="divoriginHSCutilss" style="display:block">
+<pre>
+commit 87a6f57df9dd0c04dbbb8f42248bed93c01877e6
+Author: Robert Lupton the Good <rhl@astro.princeton.edu>
+Date:   Tue Apr 16 18:47:41 2013 -0400
+
+    Initial implementation taken from Harrison Ainsworth's code; see copyright in PowFast.cc
+</pre>
+</div>
+<a href="#originHSC">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2802"></a>Branch origin/tickets/2802
+Found in:
+
+* <a href="#origintickets2802utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2802utils"></a>utils</h3>
+<div id="divorigintickets2802utilss" style="display:block">
+<pre>
+commit d0299c1e87aaadead5216c532550417ff1225f48
+Author: Robert Lupton the Good <rhl@astro.princeton.edu>
+Date:   Tue Apr 16 18:47:41 2013 -0400
+
+    Initial implementation taken from Harrison Ainsworth's code; see copyright in PowFast.cc
+</pre>
+</div>
+<a href="#origintickets2802">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2696"></a>Branch origin/tickets/2696
+Found in:
+
+* <a href="#origintickets2696base">``` base ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2696base"></a>base</h3>
+<div id="divorigintickets2696bases" style="display:block">
+<pre>
+commit b262c855f779a65099e52bd2abc740fc264954e6
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Mar 13 11:01:44 2013 -0400
+
+    Minor updates for review of #2696
+    
+    Made ModuleImporter::install private, with a friend function to access it.
+    Add/update copyright screed for new files.
+    Remove machine-generated testModuleImporterLib.py from git and ignore it.
+</pre>
+</div>
+<a href="#origintickets2696">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2664"></a>Branch origin/tickets/2664
+Found in:
+
+* <a href="#origintickets2664utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2664utils"></a>utils</h3>
+<div id="divorigintickets2664utilss" style="display:block">
+<pre>
+commit 94d26caf534aa06de234f9a3e2cf7306e0812df2
+Author: Russell Owen <rowen@uw.edu>
+Date:   Fri Mar 8 17:17:35 2013 -0800
+
+    Minor tweaks. The unit test fails for reasons I will post in the ticket.
+</pre>
+</div>
+<a href="#origintickets2664">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1894"></a>Branch origin/tickets/1894
+Found in:
+
+* <a href="#origintickets1894base">``` base ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1894base"></a>base</h3>
+<div id="divorigintickets1894bases" style="display:block">
+<pre>
+commit 849f584688c381e724b0e022c678cd09585839a3
+Merge: 1041415 b85c87c
+Author: Robert Lupton the Good <rhl@astro.princeton.edu>
+Date:   Wed Jan 9 12:48:29 2013 -0500
+
+    Merge branch 'master' into tickets/1894
+</pre>
+</div>
+<a href="#origintickets1894">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2475"></a>Branch origin/tickets/2475
+Found in:
+
+* <a href="#origintickets2475utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2475utils"></a>utils</h3>
+<div id="divorigintickets2475utilss" style="display:block">
+<pre>
+commit 7ca9f19eacbeb5dd5cb52660521e3fc1965e9a4e
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Nov 30 12:24:32 2012 -0500
+
+    Add function decorator to enter pdb when there's an uncaught exception.
+</pre>
+</div>
+<a href="#origintickets2475">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2340"></a>Branch origin/tickets/2340
+Found in:
+
+* <a href="#origintickets2340base">``` base ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2340base"></a>base</h3>
+<div id="divorigintickets2340bases" style="display:block">
+<pre>
+commit 932b869677dc0189b9b37ef84460d95daa5278e5
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Tue Sep 25 14:24:48 2012 -0400
+
+    Remove unnecessary imports.
+</pre>
+</div>
+<a href="#origintickets2340">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originreleasesSummer2012"></a>Branch origin/releases/Summer2012
+Found in:
+
+* <a href="#originreleasesSummer2012base">``` base ```</a>
+* <a href="#originreleasesSummer2012ndarray">``` ndarray ```</a>
+* <a href="#originreleasesSummer2012pexexceptions">``` pex_exceptions ```</a>
+* <a href="#originreleasesSummer2012utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleasesSummer2012base"></a>base</h3>
+<div id="divoriginreleasesSummer2012bases" style="display:block">
+<pre>
+commit 6ae8f4b79f27e690fc27a520799a61cc8f6bd4cd
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Dec 9 15:03:49 2011 -0500
+
+    Separate function definition and use with &&
+</pre>
+</div>
+<a href="#originreleasesSummer2012">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleasesSummer2012ndarray"></a>ndarray</h3>
+<div id="divoriginreleasesSummer2012ndarrays" style="display:block">
+<pre>
+commit 6cc709cf17f5c3a0ce96c94f1381dd27c7d7fd13
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Aug 21 18:42:41 2012 -0400
+
+    be more explicit with assignment operators in EigenView to avoid (valid? buggy?) clang errors
+</pre>
+</div>
+<a href="#originreleasesSummer2012">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleasesSummer2012pexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginreleasesSummer2012pexexceptionss" style="display:block">
+<pre>
+commit c802d2298c0ddc5e820c38088656c45cc72a7bbd
+Author: Serge Monkewitz <smm@ipac.caltech.edu>
+Date:   Sat May 12 00:17:33 2012 -0500
+
+    ignore generated doxygen.conf file
+</pre>
+</div>
+<a href="#originreleasesSummer2012">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originreleasesSummer2012utils"></a>utils</h3>
+<div id="divoriginreleasesSummer2012utilss" style="display:block">
+<pre>
+commit 575c33d079d503f7c3a52ea5c475afa9b669b7e1
+Merge: 5e2824d 28d5997
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu May 24 13:08:15 2012 -0400
+
+    Merge branch 'tickets/2121'
+</pre>
+</div>
+<a href="#originreleasesSummer2012">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2280"></a>Branch origin/tickets/2280
+Found in:
+
+* <a href="#origintickets2280base">``` base ```</a>
+* <a href="#origintickets2280ndarray">``` ndarray ```</a>
+* <a href="#origintickets2280pexexceptions">``` pex_exceptions ```</a>
+* <a href="#origintickets2280utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2280base"></a>base</h3>
+<div id="divorigintickets2280bases" style="display:block">
+<pre>
+commit 8013b9420379aa8d079a2a0fe5ef488074d85d63
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Mar 9 04:45:00 2012 +0900
+
+    Update build file.
+</pre>
+</div>
+<a href="#origintickets2280">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2280ndarray"></a>ndarray</h3>
+<div id="divorigintickets2280ndarrays" style="display:block">
+<pre>
+commit ff6674191c86a836d051d925f4676cdf163904a5
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Mar 9 04:45:00 2012 +0900
+
+    Update build file.
+</pre>
+</div>
+<a href="#origintickets2280">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2280pexexceptions"></a>pex_exceptions</h3>
+<div id="divorigintickets2280pexexceptionss" style="display:block">
+<pre>
+commit ebd8f0144299d0b38b575321b2aca0cfe2383ee1
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Mar 9 04:45:00 2012 +0900
+
+    Update build file.
+</pre>
+</div>
+<a href="#origintickets2280">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2280utils"></a>utils</h3>
+<div id="divorigintickets2280utilss" style="display:block">
+<pre>
+commit 676988a935744287f5f2840d1e03ff1e7a2f755f
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Mar 9 04:45:01 2012 +0900
+
+    Update build file.
+</pre>
+</div>
+<a href="#origintickets2280">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2271"></a>Branch origin/tickets/2271
+Found in:
+
+* <a href="#origintickets2271ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2271ndarray"></a>ndarray</h3>
+<div id="divorigintickets2271ndarrays" style="display:block">
+<pre>
+commit 71414239bc2be8611b6479feadf89cc7f329ef58
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Aug 21 18:42:41 2012 -0400
+
+    be more explicit with assignment operators in EigenView to avoid (valid? buggy?) clang errors
+</pre>
+</div>
+<a href="#origintickets2271">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2252"></a>Branch origin/tickets/2252
+Found in:
+
+* <a href="#origintickets2252base">``` base ```</a>
+* <a href="#origintickets2252ndarray">``` ndarray ```</a>
+* <a href="#origintickets2252pexexceptions">``` pex_exceptions ```</a>
+* <a href="#origintickets2252utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2252base"></a>base</h3>
+<div id="divorigintickets2252bases" style="display:block">
+<pre>
+commit 6a776fdbe68f439b67820b9f0927ef163e77460d
+Merge: 6ae8f4b 8013b94
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Mon Jul 23 18:36:35 2012 +0900
+
+    Merge branch 'HSC' into tickets/2252
+</pre>
+</div>
+<a href="#origintickets2252">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2252ndarray"></a>ndarray</h3>
+<div id="divorigintickets2252ndarrays" style="display:block">
+<pre>
+commit 485c26edee6098259fcb71ebe863f3a09bf831b1
+Merge: 790560c 1e63af7
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Mon Jul 23 18:48:34 2012 +0900
+
+    Merge branch 'HSC' into tickets/2252
+</pre>
+</div>
+<a href="#origintickets2252">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2252pexexceptions"></a>pex_exceptions</h3>
+<div id="divorigintickets2252pexexceptionss" style="display:block">
+<pre>
+commit f81a28a2ff7a7a12ad1394c6f7f9612a97864a1b
+Merge: c802d22 bf7f5af
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Mon Jul 23 18:37:22 2012 +0900
+
+    Merge branch 'HSC' into tickets/2252
+</pre>
+</div>
+<a href="#origintickets2252">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2252utils"></a>utils</h3>
+<div id="divorigintickets2252utilss" style="display:block">
+<pre>
+commit d2ad7affb03d039a069af79296c14c65b64e28cf
+Merge: 575c33d 0176eee
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Mon Jul 23 18:38:32 2012 +0900
+
+    Merge branch 'HSC' into tickets/2252
+</pre>
+</div>
+<a href="#origintickets2252">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets2121"></a>Branch origin/tickets/2121
+Found in:
+
+* <a href="#origintickets2121utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets2121utils"></a>utils</h3>
+<div id="divorigintickets2121utilss" style="display:block">
+<pre>
+commit 28d5997372fa657139a473e40719b6859d515a2a
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu May 24 13:06:00 2012 -0400
+
+    Add comments explaining previous commit.
+</pre>
+</div>
+<a href="#origintickets2121">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1990"></a>Branch origin/tickets/1990
+Found in:
+
+* <a href="#origintickets1990ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1990ndarray"></a>ndarray</h3>
+<div id="divorigintickets1990ndarrays" style="display:block">
+<pre>
+commit 05049546d015344e521ff045026515a0d655c72e
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Mon Mar 19 16:44:40 2012 -0400
+
+    removed unused Boost.Python code from LSST fork
+</pre>
+</div>
+<a href="#origintickets1990">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originWinter2012d"></a>Branch origin/Winter2012d
+Found in:
+
+* <a href="#originWinter2012dbase">``` base ```</a>
+* <a href="#originWinter2012dndarray">``` ndarray ```</a>
+* <a href="#originWinter2012dutils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012dbase"></a>base</h3>
+<div id="divoriginWinter2012dbases" style="display:block">
+<pre>
+commit 6ae8f4b79f27e690fc27a520799a61cc8f6bd4cd
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Dec 9 15:03:49 2011 -0500
+
+    Separate function definition and use with &&
+</pre>
+</div>
+<a href="#originWinter2012d">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012dndarray"></a>ndarray</h3>
+<div id="divoriginWinter2012dndarrays" style="display:block">
+<pre>
+commit f8cda3e3454a8d69e9b869d0f223b2be9b69c6dc
+Merge: 6630bee fd60e3c
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Mar 6 18:22:47 2012 -0500
+
+    Merge branch 'master' into Winter2012d
+</pre>
+</div>
+<a href="#originWinter2012d">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012dutils"></a>utils</h3>
+<div id="divoriginWinter2012dutilss" style="display:block">
+<pre>
+commit 5e2824d420aa5c87453d12e12ee2f98c2ccd1e1a
+Author: Robert Lupton the Good <rhl@astro.princeton.edu>
+Date:   Fri Feb 17 13:57:22 2012 -0500
+
+    Fixed compiler warning
+</pre>
+</div>
+<a href="#originWinter2012d">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originWinter2012Release"></a>Branch origin/Winter2012/Release
+Found in:
+
+* <a href="#originWinter2012Releasebase">``` base ```</a>
+* <a href="#originWinter2012Releasendarray">``` ndarray ```</a>
+* <a href="#originWinter2012Releasepexexceptions">``` pex_exceptions ```</a>
+* <a href="#originWinter2012Releaseutils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012Releasebase"></a>base</h3>
+<div id="divoriginWinter2012Releasebases" style="display:block">
+<pre>
+commit 6ae8f4b79f27e690fc27a520799a61cc8f6bd4cd
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Dec 9 15:03:49 2011 -0500
+
+    Separate function definition and use with &&
+</pre>
+</div>
+<a href="#originWinter2012Release">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012Releasendarray"></a>ndarray</h3>
+<div id="divoriginWinter2012Releasendarrays" style="display:block">
+<pre>
+commit fd60e3cbb6f5e58810aba919d7c7b44a858e01f5
+Merge: 6630bee d4009a6
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Sun Feb 19 14:07:30 2012 -0500
+
+    merge from Winter2012d; ndarray should not require further changes, and is already compatible with the rest of master
+</pre>
+</div>
+<a href="#originWinter2012Release">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012Releasepexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginWinter2012Releasepexexceptionss" style="display:block">
+<pre>
+commit 4cae825b96736a3eb5304d51d773624d9185e390
+Merge: 0bcd9b7 d42ee90
+Author: Serge Monkewitz <smm@ipac.caltech.edu>
+Date:   Mon Dec 12 17:27:26 2011 -0600
+
+    Merge branch 'Winter2012b'
+</pre>
+</div>
+<a href="#originWinter2012Release">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012Releaseutils"></a>utils</h3>
+<div id="divoriginWinter2012Releaseutilss" style="display:block">
+<pre>
+commit 5e2824d420aa5c87453d12e12ee2f98c2ccd1e1a
+Author: Robert Lupton the Good <rhl@astro.princeton.edu>
+Date:   Fri Feb 17 13:57:22 2012 -0500
+
+    Fixed compiler warning
+</pre>
+</div>
+<a href="#originWinter2012Release">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1843"></a>Branch origin/tickets/1843
+Found in:
+
+* <a href="#origintickets1843ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1843ndarray"></a>ndarray</h3>
+<div id="divorigintickets1843ndarrays" style="display:block">
+<pre>
+commit e305126ea65694e18fee51d4b915217c75466f66
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Fri Feb 10 23:57:14 2012 -0500
+
+    removed references to ndarray-tables test in SConscript and .gitignore
+</pre>
+</div>
+<a href="#origintickets1843">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1881"></a>Branch origin/tickets/1881
+Found in:
+
+* <a href="#origintickets1881utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1881utils"></a>utils</h3>
+<div id="divorigintickets1881utilss" style="display:block">
+<pre>
+commit b043fd40da7c5cb15456fa3b533e2abc21a1a386
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Jan 31 18:01:11 2012 -0500
+
+    fixed %usePointerEquality (was accidentally a duplicate of %useValueEquality)
+</pre>
+</div>
+<a href="#origintickets1881">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originWinter2012c"></a>Branch origin/Winter2012c
+Found in:
+
+* <a href="#originWinter2012cbase">``` base ```</a>
+* <a href="#originWinter2012cndarray">``` ndarray ```</a>
+* <a href="#originWinter2012cpexexceptions">``` pex_exceptions ```</a>
+* <a href="#originWinter2012cutils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012cbase"></a>base</h3>
+<div id="divoriginWinter2012cbases" style="display:block">
+<pre>
+commit 6ae8f4b79f27e690fc27a520799a61cc8f6bd4cd
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Dec 9 15:03:49 2011 -0500
+
+    Separate function definition and use with &&
+</pre>
+</div>
+<a href="#originWinter2012c">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012cndarray"></a>ndarray</h3>
+<div id="divoriginWinter2012cndarrays" style="display:block">
+<pre>
+commit 6630beeae04a0fb63c75082db192d2ac49ddc6e0
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Dec 9 15:03:49 2011 -0500
+
+    Separate function definition and use with &&
+</pre>
+</div>
+<a href="#originWinter2012c">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012cpexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginWinter2012cpexexceptionss" style="display:block">
+<pre>
+commit 4cae825b96736a3eb5304d51d773624d9185e390
+Merge: 0bcd9b7 d42ee90
+Author: Serge Monkewitz <smm@ipac.caltech.edu>
+Date:   Mon Dec 12 17:27:26 2011 -0600
+
+    Merge branch 'Winter2012b'
+</pre>
+</div>
+<a href="#originWinter2012c">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012cutils"></a>utils</h3>
+<div id="divoriginWinter2012cutilss" style="display:block">
+<pre>
+commit 802a57649ac147f5ce06f379c07d8d26877547c9
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Mon Jan 9 17:32:33 2012 -0500
+
+    added %include of lsst/base.h to make SWIG aware of PTR, CONST_PTR macros everywhere
+</pre>
+</div>
+<a href="#originWinter2012c">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1866"></a>Branch origin/tickets/1866
+Found in:
+
+* <a href="#origintickets1866utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1866utils"></a>utils</h3>
+<div id="divorigintickets1866utilss" style="display:block">
+<pre>
+commit b5bfed2c72d5966b7db199e6b9c78e4689400004
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Mon Jan 9 16:58:16 2012 -0500
+
+    switch test for bad bool conversions to allow any Exception, rather than NotImplementedError (it should probably be TypeError, actually, but that's SWIG's problem)
+</pre>
+</div>
+<a href="#origintickets1866">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originWinter2012b"></a>Branch origin/Winter2012b
+Found in:
+
+* <a href="#originWinter2012bbase">``` base ```</a>
+* <a href="#originWinter2012bndarray">``` ndarray ```</a>
+* <a href="#originWinter2012bpexexceptions">``` pex_exceptions ```</a>
+* <a href="#originWinter2012butils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012bbase"></a>base</h3>
+<div id="divoriginWinter2012bbases" style="display:block">
+<pre>
+commit f976459be9454148f4f5f2bb04e43384f7477aee
+Author: smm <smm@git.lsstcorp.org>
+Date:   Tue Nov 1 21:36:17 2011 +0000
+
+    base Winter2012b branch
+</pre>
+</div>
+<a href="#originWinter2012b">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012bndarray"></a>ndarray</h3>
+<div id="divoriginWinter2012bndarrays" style="display:block">
+<pre>
+commit bfc7c70160ef16949476ed504ed60c6fc63c7215
+Author: smm <smm@git.lsstcorp.org>
+Date:   Thu Nov 3 22:52:23 2011 +0000
+
+    ndarray Winter2012b branch
+</pre>
+</div>
+<a href="#originWinter2012b">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012bpexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginWinter2012bpexexceptionss" style="display:block">
+<pre>
+commit d42ee90b0e36d789a508c993c18ad9b83f80744a
+Merge: e5cdda2 2d4523a
+Author: Serge Monkewitz <smm@ipac.caltech.edu>
+Date:   Tue Nov 22 15:50:54 2011 -0600
+
+    Merge branch 'master' into Winter2012b
+    
+    Conflicts:
+    	ups/pex_exceptions.table
+</pre>
+</div>
+<a href="#originWinter2012b">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012butils"></a>utils</h3>
+<div id="divoriginWinter2012butilss" style="display:block">
+<pre>
+commit 157f3178545c6f2c6224b763e2febc22ea1bddc5
+Author: Serge Monkewitz <smm@ipac.caltech.edu>
+Date:   Mon Nov 28 21:27:31 2011 -0600
+
+    Move %shared_vec into p_lsstSwig.i
+</pre>
+</div>
+<a href="#originWinter2012b">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originWinter2012a"></a>Branch origin/Winter2012a
+Found in:
+
+* <a href="#originWinter2012abase">``` base ```</a>
+* <a href="#originWinter2012andarray">``` ndarray ```</a>
+* <a href="#originWinter2012apexexceptions">``` pex_exceptions ```</a>
+* <a href="#originWinter2012autils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012abase"></a>base</h3>
+<div id="divoriginWinter2012abases" style="display:block">
+<pre>
+commit 95d70ec48500870e457c8e4973b1ad22963f8245
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Nov 16 19:20:54 2011 -0500
+
+    removed getVersion from .cfg (may slow down scons to import lsst packages)
+</pre>
+</div>
+<a href="#originWinter2012a">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012andarray"></a>ndarray</h3>
+<div id="divoriginWinter2012andarrays" style="display:block">
+<pre>
+commit ccc0ed164fc2877013e8ca1505ff2d9bfc8efbe1
+Merge: 955f9cb aef3b9e
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu Nov 17 22:31:53 2011 -0500
+
+    more .gitignore tweaking
+</pre>
+</div>
+<a href="#originWinter2012a">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012apexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginWinter2012apexexceptionss" style="display:block">
+<pre>
+commit b2df94643284dc6e1588dd8ef94619949dee4e2d
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Nov 16 19:22:56 2011 -0500
+
+    removed getVersion from .cfg (may slow down scons to import lsst packages)
+</pre>
+</div>
+<a href="#originWinter2012a">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originWinter2012autils"></a>utils</h3>
+<div id="divoriginWinter2012autilss" style="display:block">
+<pre>
+commit ac247f7bd270cdded461a1a3360e9608f1c51a37
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Nov 16 19:31:45 2011 -0500
+
+    added support for git-based version introspection
+</pre>
+</div>
+<a href="#originWinter2012a">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1814"></a>Branch origin/tickets/1814
+Found in:
+
+* <a href="#origintickets1814pexexceptions">``` pex_exceptions ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1814pexexceptions"></a>pex_exceptions</h3>
+<div id="divorigintickets1814pexexceptionss" style="display:block">
+<pre>
+commit ef9ac6edb8043c6cb362059ce7bd01123e824b41
+Author: cosic <cosic@git.lsstcorp.org>
+Date:   Tue Nov 15 22:43:10 2011 +0000
+
+    Added two new exception classes for GPU exceptions
+</pre>
+</div>
+<a href="#origintickets1814">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1780"></a>Branch origin/tickets/1780
+Found in:
+
+* <a href="#origintickets1780base">``` base ```</a>
+* <a href="#origintickets1780ndarray">``` ndarray ```</a>
+* <a href="#origintickets1780pexexceptions">``` pex_exceptions ```</a>
+* <a href="#origintickets1780utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1780base"></a>base</h3>
+<div id="divorigintickets1780bases" style="display:block">
+<pre>
+commit 5d6e28524ff0cd9b9f3975d3717650cdceff1f6f
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Tue Oct 18 21:44:26 2011 +0000
+
+    #1780 - lots of dependency tree fixes; removed separate scons package
+</pre>
+</div>
+<a href="#origintickets1780">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1780ndarray"></a>ndarray</h3>
+<div id="divorigintickets1780ndarrays" style="display:block">
+<pre>
+commit 7f3065b0b1db306ee96118e760d122fb6cc2ac2e
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Tue Oct 18 21:44:53 2011 +0000
+
+    #1780 - lots of dependency tree fixes; removed separate scons package
+</pre>
+</div>
+<a href="#origintickets1780">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1780pexexceptions"></a>pex_exceptions</h3>
+<div id="divorigintickets1780pexexceptionss" style="display:block">
+<pre>
+commit dfc2b6d10ff97610ef72670b77a9ad47e3911495
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Tue Oct 18 21:44:48 2011 +0000
+
+    #1780 - lots of dependency tree fixes; removed separate scons package
+</pre>
+</div>
+<a href="#origintickets1780">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1780utils"></a>utils</h3>
+<div id="divorigintickets1780utilss" style="display:block">
+<pre>
+commit 1e5cf594052839c6f682ce785ab44a77d2d34054
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Tue Oct 18 21:46:08 2011 +0000
+
+    #1780 - lots of dependency tree fixes; removed separate scons package
+</pre>
+</div>
+<a href="#origintickets1780">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets4510"></a>Branch origin/tickets/4.5.1.0
+Found in:
+
+* <a href="#origintickets4510ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets4510ndarray"></a>ndarray</h3>
+<div id="divorigintickets4510ndarrays" style="display:block">
+<pre>
+commit d80b922c50515031383d90c8f2a3cfb02855c51c
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Mon Oct 3 15:00:33 2011 +0000
+
+    ndarray - tagging 4.5.1.0 (pre-Winter2012)
+</pre>
+</div>
+<a href="#origintickets4510">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1752"></a>Branch origin/tickets/1752
+Found in:
+
+* <a href="#origintickets1752ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1752ndarray"></a>ndarray</h3>
+<div id="divorigintickets1752ndarrays" style="display:block">
+<pre>
+commit e8030470f9a3fa2af044be3f6483b99748ac02f3
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Fri Sep 30 01:23:40 2011 +0000
+
+    ndarray #1752 - added isEmpty() to test for null data pointer
+</pre>
+</div>
+<a href="#origintickets1752">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1749"></a>Branch origin/tickets/1749
+Found in:
+
+* <a href="#origintickets1749ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1749ndarray"></a>ndarray</h3>
+<div id="divorigintickets1749ndarrays" style="display:block">
+<pre>
+commit a19c8009b9ad1548c2e1fd15d409d217434f2da6
+Author: pgee <pgee@git.lsstcorp.org>
+Date:   Tue Sep 20 21:56:23 2011 +0000
+
+    Support in C++ for integer array conversion tests.
+</pre>
+</div>
+<a href="#origintickets1749">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1703"></a>Branch origin/tickets/1703
+Found in:
+
+* <a href="#origintickets1703utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1703utils"></a>utils</h3>
+<div id="divorigintickets1703utilss" style="display:block">
+<pre>
+commit 44a8f2c72422ce5e05d94e90918bbc2c852a50d0
+Author: rplante <rplante@git.lsstcorp.org>
+Date:   Mon Sep 19 19:14:38 2011 +0000
+
+    #1703 fixed: made __enter__(), __exit__() proper functions on class
+</pre>
+</div>
+<a href="#origintickets1703">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originPT12"></a>Branch origin/PT1.2
+Found in:
+
+* <a href="#originPT12base">``` base ```</a>
+* <a href="#originPT12ndarray">``` ndarray ```</a>
+* <a href="#originPT12pexexceptions">``` pex_exceptions ```</a>
+* <a href="#originPT12utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originPT12base"></a>base</h3>
+<div id="divoriginPT12bases" style="display:block">
+<pre>
+commit 79eddc481f9c1a96a969f32ad8a303714ab33b6f
+Author: dgehrig <dgehrig@git.lsstcorp.org>
+Date:   Mon Jun 6 20:15:49 2011 +0000
+
+    PT1.2 branch
+</pre>
+</div>
+<a href="#originPT12">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originPT12ndarray"></a>ndarray</h3>
+<div id="divoriginPT12ndarrays" style="display:block">
+<pre>
+commit ca9dbaa94875a4e96c053bf269f4f191d4439648
+Merge: b58fdbf 5f986f6
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Fri Jul 15 00:48:56 2011 +0000
+
+    ndarray - merged trunk to PT1.2 branch for 3000 runs
+</pre>
+</div>
+<a href="#originPT12">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originPT12pexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginPT12pexexceptionss" style="display:block">
+<pre>
+commit 4567fbc13cc6112c4c387ba89860266b213b4009
+Author: dgehrig <dgehrig@git.lsstcorp.org>
+Date:   Mon Jun 6 21:24:15 2011 +0000
+
+    branch 1.2
+</pre>
+</div>
+<a href="#originPT12">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originPT12utils"></a>utils</h3>
+<div id="divoriginPT12utilss" style="display:block">
+<pre>
+commit 037726fb8249fb3c777f9ccc9740f1501c4f6f63
+Author: rplante <rplante@git.lsstcorp.org>
+Date:   Wed Jun 15 16:25:05 2011 +0000
+
+    merged changes from trunk
+</pre>
+</div>
+<a href="#originPT12">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1720"></a>Branch origin/tickets/1720
+Found in:
+
+* <a href="#origintickets1720ndarray">``` ndarray ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1720ndarray"></a>ndarray</h3>
+<div id="divorigintickets1720ndarrays" style="display:block">
+<pre>
+commit eb1af83b67fbfb1acd93d7facfa0fe0787cf3bf4
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Sat Jul 2 02:26:52 2011 +0000
+
+    ndarray #1720 - marged from trunk (just mergeinfo)
+</pre>
+</div>
+<a href="#origintickets1720">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originboostpython"></a>Branch origin/boost.python
+Found in:
+
+* <a href="#originboostpythonbase">``` base ```</a>
+* <a href="#originboostpythonpexexceptions">``` pex_exceptions ```</a>
+* <a href="#originboostpythonutils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originboostpythonbase"></a>base</h3>
+<div id="divoriginboostpythonbases" style="display:block">
+<pre>
+commit ba4b112d095014d69d51094cce630111d0717153
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Tue May 3 09:42:58 2011 +0000
+
+    bp metapackage - added security package
+</pre>
+</div>
+<a href="#originboostpython">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originboostpythonpexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginboostpythonpexexceptionss" style="display:block">
+<pre>
+commit 2810ac0ecc4299032ae8975f28e70cb85760842b
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Sun May 8 07:27:45 2011 +0000
+
+    bp metapackage:
+    -added daf_data
+    -added const-correctness for data members in Boost.Python
+    -added regular expression support to bpdox
+    -updated existing packages to use bpdox regular expressions
+</pre>
+</div>
+<a href="#originboostpython">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originboostpythonutils"></a>utils</h3>
+<div id="divoriginboostpythonutilss" style="display:block">
+<pre>
+commit 7292c65edfc38bd0cf291a4b6a1a59baa260cfe3
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Sun May 8 23:13:25 2011 +0000
+
+    bp metapackage: added ndarray
+</pre>
+</div>
+<a href="#originboostpython">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originPT11"></a>Branch origin/PT1.1
+Found in:
+
+* <a href="#originPT11base">``` base ```</a>
+* <a href="#originPT11utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originPT11base"></a>base</h3>
+<div id="divoriginPT11bases" style="display:block">
+<pre>
+commit 6088d100bf47427185044b47d30ce5e4ebd350c3
+Author: dgehrig <dgehrig@git.lsstcorp.org>
+Date:   Tue Dec 14 21:45:49 2010 +0000
+
+    branching from PT1.1
+</pre>
+</div>
+<a href="#originPT11">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originPT11utils"></a>utils</h3>
+<div id="divoriginPT11utilss" style="display:block">
+<pre>
+commit ef4f55c06065335ce5d072838e2bc6d8fe3f1c87
+Author: dgehrig <dgehrig@git.lsstcorp.org>
+Date:   Tue Dec 14 22:15:04 2010 +0000
+
+    branching from PT1.1
+</pre>
+</div>
+<a href="#originPT11">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originPT1"></a>Branch origin/PT1
+Found in:
+
+* <a href="#originPT1base">``` base ```</a>
+* <a href="#originPT1pexexceptions">``` pex_exceptions ```</a>
+* <a href="#originPT1utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originPT1base"></a>base</h3>
+<div id="divoriginPT1bases" style="display:block">
+<pre>
+commit b1d15b7e409840ccdea4d72c7310c5b52a2444ed
+Author: ktlim <ktlim@git.lsstcorp.org>
+Date:   Fri Jul 2 05:48:43 2010 +0000
+
+    Branch for PT1 release.
+</pre>
+</div>
+<a href="#originPT1">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originPT1pexexceptions"></a>pex_exceptions</h3>
+<div id="divoriginPT1pexexceptionss" style="display:block">
+<pre>
+commit 0ba5685efce7306348cbadcf2ee6c9cc9a17a959
+Author: ktlim <ktlim@git.lsstcorp.org>
+Date:   Fri Jul 2 05:50:18 2010 +0000
+
+    Branch for PT1 release.
+</pre>
+</div>
+<a href="#originPT1">Return to summary</a>
+</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originPT1utils"></a>utils</h3>
+<div id="divoriginPT1utilss" style="display:block">
+<pre>
+commit 74815a4f1c3db8df5a008abb8130f9f005eba1a8
+Author: ktlim <ktlim@git.lsstcorp.org>
+Date:   Fri Jul 2 05:50:51 2010 +0000
+
+    Branch for PT1 release.
+</pre>
+</div>
+<a href="#originPT1">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets1086"></a>Branch origin/tickets/1086
+Found in:
+
+* <a href="#origintickets1086utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets1086utils"></a>utils</h3>
+<div id="divorigintickets1086utilss" style="display:block">
+<pre>
+commit 10ad91d17c853eef7bb3b641fd21e7485babf482
+Author: bick <bick@git.lsstcorp.org>
+Date:   Thu Dec 10 21:07:42 2009 +0000
+
+    Creating ticket branch #1086
+</pre>
+</div>
+<a href="#origintickets1086">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets768"></a>Branch origin/tickets/768
+Found in:
+
+* <a href="#origintickets768utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets768utils"></a>utils</h3>
+<div id="divorigintickets768utilss" style="display:block">
+<pre>
+commit 63484bd7f1872b76fd09e7ebd5b4728b37a8ae99
+Author: fergal <fergal@git.lsstcorp.org>
+Date:   Thu Oct 15 16:24:54 2009 +0000
+
+    Forgot to check in RaDecStr.h
+</pre>
+</div>
+<a href="#origintickets768">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets656"></a>Branch origin/tickets/656
+Found in:
+
+* <a href="#origintickets656pexexceptions">``` pex_exceptions ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets656pexexceptions"></a>pex_exceptions</h3>
+<div id="divorigintickets656pexexceptionss" style="display:block">
+<pre>
+commit 139327611e39ee94d5858e4830c349675297acaf
+Author: ktlim <ktlim@git.lsstcorp.org>
+Date:   Mon Feb 23 19:42:32 2009 +0000
+
+    Fix type lookups for runtime exception types.
+</pre>
+</div>
+<a href="#origintickets656">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets616"></a>Branch origin/tickets/616
+Found in:
+
+* <a href="#origintickets616utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets616utils"></a>utils</h3>
+<div id="divorigintickets616utilss" style="display:block">
+<pre>
+commit b9588f80cb089eb9c782bf8029f0105ebed27d39
+Author: ktlim <ktlim@git.lsstcorp.org>
+Date:   Mon Feb 9 21:37:42 2009 +0000
+
+    Try RHL fix for boost::noncopyable SWIG warnings.
+</pre>
+</div>
+<a href="#origintickets616">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="originktl"></a>Branch origin/ktl
+Found in:
+
+* <a href="#originktlutils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="originktlutils"></a>utils</h3>
+<div id="divoriginktlutilss" style="display:block">
+<pre>
+commit aa7243c83e5538f42d33f72abdd5407d6ed97f01
+Author: ktlim <ktlim@git.lsstcorp.org>
+Date:   Wed Jan 14 02:44:31 2009 +0000
+
+    Make utils dependent on pex_exceptions.
+</pre>
+</div>
+<a href="#originktl">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets548"></a>Branch origin/tickets/548
+Found in:
+
+* <a href="#origintickets548utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets548utils"></a>utils</h3>
+<div id="divorigintickets548utilss" style="display:block">
+<pre>
+commit 76091abc6e72f5d1a051a745d04e94617daaa1f0
+Author: ktlim <ktlim@git.lsstcorp.org>
+Date:   Wed Jan 14 00:29:10 2009 +0000
+
+    Better way to import unordered_map into std::tr1 namespace.
+</pre>
+</div>
+<a href="#origintickets548">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets547"></a>Branch origin/tickets/547
+Found in:
+
+* <a href="#origintickets547utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets547utils"></a>utils</h3>
+<div id="divorigintickets547utilss" style="display:block">
+<pre>
+commit 83f8f14726c699bf98ca29225e7d18589846d0c9
+Author: smm <smm@git.lsstcorp.org>
+Date:   Tue Dec 23 03:44:42 2008 +0000
+
+    Added helper function that tests whether a specific LSST C++ exception was thrown (#547)
+</pre>
+</div>
+<a href="#origintickets547">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets458"></a>Branch origin/tickets/458
+Found in:
+
+* <a href="#origintickets458pexexceptions">``` pex_exceptions ```</a>
+* <a href="#origintickets458utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets458pexexceptions"></a>pex_exceptions</h3>
+<div id="divorigintickets458pexexceptionss" style="display:block">
+<pre>
+commit e67061c3bf0fce63af0f7a23df44bd172f30d859
+Author: ktlim <ktlim@git.lsstcorp.org>
+Date:   Wed Nov 26 21:57:39 2008 +0000
+
+    utils is required for p_lsstSwig.i
+</pre>
+</div>
+<a href="#origintickets458">Return to summary</a>
+</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets458utils"></a>utils</h3>
+<div id="divorigintickets458utilss" style="display:block">
+<pre>
+commit 33bb69ca82b592f6c360fd5ff29d2cc893cb0ff7
+Author: ktlim <ktlim@git.lsstcorp.org>
+Date:   Wed Nov 26 21:31:14 2008 +0000
+
+    Use getType() instead of ctype().
+</pre>
+</div>
+<a href="#origintickets458">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets374"></a>Branch origin/tickets/374
+Found in:
+
+* <a href="#origintickets374utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets374utils"></a>utils</h3>
+<div id="divorigintickets374utilss" style="display:block">
+<pre>
+commit b6f40c6d2feed001a89f33a93626014730d59419
+Author: smm <smm@git.lsstcorp.org>
+Date:   Thu Nov 13 21:40:26 2008 +0000
+
+    Allow a product name to be passed to lsst.utils.version(). If omitted, it is derived from the HeadURL parameter.
+</pre>
+</div>
+<a href="#origintickets374">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets358"></a>Branch origin/tickets/358
+Found in:
+
+* <a href="#origintickets358base">``` base ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets358base"></a>base</h3>
+<div id="divorigintickets358bases" style="display:block">
+<pre>
+commit af9033475a041133fb6015fa23bc92e9e0723234
+Author: rplante <rplante@git.lsstcorp.org>
+Date:   Wed Aug 20 21:04:36 2008 +0000
+
+    bug fix #358: lsstimport.py: moved update of sys.meta_path to end
+</pre>
+</div>
+<a href="#origintickets358">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>
+## <a name="origintickets337"></a>Branch origin/tickets/337
+Found in:
+
+* <a href="#origintickets337utils">``` utils ```</a>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h3><a name="origintickets337utils"></a>utils</h3>
+<div id="divorigintickets337utilss" style="display:block">
+<pre>
+commit c7ddc87b9dc28993e47017f80d804e794c8eb416
+Author: rhl <rhl@git.lsstcorp.org>
+Date:   Mon Apr 21 14:33:44 2008 +0000
+
+    Implement ticket #337
+</pre>
+</div>
+<a href="#origintickets337">Return to summary</a>
+</div>
+___
+
+<a href="#masterBranchList">Return to branch list</a>

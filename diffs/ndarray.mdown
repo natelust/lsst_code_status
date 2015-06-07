@@ -1,0 +1,1006 @@
+# Comparison of the ndarray repository
+
+
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of Repositories</h1>
+<p>
+Comparison run at 07:32PM on June 07, 2015<br>
+There are <b>17</b> differences between the two repositories<br><br>
+Repository <b>/Users/nate/repos_hsc/ndarray/</b> <br> Revision <b>1e102dd4f775e3c6afcdc5930096552123c3689d</b><br> Branch <b>master</b><br>Last commit was on <b>2013-12-06 16:06:11 -0500</b><br><br>
+Repository <b>/Users/nate/repos_lsst/ndarray/</b> <br> Revision <b>7408a83a3aa3df1509bb22d61aa4438c65cef2b6</b><br> Branch <b>master</b><br>Last commit was on <b>2015-01-22 12:09:07 -0500</b><br><br>
+</p>
+</div>
+
+
+
+___
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/ndarray/</h1>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_lsst/ndarray/</h1>
+</div>
+
+
+
+
+# List of the files in common<a name="homelist"></a>
+Files without links do not differ
+
+* ```include/ndarray/detail/Core.h```
+* ```doc/doxygen.conf.in```
+* ```include/ndarray/swig/eigen.h```
+* ```ups/ndarray.build```
+* ```doc/SConscript```
+* ```include/ndarray/fft/FFTWTraits.h.m4```
+* ```include/ndarray/ExpressionTraits.h```
+* ```include/ndarray/ArrayBaseN.h.m4```
+* ```SConstruct```
+* ```include/ndarray/detail/BinaryOp.h```
+* ```include/ndarray/casts.h```
+* ```include/ndarray/fft/FourierOps.h```
+* [```include/ndarray/Array.h```](#include/ndarray/Array.h)
+* ```include/ndarray.h```
+* ```tests/swig_test_mod.i```
+* ```include/ndarray/arange.h```
+* ```include/ndarray/detail/StridedIterator.h```
+* ```include/ndarray/formatting.h```
+* ```include/ndarray/vectorize.h```
+* ```.gitignore```
+* ```include/ndarray/swig/ufunctors.h```
+* ```include/ndarray/tables_fwd.h```
+* ```include/ndarray/swig.h```
+* ```include/ndarray/fft/FourierTransform.h```
+* ```include/ndarray/ArrayRef.h.m4```
+* ```include/ndarray/views.h```
+* ```include/ndarray/fft/FourierTransform.cc```
+* ```ups/ndarray.cfg```
+* ```include/ndarray/eigen_fwd.h```
+* ```include/ndarray/detail/ArrayAccess.h```
+* ```include/ndarray/swig/numpy.h```
+* ```include/ndarray/operators.h```
+* ```tests/SConscript```
+* ```include/ndarray_fwd.h```
+* ```include/ndarray/fft.h```
+* ```include/ndarray/detail/ViewBuilder.h```
+* ```include/ndarray/fft_fwd.h```
+* ```tests/ndarray-python-mod.cc```
+* ```include/ndarray/operators.h.m4```
+* [```include/ndarray/initialization.h```](#include/ndarray/initialization.h)
+* ```tests/ndarray-python.py```
+* ```include/SConscript```
+* ```include/ndarray/fft/FourierTraits.h```
+* ```TODO```
+* ```tests/ndarray-eigen.cc```
+* ```include/ndarray/swig/Vector.h```
+* ```include/ndarray/swig/PyConverter.h```
+* ```python/ndarray.i```
+* ```include/ndarray/ArrayTraits.h```
+* [```include/ndarray/ArrayBase.h```](#include/ndarray/ArrayBase.h)
+* [```ups/ndarray.table```](#ups/ndarray.table)
+* ```include/ndarray/detail/UnaryOp.h```
+* ```include/ndarray/ExpressionBase.h```
+* ```include/ndarray/types.h```
+* ```include/ndarray/eigen.h```
+* ```include/ndarray/Manager.h```
+* ```tests/ndarray-fft.cc```
+* ```include/ndarray/detail/NestedIterator.h```
+* ```tests/ndarray.cc```
+* ```include/ndarray/Vector.h.m4```
+
+# <a name="include/ndarray/Array.h"/></a>include/ndarray/Array.h
+### Diff:
+
+<pre>
+                // -*- c++ -*-
+                /* 
+                 * LSST Data Management System
+                 * Copyright 2008, 2009, 2010, 2011 LSST Corporation.
+                 * 
+                 * This product includes software developed by the
+                 * LSST Project (http://www.lsst.org/).
+                 *
+                 * This program is free software: you can redistribute it and/or modify
+                 * it under the terms of the GNU General Public License as published by
+                 * the Free Software Foundation, either version 3 of the License, or
+                 * (at your option) any later version.
+                 * 
+                 * This program is distributed in the hope that it will be useful,
+                 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 * GNU General Public License for more details.
+                 * 
+                 * You should have received a copy of the LSST License Statement and 
+                 * the GNU General Public License along with this program.  If not, 
+                 * see <http://www.lsstcorp.org/LegalNotices/>.
+                 */
+                #ifndef NDARRAY_Array_h_INCLUDED
+                #define NDARRAY_Array_h_INCLUDED
+                
+                /** 
+                 *  @file ndarray/Array.h
+                 *
+                 *  @brief Definitions for Array.
+                 */
+                
+                #include "ndarray_fwd.h"
+                #include "ndarray/ArrayTraits.h"
+                #include "ndarray/ArrayBaseN.h"
+                #include "ndarray/Vector.h"
+                #include "ndarray/detail/Core.h"
+                #include "ndarray/views.h"
+                
+                namespace ndarray {
+                
+                /**
+                 *  @brief A multidimensional strided array.
+                 *
+                 *  Array is the workhorse class of the ndarray library.
+                 */
+                template <typename T, int N, int C>
+                class Array : public ArrayBaseN< Array<T,N,C> > {
+                    typedef ArrayBaseN<Array> Super;
+                    typedef typename Super::Core Core;
+                    typedef typename Super::CorePtr CorePtr;
+                public:
+                
+                    /** 
+                     *  @brief Default constructor. 
+                     *
+                     *  Creates an empty array with zero dimensions and null memory.
+                     */
+                    Array() : Super(0, Core::create()) {}
+                
+                    /**
+                     *  @brief Non-converting copy constructor.
+                     */
+                    Array(Array const & other) : Super(other._data, other._core) {}
+                
+                    /**
+                     *  @brief Converting copy constructor. 
+                     *
+                     *  Implicit conversion is allowed for non-const to const and for 
+                     *  more guaranteed RMC to less guaranteed RMC (see \ref index).
+                     */
+                    template <typename T_, int C_>
+                    Array(
+                        Array<T_,N,C_> const & other
+                #ifndef DOXYGEN
+                        , typename boost::enable_if<detail::Convertible<N,T_,C_,T,C>,void*>::type=0
+                #endif
+                    ) : Super(other._data, other._core) {}
+                
+                    /**
+                     *  @brief Converting copy constructor. 
+                     *
+                     *  Implicit conversion is allowed for non-const to const and for 
+                     *  more guaranteed RMC to less guaranteed RMC (see \ref index).
+                     */
+                    template <typename T_, int C_>
+                    Array(
+                        ArrayRef<T_,N,C_> const & other
+                #ifndef DOXYGEN
+                        , typename boost::enable_if<detail::Convertible<N,T_,C_,T,C>,void*>::type=0
+                #endif
+                    ) : Super(other._data, other._core) {}
+                
+                    /**
+                     *  @brief Non-converting shallow assignment.
+                     */
+                    Array & operator=(Array const & other) {
+                        if (&other != this) {
+                            this->_data = other._data;
+                            this->_core = other._core;
+                        }
+                        return *this;
+                    }
+                
+                    /**
+                     *  @brief Converting shallow assignment. 
+                     *
+                     *  Implicit conversion is allowed for non-const -> const and for 
+                     *  more guaranteed RMC -> less guaranteed RMC (see \ref index).
+                     */
+                    template <typename T_, int C_>
+                #ifndef DOXYGEN
+                    typename boost::enable_if<detail::Convertible<N,T_,C_,T,C>, Array &>::type
+                #else
+                    Array &
+                #endif
+                    operator=(Array<T_,N,C_> const & other) {
+                        this->_data = other._data;
+                        this->_core = other._core;
+                        return *this;
+                    }
+                
+                    /**
+                     *  @brief Converting shallow assignment. 
+                     *
+                     *  Implicit conversion is allowed for non-const -> const and for 
+                     *  more guaranteed RMC -> less guaranteed RMC (see \ref index).
+                     */
+                    template <typename T_, int C_>
+                #ifndef DOXYGEN
+                    typename boost::enable_if<detail::Convertible<N,T_,C_,T,C>, Array &>::type
+                #else
+                    Array &
+                #endif
+                    operator=(ArrayRef<T_,N,C_> const & other) {
+                        this->_data = other._data;
+                        this->_core = other._core;
+                        return *this;
+                    }
+                
+                    /**
+                     *  @brief Shallow equality comparison: return true if the arrays share data and
+                     *         have the same shape and strides. 
+                     */
+                    template <typename T_, int N_, int C_>
+                    bool operator==(Array<T_,N_,C_> const & other) const {
+                        return this->getData() == other.getData()
+                            && this->getShape() == other.getShape()
+                            && this->getStrides() == other.getStrides();
+                    }
+                
+                    /**
+                     *  @brief Shallow inequality comparison. 
+                     */
+                    template <typename T_, int N_, int C_>
+                    bool operator!=(Array<T_,N_,C_> const & other) const {
+                        return !this->operator==(other);
+                    }
+                
+                    /// @brief Lightweight shallow swap.
+                    void swap(Array & other) {
+                        std::swap(this->_data, other._data);
+                        this->_core.swap(other._core);
+                    }
+                
+                    /**
+                     *  @brief Return true if the Array is definitely unique.
+                     *
+                     *  This will only return true if the manager overrides Manager::isUnique();
+                     *  this is true for the SimpleManager used by ndarray::allocate, but it is
+                     *  not true for ExternalManager.
+                     */
+                    bool isUnique() const { return this->_core->isUnique(); }
+                
+                private:
+                    template <typename T_, int N_, int C_> friend class Array;
+                    template <typename T_, int N_, int C_> friend class ArrayRef;
+                    template <typename T_, int N_, int C_> friend struct ArrayTraits;
+                    template <typename Derived> friend class ArrayBase;
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+179  <a href="#^9ccb4c9">^9ccb4c9</a> -     template <typename Array_> friend struct detail::ArrayAccess;</div>
+              ?                                        ^^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+179  <a href="#33800a4f">33800a4f</a> +     template <typename Array_> friend class detail::ArrayAccess;</div>
+              ?                                       +++ ^
+                
+                    /// @internal @brief Construct an Array from a pointer and Core.
+                    Array(T * data, CorePtr const & core) : Super(data, core) {}
+                };
+                
+                } // namespace ndarray
+                
+                #endif // !NDARRAY_Array_h_INCLUDED
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/ndarray/</h2>
+<h3><a name="^9ccb4c9"/></a>^9ccb4c9</h3>
+
+<pre>
+
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/ndarray/</h2>
+<h3><a name="33800a4f"/></a>33800a4f</h3>
+
+<pre>
+commit 33800a4f53b5a67c85c566a894d81511faf2681d
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Fri Jan 24 15:15:08 2014 -0500
+
+    Fix clang warnings about class/struct mismatches (#3081)
+</pre>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="include/ndarray/initialization.h"/></a>include/ndarray/initialization.h
+### Diff:
+
+<pre>
+                // -*- c++ -*-
+                /* 
+                 * LSST Data Management System
+                 * Copyright 2008, 2009, 2010, 2011 LSST Corporation.
+                 * 
+                 * This product includes software developed by the
+                 * LSST Project (http://www.lsst.org/).
+                 *
+                 * This program is free software: you can redistribute it and/or modify
+                 * it under the terms of the GNU General Public License as published by
+                 * the Free Software Foundation, either version 3 of the License, or
+                 * (at your option) any later version.
+                 * 
+                 * This program is distributed in the hope that it will be useful,
+                 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 * GNU General Public License for more details.
+                 * 
+                 * You should have received a copy of the LSST License Statement and 
+                 * the GNU General Public License along with this program.  If not, 
+                 * see <http://www.lsstcorp.org/LegalNotices/>.
+                 */
+                #ifndef NDARRAY_initialization_h_INCLUDED
+                #define NDARRAY_initialization_h_INCLUDED
+                
+                /** 
+                 *  \file ndarray/initialization.h @brief Construction functions for array.
+                 */
+                
+                #include "ndarray/Array.h"
+                #include "ndarray/Manager.h"
+                
+                namespace ndarray {
+                namespace detail {
+                
+                struct NullOwner {};
+                
+                template <int N, typename Derived>
+                class Initializer {
+                public:
+                
+                    template <typename T, int C>
+                    operator Array<T,N,C> () const {
+                        return static_cast<Derived const *>(this)->template apply< Array<T,N,C> >();
+                    }
+                
+                    template <typename T, int C>
+                    operator ArrayRef<T,N,C> () const {
+                        return static_cast<Derived const *>(this)->template apply< ArrayRef<T,N,C> >();
+                    }
+                
+                };
+                
+                template <int N>
+                class SimpleInitializer : public Initializer< N, SimpleInitializer<N> > {
+                public:
+                
+                    template <typename Target>
+                    Target apply() const {
+                        typedef detail::ArrayAccess< Target > Access;
+                        typedef typename Access::Core Core;
+                        typedef typename Access::Element Element;
+                        DataOrderEnum order = (ExpressionTraits< Target >::RMC::value < 0) ? COLUMN_MAJOR : ROW_MAJOR;
+                        int total = _shape.product();
+                        std::pair<Manager::Ptr,Element*> p = SimpleManager<Element>::allocate(total);
+                        return Access::construct(p.second, Core::create(_shape, order, p.first));
+                    }
+                
+                    explicit SimpleInitializer(Vector<int,N> const & shape) : _shape(shape) {}
+                
+                private:
+                    Vector<int,N> _shape;
+                };
+                
+                template <typename T, int N, typename Owner>
+                class ExternalInitializer : public Initializer< N, ExternalInitializer<T,N,Owner> > {
+                public:
+                
+                    template <typename Target>
+                    Target apply() const {
+                        typedef detail::ArrayAccess< Target > Access;
+                        typedef typename Access::Core Core;
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+83   <a href="#d7e2d1b0">d7e2d1b0</a> -         typedef typename Access::Element Element;</div>
+                        Manager::Ptr manager;
+                        if (!boost::is_same<Owner,NullOwner>::value) {
+                            manager = makeManager(_owner);
+                        }
+                        return Access::construct(_data, Core::create(_shape, _strides, manager));
+                    }
+                
+                    ExternalInitializer(
+                        T * data, 
+                        Vector<int,N> const & shape,
+                        Vector<int,N> const & strides,
+                        Owner const & owner
+                    ) : _data(data), _owner(owner), _shape(shape), _strides(strides) {}
+                
+                private:
+                    T * _data;
+                    Owner _owner;
+                    Vector<int,N> _shape;
+                    Vector<int,N> _strides;
+                };
+                
+                } // namespace detail
+                
+                /// @addtogroup MainGroup
+                /// @{
+                
+                /** 
+                 *  @brief Create an expression that allocates uninitialized memory for an array.
+                 *
+                 *  @returns A temporary object convertible to an Array with fully contiguous row-major strides.
+                 */
+                template <int N>
+                inline detail::SimpleInitializer<N> allocate(Vector<int,N> const & shape) {
+                    return detail::SimpleInitializer<N>(shape); 
+                }
+                
+                /** 
+                 *  @brief Create an expression that allocates uninitialized memory for a 1-d array.
+                 *
+                 *  @returns A temporary object convertible to an Array with fully contiguous row-major strides.
+                 */
+                inline detail::SimpleInitializer<1> allocate(int n) {
+                    return detail::SimpleInitializer<1>(ndarray::makeVector(n)); 
+                }
+                
+                /** 
+                 *  @brief Create an expression that allocates uninitialized memory for a 2-d array.
+                 *
+                 *  @returns A temporary object convertible to an Array with fully contiguous row-major strides.
+                 */
+                inline detail::SimpleInitializer<2> allocate(int n1, int n2) {
+                    return detail::SimpleInitializer<2>(ndarray::makeVector(n1, n2)); 
+                }
+                
+                /** 
+                 *  @brief Create an expression that allocates uninitialized memory for a 3-d array.
+                 *
+                 *  @returns A temporary object convertible to an Array with fully contiguous row-major strides.
+                 */
+                inline detail::SimpleInitializer<3> allocate(int n1, int n2, int n3) {
+                    return detail::SimpleInitializer<3>(ndarray::makeVector(n1, n2, n3)); 
+                }
+                
+                /** 
+                 *  @brief Create a new Array by copying an Expression.
+                 */
+                template <typename Derived>
+                inline ArrayRef<typename boost::remove_const<typename Derived::Element>::type, 
+                                Derived::ND::value, Derived::ND::value>
+                copy(ExpressionBase<Derived> const & expr) {
+                    ArrayRef<typename boost::remove_const<typename Derived::Element>::type, 
+                        Derived::ND::value,Derived::ND::value> r(
+                            allocate(expr.getShape())
+                        );
+                    r = expr;
+                    return r;
+                }
+                
+                /// @brief Compute row- or column-major strides for the given shape.
+                template <int N>
+                Vector<int,N> computeStrides(Vector<int,N> const & shape, DataOrderEnum order=ROW_MAJOR) {
+                    Vector<int,N> r(1);
+                    if (order == ROW_MAJOR) {
+                        for (int n=N-1; n > 0; --n) r[n-1] = r[n] * shape[n];
+                    } else {
+                        for (int n=1; n < N; ++n) r[n] = r[n-1] * shape[n-1];
+                    }
+                    return r;
+                }
+                
+                /** 
+                 *  @brief Create an expression that initializes an Array with externally allocated memory.
+                 *
+                 *  No checking is done to ensure the shape, strides, and data pointers are sensible.
+                 *
+                 *  @param[in] data     A raw pointer to the first element of the Array.
+                 *  @param[in] shape    A Vector of dimensions for the new Array.
+                 *  @param[in] strides  A Vector of strides for the new Array.
+                 *  @param[in] owner    A copy-constructable object with an internal reference count
+                 *                      that owns the memory pointed at by 'data'.
+                 *
+                 *  @returns A temporary object convertible to an Array.
+                 */
+                template <typename T, int N, typename Owner>
+                inline detail::ExternalInitializer<T,N,Owner> external(
+                    T * data,
+                    Vector<int,N> const & shape,
+                    Vector<int,N> const & strides,
+                    Owner const & owner
+                ) {
+                    return detail::ExternalInitializer<T,N,Owner>(data, shape, strides, owner);
+                }
+                
+                /** 
+                 *  @brief Create an expression that initializes an Array with externally allocated memory.
+                 *
+                 *  No checking is done to ensure the shape, strides, and data pointers are sensible.  Memory will not
+                 *  be managed at all; the user must ensure the data pointer remains valid for the lifetime of the array.
+                 *
+                 *  @param[in] data     A raw pointer to the first element of the Array.
+                 *  @param[in] shape    A Vector of dimensions for the new Array.
+                 *  @param[in] strides  A Vector of strides for the new Array.
+                 *
+                 *  @returns A temporary object convertible to an Array.
+                 */
+                template <typename T, int N>
+                inline detail::ExternalInitializer<T,N,detail::NullOwner> external(
+                    T * data,
+                    Vector<int,N> const & shape,
+                    Vector<int,N> const & strides
+                ) {
+                    return detail::ExternalInitializer<T,N,detail::NullOwner>(data, shape, strides, detail::NullOwner());
+                }
+                
+                /** 
+                 *  @brief Create an expression that initializes an Array with externally allocated memory.
+                 *
+                 *  No checking is done to ensure the shape and data pointers are sensible.
+                 *
+                 *  @param[in] data     A raw pointer to the first element of the Array.
+                 *  @param[in] shape    A Vector of dimensions for the new Array.
+                 *  @param[in] order    Whether the strides are row- or column-major.
+                 *  @param[in] owner    A copy-constructable object with an internal reference count
+                 *                      that owns the memory pointed at by 'data'.
+                 *
+                 *  @returns A temporary object convertible to an Array.
+                 */
+                template <typename T, int N, typename Owner>
+                inline detail::ExternalInitializer<T,N,Owner> external(
+                    T * data,
+                    Vector<int,N> const & shape,
+                    DataOrderEnum order,
+                    Owner const & owner
+                ) {
+                    return detail::ExternalInitializer<T,N,Owner>(data, shape, computeStrides(shape, order), owner);
+                }
+                
+                /** 
+                 *  @brief Create an expression that initializes an Array with externally allocated memory.
+                 *
+                 *  No checking is done to ensure the shape and data pointers are sensible.  Memory will not
+                 *  be managed at all; the user must ensure the data pointer remains valid for the lifetime of the array.
+                 *
+                 *  @param[in] data     A raw pointer to the first element of the Array.
+                 *  @param[in] shape    A Vector of dimensions for the new Array.
+                 *  @param[in] order    Whether the strides are row- or column-major.
+                 *
+                 *  @returns A temporary object convertible to an Array.
+                 */
+                template <typename T, int N>
+                inline detail::ExternalInitializer<T,N,detail::NullOwner> external(
+                    T * data,
+                    Vector<int,N> const & shape,
+                    DataOrderEnum order = ROW_MAJOR
+                ) {
+                    return detail::ExternalInitializer<T,N,detail::NullOwner>(
+                        data, shape, computeStrides(shape, order), detail::NullOwner()
+                    );
+                }
+                
+                /// @}
+                
+                } // namespace ndarray
+                
+                #endif // !NDARRAY_initialization_h_INCLUDED
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/ndarray/</h2>
+<h3><a name="d7e2d1b0"/></a>d7e2d1b0</h3>
+
+<pre>
+commit d7e2d1b0e1cc215ae737eb47cd13bb865aafce5e
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Wed Feb 16 09:00:54 2011 +0000
+
+    ndarray - synced from extrnal (added tables, switch to custom Manager class instead of shared_ptr ownership)
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/ndarray/</h2>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="include/ndarray/ArrayBase.h"/></a>include/ndarray/ArrayBase.h
+### Diff:
+
+<pre>
+                // -*- c++ -*-
+                /* 
+                 * LSST Data Management System
+                 * Copyright 2008, 2009, 2010, 2011 LSST Corporation.
+                 * 
+                 * This product includes software developed by the
+                 * LSST Project (http://www.lsst.org/).
+                 *
+                 * This program is free software: you can redistribute it and/or modify
+                 * it under the terms of the GNU General Public License as published by
+                 * the Free Software Foundation, either version 3 of the License, or
+                 * (at your option) any later version.
+                 * 
+                 * This program is distributed in the hope that it will be useful,
+                 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 * GNU General Public License for more details.
+                 * 
+                 * You should have received a copy of the LSST License Statement and 
+                 * the GNU General Public License along with this program.  If not, 
+                 * see <http://www.lsstcorp.org/LegalNotices/>.
+                 */
+                #ifndef NDARRAY_ArrayBase_h_INCLUDED
+                #define NDARRAY_ArrayBase_h_INCLUDED
+                
+                /** 
+                 *  @file ndarray/ArrayBase.h
+                 *
+                 *  @brief Definitions for ArrayBase.
+                 */
+                
+                
+                #include <boost/iterator/counting_iterator.hpp>
+                
+                #include "ndarray/ExpressionBase.h"
+                #include "ndarray/Vector.h"
+                #include "ndarray/detail/Core.h"
+                #include "ndarray/detail/NestedIterator.h"
+                #include "ndarray/detail/StridedIterator.h"
+                #include "ndarray/detail/ArrayAccess.h"
+                #include "ndarray/detail/ViewBuilder.h"
+                #include "ndarray/ArrayTraits.h"
+                #include "ndarray/eigen_fwd.h"
+                
+                namespace ndarray {
+                
+                /**
+                 *  @class ArrayBase
+                 *  @brief CRTP implementation for Array and ArrayRef.
+                 *
+                 *  @ingroup MainGroup
+                 *
+                 *  Implements member functions that need specialization for 1D arrays.
+                 */
+                template <typename Derived>
+                class ArrayBase : public ExpressionBase<Derived> {
+                protected:
+                    typedef ExpressionTraits<Derived> Traits;
+                    typedef typename Traits::Core Core;
+                    typedef typename Traits::CorePtr CorePtr;
+                public:
+                    /// @brief Data type of array elements.
+                    typedef typename Traits::Element Element;
+                    /// @brief Nested array or element iterator.
+                    typedef typename Traits::Iterator Iterator;
+                    /// @brief Nested array or element reference.
+                    typedef typename Traits::Reference Reference;
+                    /// @brief Nested array or element value type.
+                    typedef typename Traits::Value Value;
+                    /// @brief Number of dimensions (boost::mpl::int_).
+                    typedef typename Traits::ND ND;
+                    /// @brief Number of guaranteed row-major contiguous dimensions, counted from the end (boost::mpl::int_).
+                    typedef typename Traits::RMC RMC;
+                    /// @brief Vector type for N-dimensional indices.
+                    typedef Vector<int,ND::value> Index;
+                    /// @brief ArrayRef to a reverse-ordered contiguous array; the result of a call to transpose().
+                    typedef ArrayRef<Element,ND::value,-RMC::value> FullTranspose;
+                    /// @brief ArrayRef to a noncontiguous array; the result of a call to transpose(...).
+                    typedef ArrayRef<Element,ND::value,0> Transpose;
+                    /// @brief The corresponding Array type.
+                    typedef Array<Element,ND::value,RMC::value> Shallow;
+                    /// @brief The corresponding ArrayRef type.
+                    typedef ArrayRef<Element,ND::value,RMC::value> Deep;
+                
+                    /// @brief Return a single subarray.
+                    Reference operator[](int n) const {
+                        return Traits::makeReference(
+                            this->_data + n * this->template getStride<0>(),
+                            this->_core
+                        );
+                    }
+                
+                    /// @brief Return a single element from the array.
+                    Element & operator[](Index const & i) const {
+                        return *(this->_data + this->_core->template computeOffset(i));
+                    }
+                
+                    /// @brief Return an Iterator to the beginning of the array.
+                    Iterator begin() const {
+                        return Traits::makeIterator(
+                            this->_data,
+                            this->_core,
+                            this->template getStride<0>()
+                        );
+                    }
+                
+                    /// @brief Return an Iterator to one past the end of the array.
+                    Iterator end() const {
+                        return Traits::makeIterator(
+                            this->_data + this->template getSize<0>() * this->template getStride<0>(), 
+                            this->_core,
+                            this->template getStride<0>()
+                        );
+                    }
+                
+                    /// @brief Return a raw pointer to the first element of the array.
+                    Element * getData() const { return _data; }
+                    
+                    /// @brief Return true if the array has a null data point.
+                    bool isEmpty() const { return _data == 0; }
+                
+                    /// @brief Return the opaque object responsible for memory management.
+                    Manager::Ptr getManager() const { return this->_core->getManager(); }
+                
+                    /// @brief Return the size of a specific dimension.
+                    template <int P> int getSize() const {
+                        return detail::getDimension<P>(*this->_core).getSize();
+                    }
+                
+                    /// @brief Return the stride in a specific dimension.
+                    template <int P> int getStride() const {
+                        return detail::getDimension<P>(*this->_core).getStride();
+                    }
+                
+                    /// @brief Return a Vector of the sizes of all dimensions.
+                    Index getShape() const { Index r; this->_core->fillShape(r); return r; }
+                
+                    /// @brief Return a Vector of the strides of all dimensions.
+                    Index getStrides() const { Index r; this->_core->fillStrides(r); return r; }
+                
+                    /// @brief Return the total number of elements in the array.
+                    int getNumElements() const { return this->_core->getNumElements(); }
+                
+                    /// @brief Return a view of the array with the order of the dimensions reversed.
+                    FullTranspose transpose() const {
+                        Index shape = getShape();
+                        Index strides = getStrides();
+                        for (int n=0; n < ND::value / 2; ++n) {
+                            std::swap(shape[n], shape[ND::value-n-1]);
+                            std::swap(strides[n], strides[ND::value-n-1]);
+                        }
+                        return FullTranspose(
+                            getData(),
+                            Core::create(shape, strides, getManager())
+                        );
+                    }
+                
+                    /// @brief Return a view of the array with the dimensions permuted.
+                    Transpose transpose(Index const & order) const {
+                        Index newShape;
+                        Index newStrides;
+                        Index oldShape = getShape();
+                        Index oldStrides = getStrides();
+                        for (int n=0; n < ND::value; ++n) {
+                            newShape[n] = oldShape[order[n]];
+                            newStrides[n] = oldStrides[order[n]];
+                        }
+                        return Transpose(
+                            getData(), 
+                            Core::create(newShape, newStrides, getManager())
+                        );
+                    }
+                
+                    /// @brief Return a Array view to this.
+                    Shallow const shallow() const { return Shallow(this->getSelf()); }
+                
+                    /// @brief Return an ArrayRef view to this.
+                    Deep const deep() const { return Deep(this->getSelf()); }
+                    
+                    //@{
+                    /**
+                     *  @name Eigen3 Interface
+                     *
+                     *  These methods return Eigen3 views to the array.  Template
+                     *  parameters optionally control the expression type (Matrix/Array) and
+                     *  the compile-time dimensions.
+                     *
+                     *  The inline implementation is included by ndarray/eigen.h.
+                     */
+                    template <typename XprKind, int Rows, int Cols>
+                    EigenView<Element,ND::value,RMC::value,XprKind,Rows,Cols> asEigen() const;
+                
+                    template <typename XprKind>
+                    EigenView<Element,ND::value,RMC::value,XprKind> asEigen() const;
+                
+                    template <int Rows, int Cols>
+                    EigenView<Element,ND::value,RMC::value,Eigen::MatrixXpr,Rows,Cols> asEigen() const;
+                
+                    EigenView<Element,ND::value,RMC::value,Eigen::MatrixXpr> asEigen() const;
+                    //@}
+                
+                    /// @brief A template metafunction class to determine the result of a view indexing operation.
+                    template <typename View_>
+                    struct ResultOf {
+                        typedef Element Element_;
+                        typedef typename detail::ViewTraits<ND::value, RMC::value, typename View_::Sequence>::ND ND_;
+                        typedef typename detail::ViewTraits<ND::value, RMC::value, typename View_::Sequence>::RMC RMC_;
+                        typedef ArrayRef<Element_,ND_::value,RMC_::value> Type;
+                        typedef Array<Element_,ND_::value,RMC_::value> Value;
+                    };
+                
+                    /// @brief Return a general view into this array (see @ref ndarrayTutorial).
+                    template <typename Seq>
+                    typename ResultOf< View<Seq> >::Type
+                    operator[](View<Seq> const & def) const {
+                        return detail::buildView(this->getSelf(), def._seq);
+                    }
+                
+                protected:
+                    template <typename T_, int N_, int C_> friend class Array;
+                    template <typename T_, int N_, int C_> friend class ArrayRef;
+                    template <typename T_, int N_, int C_> friend struct ArrayTraits;
+                    template <typename T_, int N_, int C_> friend class detail::NestedIterator;
+                    template <typename Derived_> friend class ArrayBase;
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+225  <a href="#^9ccb4c9">^9ccb4c9</a> -     template <typename Array_> friend struct detail::ArrayAccess;</div>
+              ?                                        ^^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+225  <a href="#33800a4f">33800a4f</a> +     template <typename Array_> friend class detail::ArrayAccess;</div>
+              ?                                       +++ ^
+                
+                    Element * _data;
+                    CorePtr _core;
+                
+                    void operator=(ArrayBase const & other) {
+                        _data = other._data;
+                        _core = other._core;
+                    }
+                
+                    ArrayBase(Element * data, CorePtr const & core) : _data(data), _core(core) {}
+                };
+                
+                } // namespace ndarray
+                
+                #endif // !NDARRAY_ArrayBase_h_INCLUDED
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/ndarray/</h2>
+<h3><a name="^9ccb4c9"/></a>^9ccb4c9</h3>
+
+<pre>
+
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/ndarray/</h2>
+<h3><a name="33800a4f"/></a>33800a4f</h3>
+
+<pre>
+commit 33800a4f53b5a67c85c566a894d81511faf2681d
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Fri Jan 24 15:15:08 2014 -0500
+
+    Fix clang warnings about class/struct mismatches (#3081)
+</pre>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="ups/ndarray.table"/></a>ups/ndarray.table
+### Diff:
+
+<pre>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#7f3065b0">7f3065b0</a> - setupRequired(boost >= 1.47.0)</div>
+              ?                    ----------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#6ad128e5">6ad128e5</a> + setupRequired(boost)</div>
+                setupRequired(python)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+3    <a href="#fb4d216b">fb4d216b</a> - setupRequired(numpy >= 1.5)</div>
+              ?                    -------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+3    <a href="#6ad128e5">6ad128e5</a> + setupRequired(numpy)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+4    <a href="#df988f4b">df988f4b</a> - setupRequired(eigen >= 3.0.0)</div>
+              ?                    ---------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+4    <a href="#6ad128e5">6ad128e5</a> + setupRequired(eigen)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+5    <a href="#7f3065b0">7f3065b0</a> - setupRequired(base >= 4.6.0.0)</div>
+              ?                   -----------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+5    <a href="#6ad128e5">6ad128e5</a> + setupRequired(base)</div>
+                setupRequired(swig)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+7    <a href="#fb4d216b">fb4d216b</a> - setupRequired(fftw >= 3.1)</div>
+              ?                   -------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+7    <a href="#6ad128e5">6ad128e5</a> + setupRequired(fftw)</div>
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+9    <a href="#955f9cb7">955f9cb7</a> - envAppend(PYTHONPATH, ${PRODUCT_DIR}/python)</div>
+              ?    ^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+9    <a href="#82b9a38f">82b9a38f</a> + envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)</div>
+              ?    ^^^
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/ndarray/</h2>
+<h3><a name="7f3065b0"/></a>7f3065b0</h3>
+
+<pre>
+commit 7f3065b0b1db306ee96118e760d122fb6cc2ac2e
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Tue Oct 18 21:44:53 2011 +0000
+
+    #1780 - lots of dependency tree fixes; removed separate scons package
+</pre>
+<h3><a name="fb4d216b"/></a>fb4d216b</h3>
+
+<pre>
+commit fb4d216bb771637fbcfab73988414b6890c98785
+Author: rhl <rhl@git.lsstcorp.org>
+Date:   Mon Nov 7 21:44:13 2011 +0000
+
+    Relax python/numpy/fftw requirements
+</pre>
+<h3><a name="df988f4b"/></a>df988f4b</h3>
+
+<pre>
+commit df988f4bf8d582d775203725ce098234851469e5
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Mon Sep 26 18:58:31 2011 +0000
+
+    ndarray #1752 - synced with upstream ndarray eigen3 branch
+</pre>
+<h3><a name="955f9cb7"/></a>955f9cb7</h3>
+
+<pre>
+commit 955f9cb7356d9fa1151fcfa93ca8aeccb64abedd
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Nov 16 22:47:31 2011 -0500
+
+    added support for git-based version introspection
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/ndarray/</h2>
+<h3><a name="6ad128e5"/></a>6ad128e5</h3>
+
+<pre>
+commit 6ad128e5a208d54410538ba298c44fc70fed79c0
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:24 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+<h3><a name="82b9a38f"/></a>82b9a38f</h3>
+
+<pre>
+commit 82b9a38f2aabc061dfe06d0971f1c3726f5f7d4c
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:52:45 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.
+</pre>
+</div>
+
+
+[Return to list](#homelist)

@@ -1,0 +1,467 @@
+# Comparison of the pex_exceptions repository
+
+
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of Repositories</h1>
+<p>
+Comparison run at 07:32PM on June 07, 2015<br>
+There are <b>1</b> differences between the two repositories<br><br>
+Repository <b>/Users/nate/repos_hsc/pex_exceptions/</b> <br> Revision <b>9a1ccd9fb59e5f8d810a7deb753d526d7eb63884</b><br> Branch <b>master</b><br>Last commit was on <b>2014-02-18 16:23:41 -0500</b><br><br>
+Repository <b>/Users/nate/repos_lsst/pex_exceptions</b> <br> Revision <b>c69578ece61dcd87f871ad7d67b7874261f33d94</b><br> Branch <b>master</b><br>Last commit was on <b>2014-11-14 20:54:59 -0600</b><br><br>
+</p>
+</div>
+
+
+
+___
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/pex_exceptions/</h1>
+<h2>doc/doxygen.conf.in</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>src/Exception.cc</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>doc/mainpage.dox</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>doc/SConscript</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>python/lsst/pex/exceptions/SConscript</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>tests/Exception_2.py</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>lib/SConscript</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>include/lsst/pex/exceptions.h</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>python/lsst/__init__.py</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>tests/Exception_1.cc</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>python/lsst/pex/exceptions/__init__.py</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>include/lsst/pex/exceptions/Runtime.h</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>ups/pex_exceptions.cfg</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>tests/SConscript</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>include/lsst/pex/exceptions/Exception.h</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>ups/pex_exceptions.build</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>tests/Exception_1.h</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>include/lsst/pex/exceptions/asserts.h</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>python/lsst/pex/exceptions/exceptionsLib.i</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>python/lsst/pex/__init__.py</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>ups/pex_exceptions.table</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>tests/Failer.cc</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>tests/failer.i</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>tests/Failer.h</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>doc/pex_exceptions.inc</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+<h2>tests/Exception_3.py</h2>
+<pre>
+commit 9a1ccd9fb59e5f8d810a7deb753d526d7eb63884
+Merge: ff5c0e5 60be2e0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Tue Feb 18 16:23:41 2014 -0500
+
+    Merge remote-tracking branch 'LSST/master'</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_lsst/pex_exceptions</h1>
+<h2>/include/lsst/pex/exceptions/Runtime.h</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/lib/SConscript</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/doc/pex_exceptions.inc</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/include/lsst/pex/exceptions/Exception.h</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/python/lsst/pex/exceptions/wrappers.py</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/python/lsst/pex/exceptions/__init__.py</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/include/lsst/pex/exceptions.h</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/python/lsst/pex/exceptions/SConscript</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/tests/Exception_1.cc</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/python/lsst/pex/__init__.py</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/include/lsst/pex/exceptions/asserts.h</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/tests/Exception_1.h</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/ups/pex_exceptions.build</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/src/Exception.cc</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/tests/SConscript</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/ups/pex_exceptions.cfg</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/python/lsst/__init__.py</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/python/lsst/pex/exceptions/handler.i</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/doc/SConscript</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/tests/Exception_2.py</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/python/lsst/pex/exceptions/exceptionsLib.i</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/doc/doxygen.conf.in</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/ups/pex_exceptions.table</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/doc/mainpage.dox</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+<h2>/tests/testLib.i</h2>
+<pre>
+commit c69578ece61dcd87f871ad7d67b7874261f33d94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Fri Nov 14 20:54:59 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.</pre>
+</div>
+
+
+
+
+# List of the files in common<a name="homelist"></a>
+Files without links do not differ
+
+* ```SConstruct```
+* [```.gitignore```](#.gitignore)
+
+# <a name=".gitignore"/></a>.gitignore
+### Diff:
+
+<pre>
+                .sconsign.dblite
+                config.log
+                .sconf_temp
+                *.dylib
+                *.o
+                *.os
+                *.so
+                *.cfgc
+                *.pyc
+                *_wrap.cc
+                *Lib.py
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+12   <a href="#bf7f5afa">bf7f5afa</a> - doc/doxygen.conf</div>
+                doc/html
+                doc/doxygen.conf
+                doc/*.tag
+                doc/*.inc
+                tests/.tests
+                python/lsst/pex/exceptions/version.py
+                tests/Exception_1
+                tests/failer.py
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/pex_exceptions/</h2>
+<h3><a name="bf7f5afa"/></a>bf7f5afa</h3>
+
+<pre>
+commit bf7f5afaf1226e58fd45661f28e621739f90daaa
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Jul 11 13:11:53 2012 -0400
+
+    add doxygen.conf to .gitignore
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/pex_exceptions</h2>
+</div>
+
+
+[Return to list](#homelist)

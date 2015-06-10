@@ -1,0 +1,2128 @@
+# Comparison of the obs_test repository
+
+
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of Repositories</h1>
+<p>
+Comparison run at 11:50AM on June 09, 2015<br>
+There are <b>435</b> differences between the two repositories<br><br>
+Repository <b>/Users/nate/repos_hsc/obs_test/</b> <br> Revision <b>67560cfdb72d33cbded1e0ca22ac415b581afa16</b><br> Branch <b>master</b><br>Last commit was on <b>2013-07-17 11:44:06 -0400</b><br><br>
+Repository <b>/Users/nate/repos_lsst/obs_test/</b> <br> Revision <b>461b62ded6a9c09d76036d5b84a3d0face1af29a</b><br> Branch <b>master</b><br>Last commit was on <b>2015-06-08 16:22:06 -0700</b><br><br>
+</p>
+</div>
+
+
+
+___
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/obs_test/</h1>
+<h2>tests/data/input/raw-v85470982-E000-r0,3-s1,1-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,3-s1,0-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s0,1-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,3-s1,1-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s1,0-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s1,1-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/_mapper</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s1,0-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s1,1-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s0,1-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s1,0-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s1,1-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s0,1-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s1,0-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,3-s1,0-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s1,0-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s0,1-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s1,0-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s0,1-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s1,1-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s1,0-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s1,0-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s1,1-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s1,0-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s1,1-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s1,1-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s0,1-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s0,1-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s1,1-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s0,1-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s1,0-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s1,1-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s0,1-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s0,1-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s0,1-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s0,1-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s1,0-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s1,1-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s1,1-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s1,0-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,3-s1,0-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s1,0-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s1,1-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s1,1-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s1,0-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s1,0-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,2-s1,0-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s1,1-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s0,1-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,3-s1,1-c1,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,1-s0,1-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s0,1-c0,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,3-s1,1-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,3-s1,0-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E001-r0,1-s1,1-c1,0.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s0,1-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+<h2>tests/data/input/raw-v85470982-E000-r0,2-s1,1-c0,1.pickle</h2>
+<pre>
+commit 67560cfdb72d33cbded1e0ca22ac415b581afa16
+Merge: 043894b 3a78708
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Wed Jul 17 11:44:06 2013 -0400
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_lsst/obs_test/</h1>
+<h2>data/input/raw/raw_v1_fg.fits.gz</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/input/raw/raw_v3_fr.fits.gz</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>config/processCcd.py</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/input/bias/bias.fits.gz</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/utils/assembleLsstChannels.py</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/input/flat/flat_fg.fits.gz</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>policy/testMapper.paf</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/input/defects/defects.fits</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/input/registry.sqlite3</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/utils/maskFromDefects.py</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>bin/genInputRegistry.py</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>python/lsst/obs/test/testCamera.py</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/input/raw/raw_v2_fg.fits.gz</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/input/_mapper</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+<h2>data/utils/defectsFromBias.py</h2>
+<pre>
+commit 461b62ded6a9c09d76036d5b84a3d0face1af29a
+Merge: ea437af 321846d
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:06 2015 -0700
+
+    Merge pull request #2 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+</div>
+
+
+
+
+# List of the files in common<a name="homelist"></a>
+Files without links do not differ
+
+* ```ups/obs_test.build```
+* ```python/lsst/__init__.py```
+* [```tests/map.py```](#tests/map.py)
+* ```ups/obs_test.cfg```
+* ```python/lsst/obs/test/__init__.py```
+* [```python/lsst/obs/test/testMapper.py```](#python/lsst/obs/test/testMapper.py)
+* ```bin/mkpickle.py```
+* ```python/lsst/obs/__init__.py```
+* ```.gitignore```
+* [```python/lsst/obs/test/testConfig.py```](#python/lsst/obs/test/testConfig.py)
+* ```SConstruct```
+* [```ups/obs_test.table```](#ups/obs_test.table)
+* ```tests/SConscript```
+
+# <a name="tests/map.py"/></a>tests/map.py
+### Diff:
+
+<pre>
+                #!/usr/bin/env python
+                
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+25   <a href="#da5dc75c">da5dc75c</a> + import os</div>
+                import unittest
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+27   <a href="#9b1422ab">9b1422ab</a> + </div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+28   <a href="#321846d1">321846d1</a> + import lsst.utils</div>
+                import lsst.utils.tests as utilsTests
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+27   <a href="#9b1422ab">9b1422ab</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+28   <a href="#9b1422ab">9b1422ab</a> - import os</div>
+                from lsst.obs.test import TestMapper
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+31   <a href="#da5dc75c">da5dc75c</a> + import lsst.afw.image as afwImage</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+30   <a href="#9b1422ab">9b1422ab</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+31   <a href="#9b1422ab">9b1422ab</a> - # map_raw(self, dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+32   <a href="#9b1422ab">9b1422ab</a> - # query_raw(self, key, format, dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+33   <a href="#9b1422ab">9b1422ab</a> - # std_raw(self, item)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+34   <a href="#9b1422ab">9b1422ab</a> - # keys(self)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+35   <a href="#9b1422ab">9b1422ab</a> - # </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+36   <a href="#9b1422ab">9b1422ab</a> - # __init__(self)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+37   <a href="#9b1422ab">9b1422ab</a> - # getDatasetTypes(self)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+38   <a href="#9b1422ab">9b1422ab</a> - # map(self, datasetType, dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+39   <a href="#9b1422ab">9b1422ab</a> - # queryMetadata(self, datasetType, key, format, dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+40   <a href="#9b1422ab">9b1422ab</a> - # canStandardize(self, datasetType)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+41   <a href="#9b1422ab">9b1422ab</a> - # standardize(self, datasetType, item, dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+42   <a href="#9b1422ab">9b1422ab</a> - # validate(self, dataId)</div>
+                
+                class TestMapperTestCase(unittest.TestCase):
+                    """A test case for the test mapper."""
+                
+                    def setUp(self):
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+37   <a href="#321846d1">321846d1</a> +         obsTestDir = lsst.utils.getPackageDir('obs_test')</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+38   <a href="#da5dc75c">da5dc75c</a> +         self.input = os.path.join(obsTestDir, "data", "input")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+39   <a href="#da5dc75c">da5dc75c</a> +         self.output = self.input</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+48   <a href="#0222e582">0222e582</a> -         self.input = os.path.join(os.environ['OBS_TEST_DIR'],</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+49   <a href="#9b1422ab">9b1422ab</a> -                 "tests", "data", "input")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+50   <a href="#0222e582">0222e582</a> -         self.calib = os.path.join(os.environ['OBS_TEST_DIR'],</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+51   <a href="#9b1422ab">9b1422ab</a> -                 "tests", "data", "calib")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+52   <a href="#0222e582">0222e582</a> -         self.output = os.path.join(os.environ['OBS_TEST_DIR'],</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+53   <a href="#9b1422ab">9b1422ab</a> -                 "tests", "data", "output")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+54   <a href="#9b1422ab">9b1422ab</a> -         self.mapper = TestMapper(root=self.input,</div>
+              ?                                                 ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+40   <a href="#da5dc75c">da5dc75c</a> +         self.mapper = TestMapper(root=self.input)</div>
+              ?                                                 ^
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+55   <a href="#9b1422ab">9b1422ab</a> -                 calibRoot=self.calib,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+56   <a href="#9b1422ab">9b1422ab</a> -                 outputRoot=self.output)</div>
+                
+                    def tearDown(self):
+                        del self.mapper
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+61   <a href="#0222e582">0222e582</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+62   <a href="#9b1422ab">9b1422ab</a> -     def testMapRaw(self):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+63   <a href="#0222e582">0222e582</a> -         dataId = dict(visit=85470982,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+64   <a href="#0222e582">0222e582</a> -                 raft="0,3", sensor="0,1", channel="0,0", snap=1)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+65   <a href="#0222e582">0222e582</a> -         loc = self.mapper.map_raw(dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+66   <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getPythonType(), None)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+67   <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getCppType(), "ImageU")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+68   <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getStorageName(), "PickleStorage")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+69   <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getLocations(), [os.path.join(self.input,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+70   <a href="#0222e582">0222e582</a> -             "raw-v85470982-E001-r0,3-s0,1-c0,0.pickle")])</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+71   <a href="#0222e582">0222e582</a> -         for k, v in dataId.iteritems():</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+72   <a href="#0222e582">0222e582</a> -             self.assertEqual(loc.getAdditionalData().get(k), v)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+73   <a href="#9b1422ab">9b1422ab</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+74   <a href="#9b1422ab">9b1422ab</a> -     def testQueryRawData(self):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+75   <a href="#0222e582">0222e582</a> -         tuples = self.mapper.query_raw("raft", ["visit", "raft"], dict())</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+76   <a href="#0222e582">0222e582</a> -         self.assertEqual(tuples, set([</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+77   <a href="#0222e582">0222e582</a> -             (85470982, "0,1"), (85470982, "0,2"), (85470982, "0,3"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+78   <a href="#0222e582">0222e582</a> -             ]))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+79   <a href="#0222e582">0222e582</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+80   <a href="#0222e582">0222e582</a> -         tuples = self.mapper.query_raw("channel",</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+81   <a href="#0222e582">0222e582</a> -                 ["raft", "sensor", "channel"],</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+82   <a href="#0222e582">0222e582</a> -                 dict(visit=85470982, raft="0,1"))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+83   <a href="#0222e582">0222e582</a> -         self.assertEqual(tuples, set([</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+84   <a href="#0222e582">0222e582</a> -             ("0,1", "0,1", "0,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+85   <a href="#0222e582">0222e582</a> -             ("0,1", "0,1", "0,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+86   <a href="#0222e582">0222e582</a> -             ("0,1", "0,1", "1,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+87   <a href="#0222e582">0222e582</a> -             ("0,1", "0,1", "1,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+88   <a href="#0222e582">0222e582</a> -             ("0,1", "1,0", "0,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+89   <a href="#0222e582">0222e582</a> -             ("0,1", "1,0", "0,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+90   <a href="#0222e582">0222e582</a> -             ("0,1", "1,0", "1,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+91   <a href="#0222e582">0222e582</a> -             ("0,1", "1,0", "1,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+92   <a href="#0222e582">0222e582</a> -             ("0,1", "1,1", "0,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+93   <a href="#0222e582">0222e582</a> -             ("0,1", "1,1", "0,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+94   <a href="#0222e582">0222e582</a> -             ("0,1", "1,1", "1,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+95   <a href="#0222e582">0222e582</a> -             ("0,1", "1,1", "1,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+96   <a href="#0222e582">0222e582</a> -             ]))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+97   <a href="#9b1422ab">9b1422ab</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+98   <a href="#9b1422ab">9b1422ab</a> -     def testStdRawData(self):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+99   <a href="#0222e582">0222e582</a> -         dataId = dict(visit=85470982,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+100  <a href="#0222e582">0222e582</a> -                 snap=1, raft="0,2", sensor="1,0", channel="0,1")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+101  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.std_raw(210011, dataId),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+102  <a href="#0222e582">0222e582</a> -                 '210011/85470982')</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+103  <a href="#9b1422ab">9b1422ab</a> - </div>
+                    def testMapConfigData(self):
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+105  <a href="#0222e582">0222e582</a> -         dataId = dict(visit=85470982, raft="0,2", sensor="1,1")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+46   <a href="#0f3b356a">0f3b356a</a> +         dataId = dict(visit=1)</div>
+                        loc = self.mapper.map_processCcd_config(dataId)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+107  <a href="#05227dc8">05227dc8</a> -         self.assertEqual(loc.getPythonType(), "lsst.obs.test.TestConfig")</div>
+              ?                                                     ^^  ^  ^ ^  ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+48   <a href="#da5dc75c">da5dc75c</a> +         self.assertEqual(loc.getPythonType(), "lsst.pipe.tasks.processCcd.ProcessCcdConfig")</div>
+              ?                                                     ^^^^^^^^^  ^^^^  ^^^^ ^^^^  ^^^^
+                        self.assertEqual(loc.getCppType(), "Config")
+                        self.assertEqual(loc.getStorageName(), "ConfigStorage")
+                        self.assertEqual(loc.getLocations(), [os.path.join(self.output,
+                            "config", "processCcd.py")])
+                        for k, v in dataId.iteritems():
+                            self.assertEqual(loc.getAdditionalData().get(k), v)
+                
+                    def testMapMetadataData(self):
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+116  <a href="#0222e582">0222e582</a> -         dataId = dict(visit=85470982, raft="0,1", sensor="1,0")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+57   <a href="#0f3b356a">0f3b356a</a> +         dataId = dict(visit=1)</div>
+                        loc = self.mapper.map_processCcd_metadata(dataId)
+                        self.assertEqual(loc.getPythonType(), "lsst.daf.base.PropertySet")
+                        self.assertEqual(loc.getCppType(), "PropertySet")
+                        self.assertEqual(loc.getStorageName(), "BoostStorage")
+                        self.assertEqual(loc.getLocations(), [os.path.join(self.output,
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+122  <a href="#0222e582">0222e582</a> -             "md-v85470982-r0,1-s1,0.boost")])</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+63   <a href="#da5dc75c">da5dc75c</a> +             "processCcd_metadata", "v1_fg.boost")])</div>
+                        for k, v in dataId.iteritems():
+                            self.assertEqual(loc.getAdditionalData().get(k), v)
+                
+                    def testKeys(self):
+                        self.assertEqual(set(self.mapper.keys()),
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+128  <a href="#0222e582">0222e582</a> -                 set(['skyTile', 'visit', 'raft', 'sensor', 'snap', 'channel']))</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+69   <a href="#da5dc75c">da5dc75c</a> +                 set(['filter', 'patch', 'skyTile', 'tract', 'visit']))</div>
+                
+                    def testGetDatasetTypes(self):
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+131  <a href="#0222e582">0222e582</a> -         self.assertEqual(set(self.mapper.getDatasetTypes()),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+132  <a href="#9b1422ab">9b1422ab</a> -                 set(['raw', 'processCcd_config', 'processCcd_metadata']))</div>
+              ?         ^^^^^^^                                                         -
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+72   <a href="#da5dc75c">da5dc75c</a> +         someKeys = set(['raw', 'processCcd_config', 'processCcd_metadata'])</div>
+              ?         ^^^^^^^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+73   <a href="#da5dc75c">da5dc75c</a> +         self.assertTrue(set(self.mapper.getDatasetTypes()).issuperset(someKeys))</div>
+                
+                    def testGetKeys(self):
+                        self.assertEqual(set(self.mapper.getKeys("raw", "skyTile")),
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+136  <a href="#0222e582">0222e582</a> -                 set(["skyTile"]))</div>
+              ?                       ^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+77   <a href="#da5dc75c">da5dc75c</a> +                 set(["filter"]))</div>
+              ?                       ^  + +
+                        self.assertEqual(set(self.mapper.getKeys("raw", "visit")),
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+138  <a href="#0222e582">0222e582</a> -                 set(["skyTile", "visit"]))</div>
+              ?                       ^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+79   <a href="#da5dc75c">da5dc75c</a> +                 set(["filter", "visit"]))</div>
+              ?                       ^  + +
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+139  <a href="#0222e582">0222e582</a> -         self.assertEqual(set(self.mapper.getKeys("raw", "raft")),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+140  <a href="#0222e582">0222e582</a> -                 set(["skyTile", "visit", "raft"]))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+141  <a href="#0222e582">0222e582</a> -         self.assertEqual(set(self.mapper.getKeys("raw", "sensor")),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+142  <a href="#0222e582">0222e582</a> -                 set(["skyTile", "visit", "raft", "sensor"]))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+143  <a href="#0222e582">0222e582</a> -         self.assertEqual(set(self.mapper.getKeys("raw", "snap")),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+144  <a href="#0222e582">0222e582</a> -                 set(["skyTile", "visit", "raft", "sensor", "snap"]))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+145  <a href="#0222e582">0222e582</a> -         self.assertEqual(set(self.mapper.getKeys("raw", "channel")),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+146  <a href="#0222e582">0222e582</a> -                 set(["skyTile", "visit", "raft", "sensor", "snap", "channel"]))</div>
+                
+                    def testGetDefaultLevel(self):
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+149  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.getDefaultLevel(), "sensor")</div>
+              ?                                                           ^^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+82   <a href="#0f3b356a">0f3b356a</a> +         self.assertEqual(self.mapper.getDefaultLevel(), "visit")</div>
+              ?                                                          ++ ^^
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+150  <a href="#0222e582">0222e582</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+151  <a href="#0222e582">0222e582</a> -     def testGetDefaultSubLevel(self):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+152  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.getDefaultSubLevel("skyTile"), "sensor")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+153  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.getDefaultSubLevel("visit"), "sensor")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+154  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.getDefaultSubLevel("raft"), "sensor")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+155  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.getDefaultSubLevel("snap"), None)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+156  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.getDefaultSubLevel("sensor"), "channel")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+157  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.getDefaultSubLevel("channel"), None)</div>
+                
+                    def testMap(self):
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+160  <a href="#0222e582">0222e582</a> -         dataId = dict(visit=85470982,</div>
+              ?                             ^^^^^^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+85   <a href="#0f3b356a">0f3b356a</a> +         dataId = dict(visit=1)</div>
+              ?                             ^^
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+161  <a href="#0222e582">0222e582</a> -                 raft="0,2", sensor="0,1", channel="1,1", snap=0)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+86   <a href="#da5dc75c">da5dc75c</a> +         for loc in (</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+87   <a href="#da5dc75c">da5dc75c</a> +             self.mapper.map_raw(dataId),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+162  <a href="#0222e582">0222e582</a> -         loc = self.mapper.map("raw", dataId)</div>
+              ?         ^^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+88   <a href="#da5dc75c">da5dc75c</a> +             self.mapper.map("raw", dataId),</div>
+              ?         ^^^                               +
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+163  <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getPythonType(), None)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+89   <a href="#da5dc75c">da5dc75c</a> +         ):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+90   <a href="#da5dc75c">da5dc75c</a> +             self.assertEqual(loc.getPythonType(), "lsst.afw.image.DecoratedImageU")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+164  <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getCppType(), "ImageU")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+91   <a href="#da5dc75c">da5dc75c</a> +             self.assertEqual(loc.getCppType(), "DecoratedImageU")</div>
+              ? ++++                                            +++++++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+165  <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getStorageName(), "PickleStorage")</div>
+              ?                                                 ^ ^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+92   <a href="#da5dc75c">da5dc75c</a> +             self.assertEqual(loc.getStorageName(), "FitsStorage")</div>
+              ? ++++                                                ^ ^^
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+166  <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getLocations(), [os.path.join(self.input,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+167  <a href="#0222e582">0222e582</a> -             "raw-v85470982-E000-r0,2-s0,1-c1,1.pickle")])</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+93   <a href="#da5dc75c">da5dc75c</a> +             locationList = loc.getLocations()</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+94   <a href="#da5dc75c">da5dc75c</a> +             self.assertEqual(len(locationList), 1)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+95   <a href="#da5dc75c">da5dc75c</a> +             fileName = os.path.basename(locationList[0])</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+96   <a href="#da5dc75c">da5dc75c</a> +             self.assertEqual(fileName, "raw_v1_fg.fits.gz")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+168  <a href="#0222e582">0222e582</a> -         for k, v in dataId.iteritems():</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+97   <a href="#da5dc75c">da5dc75c</a> +             for k, v in dataId.iteritems():</div>
+              ? ++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+169  <a href="#0222e582">0222e582</a> -             self.assertEqual(loc.getAdditionalData().get(k), v)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+98   <a href="#da5dc75c">da5dc75c</a> +                 self.assertEqual(loc.getAdditionalData().get(k), v)</div>
+              ? ++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+170  <a href="#0222e582">0222e582</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+171  <a href="#0222e582">0222e582</a> -         dataId = dict(visit=85470982, raft="0,3", sensor="1,1")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+172  <a href="#0222e582">0222e582</a> -         loc = self.mapper.map("processCcd_config", dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+173  <a href="#05227dc8">05227dc8</a> -         self.assertEqual(loc.getPythonType(), "lsst.obs.test.TestConfig")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+174  <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getCppType(), "Config")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+175  <a href="#0222e582">0222e582</a> -         self.assertEqual(loc.getStorageName(), "ConfigStorage")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+176  <a href="#01cad6e9">01cad6e9</a> -         self.assertEqual(loc.getLocations(), [os.path.join(self.output,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+177  <a href="#f6bdb006">f6bdb006</a> -             "config", "processCcd.py")])</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+178  <a href="#0222e582">0222e582</a> -         for k, v in dataId.iteritems():</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+179  <a href="#0222e582">0222e582</a> -             self.assertEqual(loc.getAdditionalData().get(k), v)</div>
+                
+                    def testQueryMetadata(self):
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+101  <a href="#da5dc75c">da5dc75c</a> +         """Test expansion of incomplete information</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+102  <a href="#da5dc75c">da5dc75c</a> +         """</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+103  <a href="#0f3b356a">0f3b356a</a> +         for visit, filt in ((1, "g"), (2, "g"), (3, "r")):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+182  <a href="#0222e582">0222e582</a> -         tuples = self.mapper.queryMetadata("raw", "sensor",</div>
+              ?                                                     ^^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+104  <a href="#0f3b356a">0f3b356a</a> +             tuples = self.mapper.queryMetadata("raw", "visit",</div>
+              ? ++++                                                   ++ ^^
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+183  <a href="#0222e582">0222e582</a> -                 ["skyTile", "visit", "raft", "sensor"],</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+184  <a href="#0222e582">0222e582</a> -                 dict(raft="0,3", sensor="0,1", visit=85470982))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+185  <a href="#0222e582">0222e582</a> -         self.assertEqual(tuples, set([(1, 85470982, "0,3", "0,1")]))</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+105  <a href="#0f3b356a">0f3b356a</a> +                     ["visit", "filter"],</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+106  <a href="#0f3b356a">0f3b356a</a> +                     dict(visit=visit))</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+107  <a href="#0f3b356a">0f3b356a</a> +             self.assertEqual(len(tuples), 1)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+108  <a href="#0f3b356a">0f3b356a</a> +             self.assertEqual(tuples[0], (visit, filt))</div>
+                
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+110  <a href="#0f3b356a">0f3b356a</a> +         for filt, visitList in (</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+111  <a href="#0f3b356a">0f3b356a</a> +             ("g", (1, 2)),</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+112  <a href="#0f3b356a">0f3b356a</a> +             ("r", (3,)),</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+113  <a href="#0f3b356a">0f3b356a</a> +         ):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+187  <a href="#0222e582">0222e582</a> -         tuples = self.mapper.queryMetadata("raw", "sensor",</div>
+              ?                                                    ^ ---
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+114  <a href="#0f3b356a">0f3b356a</a> +             tuples2 = self.mapper.queryMetadata("raw", "filter",</div>
+              ? ++++              +                                     ^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+115  <a href="#0f3b356a">0f3b356a</a> +                     ["visit", "filter"],</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+116  <a href="#0f3b356a">0f3b356a</a> +                     dict(filter=filt))</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+117  <a href="#0f3b356a">0f3b356a</a> +             self.assertEqual(len(tuples2), len(visitList))</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+118  <a href="#0f3b356a">0f3b356a</a> +             for visit in visitList:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+119  <a href="#0f3b356a">0f3b356a</a> +                 self.assertTrue((visit, filt) in tuples2)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+188  <a href="#0222e582">0222e582</a> -                 ["skyTile", "visit", "raft", "sensor"], dict(visit=85470982))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+189  <a href="#0222e582">0222e582</a> -         self.assertEqual(tuples, set([</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+190  <a href="#0222e582">0222e582</a> -             (1, 85470982, "0,1", "0,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+191  <a href="#0222e582">0222e582</a> -             (1, 85470982, "0,1", "1,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+192  <a href="#0222e582">0222e582</a> -             (1, 85470982, "0,1", "1,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+193  <a href="#0222e582">0222e582</a> -             (1, 85470982, "0,2", "0,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+194  <a href="#0222e582">0222e582</a> -             (1, 85470982, "0,2", "1,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+195  <a href="#0222e582">0222e582</a> -             (1, 85470982, "0,2", "1,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+196  <a href="#0222e582">0222e582</a> -             (1, 85470982, "0,3", "0,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+197  <a href="#0222e582">0222e582</a> -             (1, 85470982, "0,3", "1,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+198  <a href="#0222e582">0222e582</a> -             (1, 85470982, "0,3", "1,1")]))</div>
+                
+                    def testCanStandardize(self):
+                        self.assertEqual(self.mapper.canStandardize("raw"), True)
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+123  <a href="#da5dc75c">da5dc75c</a> +         self.assertEqual(self.mapper.canStandardize("camera"), True)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+202  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.canStandardize("processCcd_config"),</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+124  <a href="#da5dc75c">da5dc75c</a> +         self.assertEqual(self.mapper.canStandardize("processCcd_config"), False)</div>
+              ?                                                                          +++++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+203  <a href="#0222e582">0222e582</a> -                 False)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+204  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.canStandardize("processCcd_metadata"),</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+125  <a href="#da5dc75c">da5dc75c</a> +         self.assertEqual(self.mapper.canStandardize("processCcd_metadata"), False)</div>
+              ?                                                                            +++++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+205  <a href="#0222e582">0222e582</a> -                 False)</div>
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+207  <a href="#9b1422ab">9b1422ab</a> -     def testStandardize(self):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+127  <a href="#da5dc75c">da5dc75c</a> +     def testStandardizeRaw(self):</div>
+              ?                        +++
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+128  <a href="#da5dc75c">da5dc75c</a> +         pathToRaw = os.path.join(self.input, "raw", "raw_v1_fg.fits.gz")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+129  <a href="#da5dc75c">da5dc75c</a> +         rawImage = afwImage.DecoratedImageU(pathToRaw)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+208  <a href="#0222e582">0222e582</a> -         dataId = dict(visit=12345)</div>
+              ?                              ----
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+130  <a href="#0f3b356a">0f3b356a</a> +         dataId = dict(visit=1)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+209  <a href="#0222e582">0222e582</a> -         self.assertEqual(self.mapper.standardize("raw", 9876, dataId),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+210  <a href="#0222e582">0222e582</a> -                 '9876/12345')</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+131  <a href="#da5dc75c">da5dc75c</a> +         stdImage = self.mapper.standardize("raw", rawImage, dataId)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+132  <a href="#da5dc75c">da5dc75c</a> +         self.assertTrue(isinstance(stdImage, afwImage.ExposureU))</div>
+                
+                    def testValidate(self):
+                        for dataId in [
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+136  <a href="#da5dc75c">da5dc75c</a> +             dict(visit=1),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+214  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982,</div>
+              ? ----                       ^ ^^^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+137  <a href="#da5dc75c">da5dc75c</a> +             dict(visit=25),</div>
+              ?                        ^ ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+138  <a href="#da5dc75c">da5dc75c</a> +         ]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+215  <a href="#0222e582">0222e582</a> -                     raft="0,3", sensor="0,1", channel="0,0", snap=1),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+216  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982, raft="0,2", sensor="1,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+217  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982, raft="0,1", sensor="1,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+218  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+219  <a href="#0222e582">0222e582</a> -                     raft="0,2", sensor="0,1", channel="1,1", snap=0),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+220  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982, raft="0,3", sensor="1,1"),]:</div>
+                            self.assertEqual(self.mapper.validate(dataId), dataId)
+                        for dataId in [
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+141  <a href="#0f3b356a">0f3b356a</a> +             dict(visit="not-an-int"), # visit must be an integer</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+142  <a href="#da5dc75c">da5dc75c</a> +         ]:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+143  <a href="#da5dc75c">da5dc75c</a> +             self.assertRaises(Exception, self.mapper.validate, dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+223  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+224  <a href="#0222e582">0222e582</a> -                     raft="0.3", sensor="0,1", channel="0,0", snap=1),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+225  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982, raft="0,2", sensor="11"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+226  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982, raft="x,1", sensor="1,0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+227  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+228  <a href="#0222e582">0222e582</a> -                     raft="0,2", sensor="0,1", channel="1,1", snap="0"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+229  <a href="#0222e582">0222e582</a> -                 dict(visit="85470982", raft="0,3", sensor="1,1"),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+230  <a href="#0222e582">0222e582</a> -                 dict(visit=85470982,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+231  <a href="#0222e582">0222e582</a> -                     raft=03, sensor="0,1", channel="0,0", snap=1),</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+232  <a href="#0222e582">0222e582</a> -                 ]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+233  <a href="#0222e582">0222e582</a> -             try:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+234  <a href="#0222e582">0222e582</a> -                 self.mapper.validate(dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+235  <a href="#0222e582">0222e582</a> -                 self.assert_(False,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+236  <a href="#0222e582">0222e582</a> -                         msg="%s failed to raise exception" % str(dataId))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+237  <a href="#0222e582">0222e582</a> -             except AssertionError:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+238  <a href="#0222e582">0222e582</a> -                 raise</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+239  <a href="#0222e582">0222e582</a> -             except Exception, e:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+240  <a href="#0222e582">0222e582</a> -                 self.assertIsInstance(e, RuntimeError)</div>
+                
+                
+                def suite():
+                    utilsTests.init()
+                
+                    suites = []
+                    suites += unittest.makeSuite(TestMapperTestCase)
+                    suites += unittest.makeSuite(utilsTests.MemoryTestCase)
+                    return unittest.TestSuite(suites)
+                
+                def run(shouldExit=False):
+                    utilsTests.run(suite(), shouldExit)
+                
+                if __name__ == '__main__':
+                    run(True)
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/obs_test/</h2>
+<h3><a name="0222e582"/></a>0222e582</h3>
+
+<pre>
+commit 0222e582b6fbf1c175c631a7495651037b266695
+Author: Kian-Tat Lim <ktl@slac.stanford.edu>
+Date:   Sat Mar 17 00:37:38 2012 -0700
+
+    Complete mapper (except bypass functionality.  Add input data for raw.
+</pre>
+<h3><a name="9b1422ab"/></a>9b1422ab</h3>
+
+<pre>
+commit 9b1422ab70c2c9aeb43b75bcf41d9ce90b3d9e4d
+Author: Kian-Tat Lim <ktl@slac.stanford.edu>
+Date:   Fri Mar 16 11:30:09 2012 -0700
+
+    Start on tests for test mapper.
+</pre>
+<h3><a name="05227dc8"/></a>05227dc8</h3>
+
+<pre>
+commit 05227dc837788077356d51f058b8c17d96d0904f
+Author: Russell Owen <rowen@uw.edu>
+Date:   Fri May 17 16:03:06 2013 -0700
+
+    Committed some changes that I thought were already there. Now uses TestConfig and tests for it.
+</pre>
+<h3><a name="f6bdb006"/></a>f6bdb006</h3>
+
+<pre>
+commit f6bdb0065ac5305e2388a8e4825da8e6c8217da2
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Apr 10 14:07:33 2013 -0400
+
+    Fix unit test breakage caused by fixing pipe_base tests here
+</pre>
+<h3><a name="01cad6e9"/></a>01cad6e9</h3>
+
+<pre>
+commit 01cad6e9226ce2f09063f595a613db02f66cbb14
+Author: Kian-Tat Lim <ktl@slac.stanford.edu>
+Date:   Wed Mar 28 09:15:00 2012 -0700
+
+    Fix up tests and deal with no output root.
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/obs_test/</h2>
+<h3><a name="0f3b356a"/></a>0f3b356a</h3>
+
+<pre>
+commit 0f3b356a9c1291431ad4ee0c99a729a689822e17
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Nov 19 13:15:38 2014 -0800
+
+    Review response.
+    
+    Changes include:
+    - Fix outdated code in bin/genInputRegistry.py (no ccd key; also modified to use argparse).
+    - Updated the registry database file. It was missing some entries and the format changed
+      when I updated bin/genImputRegistry.py.
+    - Made all tests/utils use argparse and removed file doc strings (use argparse help instead).
+    - Simplified testMapper.paf as per K-T's suggestions (except that removing table entries
+      made tests fail, so I did not do that).
+    - Removed convertDefecs.py because it was too fragile. I you used the wrong
+      version of obs_lsstSim to get your defects the resulting defects were unusable;
+      using defectsFromBias.py is much safer.
+    - Updated tests/map.py for the above changes and made testQueryMetadata more thorough.
+</pre>
+<h3><a name="9b1422ab"/></a>9b1422ab</h3>
+
+<pre>
+commit 9b1422ab70c2c9aeb43b75bcf41d9ce90b3d9e4d
+Author: Kian-Tat Lim <ktl@slac.stanford.edu>
+Date:   Fri Mar 16 11:30:09 2012 -0700
+
+    Start on tests for test mapper.
+</pre>
+<h3><a name="da5dc75c"/></a>da5dc75c</h3>
+
+<pre>
+commit da5dc75c89d2c9446f40310881f7a74e3f3a44f6
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Nov 4 16:01:10 2014 -0800
+
+    New data, camera and mapper
+    
+    The old data is still present and the unit tests assume the old mapper.
+</pre>
+<h3><a name="321846d1"/></a>321846d1</h3>
+
+<pre>
+commit 321846d197701e37c03b8533c020e8c3d3acd423
+Author: Joshua Hoblitt <josh@hoblitt.com>
+Date:   Fri May 22 12:11:56 2015 -0700
+
+    replace eups.productDir() calls with lsst.utils.getPackageDir()
+</pre>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="python/lsst/obs/test/testMapper.py"/></a>python/lsst/obs/test/testMapper.py
+### Diff:
+
+<pre>
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+                import os
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+24   <a href="#^6d2c14e">^6d2c14e</a> - import re</div>
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+26   <a href="#^6d2c14e">^6d2c14e</a> - import lsst.daf.base as dafBase</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+27   <a href="#^6d2c14e">^6d2c14e</a> - import lsst.daf.persistence as dafPersist</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+25   <a href="#321846d1">321846d1</a> + import lsst.utils</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+26   <a href="#da5dc75c">da5dc75c</a> + import lsst.afw.image.utils as afwImageUtils</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+27   <a href="#da5dc75c">da5dc75c</a> + from lsst.daf.butlerUtils import CameraMapper</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+28   <a href="#da5dc75c">da5dc75c</a> + import lsst.pex.policy as pexPolicy</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+29   <a href="#da5dc75c">da5dc75c</a> + from .testCamera import TestCamera</div>
+                
+                __all__ = ["TestMapper"]
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+31   <a href="#adf9f2d5">adf9f2d5</a> - class TestMapper(dafPersist.Mapper):</div>
+              ?                  ^ ^^  ^^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+33   <a href="#da5dc75c">da5dc75c</a> + class TestMapper(CameraMapper):</div>
+              ?                  ^ ^  ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+34   <a href="#00bafa67">00bafa67</a> +     packageName = 'obs_test'</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+32   <a href="#0222e582">0222e582</a> -     def __init__(self, root=None, calibRoot=None, outputRoot=None, **kwargs):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+33   <a href="#0222e582">0222e582</a> -         super(TestMapper, self).__init__()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+34   <a href="#0222e582">0222e582</a> -         self.root = root</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+35   <a href="#0222e582">0222e582</a> -         self.calibRoot = calibRoot</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+36   <a href="#01cad6e9">01cad6e9</a> -         if outputRoot is None:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+37   <a href="#01cad6e9">01cad6e9</a> -             outputRoot = root</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+38   <a href="#0222e582">0222e582</a> -         self.outputRoot = outputRoot</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+39   <a href="#0222e582">0222e582</a> -         self.keyDict = dict(</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+40   <a href="#0222e582">0222e582</a> -                 skyTile=int,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+41   <a href="#0222e582">0222e582</a> -                 visit=int,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+42   <a href="#0222e582">0222e582</a> -                 raft=str,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+43   <a href="#0222e582">0222e582</a> -                 sensor=str,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+44   <a href="#0222e582">0222e582</a> -                 snap=int,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+45   <a href="#0222e582">0222e582</a> -                 channel=str</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+46   <a href="#0222e582">0222e582</a> -                 )</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+47   <a href="#0222e582">0222e582</a> -         self.levels = dict(</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+48   <a href="#0222e582">0222e582</a> -                 skyTile=['visit', 'raft', 'sensor', 'snap', 'channel'],</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+49   <a href="#0222e582">0222e582</a> -                 visit=['snap', 'raft', 'sensor', 'channel'],</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+50   <a href="#0222e582">0222e582</a> -                 raft=['snap', 'sensor', 'channel'],</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+51   <a href="#0222e582">0222e582</a> -                 sensor=['snap', 'channel'],</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+52   <a href="#0222e582">0222e582</a> -                 snap=['channel']</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+53   <a href="#0222e582">0222e582</a> -                 )</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+54   <a href="#0222e582">0222e582</a> -         self.defaultLevel = 'sensor'</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+55   <a href="#0222e582">0222e582</a> -         self.defaultSubLevels = dict(</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+56   <a href="#0222e582">0222e582</a> -                 skyTile='sensor',</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+57   <a href="#0222e582">0222e582</a> -                 visit='sensor',</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+58   <a href="#0222e582">0222e582</a> -                 raft='sensor',</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+59   <a href="#0222e582">0222e582</a> -                 sensor='channel'</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+60   <a href="#0222e582">0222e582</a> -                 )</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+61   <a href="#0222e582">0222e582</a> -         self.dictList = []</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+62   <a href="#0222e582">0222e582</a> -         for raft in ["0,1", "0,2", "0,3"]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+63   <a href="#0222e582">0222e582</a> -             for sensor in ["0,1", "1,0", "1,1"]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+64   <a href="#0222e582">0222e582</a> -                 for snap in [0, 1]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+65   <a href="#0222e582">0222e582</a> -                     for channel in ["0,0", "0,1", "1,0", "1,1"]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+66   <a href="#0222e582">0222e582</a> -                         self.dictList.append(dict(</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+67   <a href="#0222e582">0222e582</a> -                             skyTile=1,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+68   <a href="#0222e582">0222e582</a> -                             visit=85470982,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+69   <a href="#0222e582">0222e582</a> -                             raft=raft,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+70   <a href="#0222e582">0222e582</a> -                             sensor=sensor,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+71   <a href="#0222e582">0222e582</a> -                             snap=snap,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+72   <a href="#0222e582">0222e582</a> -                             channel=channel</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+73   <a href="#0222e582">0222e582</a> -                             ))</div>
+                
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+36   <a href="#da5dc75c">da5dc75c</a> +     def __init__(self, inputPolicy=None, **kwargs):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+37   <a href="#00bafa67">00bafa67</a> +         policyFile = pexPolicy.DefaultPolicyFile(self.packageName, "testMapper.paf", "policy")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+38   <a href="#da5dc75c">da5dc75c</a> +         policy = pexPolicy.Policy(policyFile)</div>
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+76   <a href="#0222e582">0222e582</a> -     def keys(self):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+77   <a href="#0222e582">0222e582</a> -         return self.keyDict.iterkeys()</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+40   <a href="#da5dc75c">da5dc75c</a> +         self.doFootprints = False</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+41   <a href="#da5dc75c">da5dc75c</a> +         if inputPolicy is not None:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+42   <a href="#da5dc75c">da5dc75c</a> +             for kw in inputPolicy.paramNames(True):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+43   <a href="#da5dc75c">da5dc75c</a> +                 if kw == "doFootprints":</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+44   <a href="#da5dc75c">da5dc75c</a> +                     self.doFootprints = True</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+45   <a href="#da5dc75c">da5dc75c</a> +                 else:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+46   <a href="#da5dc75c">da5dc75c</a> +                     kwargs[kw] = inputPolicy.get(kw)</div>
+                
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+48   <a href="#da5dc75c">da5dc75c</a> +         CameraMapper.__init__(self, policy, policyFile.getRepositoryPath(), **kwargs)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+49   <a href="#da5dc75c">da5dc75c</a> +         self.filterIdMap = {</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+50   <a href="#da5dc75c">da5dc75c</a> +                 'u': 0, 'g': 1, 'r': 2, 'i': 3, 'z': 4, 'y': 5, 'i2': 5}</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+79   <a href="#0222e582">0222e582</a> -     def getKeys(self, datasetType, level):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+80   <a href="#0222e582">0222e582</a> -         keyDict = self.keyDict</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+81   <a href="#0222e582">0222e582</a> -         if level is not None and level in self.levels:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+82   <a href="#0222e582">0222e582</a> -             keyDict = dict(keyDict)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+83   <a href="#0222e582">0222e582</a> -             for l in self.levels[level]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+84   <a href="#0222e582">0222e582</a> -                 if l in keyDict:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+85   <a href="#0222e582">0222e582</a> -                     del keyDict[l]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+86   <a href="#0222e582">0222e582</a> -         return keyDict</div>
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+88   <a href="#d2c979e4">d2c979e4</a> -     @classmethod</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+89   <a href="#d2c979e4">d2c979e4</a> -     def getCameraName(cls):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+90   <a href="#279b2597">279b2597</a> -         return "test"</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+91   <a href="#279b2597">279b2597</a> -     </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+92   <a href="#d2c979e4">d2c979e4</a> -     @classmethod</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+93   <a href="#2ce00d57">2ce00d57</a> -     def getEupsProductName(cls):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+94   <a href="#279b2597">279b2597</a> -         return "obs_test"</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+52   <a href="#da5dc75c">da5dc75c</a> +         # The LSST Filters from L. Jones 04/07/10</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+53   <a href="#da5dc75c">da5dc75c</a> +         afwImageUtils.defineFilter('u', 364.59)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+54   <a href="#da5dc75c">da5dc75c</a> +         afwImageUtils.defineFilter('g', 476.31)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+55   <a href="#da5dc75c">da5dc75c</a> +         afwImageUtils.defineFilter('r', 619.42)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+56   <a href="#da5dc75c">da5dc75c</a> +         afwImageUtils.defineFilter('i', 752.06)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+57   <a href="#da5dc75c">da5dc75c</a> +         afwImageUtils.defineFilter('z', 866.85)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+58   <a href="#da5dc75c">da5dc75c</a> +         afwImageUtils.defineFilter('y', 971.68, alias=['y4']) # official y filter</div>
+                
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+60   <a href="#da5dc75c">da5dc75c</a> +         self.camera = TestCamera()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+96   <a href="#0222e582">0222e582</a> -     def getDefaultLevel(self):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+97   <a href="#0222e582">0222e582</a> -         return self.defaultLevel</div>
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+99   <a href="#0222e582">0222e582</a> -     def getDefaultSubLevel(self, level):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+100  <a href="#0222e582">0222e582</a> -         if level in self.defaultSubLevels:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+101  <a href="#0222e582">0222e582</a> -             return self.defaultSubLevels[level]</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+62   <a href="#da5dc75c">da5dc75c</a> +     def _extractDetectorName(self, dataId):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+63   <a href="#da5dc75c">da5dc75c</a> +         return "0"</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+64   <a href="#da5dc75c">da5dc75c</a> + </div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+65   <a href="#da5dc75c">da5dc75c</a> +     def _defectLookup(self, dataId):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+66   <a href="#da5dc75c">da5dc75c</a> +         """Find the defects for a given CCD.</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+67   <a href="#da5dc75c">da5dc75c</a> +         @param dataId (dict) Dataset identifier</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+68   <a href="#da5dc75c">da5dc75c</a> +         @return (string) path to the defects file or None if not available</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+69   <a href="#da5dc75c">da5dc75c</a> +         """</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+70   <a href="#321846d1">321846d1</a> +         obsTestDir = lsst.utils.getPackageDir('obs_test')</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+71   <a href="#da5dc75c">da5dc75c</a> + </div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+72   <a href="#da5dc75c">da5dc75c</a> +         return os.path.join(obsTestDir, "data", "input", "defects", "defects.fits")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+73   <a href="#da5dc75c">da5dc75c</a> + </div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+74   <a href="#da5dc75c">da5dc75c</a> +     def _computeCcdExposureId(self, dataId):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+75   <a href="#da5dc75c">da5dc75c</a> +         """Compute the 64-bit (long) identifier for a CCD exposure.</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+76   <a href="#da5dc75c">da5dc75c</a> + </div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+77   <a href="#da5dc75c">da5dc75c</a> +         @param dataId (dict) Data identifier with visit</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+78   <a href="#da5dc75c">da5dc75c</a> +         """</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+79   <a href="#da5dc75c">da5dc75c</a> +         visit = dataId['visit']</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+80   <a href="#da5dc75c">da5dc75c</a> +         return long(visit)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+81   <a href="#da5dc75c">da5dc75c</a> + </div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+82   <a href="#0f3b356a">0f3b356a</a> +     def bypass_camera(self, *args, **kwargs):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+83   <a href="#0f3b356a">0f3b356a</a> +         """Return the camera object. All arguments are ignored.</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+84   <a href="#0f3b356a">0f3b356a</a> +         """</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+85   <a href="#0f3b356a">0f3b356a</a> +         print("***** bypass_camera(*args=%r, **kwargs=%r)" % (args, kwargs))</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+86   <a href="#0f3b356a">0f3b356a</a> +         return self.camera</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+87   <a href="#da5dc75c">da5dc75c</a> +     def bypass_ccdExposureId(self, datasetType, pythonType, location, dataId):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+88   <a href="#da5dc75c">da5dc75c</a> +         return self._computeCcdExposureId(dataId)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+89   <a href="#da5dc75c">da5dc75c</a> + </div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+90   <a href="#da5dc75c">da5dc75c</a> +     def bypass_ccdExposureId_bits(self, datasetType, pythonType, location, dataId):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+102  <a href="#0222e582">0222e582</a> -         return None</div>
+              ?                ^^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+91   <a href="#da5dc75c">da5dc75c</a> +         return 41</div>
+              ?                ^^
+                
+                    def validate(self, dataId):
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+94   <a href="#da5dc75c">da5dc75c</a> +         visit = dataId.get("visit")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+95   <a href="#da5dc75c">da5dc75c</a> +         if visit is not None and not isinstance(visit, int):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+96   <a href="#da5dc75c">da5dc75c</a> +             dataId["visit"] = int(visit)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+105  <a href="#0222e582">0222e582</a> -         for component in ("raft", "sensor", "channel"):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+106  <a href="#0222e582">0222e582</a> -             if component not in dataId:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+107  <a href="#0222e582">0222e582</a> -                 continue</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+108  <a href="#0222e582">0222e582</a> -             id = dataId[component]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+109  <a href="#0222e582">0222e582</a> -             if not isinstance(id, str):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+110  <a href="#0222e582">0222e582</a> -                 raise RuntimeError, \</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+111  <a href="#0222e582">0222e582</a> -                         "%s identifier should be type str, not %s: %s" % \</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+112  <a href="#0222e582">0222e582</a> -                         (component.title(), type(id), repr(id))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+113  <a href="#0222e582">0222e582</a> -             if not re.search(r'^(\d),(\d)$', id):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+114  <a href="#0222e582">0222e582</a> -                 raise RuntimeError, \</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+115  <a href="#0222e582">0222e582</a> -                         "Invalid %s identifier: %s" % (component, repr(id))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+116  <a href="#0222e582">0222e582</a> -         for component in ("visit", "snap"):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+117  <a href="#0222e582">0222e582</a> -             if component not in dataId:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+118  <a href="#0222e582">0222e582</a> -                 continue</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+119  <a href="#0222e582">0222e582</a> -             id = dataId[component]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+120  <a href="#0222e582">0222e582</a> -             if not isinstance(id, int) and not isinstance(id, long):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+121  <a href="#0222e582">0222e582</a> -                 raise RuntimeError, \</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+122  <a href="#0222e582">0222e582</a> -                         "%s identifier should be int or long, not %s: %s" % \</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+123  <a href="#0222e582">0222e582</a> -                         (component.title(), type(id), repr(id))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+124  <a href="#0222e582">0222e582</a> -             if component == "snap":</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+125  <a href="#0222e582">0222e582</a> -                 if id < 0 or id > 1:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+126  <a href="#0222e582">0222e582</a> -                     raise RuntimeError, \</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+127  <a href="#0222e582">0222e582</a> -                             "Invalid snap identifier: %d" % (id,)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+128  <a href="#0222e582">0222e582</a> - </div>
+                        return dataId
+                
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+99   <a href="#da5dc75c">da5dc75c</a> +     def _setCcdExposureId(self, propertyList, dataId):</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+100  <a href="#da5dc75c">da5dc75c</a> +         propertyList.set("Computed_ccdExposureId", self._computeCcdExposureId(dataId))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+131  <a href="#90101006">90101006</a> -     def map_raw(self, dataId, write=False):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+132  <a href="#0222e582">0222e582</a> -         loc = "raw-v%(visit)d-E%(snap)03d-r%(raft)s-s%(sensor)s-c%(channel)s.pickle" % dataId</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+133  <a href="#0222e582">0222e582</a> -         loc = os.path.join(self.root, loc)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+134  <a href="#0222e582">0222e582</a> -         return dafPersist.ButlerLocation(None, "ImageU", "PickleStorage",</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+135  <a href="#0222e582">0222e582</a> -                 [loc], dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+136  <a href="#0222e582">0222e582</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+137  <a href="#0222e582">0222e582</a> -     def std_raw(self, object, dataId):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+138  <a href="#0222e582">0222e582</a> -         return str(object) + "/" + str(dataId['visit'])</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+139  <a href="#0222e582">0222e582</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+140  <a href="#90101006">90101006</a> -     def map_processCcd_config(self, dataId, write=False):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+141  <a href="#099dd425">099dd425</a> -         loc = "config/processCcd.py"</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+142  <a href="#054a134e">054a134e</a> -         loc = os.path.join(self.outputRoot, loc)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+143  <a href="#05227dc8">05227dc8</a> -         return dafPersist.ButlerLocation("lsst.obs.test.TestConfig", "Config", "ConfigStorage",</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+144  <a href="#0222e582">0222e582</a> -                 [loc], dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+145  <a href="#0222e582">0222e582</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+146  <a href="#90101006">90101006</a> -     def map_processCcd_metadata(self, dataId, write=False):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+147  <a href="#0222e582">0222e582</a> -         loc = "md-v%(visit)d-r%(raft)s-s%(sensor)s.boost" % dataId</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+148  <a href="#054a134e">054a134e</a> -         loc = os.path.join(self.outputRoot, loc)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+149  <a href="#0222e582">0222e582</a> -         return dafPersist.ButlerLocation(</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+150  <a href="#0222e582">0222e582</a> -                 "lsst.daf.base.PropertySet", "PropertySet", "BoostStorage",</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+151  <a href="#0222e582">0222e582</a> -                 [loc], dataId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+152  <a href="#0222e582">0222e582</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+153  <a href="#0222e582">0222e582</a> -     def query_raw(self, level, format, dataId):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+154  <a href="#0222e582">0222e582</a> -         result = set()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+155  <a href="#0222e582">0222e582</a> -         for d in self.dictList:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+156  <a href="#0222e582">0222e582</a> -             where = True</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+157  <a href="#0222e582">0222e582</a> -             for k in dataId.iterkeys():</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+158  <a href="#0222e582">0222e582</a> -                 if k not in d:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+159  <a href="#0222e582">0222e582</a> -                     raise RuntimeError("%s not in %s" % (k, repr(d)))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+160  <a href="#0222e582">0222e582</a> -                 if d[k] != dataId[k]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+161  <a href="#0222e582">0222e582</a> -                     where = False</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+162  <a href="#0222e582">0222e582</a> -                     break</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+163  <a href="#0222e582">0222e582</a> -             if where:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+164  <a href="#0222e582">0222e582</a> -                 values = []</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+165  <a href="#0222e582">0222e582</a> -                 for k in format:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+166  <a href="#0222e582">0222e582</a> -                     values.append(d[k])</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+167  <a href="#0222e582">0222e582</a> -                 result.add(tuple(values))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+168  <a href="#0222e582">0222e582</a> -         return result</div>
+              ?                   --
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+101  <a href="#da5dc75c">da5dc75c</a> +         return propertyList</div>
+              ?                + ++ +++++
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/obs_test/</h2>
+<h3><a name="054a134e"/></a>054a134e</h3>
+
+<pre>
+commit 054a134eed810425c44373315e8947dbee005854
+Author: Kian-Tat Lim <ktl@slac.stanford.edu>
+Date:   Wed Mar 28 09:10:38 2012 -0700
+
+    Put processCcd config and metadata into output root instead of input root.
+</pre>
+<h3><a name="90101006"/></a>90101006</h3>
+
+<pre>
+commit 9010100681e26864987e004bf72ec88b79233291
+Author: Kian-Tat Lim <ktl@slac.stanford.edu>
+Date:   Thu Jul 12 14:22:49 2012 -0500
+
+    Add new write argument to mapper functions.
+</pre>
+<h3><a name="099dd425"/></a>099dd425</h3>
+
+<pre>
+commit 099dd425a0c793930db4070245ef5e2348ace3bf
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Apr 10 11:55:25 2013 -0400
+
+    Fix config entry in test mapper to fix problems in pipe_base unit tests.
+</pre>
+<h3><a name="0222e582"/></a>0222e582</h3>
+
+<pre>
+commit 0222e582b6fbf1c175c631a7495651037b266695
+Author: Kian-Tat Lim <ktl@slac.stanford.edu>
+Date:   Sat Mar 17 00:37:38 2012 -0700
+
+    Complete mapper (except bypass functionality.  Add input data for raw.
+</pre>
+<h3><a name="279b2597"/></a>279b2597</h3>
+
+<pre>
+commit 279b25970b50941d7b6338a0a812fc0c4ee197fc
+Author: Russell Owen <rowen@uw.edu>
+Date:   Thu Oct 11 16:59:44 2012 -0700
+
+    Added methods getCameraName and getEupsPackageName to the mapper, so pipe_base unit tests work.
+    Added _mapper to the test repository.
+</pre>
+<h3><a name="2ce00d57"/></a>2ce00d57</h3>
+
+<pre>
+commit 2ce00d57d21fd2b9f3978b1ba5ea2bb64c438d97
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Oct 16 17:16:10 2012 -0500
+
+    Fix name of mapper method
+</pre>
+<h3><a name="adf9f2d5"/></a>adf9f2d5</h3>
+
+<pre>
+commit adf9f2d54f692c3ca8a8b971c7cd0b24e4ef5d1a
+Author: Kian-Tat Lim <ktl@slac.stanford.edu>
+Date:   Fri Mar 16 10:52:53 2012 -0700
+
+    Rename from obs_dummy to obs_test.
+</pre>
+<h3><a name="01cad6e9"/></a>01cad6e9</h3>
+
+<pre>
+commit 01cad6e9226ce2f09063f595a613db02f66cbb14
+Author: Kian-Tat Lim <ktl@slac.stanford.edu>
+Date:   Wed Mar 28 09:15:00 2012 -0700
+
+    Fix up tests and deal with no output root.
+</pre>
+<h3><a name="^6d2c14e"/></a>^6d2c14e</h3>
+
+<pre>
+
+</pre>
+<h3><a name="d2c979e4"/></a>d2c979e4</h3>
+
+<pre>
+commit d2c979e47d2d9bd75d2b41828d5acb23f9f13dfe
+Author: Russell Owen <rowen@uw.edu>
+Date:   Fri Oct 12 15:16:29 2012 -0700
+
+    Make new methods class methods, like daf_* tickets/2381
+</pre>
+<h3><a name="05227dc8"/></a>05227dc8</h3>
+
+<pre>
+commit 05227dc837788077356d51f058b8c17d96d0904f
+Author: Russell Owen <rowen@uw.edu>
+Date:   Fri May 17 16:03:06 2013 -0700
+
+    Committed some changes that I thought were already there. Now uses TestConfig and tests for it.
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/obs_test/</h2>
+<h3><a name="0f3b356a"/></a>0f3b356a</h3>
+
+<pre>
+commit 0f3b356a9c1291431ad4ee0c99a729a689822e17
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Nov 19 13:15:38 2014 -0800
+
+    Review response.
+    
+    Changes include:
+    - Fix outdated code in bin/genInputRegistry.py (no ccd key; also modified to use argparse).
+    - Updated the registry database file. It was missing some entries and the format changed
+      when I updated bin/genImputRegistry.py.
+    - Made all tests/utils use argparse and removed file doc strings (use argparse help instead).
+    - Simplified testMapper.paf as per K-T's suggestions (except that removing table entries
+      made tests fail, so I did not do that).
+    - Removed convertDefecs.py because it was too fragile. I you used the wrong
+      version of obs_lsstSim to get your defects the resulting defects were unusable;
+      using defectsFromBias.py is much safer.
+    - Updated tests/map.py for the above changes and made testQueryMetadata more thorough.
+</pre>
+<h3><a name="da5dc75c"/></a>da5dc75c</h3>
+
+<pre>
+commit da5dc75c89d2c9446f40310881f7a74e3f3a44f6
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Nov 4 16:01:10 2014 -0800
+
+    New data, camera and mapper
+    
+    The old data is still present and the unit tests assume the old mapper.
+</pre>
+<h3><a name="00bafa67"/></a>00bafa67</h3>
+
+<pre>
+commit 00bafa67ee9fb251fb0a2d0a322da027bf1f7b69
+Author: Joshua Hoblitt <josh@hoblitt.com>
+Date:   Tue May 26 12:36:06 2015 -0700
+
+    remove getEupsProductName method from CameraMapper subclasses
+    
+    Replaced by the packageName class variable and getPackageName() method.
+</pre>
+<h3><a name="321846d1"/></a>321846d1</h3>
+
+<pre>
+commit 321846d197701e37c03b8533c020e8c3d3acd423
+Author: Joshua Hoblitt <josh@hoblitt.com>
+Date:   Fri May 22 12:11:56 2015 -0700
+
+    replace eups.productDir() calls with lsst.utils.getPackageDir()
+</pre>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="python/lsst/obs/test/testConfig.py"/></a>python/lsst/obs/test/testConfig.py
+### Diff:
+
+<pre>
+                #!/usr/bin/env python
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                import lsst.pex.config as pexConfig
+                
+                __all__ = ["TestConfig"]
+                
+                class TestConfig(pexConfig.Config):
+                    floatField = pexConfig.Field(doc="float field", dtype=float, default=3.1)
+                    strField = pexConfig.Field(doc="str field", dtype=str, default="default for strField")
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+30   <a href="#22248e4b">22248e4b</a> +     doFail = pexConfig.Field(doc="should the task fail?", dtype=bool, default=False)</div>
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/obs_test/</h2>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/obs_test/</h2>
+<h3><a name="22248e4b"/></a>22248e4b</h3>
+
+<pre>
+commit 22248e4bdb2788586d0e41494245584ce28d6146
+Author: Russell Owen <rowen@uw.edu>
+Date:   Fri Nov 21 13:24:31 2014 -0800
+
+    Add a field to the test config.
+</pre>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="ups/obs_test.table"/></a>ups/obs_test.table
+### Diff:
+
+<pre>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#3fbc8647">3fbc8647</a> + setupRequired(afw)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#^6d2c14e">^6d2c14e</a> - setupRequired(daf_base >= 4.6.0.0)</div>
+              ?                       -----------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+2    <a href="#1c0851e0">1c0851e0</a> + setupRequired(daf_base)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+3    <a href="#da5dc75c">da5dc75c</a> + setupRequired(daf_butlerUtils)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+2    <a href="#^6d2c14e">^6d2c14e</a> - setupRequired(pex_policy >= 4.6.0.0)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+3    <a href="#^6d2c14e">^6d2c14e</a> - setupRequired(daf_persistence >= 4.6.0.0)</div>
+                setupRequired(pex_config)
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+5    <a href="#1eed540e">1eed540e</a> + setupRequired(pex_policy)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+6    <a href="#1eed540e">1eed540e</a> + setupRequired(numpy)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+7    <a href="#1eed540e">1eed540e</a> + setupRequired(skypix)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+8    <a href="#1eed540e">1eed540e</a> + setupRequired(utils)</div>
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+6    <a href="#^6d2c14e">^6d2c14e</a> - envAppend(PYTHONPATH, ${PRODUCT_DIR}/python)</div>
+              ?    ^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+10   <a href="#13888858">13888858</a> + envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)</div>
+              ?    ^^^
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/obs_test/</h2>
+<h3><a name="^6d2c14e"/></a>^6d2c14e</h3>
+
+<pre>
+
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/obs_test/</h2>
+<h3><a name="1eed540e"/></a>1eed540e</h3>
+
+<pre>
+commit 1eed540e2c645ba548b9f71a2dd759df27d5cf45
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed May 27 16:28:54 2015 -0700
+
+    Update obs_test.table to add missing entries
+    
+    ups/obs_test.table was missing some entries for packages
+    needed by unit tests and bin/genInputRegistry.py.
+    Note that there are additional entries, including ip_isr, pyfits and meas_algorithms,
+    that are required by code in data/utils. That code is only used to generate the
+    data repository in this package, and so is essentially never run. Adding
+    the extra entries to the ups table file would create needless extra dependencies,
+    and in the case of meas_algorithms it would create a circular dependency.
+</pre>
+<h3><a name="3fbc8647"/></a>3fbc8647</h3>
+
+<pre>
+commit 3fbc8647bbc22ff2c3fdc2d08e7f93764e2d0298
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue May 26 11:31:08 2015 -0700
+
+    Update UPS table file
+    
+    Changes include:
+    - Added afw
+    - Removed daf_persistence (since it is not directly used by any code in the package)
+    - Added meas_algorithms and skypix as optional entries and made daf_base optional,
+      because they are only used by bin/genInputRegistry.py, which is only used
+      to generate data for the input repository.
+    
+    Try to fix a bug
+    
+    I fixed a table issue (meas_algorithms creates a circular dependency)
+</pre>
+<h3><a name="da5dc75c"/></a>da5dc75c</h3>
+
+<pre>
+commit da5dc75c89d2c9446f40310881f7a74e3f3a44f6
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Nov 4 16:01:10 2014 -0800
+
+    New data, camera and mapper
+    
+    The old data is still present and the unit tests assume the old mapper.
+</pre>
+<h3><a name="1c0851e0"/></a>1c0851e0</h3>
+
+<pre>
+commit 1c0851e0d7d36f611f90be7b3f2770438cf9ec61
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:27 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+<h3><a name="13888858"/></a>13888858</h3>
+
+<pre>
+commit 1388885866c58a5706748023d2d2bb49e6c07b94
+Author: Robyn Allsman <robyn@LSST.org>
+Date:   Mon Nov 17 10:06:00 2014 -0600
+
+    Replace envAppend with envPrepend in ups table files.
+</pre>
+</div>
+
+
+[Return to list](#homelist)

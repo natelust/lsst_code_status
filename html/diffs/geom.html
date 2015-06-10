@@ -1,0 +1,1713 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>geom</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+</head>
+<body>
+<h1 id="toc_0">Comparison of the geom repository</h1>
+
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of Repositories</h1>
+<p>
+Comparison run at 11:34AM on June 09, 2015<br>
+There are <b>13</b> differences between the two repositories<br><br>
+Repository <b>/Users/nate/repos_hsc/geom/</b> <br> Revision <b>55d2df5aa432ac45998b7d2794eb18ad1edcf35f</b><br> Branch <b>master</b><br>Last commit was on <b>2013-12-06 16:33:23 -0500</b><br><br>
+Repository <b>/Users/nate/repos_lsst/geom/</b> <br> Revision <b>e36792e6e9d9e1dba9c850006c7d1175100e0ab0</b><br> Branch <b>master</b><br>Last commit was on <b>2014-06-15 11:06:07 +0200</b><br><br>
+</p>
+</div>
+
+<hr>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/geom/</h1>
+<h2>ups/geom.build</h2>
+<pre>
+commit 55d2df5aa432ac45998b7d2794eb18ad1edcf35f
+Merge: 5fee226 c9c4c90
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Dec 6 16:33:23 2013 -0500
+
+    Merge remote-tracking branch 'lsst/master'</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_lsst/geom/</h1>
+</div>
+
+<h1 id="toc_1">List of the files in common<a name="homelist"></a></h1>
+
+<p>Files without links do not differ</p>
+
+<ul>
+<li><code>doc/doxygen.conf.in</code></li>
+<li><a href="#tests/geometry.py"><code>tests/geometry.py</code></a></li>
+<li><a href="#ups/geom.cfg"><code>ups/geom.cfg</code></a></li>
+<li><code>python/lsst/geom/__init__.py</code></li>
+<li><code>doc/SConscript</code></li>
+<li><code>.gitignore</code></li>
+<li><a href="#python/lsst/__init__.py"><code>python/lsst/__init__.py</code></a></li>
+<li><code>python/lsst/geom/geometry.py</code></li>
+<li><a href="#ups/geom.table"><code>ups/geom.table</code></a></li>
+<li><code>SConstruct</code></li>
+<li><code>tests/SConscript</code></li>
+</ul>
+
+<h1 id="toc_2"><a name="tests/geometry.py"/></a>tests/geometry.py</h1>
+
+<h3 id="toc_3">Diff:</h3>
+
+<pre>
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+                import math
+                import pdb
+                import random
+                import unittest
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+28   <a href="#878850a6">878850a6</a> - import lsst.utils.tests as utilsTests</div>
+                import lsst.geom.geometry as g
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+30   <a href="#9693bebc">9693bebc</a> - </div>
+                
+                def _pointsOnCircle(c, r, n, clockwise=False):
+                    """Generates an n-gon lying on the circle with center c and
+                    radius r. Vertices are equi-spaced.
+                    """
+                    c = g.cartesianUnitVector(c)
+                    north, east = g.northEast(c)
+                    points = []
+                    sr = math.sin(math.radians(r))
+                    cr = math.cos(math.radians(r))
+                    aoff = random.uniform(0.0, 2.0 * math.pi)
+                    for i in xrange(n):
+                        a = 2.0 * i * math.pi / n
+                        if not clockwise:
+                            a = -a
+                        sa = math.sin(a + aoff)
+                        ca = math.cos(a + aoff)
+                        p = (ca * north[0] + sa * east[0],
+                             ca * north[1] + sa * east[1],
+                             ca * north[2] + sa * east[2])
+                        points.append(g.normalize((cr * c[0] + sr * p[0],
+                                                   cr * c[1] + sr * p[1],
+                                                   cr * c[2] + sr * p[2])))
+                    return points
+                
+                def _pointsOnEllipse(c, smaa, smia, ang, n):
+                    """Generates points lying on the ellipse with center c,
+                    semi-major/semi-minor axis lengths smaa/smia, and major axis
+                    angle (E of N) ang.
+                    """
+                    points = []
+                    c = g.cartesianUnitVector(c)
+                    north, east = g.northEast(c)
+                    sa = math.sin(math.radians(ang))
+                    ca = math.cos(math.radians(ang))
+                    smaa = math.radians(smaa * g.DEG_PER_ARCSEC)
+                    smia = math.radians(smia * g.DEG_PER_ARCSEC)
+                    aoff = random.uniform(0.0, 2.0 * math.pi)
+                    for i in xrange(n):
+                        a = aoff + 2.0 * i * math.pi / n
+                        x = smaa * math.cos(a)
+                        y = smia * math.sin(a)
+                        # rotate x, y by a
+                        nc = ca * x - sa * y
+                        ec = sa * x + ca * y
+                        cc = math.sqrt(abs(1.0 - nc * nc - ec * ec))
+                        points.append(g.normalize((cc * c[0] + nc * north[0] + ec * east[0],
+                                                   cc * c[1] + nc * north[1] + ec * east[1],
+                                                   cc * c[2] + nc * north[2] + ec * east[2])))
+                    return points
+                
+                
+                class UtilsTestCase(unittest.TestCase):
+                    """Tests for geometry related utility methods.
+                    """
+                    def testCross(self):
+                        v = g.cross((1.0, 0.0, 0.0), (0.0, 1.0, 0.0))
+                        self.assertEqual(v, (0.0, 0.0, 1.0))
+                        v = g.cross((0.0, 1.0, 0.0), (1.0, 0.0, 0.0))
+                        self.assertEqual(v, (0.0, 0.0, -1.0))
+                        v = g.cross((0.0, 1.0, 0.0), (0.0, 0.0, 1.0))
+                        self.assertEqual(v, (1.0, 0.0, 0.0))
+                        v = g.cross((0.0, 0.0, 1.0), (0.0, 1.0, 0.0))
+                        self.assertEqual(v, (-1.0, 0.0, 0.0))
+                        v = g.cross((0.0, 0.0, 1.0), (1.0, 0.0, 0.0))
+                        self.assertEqual(v, (0.0, 1.0, 0.0))
+                        v = g.cross((1.0, 0.0, 0.0), (0.0, 0.0, 1.0))
+                        self.assertEqual(v, (0.0, -1.0, 0.0))
+                
+                    def testDot(self):
+                        d = g.dot((1.0, 0.0, 0.0), (1.0, 0.0, 0.0))
+                        self.assertEqual(d, 1.0)
+                        d = g.dot((0.0, 1.0, 0.0), (0.0, 1.0, 0.0))
+                        self.assertEqual(d, 1.0)
+                        d = g.dot((0.0, 0.0, 1.0), (0.0, 0.0, 1.0))
+                        self.assertEqual(d, 1.0)
+                        d = g.dot((0.0, 0.0, 1.0), (1.0, 0.0, 0.0))
+                        self.assertEqual(d, 0.0)
+                
+                    def testNormalize(self):
+                        self.assertRaises(RuntimeError, g.normalize, (0.0, 0.0, 0.0))
+                        v = g.normalize((1.0, 1.0, 1.0))
+                        self.assertAlmostEqual(g.dot(v, v), 1.0)
+                
+                    def testSphericalCoords(self):
+                        sc = g.sphericalCoords((1.0, 1.0))
+                        self.assertEqual(sc, (1.0, 1.0))
+                        sc = g.sphericalCoords((1.0, 0.0, 0.0))
+                        self.assertAlmostEqual(sc[0], 0.0)
+                        self.assertAlmostEqual(sc[1], 0.0)
+                        sc = g.sphericalCoords((0.0, 1.0, 0.0))
+                        self.assertAlmostEqual(sc[0], 90.0)
+                        self.assertAlmostEqual(sc[1], 0.0)
+                        sc = g.sphericalCoords((0.0, -1.0, 0.0))
+                        self.assertAlmostEqual(sc[0], 270.0)
+                        self.assertAlmostEqual(sc[1], 0.0)
+                        sc = g.sphericalCoords((1.0, 1.0, 1.0))
+                        self.assertAlmostEqual(sc[0], 45.0)
+                        self.assertAlmostEqual(sc[1], 35.2643896827547)
+                
+                    def testCartesianUnitVector(self):
+                        v = g.cartesianUnitVector((1.0, 0.0, 0.0))
+                        self.assertEqual(v[0], 1.0)
+                        self.assertEqual(v[1], 0.0)
+                        self.assertEqual(v[2], 0.0)
+                        v = g.cartesianUnitVector((1.0, 1.0, 1.0))
+                        self.assertAlmostEqual(v[0], 0.577350269189626)
+                        self.assertAlmostEqual(v[1], 0.577350269189626)
+                        self.assertAlmostEqual(v[2], 0.577350269189626)
+                        v = g.cartesianUnitVector((45.0, 35.2643896827547))
+                        self.assertAlmostEqual(v[0], 0.577350269189626)
+                        self.assertAlmostEqual(v[1], 0.577350269189626)
+                        self.assertAlmostEqual(v[2], 0.577350269189626)
+                        v = g.cartesianUnitVector((180.0, 0.0))
+                        self.assertAlmostEqual(v[0], -1.0)
+                        self.assertAlmostEqual(v[1], 0.0)
+                        self.assertAlmostEqual(v[2], 0.0)
+                
+                    def testClampPhi(self):
+                        self.assertEqual(g.clampPhi(100.0), 90.0)
+                        self.assertEqual(g.clampPhi(-100.0), -90.0)
+                        self.assertEqual(g.clampPhi(0.0), 0.0)
+                
+                    def testAngularSep(self):
+                        tv = [((1.0, 1.0, 0.0), (1.0, 0.0, 0.0), 45.0),
+                              ((1.0, 1.0, 0.0), (0.0, 1.0, 0.0), 45.0),
+                              ((1.0, 0.0, 1.0), (1.0, 0.0, 0.0), 45.0),
+                              ((0.0, 1.0, 1.0), (0.0, 0.0, 1.0), 45.0),
+                              ((1.0, 1.0, 0.0), (1.0, -1.0, 0.0), 90.0),
+                              ((1.0, 0.0, 1.0), (1.0, 0.0, -1.0), 90.0)
+                             ]
+                        for v1, v2, a in tv:
+                            d = [g.cartesianAngularSep(v1, v2)]
+                            d.append(g.cartesianAngularSep(v2, v1))
+                            sc1, sc2 = g.sphericalCoords(v1), g.sphericalCoords(v2)
+                            d.append(g.sphericalAngularSep(sc1, sc2))
+                            d.append(g.sphericalAngularSep(sc2, sc1))
+                            for x in d:
+                                self.assertAlmostEqual(x, a)
+                
+                    def testAlpha(self):
+                        c = (0.0, 0.0)
+                        for r in (1.0, 10.0, 20.0, 45.0):
+                            self.assertEqual(g.alpha(r, 0.0, r + 1), None)
+                            self.assertEqual(g.alpha(r, 0.0, -r - 1), None)
+                            alpha = g.alpha(r, 0.0, 0.0)
+                            self.assertAlmostEqual(alpha, r)
+                            phi = 0.5 * r
+                            a1 = g.alpha(r, 0.0, phi)
+                            a2 = g.alpha(r, 0.0, -phi)
+                            self.assertAlmostEqual(a1, a2)
+                            self.assertAlmostEqual(g.sphericalAngularSep((a1, phi), c), r)
+                            self.assertAlmostEqual(g.sphericalAngularSep((-a1, phi), c), r)
+                            self.assertAlmostEqual(g.sphericalAngularSep((a2, -phi), c), r)
+                            self.assertAlmostEqual(g.sphericalAngularSep((-a2, -phi), c), r)
+                        c = (0.0, 89.0)
+                        self.assertEqual(g.alpha(3.0, 89.0, 89.0), None)
+                        c = (0.0, -89.0)
+                        self.assertEqual(g.alpha(3.0, -89.0, -89.0), None)
+                
+                    def testMaxAlpha(self):
+                        c = (0.0, 0.0)
+                        for r in (1.0, 10.0, 20.0, 45.0):
+                            for phi in (-40.0, -20.0, 0.0, 10.0, 40.0):
+                                a = g.maxAlpha(r, phi) + g.ANGLE_EPSILON
+                                for x in (phi, phi + r, phi - r):
+                                    self.assertTrue(g.sphericalAngularSep((a, x), c) > r)
+                                    self.assertTrue(g.sphericalAngularSep((-a, x), c) > r)
+                                points = _pointsOnCircle((0.0, phi), r, 50)
+                                box = g.SphericalBox((-a, phi - r - g.ANGLE_EPSILON),
+                                                     (a, phi + r + + g.ANGLE_EPSILON))
+                                for p in points:
+                                    self.assertTrue(box.contains(p))
+                
+                
+                class SphericalBoxTestCase(unittest.TestCase):
+                    """Tests for the SphericalBox class.
+                    """
+                    def testInit(self):
+                        b = g.SphericalBox()
+                        self.assertTrue(b.isEmpty())
+                        self.assertFalse(b.isFull())
+                        b = g.SphericalBox((0.0, -90.0), (360.0, 90.0))
+                        self.assertTrue(b.isFull())
+                        self.assertFalse(b.isEmpty())
+                        b = g.SphericalBox((-10.0, 0.0), (10.0, 0.0))
+                        self.assertEqual(b, g.SphericalBox((350.0, 0.0), (10.0, 0.0)))
+                        self.assertEqual(b, g.SphericalBox((350.0, 0.0), (370.0, 0.0)))
+                        self.assertRaises(RuntimeError, g.SphericalBox,
+                                          (350.0, 0.0), (-10.0, 0.0))
+                        self.assertRaises(RuntimeError, g.SphericalBox,
+                                          (390.0, 0.0), (-10.0, 0.0))
+                
+                    def testIntersects(self):
+                        # box-box intersection
+                        b1 = g.SphericalBox((0.0, 0.0), (10.0, 10.0))
+                        self.assertTrue(b1.intersects(b1))
+                        b2 = g.SphericalBox((0.0, 20.0), (20.0, 25.0))
+                        self.assertFalse(b1.intersects(b2))
+                        b2 = g.SphericalBox((0.0, -20.0), (20.0, -5.0))
+                        self.assertFalse(b1.intersects(b2))
+                        b2 = g.SphericalBox((30.0, 0.0), (40.0, 25.0))
+                        self.assertFalse(b1.intersects(b2))
+                        b2 = g.SphericalBox((350.0, 0.0), (359.0, 25.0))
+                        self.assertFalse(b1.intersects(b2))
+                        b2 = g.SphericalBox((0.0, 10.0), (20.0, 25.0))
+                        self.assertTrue(b1.intersects(b2))
+                        b2 = g.SphericalBox((10.0, 10.0), (20.0, 25.0))
+                        self.assertTrue(b1.intersects(b2))
+                        b2 = g.SphericalBox((350.0, -10.0), (360.0, 0.0))
+                        self.assertTrue(b1.intersects(b2))
+                        b2 = g.SphericalBox((-10.0, -10.0), (5.0, 0.0))
+                        self.assertTrue(b1.intersects(b2))
+                        b1 = g.SphericalBox((-5.0, -5.0), (1.0, 5.0))
+                        self.assertTrue(b1.intersects(b2))
+                
+                    def testContains(self):
+                        # box-box containment
+                        b1 = g.SphericalBox((10.0, 0.0), (20.0, 10.0))
+                        self.assertTrue(b1.contains(b1))
+                        b2 = g.SphericalBox((11.0, 0.0), (19.0, 10.0))
+                        self.assertTrue(b1.contains(b2))
+                        self.assertFalse(b2.contains(b1))
+                        b1 = g.SphericalBox((350.0, 0.0), (370.0, 10.0))
+                        b2 = g.SphericalBox((355.0, 0.0), (365.0, 10.0))
+                        self.assertTrue(b1.contains(b2))
+                        self.assertFalse(b2.contains(b1))
+                        b2 = g.SphericalBox((355.0, 0.0), (359.0, 10.0))
+                        self.assertTrue(b1.contains(b2))
+                        self.assertFalse(b2.contains(b1))
+                        b2 = g.SphericalBox((0.0, 0.0), (5.0, 10.0))
+                        self.assertTrue(b1.contains(b2))
+                        self.assertFalse(b2.contains(b1))
+                        # box-point containment
+                        b = g.SphericalBox((0.0, 0.0), (10.0, 10.0))
+                        self.assertTrue(b.contains(b.getMin()))
+                        self.assertTrue(b.contains(b.getMax()))
+                        self.assertTrue(b.contains(b.getCenter()))
+                        b = g.SphericalBox((350.0, 0.0), (370.0, 1.0))
+                        self.assertTrue(b.contains(b.getMin()))
+                        self.assertTrue(b.contains(b.getMax()))
+                        self.assertTrue(b.contains(b.getCenter()))
+                        self.assertTrue(b.contains((360.0, 0.5)))
+                        self.assertTrue(b.contains((720.0, 0.5)))
+                        self.assertTrue(b.contains((5.0, 0.5)))
+                        self.assertTrue(b.contains((355.0, 0.5)))
+                
+                    def testShrink(self):
+                        b1 = g.SphericalBox((0.0, 0.0), (10.0, 10.0))
+                        b2 = g.SphericalBox((10.0, 10.0), (20.0, 20.0))
+                        self.assertFalse(b1.contains(b2))
+                        self.assertTrue(b1.intersects(b2))
+                        b1.shrink(b2)
+                        self.assertEqual(b1, g.SphericalBox((10.0, 10.0), (10.0, 10.0)))
+                        b1 = g.SphericalBox((0.0, 0.0), (15.0, 10.0))
+                        b1.shrink(b2)
+                        self.assertFalse(b1.contains(b2))
+                        self.assertEqual(b1, g.SphericalBox((10.0, 10.0), (15.0, 10.0)))
+                        b1 = g.SphericalBox((0.0, 0.0), (10.0, 9.0))
+                        self.assertFalse(b1.contains(b2))
+                        self.assertFalse(b1.intersects(b2))
+                        self.assertTrue(b1.shrink(b2).isEmpty())
+                        b1 = g.SphericalBox((0.0, 0.0), (9.0, 15.0))
+                        self.assertFalse(b1.contains(b2))
+                        self.assertFalse(b1.intersects(b2))
+                        self.assertTrue(b1.shrink(b2).isEmpty())
+                        b1 = g.SphericalBox((350.0, 0.0), (370.0, 10.0))
+                        b2 = g.SphericalBox((5.0, 10.0), (355.0, 20.0))
+                        b1.shrink(b2)
+                        self.assertFalse(b1.contains(b2))
+                        self.assertTrue(b1.intersects(b2))
+                        self.assertEqual(b1, g.SphericalBox((350.0, 10.0), (370.0, 10.0)))
+                        b1 = g.SphericalBox((190.0, 0.0), (540.0, 10.0))
+                        b2 = g.SphericalBox((180.0, 10.0), (190.0, 20.0))
+                        b1.shrink(b2)
+                        self.assertFalse(b1.contains(b2))
+                        self.assertTrue(b1.intersects(b2))
+                        self.assertEqual(b1, g.SphericalBox((180.0, 10.0), (190.0, 10.0)))
+                
+                    def testExtend(self):
+                        # box-box extension
+                        b1 = g.SphericalBox((0.0, 0.0), (10.0, 10.0))
+                        b2 = g.SphericalBox((10.0, 10.0), (20.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((0.0, 0.0), (20.0, 20.0)))
+                        b1 = g.SphericalBox((350.0, 0.0), (370.0, 10.0))
+                        b2 = g.SphericalBox((10.0, 10.0), (20.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((350.0, 0.0), (380.0, 20.0)))
+                        b1 = g.SphericalBox((350.0, 0.0), (370.0, 10.0))
+                        b2 = g.SphericalBox((340.0, 10.0), (350.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((340.0, 0.0), (370.0, 20.0)))
+                        b1 = g.SphericalBox((350.0, 0.0), (370.0, 10.0))
+                        b2 = g.SphericalBox((5.0, 10.0), (355.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((0.0, 0.0), (360.0, 20.0)))
+                        b1 = g.SphericalBox((0.0, 0.0), (10.0, 10.0))
+                        b2 = g.SphericalBox((20.0, 10.0), (30.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((0.0, 0.0), (30.0, 20.0)))
+                        b1 = g.SphericalBox((0.0, 0.0), (10.0, 10.0))
+                        b2 = g.SphericalBox((350.0, 10.0), (360.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((350.0, 0.0), (370.0, 20.0)))
+                        b1 = g.SphericalBox((5.0, 0.0), (10.0, 10.0))
+                        b2 = g.SphericalBox((350.0, 10.0), (355.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((350.0, 0.0), (370.0, 20.0)))
+                        b1 = g.SphericalBox((350.0, 0.0), (370.0, 10.0))
+                        b2 = g.SphericalBox((340.0, 10.0), (375.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((340.0, 0.0), (375.0, 20.0)))
+                        b1 = g.SphericalBox((350.0, 0.0), (370.0, 10.0))
+                        b2 = g.SphericalBox((330.0, 10.0), (340.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((330.0, 0.0), (370.0, 20.0)))
+                        b1 = g.SphericalBox((350.0, 0.0), (370.0, 10.0))
+                        b2 = g.SphericalBox((20.0, 10.0), (30.0, 20.0))
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((350.0, 0.0), (390.0, 20.0)))
+                        b1 = g.SphericalBox()
+                        b2 = g.SphericalBox()
+                        b1.extend(b2)
+                        self.assertTrue(b1.isEmpty())
+                        b2.setFull()
+                        b1.extend(b2)
+                        self.assertTrue(b1.isFull())
+                        b1.extend(b2)
+                        self.assertTrue(b1.isFull())
+                        b1 = g.SphericalBox((350.0, 0.0), (370.0, 10.0))
+                        b2.setEmpty()
+                        b1.extend(b2)
+                        self.assertEqual(b1, g.SphericalBox((350.0, 0.0), (370.0, 10.0)))
+                        # box-point extension
+                        b = g.SphericalBox((0.0, 0.0), (10.0, 10.0))
+                        b.extend((20.0, 20.0))
+                        self.assertEqual(b, g.SphericalBox((0.0, 0.0), (20.0, 20.0)))
+                        b.extend((350.0, 15.0))
+                        self.assertEqual(b, g.SphericalBox((350.0, 0.0), (380.0, 20.0)))
+                        self.assertRaises(RuntimeError, g.SphericalBox.extend, b, (0.0, 100.0))
+                        self.assertRaises(RuntimeError, g.SphericalBox.extend, b, (0.0, -100.0))
+                
+                    def testEdge(self):
+                        v1 = g.cartesianUnitVector(0.0, 45.0)
+                        v2 = g.cartesianUnitVector(180.0, 45.0)
+                        n = (0.0, -1.0, 0.0)
+                        b = g.SphericalBox.edge(v1, v2, n)
+                        self.assertEqual(b.getMin()[0], 0.0)
+                        self.assertEqual(b.getMax()[0], 360.0)
+                        self.assertAlmostEqual(b.getMin()[1], 45.0)
+                        self.assertEqual(b.getMax()[1], 90.0)
+                        v1 = g.cartesianUnitVector(0.0, 45.0)
+                        v2 = g.cartesianUnitVector(0.0, 75.0)
+                        b = g.SphericalBox.edge(v1, v2, n)
+                        self.assertAlmostEqual(b.getMin()[0], 0.0)
+                        self.assertAlmostEqual(b.getMax()[0], 0.0)
+                        self.assertAlmostEqual(b.getMin()[1], 45.0)
+                        self.assertAlmostEqual(b.getMax()[1], 75.0)
+                        v1 = g.cartesianUnitVector(-0.1 * g.ANGLE_EPSILON, 45.0)
+                        v2 = g.cartesianUnitVector(180 + 0.1 *g.ANGLE_EPSILON, 45.0)
+                        n = g.normalize(g.cross(v1, v2))
+                        b = g.SphericalBox.edge(v1, v2, n)
+                        self.assertEqual(b.getMin()[0], 0.0)
+                        self.assertEqual(b.getMax()[0], 360.0)
+                        self.assertAlmostEqual(b.getMin()[1], 45.0)
+                        self.assertEqual(b.getMax()[1], 90.0)
+                        v1 = g.cartesianUnitVector(-0.1 * g.ANGLE_EPSILON, 45.0)
+                        v2 = g.cartesianUnitVector(0.1 * g.ANGLE_EPSILON, 75.0)
+                        n = g.normalize(g.cross(v1, v2))
+                        b = g.SphericalBox.edge(v1, v2, n)
+                        self.assertAlmostEqual(b.getMin()[0], 360.0)
+                        self.assertAlmostEqual(b.getMax()[0], 0.0)
+                        self.assertAlmostEqual(b.getMin()[1], 45.0)
+                        self.assertAlmostEqual(b.getMax()[1], 75.0)
+                        v1 = g.cartesianUnitVector(1.0, 1.0)
+                        v2 = g.cartesianUnitVector(2.0, 2.0)
+                        n = g.normalize(g.cross(v1, v2))
+                        b = g.SphericalBox.edge(v1, v2, n)
+                        self.assertAlmostEqual(b.getMin()[0], 1.0)
+                        self.assertAlmostEqual(b.getMax()[0], 2.0)
+                        self.assertAlmostEqual(b.getMin()[1], 1.0)
+                        self.assertAlmostEqual(b.getMax()[1], 2.0)
+                        v1 = g.cartesianUnitVector(-1.0, 3.0)
+                        v2 = g.cartesianUnitVector(2.0, -1.0)
+                        n = g.normalize(g.cross(v1, v2))
+                        b = g.SphericalBox.edge(v1, v2, n)
+                        self.assertAlmostEqual(b.getMin()[0], 359.0)
+                        self.assertAlmostEqual(b.getMax()[0], 2.0)
+                        self.assertAlmostEqual(b.getMin()[1], -1.0)
+                        self.assertAlmostEqual(b.getMax()[1], 3.0)
+                
+                
+                class SphericalCircleTestCase(unittest.TestCase):
+                    """Tests for the SphericalCircle class.
+                    """
+                    def testInit(self):
+                        self.assertRaises(RuntimeError, g.SphericalCircle, (0.0, 0.0), 181.0)
+                        self.assertRaises(RuntimeError, g.SphericalCircle, (0.0, 91.0), 1.0)
+                        self.assertRaises(RuntimeError, g.SphericalCircle, (0.0, -91.0), 1.0)
+                
+                    def testSpatialPredicates(self):
+                        # circle-circle, circle-box, box-circle
+                        c1 = g.SphericalCircle((0.0, 0.0), 1.0)
+                        self.assertTrue(c1.intersects(c1))
+                        self.assertTrue(c1.contains(c1))
+                        b1 = c1.getBoundingBox()
+                        self.assertTrue(b1.contains(c1))
+                        self.assertTrue(b1.intersects(c1))
+                        c2 = g.SphericalCircle((3.0, 0.0), 1.0)
+                        b2 = c2.getBoundingBox()
+                        self.assertTrue(b2.contains(c2))
+                        self.assertTrue(b2.intersects(c2))
+                        self.assertFalse(c1.contains(c2))
+                        self.assertFalse(c1.intersects(c2))
+                        c1 = g.SphericalCircle((0.0, 0.0), 5.0)
+                        c3 = g.SphericalCircle((180.0, 0.0), 5.0)
+                        b1 = c1.getBoundingBox()
+                        self.assertTrue(c1.contains(c2))
+                        self.assertFalse(c2.contains(c1))
+                        self.assertTrue(c1.intersects(c2))
+                        self.assertTrue(c2.intersects(c1))
+                        self.assertTrue(b2.intersects(c1))
+                        self.assertTrue(b2.intersects(c2))
+                        self.assertTrue(b1.intersects(c1))
+                        self.assertTrue(b1.intersects(c2))
+                        self.assertFalse(c3.intersects(b1))
+                        self.assertFalse(b1.intersects(c3))
+                        self.assertFalse(c3.contains(b1))
+                        self.assertFalse(b1.contains(c3))
+                        b3 = g.SphericalBox((1.0, -1.0), (359.0, 1.0))
+                        self.assertTrue(b3.intersects(c1))
+                        self.assertTrue(b3.intersects(c2))
+                        self.assertTrue(b3.contains(c2))
+                        self.assertFalse(b3.contains(c1))
+                        self.assertFalse(c1.contains(b3))
+                        self.assertFalse(c2.contains(b3))
+                        # circle-point
+                        self.assertTrue(c1.contains((1.0, 0.0, 0.0)))
+                        self.assertTrue(c1.intersects((0.0, 0.0)))
+                        self.assertFalse(c1.intersects((10.0, 0.0)))
+                        self.assertFalse(c1.contains((-10.0, 0.0)))
+                        points = _pointsOnCircle((0.0, 0.0), 4.999, 100)
+                        for p in points:
+                            self.assertTrue(c1.contains(p))
+                        points = _pointsOnCircle((0.0, 0.0), 5.001, 100)
+                        for p in points:
+                            self.assertFalse(c1.contains(p))
+                        # circle-polygon
+                        p1 = g.SphericalConvexPolygon(_pointsOnCircle((0.0, 0.0), 10.0, 100))
+                        p2 = g.SphericalConvexPolygon(_pointsOnCircle((0.0, 0.0), 3.0, 100))
+                        self.assertTrue(c1.contains(p2))
+                        self.assertTrue(c1.intersects(p2))
+                        self.assertFalse(c1.contains(p1))
+                        self.assertTrue(c1.intersects(p2))
+                        self.assertTrue(p1.intersects(c1))
+                        self.assertTrue(p2.intersects(c1))
+                        self.assertTrue(p1.contains(c1))
+                        self.assertFalse(p2.contains(c1))
+                
+                
+                class SphericalEllipseTestCase(unittest.TestCase):
+                    """Tests for the SphericalEllipse class.
+                    """
+                    def testInit(self):
+                        self.assertRaises(RuntimeError, g.SphericalEllipse,
+                                          (0.0, 0.0), 11.0 * g.ARCSEC_PER_DEG, 1.0, 0.0)
+                        self.assertRaises(RuntimeError, g.SphericalEllipse,
+                                          (0.0, 0.0), 0.5, 1.0, 0.0)
+                        self.assertRaises(RuntimeError, g.SphericalEllipse,
+                                          (0.0, 0.0), -0.5, -1.0, 0.0)
+                        self.assertRaises(RuntimeError, g.SphericalEllipse,
+                                          (0.0, 0.0), 0.5, -1.0, 0.0)
+                        self.assertRaises(RuntimeError, g.SphericalEllipse,
+                                          (0.0, 0.0), -0.5, 1.0, 0.0)
+                        self.assertRaises(RuntimeError, g.SphericalEllipse,
+                                          (0.0, 91.0), 0.0, 0.0, 0.0)
+                        self.assertRaises(RuntimeError, g.SphericalEllipse,
+                                          (0.0, -91.0), 0.0, 0.0, 0.0)
+                
+                    def testSpatialPredicates(self):
+                        # ellipse-point
+                        for cen in ((0.0, 0.0), (45.0, 45.0), (135.0, -45.0), (0.0, 90.0)):
+                            smaa = random.uniform(30, 20000)
+                            smia = random.uniform(1, smaa)
+                            a = random.uniform(0.0, 360.0)
+                            e = g.SphericalEllipse(cen, smaa, smia, a)
+                            self.assertTrue(e.contains(cen))
+                            self.assertTrue(e.contains(g.cartesianUnitVector(cen)))
+                            self.assertTrue(e.intersects(cen))
+                            self.assertTrue(e.intersects(g.cartesianUnitVector(cen)))
+                            points = _pointsOnCircle(
+                                cen, e.getInnerCircle().getRadius() - g.ANGLE_EPSILON, 100)
+                            for p in points:
+                                self.assertTrue(e.contains(p))
+                            points = _pointsOnCircle(
+                                cen, e.getBoundingCircle().getRadius() + g.ANGLE_EPSILON, 100)
+                            for p in points:
+                                self.assertFalse(e.intersects(p))
+                            points = _pointsOnEllipse(
+                                cen, smaa - g.ANGLE_EPSILON * g.ARCSEC_PER_DEG,
+                                smia - g.ANGLE_EPSILON * g.ARCSEC_PER_DEG, a, 100)
+                            for p in points:
+                                self.assertTrue(e.contains(p))
+                            points = _pointsOnEllipse(
+                                cen, smaa + g.ANGLE_EPSILON * g.ARCSEC_PER_DEG,
+                                smia + g.ANGLE_EPSILON * g.ARCSEC_PER_DEG, a, 100)
+                            for p in points:
+                                self.assertFalse(e.contains(p))
+                        # ellipse-circle
+                        cen = (0.0, 0.0)
+                        e = g.SphericalEllipse(cen, 7200.0, 3600.0, 90.0)
+                        c = g.SphericalCircle(
+                            cen, e.getInnerCircle().getRadius() - g.ANGLE_EPSILON)
+                        self.assertTrue(e.intersects(c))
+                        self.assertTrue(c.intersects(e))
+                        self.assertTrue(e.contains(c))
+                        self.assertFalse(c.contains(e))
+                        # ellipse-box
+                        b = g.SphericalBox((-0.5, -0.5), (0.5, 0.5))
+                        self.assertTrue(e.intersects(b))
+                        self.assertTrue(e.contains(b))
+                        b = g.SphericalBox((0.5, -0.5), (359.5, 0.5))
+                        self.assertTrue(e.intersects(b))
+                        self.assertFalse(e.contains(b))
+                
+                
+                class SphericalConvexPolygonTestCase(unittest.TestCase):
+                    """Tests for the SphericalConvexPolygon class.
+                    """
+                    def testInit(self):
+                        self.assertRaises(RuntimeError, g.SphericalConvexPolygon,
+                                          [(1.0, 0.0, 0.0)])
+                        self.assertRaises(RuntimeError, g.SphericalConvexPolygon,
+                                          [(1.0, 0.0, 0.0), (0.0, 1.0, 0.0)])
+                        self.assertRaises(RuntimeError, g.SphericalConvexPolygon,
+                                          [(1.0, 0.0, 0.0), (0.0, 1.0, 0.0), (0.0, 0.0, 1.0)],
+                                          [(0.0, 0.0, 1.0)])
+                
+                    def testSpatialPredicates(self):
+                        # polygon-point, polygon-circle
+                        p = g.SphericalConvexPolygon(_pointsOnCircle((0.0, 0.0), 1.0, 8))
+                        self.assertTrue(p.contains(p.getBoundingCircle().getCenter()))
+                        self.assertTrue(p.intersects(p.getBoundingCircle().getCenter()))
+                        points = _pointsOnCircle((0.0, 0.0), 0.5, 50)
+                        for v in points:
+                            self.assertTrue(p.contains(v))
+                            self.assertTrue(p.intersects(v))
+                        c = g.SphericalCircle((0.0, 0.0), 0.5)
+                        self.assertTrue(p.contains(c))
+                        self.assertTrue(p.intersects(c))
+                        self.assertFalse(c.contains(p))
+                        self.assertTrue(c.intersects(p))
+                        points = _pointsOnCircle((0.0, 0.0), 1.001, 50)
+                        for v in points:
+                            self.assertFalse(p.contains(v))
+                            self.assertFalse(p.intersects(v))
+                        c = g.SphericalCircle((0.0, 0.0), 1.001)
+                        c2 = g.SphericalCircle((180.0, 0.0), 1.001)
+                        self.assertTrue(c.contains(p))
+                        self.assertTrue(c.intersects(p))
+                        self.assertFalse(c2.intersects(p))
+                        self.assertFalse(p.intersects(c2))
+                        self.assertFalse(c2.contains(p))
+                        self.assertFalse(p.contains(c2))
+                        self.assertFalse(p.contains(c))
+                        self.assertTrue(p.intersects(c))
+                        # polygon-box
+                        b = g.SphericalBox((-0.5, -0.5), (0.5, 0.5))
+                        self.assertTrue(b.intersects(p))
+                        self.assertTrue(p.intersects(b))
+                        self.assertTrue(p.contains(b))
+                        self.assertFalse(b.contains(p))
+                        b = g.SphericalBox((0.5, -0.5), (359.5, 0.5))
+                        self.assertTrue(b.intersects(p))
+                        self.assertTrue(p.intersects(b))
+                        self.assertFalse(b.contains(p))
+                        self.assertFalse(p.contains(b))
+                        # polygon-polygon
+                        self.assertTrue(p.intersects(p))
+                        p2 = g.SphericalConvexPolygon(_pointsOnCircle((0.5, 0.0), 1.0, 8))
+                        self.assertTrue(p.intersects(p2))
+                        self.assertTrue(p2.intersects(p))
+                        self.assertFalse(p.contains(p2))
+                        self.assertFalse(p2.contains(p))
+                        p3 = g.SphericalConvexPolygon(_pointsOnCircle((0.25, 0.0), 0.25, 8))
+                        self.assertTrue(p.contains(p3))
+                
+                    def testArea(self):
+                        verts = [(1.0, 0.0, 0.0), (0.0, 1.0, 0.0), g.normalize((1.0, 1.0, 1.0))]
+                        p = g.SphericalConvexPolygon(verts)
+                        self.assertAlmostEqual(p.area(), math.pi / 6)
+                
+                
+                class MedianTestCase(unittest.TestCase):
+                    """Tests the "median-of-medians" median finding algorithm.
+                    """
+                    def testEdgeCases(self):
+                        a = []
+                        self.assertEqual(g.median(a), None)
+                        for i in xrange(1, 50):
+                            a = [1] * i
+                            self.assertEqual(g.median(a), 1)
+                
+                    def testMedian(self):
+                        for i in xrange(2, 100):
+                            a = [j for j in xrange(1, i)]
+                            m = a[len(a) / 2]
+                            self.assertEqual(g.median(a), m)
+                            a.reverse()
+                            self.assertEqual(g.median(a), m)
+                            random.shuffle(a)
+                            self.assertEqual(g.median(a), m)
+                        for i in xrange(2, 50):
+                            a = []
+                            for j in xrange(1, i):
+                                for k in xrange(random.randint(1, 10)):
+                                    a.append(j)
+                            m = a[len(a) / 2]
+                            self.assertEqual(g.median(a), m)
+                            a.reverse()
+                            self.assertEqual(g.median(a), m)
+                            random.shuffle(a)
+                            self.assertEqual(g.median(a), m)
+                
+                
+                def _hemPoints(v, n):
+                    """Randomly generates a list of n points in the hemisphere
+                    given by the plane with normal v.
+                    """
+                    v = g.normalize(v)
+                    north, east = g.northEast(v)
+                    points = []
+                    for i in xrange(n):
+                        z = -1.0
+                        while z < 0.0:
+                            x = random.uniform(-1.0 + 1.0e-7, 1.0 - 1.0e-7)
+                            y = random.uniform(-1.0 + 1.0e-7, 1.0 - 1.0e-7)
+                            z = 1.0 - x * x - y * y
+                        z = math.sqrt(z)
+                        p = (z * v[0] + x * north[0] + y * east[0],
+                             z * v[1] + x * north[1] + y * east[1],
+                             z * v[2] + x * north[2] + y * east[2])
+                        points.append(g.normalize(p))
+                    return points
+                
+                def _opposing(points):
+                    """Returns a point p such that adding p to points
+                    results in a non-hemispherical point list.
+                    """
+                    if len(points) > 1:
+                        n = min(3, len(points))
+                        return g.normalize((sum(-u[0] for u in points[:n]),
+                                            sum(-u[1] for u in points[:n]),
+                                            sum(-u[2] for u in points[:n])))
+                    elif len(points) == 1:
+                        return (-points[0][0], -points[0][1], -points[0][2])
+                
+                
+                class HemisphericalTestCase(unittest.TestCase):
+                    """Tests the hemispherical() function.
+                    """
+                    def testHemispherical(self):
+                        x = (1.0, 0.0, 0.0)
+                        y = (0.0, 1.0, 0.0)
+                        z = (0.0, 0.0, 1.0)
+                        nx = (-1.0, 0.0, 0.0)
+                        ny = (0.0, -1.0, 0.0)
+                        nz = (0.0, 0.0, -1.0)
+                        # Cannot use itertools.product and itertools.permutations until
+                        # Python 2.6+ becomes standard.
+                        self.assertTrue(g.hemispherical([x, y, z]))
+                        self.assertTrue(g.hemispherical([x, y, nz]))
+                        self.assertTrue(g.hemispherical([x, ny, z]))
+                        self.assertTrue(g.hemispherical([x, ny, nz]))
+                        self.assertTrue(g.hemispherical([nx, y, z]))
+                        self.assertTrue(g.hemispherical([nx, y, nz]))
+                        self.assertTrue(g.hemispherical([nx, ny, z]))
+                        self.assertTrue(g.hemispherical([nx, ny, nz]))
+                        self.assertTrue(g.hemispherical([x]))
+                        self.assertTrue(g.hemispherical([y]))
+                        self.assertTrue(g.hemispherical([z]))
+                        self.assertFalse(g.hemispherical([x, nx]))
+                        self.assertFalse(g.hemispherical([y, ny]))
+                        self.assertFalse(g.hemispherical([z, nz]))
+                        self.assertFalse(g.hemispherical([x, nx, z]))
+                        self.assertFalse(g.hemispherical([x, nx, y]))
+                        self.assertFalse(g.hemispherical([x, nx, nz]))
+                        self.assertFalse(g.hemispherical([x, nx, ny]))
+                        self.assertFalse(g.hemispherical([y, ny, x]))
+                        self.assertFalse(g.hemispherical([y, ny, z]))
+                        self.assertFalse(g.hemispherical([y, ny, nx]))
+                        self.assertFalse(g.hemispherical([y, ny, nz]))
+                        self.assertFalse(g.hemispherical([z, nz, x]))
+                        self.assertFalse(g.hemispherical([z, nz, y]))
+                        self.assertFalse(g.hemispherical([z, nz, nx]))
+                        self.assertFalse(g.hemispherical([z, nz, ny]))
+                        self.assertFalse(g.hemispherical([x, y, z, nx, ny, nz]))
+                        for v in ((1.0, 1.0, 1.0), (-1.0, 1.0, 1.0), (1.0, -1.0, 1.0),
+                                  (1.0, 1.0, -1.0), (1.0, -1.0, -1.0), (-1.0, 1.0, -1.0),
+                                  (-1.0, -1.0, 1.0), (-1.0, -1.0, -1.0), x, y, z, nx, ny, nz):
+                            # test with randomly generated point clouds
+                            points = _hemPoints(v, 1000)
+                            p = _opposing(points)
+                            self.assertTrue(g.hemispherical(points))
+                            self.assertFalse(g.hemispherical(points + [p]))
+                            random.shuffle(points)
+                            p = _opposing(points)
+                            self.assertTrue(g.hemispherical(points))
+                            self.assertFalse(g.hemispherical(points + [p]))
+                        for v in ((1.0, 1.0, 1.0), (-1.0, 1.0, 1.0),
+                                  (1.0, -1.0, 1.0), (1.0, 1.0, -1.0), x, y, z):
+                            # test with points lying on circles
+                            p1 = _pointsOnCircle(v, 89.9999, 10)
+                            p2 = _pointsOnCircle((-v[0], -v[1], -v[2]), 89.9999, 10)
+                            self.assertTrue(g.hemispherical(p1))
+                            self.assertTrue(g.hemispherical(p2))
+                            self.assertFalse(g.hemispherical(p1 + p2))
+                
+                
+                def _pointsOnPeriodicHypotrochoid(c, R, r, d, n):
+                    assert isinstance(r, int) and isinstance(R, int)
+                    assert R > r
+                    assert (2 * r) % (R - r) == 0
+                    points = []
+                    c = g.cartesianUnitVector(c)
+                    north, east = g.northEast(c)
+                    scale = 1.0 / (R - r + d + 1)
+                    period = (2 * r) / (R - r)
+                    if period % 2 != 0:
+                        period *= 2
+                    for i in xrange(n):
+                        theta = i * period * math.pi / n
+                        x = (R - r) * math.cos(theta) + d * math.cos((R - r) * theta / r)
+                        y = (R - r) * math.sin(theta) - d * math.sin((R - r) * theta / r)
+                        x *= scale
+                        y *= scale
+                        z = math.sqrt(1.0 - x * x - y * y)
+                        points.append(g.normalize((z * c[0] + x * north[0] + y * east[0],
+                                                   z * c[1] + x * north[1] + y * east[1],
+                                                   z * c[2] + x * north[2] + y * east[2])))
+                    return points
+                
+                def _checkHull(hull, points):
+                    vertices = set(hull.getVertices())
+                    for p in points:
+                        if p not in vertices:
+                            for e in hull.getEdges():
+                                if g.dot(p, e) < -g.CROSS_N2MIN:
+                                    return False
+                    return True
+                
+                class ConvexTestCase(unittest.TestCase):
+                    """Tests the convex hull algorithm and convexity test.
+                    """
+                    def testConvex(self):
+                        for c in ((0.0, 0.0), (0.0, 90.0), (0.0, -90.0), (45.0, 45.0)):
+                            points = _pointsOnCircle(c, 10.0, 100)
+                            results = g.convex(points)
+                            self.assertTrue(results[0])
+                            self.assertTrue(results[1])
+                            points.reverse()
+                            results = g.convex(points)
+                            self.assertTrue(results[0])
+                            self.assertFalse(results[1])
+                            smaa = random.uniform(0.5 * g.ARCSEC_PER_DEG,
+                                                  5.0 * g.ARCSEC_PER_DEG)
+                            smia = random.uniform(0.01 * g.ARCSEC_PER_DEG, smaa)
+                            ang = random.uniform(0.0, 180.0)
+                            points = _pointsOnEllipse(c, smaa, smia, ang, 100)
+                            results = g.convex(points)
+                            self.assertTrue(results[0])
+                            self.assertFalse(results[1])
+                            points.reverse()
+                            results = g.convex(points)
+                            self.assertTrue(results[0])
+                            self.assertTrue(results[1])
+                        # Test with duplicate vertices
+                        points = _pointsOnCircle(c, 10.0, 10)
+                        points += points
+                        results = g.convex(points)
+                        self.assertFalse(results[0])
+                        # Test with non-convex vertex lists
+                        points = [(1.0, 0.0, 0.0),
+                                  g.normalize((1.0, 1.0, 1.0)),
+                                  (0.0, 1.0, 0.0),
+                                  (0.0, 0.0, 1.0)]
+                        results = g.convex(points)
+                        self.assertFalse(results[0])
+                        # consecutive edges of the following hypotrochoids look convex,
+                        # but the polygon formed by them is self-intersecting - it winds
+                        # around the vertex centroid multiple times.
+                        points = _pointsOnPeriodicHypotrochoid((1.0, 1.0, 1.0), 5, 3, 5, 100)
+                        results = g.convex(points)
+                        self.assertFalse(results[0])
+                        points = _pointsOnPeriodicHypotrochoid((1.0, 1.0, 1.0), 6, 4, 6, 100)
+                        results = g.convex(points)
+                        self.assertFalse(results[0])
+                
+                    def testConvexHull(self):
+                        points = _hemPoints((1.0, 1.0, 1.0), 1000)
+                        hull = g.convexHull(points)
+                        self.assertNotEqual(hull, None)
+                        self.assertTrue(g.convex(hull.getVertices()))
+                        self.assertTrue(_checkHull(hull, points))
+                        points = _pointsOnPeriodicHypotrochoid((1.0, 1.0, -1.0),
+                                                               15, 13, 15, 1000)
+                        hull = g.convexHull(points)
+                        self.assertNotEqual(hull, None)
+                        self.assertTrue(g.convex(hull.getVertices()))
+                        self.assertTrue(_checkHull(hull, points))
+                        random.shuffle(points)
+                        hull = g.convexHull(points)
+                        self.assertNotEqual(hull, None)
+                        self.assertTrue(g.convex(hull.getVertices()))
+                        self.assertTrue(_checkHull(hull, points))
+                        # Test with duplicate vertices
+                        points = _pointsOnCircle((0.0, 0.0), 10.0, 100, True)
+                        points2 = points + points
+                        hull = g.convexHull(points2)
+                        self.assertNotEqual(hull, None)
+                        self.assertTrue(g.convex(hull.getVertices()))
+                        vertices = set(hull.getVertices())
+                        self.assertEqual(len(points), len(vertices))
+                        for p in points:
+                            self.assertTrue(p in vertices)
+                        random.shuffle(points2)
+                        hull = g.convexHull(points2)
+                        self.assertNotEqual(hull, None)
+                        self.assertTrue(g.convex(hull.getVertices()))
+                        vertices = set(hull.getVertices())
+                        self.assertEqual(len(points), len(vertices))
+                        for p in points:
+                            self.assertTrue(p in vertices)
+                        # Test with non hemispherical points
+                        points = _hemPoints((1.0, -1.0, -0.5), 1000)
+                        points.append(_opposing(points))
+                        hull = g.convexHull(points)
+                        self.assertEqual(hull, None)
+                
+                
+                class SphericalBoxPartitionMapTestCase(unittest.TestCase):
+                    """Tests for the spherical box unit sphere partitioning scheme.
+                    """
+                    def testSubList(self):
+                        a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                        s = g._SubList(a)
+                        s.append(9)
+                        s.append(5)
+                        s.append(4)
+                        s.append(1)
+                        self.assertEqual(len(s), 4)
+                        x = max(a) + 1
+                        for y in s:
+                            self.assertTrue(y < x)
+                            x = y
+                        s.filter(lambda x: x == 5)
+                        self.assertEqual(len(s), 3)
+                        x = max(a) + 1
+                        for y in s:
+                            self.assertTrue(y < x)
+                            x = y
+                        s.append(0)
+                        self.assertEqual(len(s), 4)
+                        x = max(a) + 1
+                        for y in s:
+                            self.assertTrue(y < x)
+                            x = y
+                
+                    def testInit(self):
+                        self.assertRaises(TypeError, g.SphericalBoxPartitionMap, 1.0, 1)
+                        self.assertRaises(TypeError, g.SphericalBoxPartitionMap, 1, 1.0)
+                        self.assertRaises(RuntimeError, g.SphericalBoxPartitionMap, 0, 1)
+                        self.assertRaises(RuntimeError, g.SphericalBoxPartitionMap, 1, 0)
+                
+                    def testIter(self):
+                        pmap = g.SphericalBoxPartitionMap(1, 1)
+                        nc = 0
+                        for chunkId, subIter in pmap:
+                            nc += 1
+                            self.assertEqual(chunkId, 0)
+                            nsc = 0
+                            for subChunkId in subIter:
+                                nsc += 1
+                                self.assertEqual(subChunkId, 0)
+                            self.assertEqual(nsc, 1)
+                        self.assertEqual(nc, 1)
+                        pmap = g.SphericalBoxPartitionMap(18, 10)
+                        nc = sum(pmap.numChunks)
+                        for chunkId, subIter in pmap:
+                            nc -= 1
+                        self.assertEqual(nc, 0)
+                
+                    def testIntersect(self):
+                        pmap = g.SphericalBoxPartitionMap(1, 1)
+                        b = g.SphericalBox((0.0, -90.0), (360.0, 90.0))
+                        for chunkId, subIter in pmap.intersect(b):
+                            self.assertEqual(chunkId, 0)
+                            for subChunkId, regions in subIter:
+                                self.assertEqual(subChunkId, 0)
+                                self.assertEqual(regions, set())
+                        pmap = g.SphericalBoxPartitionMap(18, 10)
+                        b = g.SphericalBox((0.01, 0.01), (0.99, 0.99))
+                        for chunkId, subIter in pmap.intersect(b):
+                            self.assertEqual(chunkId, 324)
+                            for subChunkId, regions in subIter:
+                                self.assertEqual(subChunkId, 0)
+                                self.assertEqual(len(regions), 1)
+                                self.assertTrue(b in regions)
+                        # Test with an assortment of regions
+                        regions = [g.SphericalBox((-0.01, -0.01), (11.0, 11.0)),
+                                   g.SphericalBox((350.0, 80.0), (360.0, 90.0)),
+                                   g.SphericalBox((350.0, -90.0), (360.0, -80.0)),
+                                   g.SphericalBox((-5.0, 20.0), (5.0, 22.0)),
+                                   g.SphericalBox((0.0, -25.0), (2.0, -20.0)),
+                                   g.SphericalCircle((45.0, 45.0), 1.0),
+                                   g.SphericalConvexPolygon((-1.0, 0.0, 0.0), (0.0, 1.0, 0.0),
+                                                            g.normalize((-1.0, 1.0, -1.0))),
+                                  ]
+                        # compute expected results by brute force
+                        results = {}
+                        for chunkId, subIter in pmap:
+                            for subChunkId in subIter:
+                                bbox = pmap.getSubChunkBoundingBox(chunkId, subChunkId)
+                                for i in xrange(len(regions)):
+                                    if regions[i].contains(bbox):
+                                        results[(chunkId, subChunkId)] = set()
+                                        break
+                                    elif regions[i].intersects(bbox):
+                                        if (chunkId, subChunkId) not in results:
+                                            results[(chunkId, subChunkId)] = set()
+                                        results[(chunkId, subChunkId)].add(regions[i])
+                        # and compare them to the results of intersect()
+                        for chunkId, subIter in pmap.intersect(regions):
+                            for subChunkId, xr in subIter:
+                                exr = results.pop((chunkId, subChunkId), None)
+                                self.assertEqual(xr, exr)
+                        self.assertEqual(len(results), 0)
+                
+                def suite():
+                    """Returns a suite containing all the test cases in this module."""
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+972  <a href="#878850a6">878850a6</a> -     utilsTests.init()</div>
+                    suites = map(unittest.makeSuite,
+                        [UtilsTestCase,
+                         SphericalBoxTestCase,
+                         SphericalCircleTestCase,
+                         SphericalEllipseTestCase,
+                         SphericalConvexPolygonTestCase,
+                         MedianTestCase,
+                         HemisphericalTestCase,
+                         ConvexTestCase,
+                         SphericalBoxPartitionMapTestCase
+                        ])
+                    return unittest.TestSuite(suites)
+                
+                def run(shouldExit=False):
+                    """Run the tests"""
+                    random.seed(123456789)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+989  <a href="#878850a6">878850a6</a> -     utilsTests.run(suite(), shouldExit)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+986  <a href="#20c5781a">20c5781a</a> +     test_suite = suite()</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+987  <a href="#20c5781a">20c5781a</a> +     unittest.TextTestRunner(verbosity=2, failfast=shouldExit).run(test_suite)</div>
+                
+                if __name__ == '__main__':
+                    run(True)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/geom/</h2>
+<h3><a name="9693bebc"/></a>9693bebc</h3>
+
+<pre>
+commit 9693bebc1eacb949f5f2c781ca2b9f2aaba21f74
+Author: smm <smm@git.lsstcorp.org>
+Date:   Wed Apr 7 23:44:53 2010 +0000
+
+    Moving qserv geometry code to top-level geom package
+</pre>
+<h3><a name="878850a6"/></a>878850a6</h3>
+
+<pre>
+commit 878850a6f618d5c7046c332b13034c07f8ddf264
+Author: smm <smm@git.lsstcorp.org>
+Date:   Thu Apr 8 00:19:13 2010 +0000
+
+    LSSTify tests, setup svn:ignore
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/geom/</h2>
+<h3><a name="20c5781a"/></a>20c5781a</h3>
+
+<pre>
+commit 20c5781a21762ba4ac13ae15ac5959702c54dfa2
+Author: Fabrice Jammes <fabrice.jammes@in2p3.fr>
+Date:   Fri May 23 15:16:18 2014 +0200
+
+    - Migrating to eupspkg format
+    - Dependencies list reduced to sconsUtils,
+      i.e. 'utils' package dependency removed :
+          - lsst.utils.tests.init dependency removed
+          - lsstimport (python module) dependency removed
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_4"><a name="ups/geom.cfg"/></a>ups/geom.cfg</h1>
+
+<h3 id="toc_5">Diff:</h3>
+
+<pre>
+                # -*- python -*-
+                
+                import lsst.sconsUtils
+                
+                dependencies = {
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+6    <a href="#de77a035">de77a035</a> -     "required": ["utils", ],</div>
+              ?                  ---------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+6    <a href="#20c5781a">20c5781a</a> +     "required": [],</div>
+                }
+                
+                config = lsst.sconsUtils.Configuration(
+                    __file__,
+                    headers=[], libs=[],
+                    hasDoxygenInclude=False,
+                    hasSwigFiles=False,
+                )
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/geom/</h2>
+<h3><a name="de77a035"/></a>de77a035</h3>
+
+<pre>
+commit de77a0354f7223ec94fd8e753c36328bf3bcb3cd
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Thu Oct 27 19:29:49 2011 +0000
+
+    Winter2012a geom - updated to new sconsUtils
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/geom/</h2>
+<h3><a name="20c5781a"/></a>20c5781a</h3>
+
+<pre>
+commit 20c5781a21762ba4ac13ae15ac5959702c54dfa2
+Author: Fabrice Jammes <fabrice.jammes@in2p3.fr>
+Date:   Fri May 23 15:16:18 2014 +0200
+
+    - Migrating to eupspkg format
+    - Dependencies list reduced to sconsUtils,
+      i.e. 'utils' package dependency removed :
+          - lsst.utils.tests.init dependency removed
+          - lsstimport (python module) dependency removed
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_6"><a name="python/lsst/__init__.py"/></a>python/lsst/<strong>init</strong>.py</h1>
+
+<h3 id="toc_7">Diff:</h3>
+
+<pre>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#de77a035">de77a035</a> - import pkgutil, lsstimport</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#e36792e6">e36792e6</a> + import pkgutil</div>
+                __path__ = pkgutil.extend_path(__path__, __name__)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/geom/</h2>
+<h3><a name="de77a035"/></a>de77a035</h3>
+
+<pre>
+commit de77a0354f7223ec94fd8e753c36328bf3bcb3cd
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Thu Oct 27 19:29:49 2011 +0000
+
+    Winter2012a geom - updated to new sconsUtils
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/geom/</h2>
+<h3><a name="e36792e6"/></a>e36792e6</h3>
+
+<pre>
+commit e36792e6e9d9e1dba9c850006c7d1175100e0ab0
+Author: Fabrice <fjammes@MacBook-Air-de-charlotte.local>
+Date:   Sun Jun 15 11:04:40 2014 +0200
+
+    Reverting to standard __init__.py file for lsst package
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_8"><a name="ups/geom.table"/></a>ups/geom.table</h1>
+
+<h3 id="toc_9">Diff:</h3>
+
+<pre>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#20c5781a">20c5781a</a> + setupRequired(sconsUtils)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#de77a035">de77a035</a> - setupRequired(utils >= 4.6.0.0)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+2    <a href="#878850a6">878850a6</a> - </div>
+                envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/geom/</h2>
+<h3><a name="de77a035"/></a>de77a035</h3>
+
+<pre>
+commit de77a0354f7223ec94fd8e753c36328bf3bcb3cd
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Thu Oct 27 19:29:49 2011 +0000
+
+    Winter2012a geom - updated to new sconsUtils
+</pre>
+<h3><a name="878850a6"/></a>878850a6</h3>
+
+<pre>
+commit 878850a6f618d5c7046c332b13034c07f8ddf264
+Author: smm <smm@git.lsstcorp.org>
+Date:   Thu Apr 8 00:19:13 2010 +0000
+
+    LSSTify tests, setup svn:ignore
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/geom/</h2>
+<h3><a name="20c5781a"/></a>20c5781a</h3>
+
+<pre>
+commit 20c5781a21762ba4ac13ae15ac5959702c54dfa2
+Author: Fabrice Jammes <fabrice.jammes@in2p3.fr>
+Date:   Fri May 23 15:16:18 2014 +0200
+
+    - Migrating to eupspkg format
+    - Dependencies list reduced to sconsUtils,
+      i.e. 'utils' package dependency removed :
+          - lsst.utils.tests.init dependency removed
+          - lsstimport (python module) dependency removed
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<script type="text/javascript">
+self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{};var Prism=function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{encode:function(e){return e instanceof n?new n(e.type,t.util.encode(e.content),e.alias):"Array"===t.util.type(e)?e.map(t.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=t.util.clone(e[r]));return a;case"Array":return e.map(function(e){return t.util.clone(e)})}return e}},languages:{extend:function(e,n){var a=t.util.clone(t.languages[e]);for(var r in n)a[r]=n[r];return a},insertBefore:function(e,n,a,r){r=r||t.languages;var i=r[e];if(2==arguments.length){a=arguments[1];for(var l in a)a.hasOwnProperty(l)&&(i[l]=a[l]);return i}var s={};for(var o in i)if(i.hasOwnProperty(o)){if(o==n)for(var l in a)a.hasOwnProperty(l)&&(s[l]=a[l]);s[o]=i[o]}return t.languages.DFS(t.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=s)}),r[e]=s},DFS:function(e,n,a){for(var r in e)e.hasOwnProperty(r)&&(n.call(e,r,e[r],a||r),"Object"===t.util.type(e[r])?t.languages.DFS(e[r],n):"Array"===t.util.type(e[r])&&t.languages.DFS(e[r],n,r))}},highlightAll:function(e,n){for(var a,r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'),i=0;a=r[i++];)t.highlightElement(a,e===!0,n)},highlightElement:function(a,r,i){for(var l,s,o=a;o&&!e.test(o.className);)o=o.parentNode;if(o&&(l=(o.className.match(e)||[,""])[1],s=t.languages[l]),s){a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=a.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var u=a.textContent;if(u){u=u.replace(/^(?:\r?\n|\r)/,"");var g={element:a,language:l,grammar:s,code:u};if(t.hooks.run("before-highlight",g),r&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){g.highlightedCode=n.stringify(JSON.parse(e.data),l),t.hooks.run("before-insert",g),g.element.innerHTML=g.highlightedCode,i&&i.call(g.element),t.hooks.run("after-highlight",g)},c.postMessage(JSON.stringify({language:g.language,code:g.code}))}else g.highlightedCode=t.highlight(g.code,g.grammar,g.language),t.hooks.run("before-insert",g),g.element.innerHTML=g.highlightedCode,i&&i.call(a),t.hooks.run("after-highlight",g)}}},highlight:function(e,a,r){var i=t.tokenize(e,a);return n.stringify(t.util.encode(i),r)},tokenize:function(e,n){var a=t.Token,r=[e],i=n.rest;if(i){for(var l in i)n[l]=i[l];delete n.rest}e:for(var l in n)if(n.hasOwnProperty(l)&&n[l]){var s=n[l];s="Array"===t.util.type(s)?s:[s];for(var o=0;o<s.length;++o){var u=s[o],g=u.inside,c=!!u.lookbehind,f=0,h=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var d=r[p];if(r.length>e.length)break e;if(!(d instanceof a)){u.lastIndex=0;var m=u.exec(d);if(m){c&&(f=m[1].length);var y=m.index-1+f,m=m[0].slice(f),v=m.length,k=y+v,b=d.slice(0,y+1),w=d.slice(k+1),N=[p,1];b&&N.push(b);var O=new a(l,g?t.tokenize(m,g):m,h);N.push(O),w&&N.push(w),Array.prototype.splice.apply(r,N)}}}}}return r},hooks:{all:{},add:function(e,n){var a=t.hooks.all;a[e]=a[e]||[],a[e].push(n)},run:function(e,n){var a=t.hooks.all[e];if(a&&a.length)for(var r,i=0;r=a[i++];)r(n)}}},n=t.Token=function(e,t,n){this.type=e,this.content=t,this.alias=n};if(n.stringify=function(e,a,r){if("string"==typeof e)return e;if("Array"===t.util.type(e))return e.map(function(t){return n.stringify(t,a,e)}).join("");var i={type:e.type,content:n.stringify(e.content,a,r),tag:"span",classes:["token",e.type],attributes:{},language:a,parent:r};if("comment"==i.type&&(i.attributes.spellcheck="true"),e.alias){var l="Array"===t.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(i.classes,l)}t.hooks.run("wrap",i);var s="";for(var o in i.attributes)s+=o+'="'+(i.attributes[o]||"")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'" '+s+">"+i.content+"</"+i.tag+">"},!self.document)return self.addEventListener?(self.addEventListener("message",function(e){var n=JSON.parse(e.data),a=n.language,r=n.code;self.postMessage(JSON.stringify(t.util.encode(t.tokenize(r,t.languages[a])))),self.close()},!1),self.Prism):self.Prism;var a=document.getElementsByTagName("script");return a=a[a.length-1],a&&(t.filename=a.src,document.addEventListener&&!a.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)),self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism);
+</script>
+</body>
+
+</html>

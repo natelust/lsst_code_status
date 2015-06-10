@@ -1,0 +1,3588 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>coadd_utils</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+</head>
+<body>
+<h1 id="toc_0">Comparison of the coadd_utils repository</h1>
+
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of Repositories</h1>
+<p>
+Comparison run at 02:15PM on June 09, 2015<br>
+There are <b>152</b> differences between the two repositories<br><br>
+Repository <b>/Users/nate/repos_hsc/coadd_utils/</b> <br> Revision <b>d29a181b6c60421aa97f8f3f937afb394a90a65a</b><br> Branch <b>master</b><br>Last commit was on <b>2014-06-06 17:21:15 -0400</b><br><br>
+Repository <b>/Users/nate/repos_lsst/coadd_utils/</b> <br> Revision <b>c5164d8a845f39e5eec197afb4454405cd305d2f</b><br> Branch <b>master</b><br>Last commit was on <b>2015-06-08 16:22:40 -0700</b><br><br>
+</p>
+</div>
+
+<hr>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/coadd_utils/</h1>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_lsst/coadd_utils/</h1>
+<h2>python/lsst/coadd/utils/coaddDataIdContainer.py</h2>
+<pre>
+commit c5164d8a845f39e5eec197afb4454405cd305d2f
+Merge: 4b7b172 62d6629
+Author: Joshua Hoblitt <jhoblitt@cpan.org>
+Date:   Mon Jun 8 16:22:40 2015 -0700
+
+    Merge pull request #1 from lsst/tickets/DM-2636
+    
+    replace eups.productDir() calls with lsst.utils.getPackageDir()</pre>
+</div>
+
+<h1 id="toc_1">List of the files in common<a name="homelist"></a></h1>
+
+<p>Files without links do not differ</p>
+
+<ul>
+<li><a href="#python/lsst/coadd/utils/__init__.py"><code>python/lsst/coadd/utils/__init__.py</code></a></li>
+<li><code>doc/doxygen.conf.in</code></li>
+<li><code>ups/coadd_utils.build</code></li>
+<li><code>doc/main.dox</code></li>
+<li><code>doc/SConscript</code></li>
+<li><a href="#tests/testSetCoaddEdgeBits.py"><code>tests/testSetCoaddEdgeBits.py</code></a></li>
+<li><code>lib/SConscript</code></li>
+<li><a href="#include/lsst/coadd/utils/setCoaddEdgeBits.h"><code>include/lsst/coadd/utils/setCoaddEdgeBits.h</code></a></li>
+<li><code>python/lsst/__init__.py</code></li>
+<li><code>python/lsst/coadd/utils/SConscript</code></li>
+<li><code>SConstruct</code></li>
+<li><code>examples/SConscript</code></li>
+<li><a href="#tests/SConscript"><code>tests/SConscript</code></a></li>
+<li><a href="#tests/testAddToCoadd.py"><code>tests/testAddToCoadd.py</code></a></li>
+<li><a href="#src/setCoaddEdgeBits.cc"><code>src/setCoaddEdgeBits.cc</code></a></li>
+<li><a href="#examples/warpAndCoadd.py"><code>examples/warpAndCoadd.py</code></a></li>
+<li><code>python/lsst/coadd/__init__.py</code></li>
+<li><a href="#ups/coadd_utils.table"><code>ups/coadd_utils.table</code></a></li>
+<li><code>include/lsst/coadd/utils.h</code></li>
+<li><code>.gitignore</code></li>
+<li><code>include/lsst/coadd/utils/copyGoodPixels.h</code></li>
+<li><code>tests/testSetMaskBits.py</code></li>
+<li><a href="#tests/testCopyGoodPixels.py"><code>tests/testCopyGoodPixels.py</code></a></li>
+<li><a href="#include/lsst/coadd/utils/addToCoadd.h"><code>include/lsst/coadd/utils/addToCoadd.h</code></a></li>
+<li><a href="#python/lsst/coadd/utils/utilsLib.i"><code>python/lsst/coadd/utils/utilsLib.i</code></a></li>
+<li><code>ups/coadd_utils.cfg</code></li>
+<li><code>python/lsst/coadd/utils/makeBitMask.py</code></li>
+<li><a href="#python/lsst/coadd/utils/coadd.py"><code>python/lsst/coadd/utils/coadd.py</code></a></li>
+<li><a href="#src/addToCoadd.cc"><code>src/addToCoadd.cc</code></a></li>
+<li><a href="#tests/testCoadd.py"><code>tests/testCoadd.py</code></a></li>
+<li><a href="#src/copyGoodPixels.cc"><code>src/copyGoodPixels.cc</code></a></li>
+</ul>
+
+<h1 id="toc_2"><a name="python/lsst/coadd/utils/__init__.py"/></a>python/lsst/coadd/utils/<strong>init</strong>.py</h1>
+
+<h3 id="toc_3">Diff:</h3>
+
+<pre>
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                from .version import *
+                
+                from .makeBitMask import *
+                from .utilsLib import *
+                from .coadd import *
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+27   <a href="#4baba132">4baba132</a> + from .coaddDataIdContainer import *</div>
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="4baba132"/></a>4baba132</h3>
+
+<pre>
+commit 4baba132e93df0df578f9f1a847fe8415eff1f7b
+Author: pgee <pgee@pgeepc2.gateway.2wire.net>
+Date:   Thu Feb 20 20:20:00 2014 -0800
+
+    Move CoaddDataIdContainer class to lsst.coadd.utils
+    add this container to the package initialization
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_4"><a name="tests/testSetCoaddEdgeBits.py"/></a>tests/testSetCoaddEdgeBits.py</h1>
+
+<h3 id="toc_5">Diff:</h3>
+
+<pre>
+                #!/usr/bin/env python
+                
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+                """Test lsst.coadd.utils.setCoaddEdgeBits
+                """
+                import os
+                import math
+                import pdb # we may want to say pdb.set_trace()
+                import unittest
+                
+                import numpy
+                
+                import lsst.afw.geom as afwGeom
+                import lsst.afw.image as afwImage
+                import lsst.afw.image.testUtils as imTestUtils
+                import lsst.utils.tests as utilsTests
+                import lsst.pex.logging as pexLog
+                import lsst.coadd.utils as coaddUtils
+                
+                Verbosity = 0 # increase to see trace
+                pexLog.Trace_setVerbosity("lsst.coadd.utils", Verbosity)
+                
+                #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+                
+                
+                class SetCoaddEdgeBitsTestCase(unittest.TestCase):
+                    """A test case for setCoaddEdgeBits
+                    """
+                    def testRandomMap(self):
+                        """Test setCoaddEdgeBits using a random depth map
+                        """
+                        imDim = afwGeom.Extent2I(50, 55)
+                        coaddMask = afwImage.MaskU(imDim)
+                
+                        numpy.random.seed(12345)
+                        depthMapArray = numpy.random.randint(0, 3, list((imDim[1], imDim[0]))).astype(numpy.uint16)
+                        depthMap = afwImage.makeImageFromArray(depthMapArray)
+                        
+                        refCoaddMaskArray = coaddMask.getArray()
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+61   <a href="#ef2a52c2">ef2a52c2</a> -         edgeMask = afwImage.MaskU.getPlaneBitMask("NO_DATA")</div>
+              ?                                                    ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+61   <a href="#01e94d8f">01e94d8f</a> +         edgeMask = afwImage.MaskU.getPlaneBitMask("EDGE")</div>
+              ?                                                    ^ ^^
+                        refCoaddMaskArray |= numpy.where(depthMapArray > 0, 0, edgeMask)
+                        
+                        coaddUtils.setCoaddEdgeBits(coaddMask, depthMap)
+                        coaddMaskArray = coaddMask.getArray()
+                        if numpy.any(refCoaddMaskArray != coaddMaskArray):
+                            errMsgList = (
+                                "Coadd mask does not match reference:",
+                                "computed=  %s" % (coaddMaskArray,),
+                                "reference= %s" % (refCoaddMaskArray,),
+                            )
+                            errMsg = "\n".join(errMsgList)
+                            self.fail(errMsg)
+                
+                #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+                
+                def suite():
+                    """Return a suite containing all the test cases in this module.
+                    """
+                    utilsTests.init()
+                
+                    suites = []
+                    suites += unittest.makeSuite(SetCoaddEdgeBitsTestCase)
+                    suites += unittest.makeSuite(utilsTests.MemoryTestCase)
+                
+                    return unittest.TestSuite(suites)
+                
+                if __name__ == "__main__":
+                    utilsTests.run(suite())
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="ef2a52c2"/></a>ef2a52c2</h3>
+
+<pre>
+commit ef2a52c2365371eb39e632e53a57fb7ee8cc795e
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri May 23 15:05:00 2014 -0400
+
+    Adapt to new mask bit NO_DATA replacing EDGE (DM-669)
+    
+    NO_DATA means a warp/coadd pixel doesn't map to a CCD.
+    EDGE means a pixel is near the edge and couldn't be searched
+    for sources.
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="01e94d8f"/></a>01e94d8f</h3>
+
+<pre>
+commit 01e94d8f60f898d9af5bcbfdd6502d9de816fd47
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Thu Aug 13 22:12:11 2009 +0000
+
+    First cut at coadd utils.
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_6"><a name="include/lsst/coadd/utils/setCoaddEdgeBits.h"/></a>include/lsst/coadd/utils/setCoaddEdgeBits.h</h1>
+
+<h3 id="toc_7">Diff:</h3>
+
+<pre>
+                // -*- LSST-C++ -*-
+                
+                /* 
+                 * LSST Data Management System
+                 * Copyright 2008, 2009, 2010 LSST Corporation.
+                 * 
+                 * This product includes software developed by the
+                 * LSST Project (http://www.lsst.org/).
+                 *
+                 * This program is free software: you can redistribute it and/or modify
+                 * it under the terms of the GNU General Public License as published by
+                 * the Free Software Foundation, either version 3 of the License, or
+                 * (at your option) any later version.
+                 * 
+                 * This program is distributed in the hope that it will be useful,
+                 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 * GNU General Public License for more details.
+                 * 
+                 * You should have received a copy of the LSST License Statement and 
+                 * the GNU General Public License along with this program.  If not, 
+                 * see <http://www.lsstcorp.org/LegalNotices/>.
+                 */
+                 
+                #ifndef LSST_COADD_UTILS_SETCOADDEDGEBITS_H
+                #define LSST_COADD_UTILS_SETCOADDEDGEBITS_H
+                /**
+                * @file
+                *
+                * @author Russell Owen
+                */
+                #include "boost/cstdint.hpp"
+                
+                #include "lsst/afw/image.h"
+                
+                namespace lsst {
+                namespace coadd {
+                namespace utils {
+                    
+                    /**
+                    * @brief set edge bits of coadd mask based on weight map
+                    *
+                    * Set pixels in the image to the edge pixel when the corresponding pixel in the weight map is zero.
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+44   <a href="#ef2a52c2">ef2a52c2</a> -     * The edge pixel is image=nan, variance=inf, mask=NO_DATA for masked images and image=nan for plain images.</div>
+              ?                                                       ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+44   <a href="#ab281cf1">ab281cf1</a> +     * The edge pixel is image=nan, variance=inf, mask=EDGE for masked images and image=nan for plain images.</div>
+              ?                                                       ^ ^^
+                    *
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+46   <a href="#ab281cf1">ab281cf1</a> -     * @throw pexExcept::InvalidParameterException if the dimensions of coaddMask and weightMap do not match.</div>
+              ?                                          ^^^^^^ ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+46   <a href="#c6e9e0a1">c6e9e0a1</a> +     * @throw pexExcept::InvalidParameterError if the dimensions of coaddMask and weightMap do not match.</div>
+              ?                                          ^^ ^
+                    */
+                    template<typename WeightPixelT>
+                    void setCoaddEdgeBits(
+                        lsst::afw::image::Mask<lsst::afw::image::MaskPixel> &coaddMask, ///< [in,out] mask of coadd
+                        lsst::afw::image::Image<WeightPixelT> const &weightMap          ///< weight map
+                    );
+                
+                }}} // lsst::coadd::utils
+                
+                #endif // !defined(LSST_COADD_UTILS_SETCOADDEDGEBITS_H)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="ab281cf1"/></a>ab281cf1</h3>
+
+<pre>
+commit ab281cf1f6833f991272008157777039db90c8d6
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Thu Oct 27 22:53:30 2011 +0000
+
+    Moved documentation to .h files as per new standard.
+    Gave intro section a unique name in documentation.
+</pre>
+<h3><a name="ef2a52c2"/></a>ef2a52c2</h3>
+
+<pre>
+commit ef2a52c2365371eb39e632e53a57fb7ee8cc795e
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri May 23 15:05:00 2014 -0400
+
+    Adapt to new mask bit NO_DATA replacing EDGE (DM-669)
+    
+    NO_DATA means a warp/coadd pixel doesn't map to a CCD.
+    EDGE means a pixel is near the edge and couldn't be searched
+    for sources.
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="c6e9e0a1"/></a>c6e9e0a1</h3>
+
+<pre>
+commit c6e9e0a191915cbfdadae4b0753011e4b7523cc0
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Jun 17 16:15:51 2014 -0700
+
+    Renamed exceptions
+</pre>
+<h3><a name="ab281cf1"/></a>ab281cf1</h3>
+
+<pre>
+commit ab281cf1f6833f991272008157777039db90c8d6
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Thu Oct 27 22:53:30 2011 +0000
+
+    Moved documentation to .h files as per new standard.
+    Gave intro section a unique name in documentation.
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_8"><a name="tests/SConscript"/></a>tests/SConscript</h1>
+
+<h3 id="toc_9">Diff:</h3>
+
+<pre>
+                # -*- python -*-
+                import os
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+3    <a href="#62d66293">62d66293</a> + import lsst.utils</div>
+                from lsst.sconsUtils import scripts, env
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+5    <a href="#dcd5f3b2">dcd5f3b2</a> - dataDir = env.ProductDir("afwdata")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+6    <a href="#3f3cec54">3f3cec54</a> - if not dataDir:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+6    <a href="#62d66293">62d66293</a> + try:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+7    <a href="#62d66293">62d66293</a> +     afwdataDir = lsst.utils.getPackageDir('afwdata')</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+8    <a href="#62d66293">62d66293</a> + except Exception:</div>
+                    print "Warning: afwdata is not set up; not running the tests!"
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+8    <a href="#dcd5f3b2">dcd5f3b2</a> - else:    </div>
+              ?      ----
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+10   <a href="#62d66293">62d66293</a> + else:</div>
+                    # copy AFWDATA_DIR to the test's environment
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+12   <a href="#62d66293">62d66293</a> +     env["ENV"]["AFWDATA_DIR"] = afwdataDir</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+10   <a href="#dcd5f3b2">dcd5f3b2</a> -     env["ENV"]["AFWDATA_DIR"] = os.environ["AFWDATA_DIR"]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+11   <a href="#3f3cec54">3f3cec54</a> - </div>
+                    scripts.BasicSConscript.tests()
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="3f3cec54"/></a>3f3cec54</h3>
+
+<pre>
+commit 3f3cec54cedb385f03b4502dd7abd94bfbe2bcff
+Author: rhl <rhl@git.lsstcorp.org>
+Date:   Sun Nov 22 15:48:02 2009 +0000
+
+    Building without afwdata shouldn't raise an error
+</pre>
+<h3><a name="dcd5f3b2"/></a>dcd5f3b2</h3>
+
+<pre>
+commit dcd5f3b2d13e0aa154654be3c6321e40c795bf0e
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Thu Oct 27 17:01:23 2011 +0000
+
+    First cut at new sconsUtils support. It fails to build with a recursion error.
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="62d66293"/></a>62d66293</h3>
+
+<pre>
+commit 62d66293eba68f21c0748bc8d9de191f90528fa0
+Author: Joshua Hoblitt <josh@hoblitt.com>
+Date:   Fri May 22 10:43:42 2015 -0700
+
+    replace eups.productDir() calls with lsst.utils.getPackageDir()
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_10"><a name="tests/testAddToCoadd.py"/></a>tests/testAddToCoadd.py</h1>
+
+<h3 id="toc_11">Diff:</h3>
+
+<pre>
+                #!/usr/bin/env python
+                
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+                """Test lsst.coadd.utils.addToCoadd
+                """
+                import os
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+28   <a href="#3e546e1f">3e546e1f</a> - import pdb # we may want to say pdb.set_trace()</div>
+                import unittest
+                import warnings
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+31   <a href="#3109e504">3109e504</a> - import sys</div>
+                
+                import numpy
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+35   <a href="#3e546e1f">3e546e1f</a> - import eups</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+33   <a href="#62d66293">62d66293</a> + import lsst.utils</div>
+                import lsst.afw.geom as afwGeom
+                import lsst.afw.image as afwImage
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+38   <a href="#3e546e1f">3e546e1f</a> - import lsst.afw.image.testUtils as imTestUtils</div>
+                import lsst.afw.math as afwMath
+                import lsst.afw.display.ds9 as ds9
+                import lsst.utils.tests as utilsTests
+                import lsst.pex.exceptions as pexExcept
+                import lsst.pex.logging as pexLog
+                import lsst.coadd.utils as coaddUtils
+                
+                try:
+                    display
+                except NameError:
+                    display = False
+                    Verbosity = 0 # increase to see trace
+                
+                pexLog.Trace_setVerbosity("lsst.coadd.utils", Verbosity)
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+54   <a href="#3e546e1f">3e546e1f</a> - dataDir = eups.productDir("afwdata")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+51   <a href="#62d66293">62d66293</a> + try:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+52   <a href="#62d66293">62d66293</a> +     dataDir = lsst.utils.getPackageDir('afwdata')</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+53   <a href="#62d66293">62d66293</a> + except Exception:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+54   <a href="#62d66293">62d66293</a> +     dataDir = None</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+55   <a href="#62d66293">62d66293</a> + </div>
+                if dataDir != None:
+                    medMIPath = os.path.join(dataDir, "data", "med.fits")
+                    
+                #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+                
+                def slicesFromBox(box, image):
+                    """Computes the numpy slice in x and y associated with a parent bounding box
+                    given an image/maskedImage/exposure
+                    """
+                    startInd = (box.getMinX() - image.getX0(), box.getMinY() - image.getY0())
+                    stopInd = (startInd[0] + box.getWidth(), startInd[1] + box.getHeight())
+                #     print "slicesFromBox: box=(min=%s, dim=%s), imxy0=%s, imdim=%s, startInd=%s, stopInd=%s" %\
+                #         (box.getMin(), box.getDimensions(), image.getXY0(), image.getDimensions(), startInd, stopInd)
+                    return (
+                        slice(startInd[0], stopInd[0]),
+                        slice(startInd[1], stopInd[1]),
+                    )
+                
+                def referenceAddToCoadd(coadd, weightMap, maskedImage, badPixelMask, weight):
+                    """Reference implementation of lsst.coadd.utils.addToCoadd
+                    
+                    Unlike lsst.coadd.utils.addToCoadd this one does not update the input coadd and weightMap,
+                    but instead returns the new versions (as numpy arrays).
+                    
+                    Inputs:
+                    - coadd: coadd before adding maskedImage (a MaskedImage)
+                    - weightMap: weight map before adding maskedImage (an Image)
+                    - maskedImage: masked image to add to coadd (a MaskedImage)
+                    - badPixelMask: mask of bad pixels to ignore (an int)
+                    - weight: relative weight of this maskedImage (a float)
+                
+                    Returns three items:
+                    - overlapBBox: the overlap region relative to the parent (afwGeom.Box2I)
+                    - coaddArrayList: new coadd as a list of image, mask, variance numpy arrays
+                    - weightMapArray: new weight map, as a numpy array
+                    """
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+91   <a href="#a9b6402f">a9b6402f</a> -     overlapBBox = coadd.getBBox(afwImage.PARENT)</div>
+              ?                                 ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+92   <a href="#fa470e8d">fa470e8d</a> +     overlapBBox = coadd.getBBox()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+92   <a href="#a9b6402f">a9b6402f</a> -     overlapBBox.clip(maskedImage.getBBox(afwImage.PARENT))</div>
+              ?                                          ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+93   <a href="#fa470e8d">fa470e8d</a> +     overlapBBox.clip(maskedImage.getBBox())</div>
+                
+                    coaddArrayList = tuple(arr.copy() for arr in coadd.getArrays())
+                    weightMapArray = weightMap.getArray().copy()
+                    
+                    if overlapBBox.isEmpty():
+                        return (overlapBBox, coaddArrayList, weightMapArray)
+                    
+                    maskedImageArrayList = maskedImage.getArrays()
+                    badMaskArr = (maskedImageArrayList[1] & badPixelMask) != 0
+                    
+                    coaddSlices = slicesFromBox(overlapBBox, coadd)
+                    imageSlices = slicesFromBox(overlapBBox, maskedImage)
+                
+                    badMaskView = badMaskArr[imageSlices[1], imageSlices[0]]
+                    for ind in range(3):
+                        coaddView = coaddArrayList[ind][coaddSlices[1], coaddSlices[0]]
+                        maskedImageView = maskedImageArrayList[ind][imageSlices[1], imageSlices[0]]
+                        if ind == 1: # mask plane
+                            coaddView |= numpy.where(badMaskView, 0, maskedImageView)
+                        else: # image or variance plane
+                            if ind == 0: # image
+                                weightFac = weight
+                            else: # variance
+                                weightFac = weight**2
+                            coaddView += numpy.where(badMaskView, 0, maskedImageView)*weightFac
+                    weightMapView = weightMapArray[coaddSlices[1], coaddSlices[0]]
+                    weightMapView += numpy.where(badMaskView, 0, 1)*weight
+                    return overlapBBox, coaddArrayList, weightMapArray
+                
+                
+                class AddToCoaddTestCase(unittest.TestCase):
+                    """A test case for addToCoadd
+                    """
+                
+                    def _testAddToCoaddImpl(self, useMask, uniformWeight=True):
+                        """Test coadd"""
+                
+                        trueImageValue = 10.0
+                        imBBox = afwGeom.Box2I(afwGeom.Point2I(0, 0), afwGeom.Extent2I(10, 20))
+                        if useMask:
+                            coadd = afwImage.MaskedImageF(imBBox)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+134  <a href="#a9b6402f">a9b6402f</a> -             weightMap = coadd.getImage().Factory(coadd.getBBox(afwImage.PARENT))</div>
+              ?                                                                ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+135  <a href="#fa470e8d">fa470e8d</a> +             weightMap = coadd.getImage().Factory(coadd.getBBox())</div>
+                
+                            badBits = 0x1
+                            badPixel = (float("NaN"), badBits, 0)
+                            zero = (0.0, 0x0, 0)
+                            truth = (trueImageValue, 0x0, 0)
+                        else:
+                            coadd = afwImage.ImageF(imBBox)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+142  <a href="#a9b6402f">a9b6402f</a> -             weightMap = coadd.Factory(coadd.getBBox(afwImage.PARENT))</div>
+              ?                                                     ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+143  <a href="#fa470e8d">fa470e8d</a> +             weightMap = coadd.Factory(coadd.getBBox())</div>
+                
+                            badPixel = float("NaN")
+                            zero = 0.0
+                            truth = trueImageValue
+                
+                        for i in range(0, 20, 3):
+                            image = coadd.Factory(coadd.getDimensions())
+                            image.set(badPixel)
+                
+                            subBBox = afwGeom.Box2I(afwGeom.Point2I(0, i),
+                                image.getDimensions() - afwGeom.Extent2I(0, i))
+                            subImage = image.Factory(image, subBBox, afwImage.LOCAL)
+                            subImage.set(truth)
+                            del subImage
+                
+                            weight = 1.0 if uniformWeight else 1.0 + 0.1*i
+                            if useMask:
+                                coaddUtils.addToCoadd(coadd, weightMap, image, badBits, weight)
+                            else:
+                                coaddUtils.addToCoadd(coadd, weightMap, image, weight)
+                
+                            self.assertEqual(image.get(image.getWidth() - 1, image.getHeight() - 1), truth)
+                
+                        coadd /= weightMap
+                
+                        if display:
+                            ds9.mtv(image, title="image", frame=1)
+                            ds9.mtv(coadd, title="coadd", frame=2)
+                            ds9.mtv(weightMap, title="weightMap", frame=3)
+                
+                        stats = afwMath.makeStatistics(coadd, afwMath.MEAN | afwMath.STDEV)
+                
+                        return [trueImageValue, stats.getValue(afwMath.MEAN), 0.0, stats.getValue(afwMath.STDEV)]
+                
+                    def testAddToCoaddMask(self):
+                        """Test coadded MaskedImages"""
+                
+                        for uniformWeight in (False, True):
+                            truth_mean, mean, truth_stdev, stdev = self._testAddToCoaddImpl(True, uniformWeight)
+                    
+                            self.assertEqual(truth_mean, mean)
+                            self.assertEqual(truth_stdev, stdev)
+                
+                    def testAddToCoaddNaN(self):
+                        """Test coadded Images with NaN"""
+                
+                        for uniformWeight in (False, True):
+                            truth_mean, mean, truth_stdev, stdev = self._testAddToCoaddImpl(False, uniformWeight)
+                
+                            self.assertEqual(truth_mean, mean)
+                            self.assertEqual(truth_stdev, stdev)
+                
+                #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+                
+                class AddToCoaddAfwdataTestCase(unittest.TestCase):
+                    """A test case for addToCoadd using afwdata
+                    """
+                    def referenceTest(self, coadd, weightMap, image, badPixelMask, weight):
+                        """Compare lsst implemenation of addToCoadd to a reference implementation.
+                        
+                        Returns the overlap bounding box
+                        """
+                        # this call leaves coadd and weightMap alone:
+                        overlapBBox, refCoaddArrayList, refweightMapArray = \
+                            referenceAddToCoadd(coadd, weightMap, image, badPixelMask, weight)
+                        # this updates coadd and weightMap:
+                        afwOverlapBox = coaddUtils.addToCoadd(coadd, weightMap, image, badPixelMask, weight)
+                        self.assertEquals(overlapBBox, afwOverlapBox)
+                        
+                        coaddArrayList = coadd.getArrays()
+                        maskArr = coaddArrayList[1]
+                        weightMapArray = weightMap.getArray()
+                        
+                        for name, ind in (("image", 0), ("mask", 1), ("variance", 2)):
+                            if not numpy.allclose(coaddArrayList[ind], refCoaddArrayList[ind]):
+                                errMsgList = (
+                                    "Computed %s does not match reference for badPixelMask=%s:" % (name, badPixelMask),
+                                    "computed=  %s" % (coaddArrayList[ind],),
+                                    "reference= %s" % (refCoaddArrayList[ind],),
+                                )
+                                errMsg = "\n".join(errMsgList)
+                                self.fail(errMsg)
+                        if not numpy.allclose(weightMapArray, refweightMapArray):
+                            errMsgList = (
+                                "Computed weight map does not match reference for badPixelMask=%s:" % (badPixelMask,),
+                                "computed=  %s" % (weightMapArray,),
+                                "reference= %s" % (refweightMapArray,),
+                            )
+                            errMsg = "\n".join(errMsgList)
+                            self.fail(errMsg)
+                        return overlapBBox
+                        
+                    def testMed(self):
+                        """Test addToCoadd by adding an image with known bad pixels using varying masks
+                        """
+                        medBBox = afwGeom.Box2I(afwGeom.Point2I(130, 315), afwGeom.Extent2I(20, 21))
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+239  <a href="#a9b6402f">a9b6402f</a> -         maskedImage = afwImage.MaskedImageF(afwImage.MaskedImageF(medMIPath), medBBox, afwImage.PARENT)</div>
+              ?                                                                                      -----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+240  <a href="#fa470e8d">fa470e8d</a> +         maskedImage = afwImage.MaskedImageF(afwImage.MaskedImageF(medMIPath), medBBox)</div>
+                        coadd = afwImage.MaskedImageF(medBBox)
+                        weightMap = afwImage.ImageF(medBBox)
+                        weight = 0.9
+                        for badPixelMask in (0x00, 0xFF):
+                            self.referenceTest(coadd, weightMap, maskedImage, badPixelMask, weight)
+                    
+                    def testMultSizes(self):
+                        """Test addToCoadd by adding various subregions of the med image
+                        to a coadd that's a slightly different shape
+                        """
+                        bbox = afwGeom.Box2I(afwGeom.Point2I(130, 315), afwGeom.Extent2I(30, 31))
+                        fullMaskedImage = afwImage.MaskedImageF(medMIPath)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+252  <a href="#a9b6402f">a9b6402f</a> -         maskedImage = afwImage.MaskedImageF(fullMaskedImage, bbox, afwImage.PARENT)</div>
+              ?                                                                  -----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+253  <a href="#fa470e8d">fa470e8d</a> +         maskedImage = afwImage.MaskedImageF(fullMaskedImage, bbox)</div>
+                        coaddBBox = afwGeom.Box2I(
+                            maskedImage.getXY0() + afwGeom.Extent2I(-6, +4),
+                            maskedImage.getDimensions() + afwGeom.Extent2I(10, -10))
+                        coadd = afwImage.MaskedImageF(coaddBBox)
+                        weightMap = afwImage.ImageF(coaddBBox)
+                        badPixelMask = 0x0
+                        
+                        # add masked image that extends beyond coadd in y
+                        overlapBBox = self.referenceTest(coadd, weightMap, maskedImage, badPixelMask, 0.5)
+                        self.assertFalse(overlapBBox.isEmpty())
+                
+                        # add masked image that extends beyond coadd in x
+                        bbox = afwGeom.Box2I(afwGeom.Point2I(120, 320), afwGeom.Extent2I(50, 10))
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+266  <a href="#a9b6402f">a9b6402f</a> -         maskedImage = afwImage.MaskedImageF(fullMaskedImage, bbox, afwImage.PARENT)</div>
+              ?                                                                  -----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+267  <a href="#fa470e8d">fa470e8d</a> +         maskedImage = afwImage.MaskedImageF(fullMaskedImage, bbox)</div>
+                        overlapBBox = self.referenceTest(coadd, weightMap, maskedImage, badPixelMask, 0.5)
+                        self.assertFalse(overlapBBox.isEmpty())
+                        
+                        # add masked image that is fully within the coadd
+                        bbox = afwGeom.Box2I(afwGeom.Point2I(130, 320), afwGeom.Extent2I(10, 10))
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+272  <a href="#a9b6402f">a9b6402f</a> -         maskedImage = afwImage.MaskedImageF(fullMaskedImage, bbox, afwImage.PARENT)</div>
+              ?                                                                  -----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+273  <a href="#fa470e8d">fa470e8d</a> +         maskedImage = afwImage.MaskedImageF(fullMaskedImage, bbox)</div>
+                        overlapBBox = self.referenceTest(coadd, weightMap, maskedImage, badPixelMask, 0.5)
+                        self.assertFalse(overlapBBox.isEmpty())
+                        
+                        # add masked image that does not overlap coadd
+                        bbox = afwGeom.Box2I(afwGeom.Point2I(0, 0), afwGeom.Extent2I(10, 10))
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+278  <a href="#a9b6402f">a9b6402f</a> -         maskedImage = afwImage.MaskedImageF(fullMaskedImage, bbox, afwImage.PARENT)</div>
+              ?                                                                  -----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+279  <a href="#fa470e8d">fa470e8d</a> +         maskedImage = afwImage.MaskedImageF(fullMaskedImage, bbox)</div>
+                        overlapBBox = self.referenceTest(coadd, weightMap, maskedImage, badPixelMask, 0.5)
+                        self.assertTrue(overlapBBox.isEmpty())
+                    
+                    def testAssertions(self):
+                        """Test that addToCoadd requires coadd and weightMap to have the same dimensions and xy0"""
+                        maskedImage = afwImage.MaskedImageF(afwGeom.Extent2I(10, 10))
+                        coadd = afwImage.MaskedImageF(afwGeom.Extent2I(11, 11))
+                        coadd.setXY0(5, 6)
+                        for dw, dh in (1, 0), (0, 1), (-1, 0), (0, -1):
+                            weightMapBBox = afwGeom.Box2I(coadd.getXY0(), coadd.getDimensions() + afwGeom.Extent2I(dw, dh))
+                            weightMap = afwImage.ImageF(weightMapBBox)
+                            weightMap.setXY0(coadd.getXY0())
+                            try:
+                                coaddUtils.addToCoadd(coadd, weightMap, maskedImage, 0x0, 0.1)
+                                self.fail("should have raised exception")
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+294  <a href="#3109e504">3109e504</a> -             except pexExcept.LsstCppException, e:</div>
+              ?                              -------         ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+295  <a href="#1860464e">1860464e</a> +             except pexExcept.Exception as e:</div>
+              ?                                       ^^^
+                                pass
+                        for dx0, dy0 in (1, 0), (0, 1), (-1, 0), (0, -1):
+                            weightMapBBox = afwGeom.Box2I(coadd.getXY0() + afwGeom.Extent2I(dx0, dy0), coadd.getDimensions())
+                            weightMap = afwImage.ImageF(weightMapBBox)
+                            try:
+                                coaddUtils.addToCoadd(coadd, weightMap, maskedImage, 0x0, 0.1)
+                                self.fail("should have raised exception")
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+302  <a href="#3109e504">3109e504</a> -             except pexExcept.LsstCppException, e:</div>
+              ?                              -------         ---
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+303  <a href="#fa470e8d">fa470e8d</a> +             except pexExcept.Exception:</div>
+                                pass
+                
+                def suite():
+                    """Return a suite containing all the test cases in this module.
+                    """
+                    utilsTests.init()
+                
+                    suites = []
+                    suites += unittest.makeSuite(AddToCoaddTestCase)
+                
+                    if dataDir:
+                        suites += unittest.makeSuite(AddToCoaddAfwdataTestCase)
+                    else:
+                        warnings.warn("Skipping some tests because afwdata is not setup")
+                    suites += unittest.makeSuite(utilsTests.MemoryTestCase)
+                
+                    return unittest.TestSuite(suites)
+                
+                
+                def run(shouldExit=False):
+                    """Run the tests"""
+                    utilsTests.run(suite(), shouldExit)
+                
+                if __name__ == "__main__":
+                    run(True)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="3e546e1f"/></a>3e546e1f</h3>
+
+<pre>
+commit 3e546e1ffccad73e44a4aa9484cc04a5653f8dc1
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Mon Sep 21 18:38:57 2009 +0000
+
+    Added addToCoadd function.
+</pre>
+<h3><a name="3109e504"/></a>3109e504</h3>
+
+<pre>
+commit 3109e50499da07f1f157fddb025b8fc235085217
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Sat Feb 5 00:14:56 2011 +0000
+
+    Implement ticket #1567
+</pre>
+<h3><a name="a9b6402f"/></a>a9b6402f</h3>
+
+<pre>
+commit a9b6402f0765ae91165b78e6b2c0ef435fc12950
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Tue Mar 8 23:34:48 2011 +0000
+
+    Implement ticket #1556
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="fa470e8d"/></a>fa470e8d</h3>
+
+<pre>
+commit fa470e8dbeadd213877443d4dff057e84c498542
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Sep 10 17:25:28 2014 -0700
+
+    Use new default image origin of PARENT when possible
+</pre>
+<h3><a name="1860464e"/></a>1860464e</h3>
+
+<pre>
+commit 1860464e5a18ca2538812559e8c8bcefe6a3ebec
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Fri Jul 18 13:26:55 2014 -0400
+
+    Adapt to changes in exception Python wrappers (DM-827)
+</pre>
+<h3><a name="62d66293"/></a>62d66293</h3>
+
+<pre>
+commit 62d66293eba68f21c0748bc8d9de191f90528fa0
+Author: Joshua Hoblitt <josh@hoblitt.com>
+Date:   Fri May 22 10:43:42 2015 -0700
+
+    replace eups.productDir() calls with lsst.utils.getPackageDir()
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_12"><a name="src/setCoaddEdgeBits.cc"/></a>src/setCoaddEdgeBits.cc</h1>
+
+<h3 id="toc_13">Diff:</h3>
+
+<pre>
+                // -*- LSST-C++ -*-
+                
+                /* 
+                 * LSST Data Management System
+                 * Copyright 2008, 2009, 2010 LSST Corporation.
+                 * 
+                 * This product includes software developed by the
+                 * LSST Project (http://www.lsst.org/).
+                 *
+                 * This program is free software: you can redistribute it and/or modify
+                 * it under the terms of the GNU General Public License as published by
+                 * the Free Software Foundation, either version 3 of the License, or
+                 * (at your option) any later version.
+                 * 
+                 * This program is distributed in the hope that it will be useful,
+                 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 * GNU General Public License for more details.
+                 * 
+                 * You should have received a copy of the LSST License Statement and 
+                 * the GNU General Public License along with this program.  If not, 
+                 * see <http://www.lsstcorp.org/LegalNotices/>.
+                 */
+                 
+                /**
+                * @file
+                *
+                * @author Russell Owen
+                */
+                #include "boost/format.hpp"
+                
+                #include "lsst/pex/exceptions.h"
+                #include "lsst/coadd/utils/setCoaddEdgeBits.h"
+                
+                namespace pexExcept = lsst::pex::exceptions;
+                namespace afwImage = lsst::afw::image;
+                namespace coaddUtils = lsst::coadd::utils;
+                
+                template<typename WeightPixelT>
+                void coaddUtils::setCoaddEdgeBits(
+                    // spell out lsst:afw::image to make Doxygen happy
+                    lsst::afw::image::Mask<lsst::afw::image::MaskPixel> &coaddMask,
+                    lsst::afw::image::Image<WeightPixelT> const &weightMap
+                ) {
+                    typedef afwImage::Mask<afwImage::MaskPixel>::x_iterator MaskXIter;
+                    typedef typename afwImage::Image<WeightPixelT>::const_x_iterator WeightMapConstXIter;
+                
+                    if (coaddMask.getDimensions() != weightMap.getDimensions()) {
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+49   <a href="#e3cb44d8">e3cb44d8</a> -         throw LSST_EXCEPT(pexExcept::InvalidParameterException,</div>
+              ?                                                       ^^^^^^ ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+49   <a href="#c6e9e0a1">c6e9e0a1</a> +         throw LSST_EXCEPT(pexExcept::InvalidParameterError,</div>
+              ?                                                       ^^ ^
+                            (boost::format("coaddMask and weightMap dimensions differ: %dx%d != %dx%d") %
+                            coaddMask.getWidth() % coaddMask.getHeight() % weightMap.getWidth() % weightMap.getHeight()
+                            ).str());
+                    }
+                    
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+55   <a href="#ef2a52c2">ef2a52c2</a> -     afwImage::MaskPixel const edgeMask = afwImage::Mask<afwImage::MaskPixel>::getPlaneBitMask("NO_DATA");</div>
+              ?                                                                                                ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+55   <a href="#e3cb44d8">e3cb44d8</a> +     afwImage::MaskPixel const edgeMask = afwImage::Mask<afwImage::MaskPixel>::getPlaneBitMask("EDGE");</div>
+              ?                                                                                                ^ ^^
+                
+                    // Set the pixels row by row, to avoid repeated checks for end-of-row
+                    for (int y = 0, endY = weightMap.getHeight(); y != endY; ++y) {
+                        WeightMapConstXIter weightMapPtr = weightMap.row_begin(y);
+                        WeightMapConstXIter const weightMapEndPtr = weightMap.row_end(y);
+                        MaskXIter coaddMaskPtr = coaddMask.row_begin(y);
+                        for (; weightMapPtr != weightMapEndPtr; ++weightMapPtr, ++coaddMaskPtr) {
+                            if (*weightMapPtr == 0) {
+                                (*coaddMaskPtr) = (*coaddMaskPtr) | edgeMask;
+                            }
+                        }
+                    }
+                }
+                
+                //
+                // Explicit instantiations
+                //
+                /// \cond
+                #define INSTANTIATE(WEIGHTPIXEL) \
+                    template void coaddUtils::setCoaddEdgeBits<WEIGHTPIXEL>( \
+                        afwImage::Mask<afwImage::MaskPixel> &coaddMask, \
+                        afwImage::Image<WEIGHTPIXEL> const &weightMap \
+                    );
+                
+                INSTANTIATE(double);
+                INSTANTIATE(float);
+                INSTANTIATE(int);
+                INSTANTIATE(boost::uint16_t);
+                /// \endcond
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="e3cb44d8"/></a>e3cb44d8</h3>
+
+<pre>
+commit e3cb44d888dcc3a334f929c30a8c5f42bf3eea29
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Thu Sep 24 21:44:12 2009 +0000
+
+    Modified to support floating point weight maps instead of just depth maps.
+</pre>
+<h3><a name="ef2a52c2"/></a>ef2a52c2</h3>
+
+<pre>
+commit ef2a52c2365371eb39e632e53a57fb7ee8cc795e
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri May 23 15:05:00 2014 -0400
+
+    Adapt to new mask bit NO_DATA replacing EDGE (DM-669)
+    
+    NO_DATA means a warp/coadd pixel doesn't map to a CCD.
+    EDGE means a pixel is near the edge and couldn't be searched
+    for sources.
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="e3cb44d8"/></a>e3cb44d8</h3>
+
+<pre>
+commit e3cb44d888dcc3a334f929c30a8c5f42bf3eea29
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Thu Sep 24 21:44:12 2009 +0000
+
+    Modified to support floating point weight maps instead of just depth maps.
+</pre>
+<h3><a name="c6e9e0a1"/></a>c6e9e0a1</h3>
+
+<pre>
+commit c6e9e0a191915cbfdadae4b0753011e4b7523cc0
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Jun 17 16:15:51 2014 -0700
+
+    Renamed exceptions
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_14"><a name="examples/warpAndCoadd.py"/></a>examples/warpAndCoadd.py</h1>
+
+<h3 id="toc_15">Diff:</h3>
+
+<pre>
+                #!/usr/bin/env python
+                
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                """Demonstrate how to create a coadd by warping and adding.
+                """
+                import os
+                import sys
+                import time
+                import traceback
+                
+                import lsst.pex.config as pexConfig
+                import lsst.pex.logging as pexLog
+                import lsst.afw.geom as afwGeom
+                import lsst.afw.image as afwImage
+                import lsst.afw.math as afwMath
+                import lsst.coadd.utils as coaddUtils
+                
+                class WarpAndCoaddConfig(pexConfig.Config):
+                    saveDebugImages = pexConfig.Field(
+                        doc = "Save intermediate images?",
+                        dtype = bool,
+                        default = False,
+                    )
+                    bboxMin = pexConfig.ListField(
+                        doc = "Lower left corner of bounding box used to subframe to all input images",
+                        dtype = int,
+                        default = (0, 0),
+                        length = 2,
+                    )
+                    bboxSize = pexConfig.ListField(
+                        doc = "Size of bounding box used to subframe all input images; 0 0 for full input images",
+                        dtype = int,
+                        default = (0, 0),
+                        length = 2,
+                    )
+                    coaddZeroPoint = pexConfig.Field(
+                        dtype = float,
+                        doc = "Photometric zero point of coadd (mag).",
+                        default = 27.0,
+                    )
+                    coadd = pexConfig.ConfigField(dtype = coaddUtils.Coadd.ConfigClass, doc = "")
+                    warp = pexConfig.ConfigField(dtype = afwMath.Warper.ConfigClass, doc = "")
+                    
+                
+                def warpAndCoadd(coaddPath, exposureListPath, config):
+                    """Create a coadd by warping and psf-matching
+                    
+                    Inputs:
+                    - coaddPath: path to desired coadd; ovewritten if it exists
+                    - exposureListPath: a file containing a list of paths to input exposures;
+                        blank lines and lines that start with # are ignored
+                    - config: an instance of WarpAndCoaddConfig
+                    
+                    The first exposure in exposureListPath is used as the reference: all other exposures
+                    are warped to match to it.
+                    """
+                    weightPath = os.path.splitext(coaddPath)[0] + "_weight.fits"
+                
+                    bbox = afwGeom.Box2I(
+                        afwGeom.Point2I(config.bboxMin[0], config.bboxMin[1]),
+                        afwGeom.Extent2I(config.bboxSize[0], config.bboxSize[1]),
+                    )
+                    print "SaveDebugImages =", config.saveDebugImages
+                    print "bbox =", bbox
+                    
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+86   <a href="#ed585e86">ed585e86</a> -     zpScaler = coaddUtils.ZeropointScaler(self.config.coaddZeroPoint)</div>
+              ?                                           -----
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+86   <a href="#fa470e8d">fa470e8d</a> +     zpScaler = coaddUtils.ZeropointScaler(config.coaddZeroPoint)</div>
+                
+                    # process exposures
+                    accumGoodTime = 0
+                    coadd = None
+                    expNum = 0
+                    numExposuresInCoadd = 0
+                    numExposuresFailed = 0
+                    with file(exposureListPath, "rU") as infile:
+                        for exposurePath in infile:
+                            exposurePath = exposurePath.strip()
+                            if not exposurePath or exposurePath.startswith("#"):
+                                continue
+                            expNum += 1
+                
+                            try:
+                                print >> sys.stderr, "Processing exposure: %s" % (exposurePath,)
+                                startTime = time.time()
+                                exposure = afwImage.ExposureF(exposurePath, 0, bbox, afwImage.LOCAL)
+                                if config.saveDebugImages:
+                                    exposure.writeFits("exposure%s.fits" % (expNum,))
+                                
+                                if not coadd:
+                                    print >> sys.stderr, "Create warper and coadd with size and WCS matching the first/reference exposure"
+                                    warper = afwMath.Warper.fromConfig(config.warp)
+                                    coadd = coaddUtils.Coadd.fromConfig(
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+112  <a href="#a9b6402f">a9b6402f</a> -                         bbox = exposure.getBBox(afwImage.PARENT),</div>
+              ?                                                 ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+112  <a href="#fa470e8d">fa470e8d</a> +                         bbox = exposure.getBBox(),</div>
+                                        wcs = exposure.getWcs(),
+                                        config = config.coadd)
+                                    print "badPixelMask=", coadd.getBadPixelMask()
+                                    
+                                    print >> sys.stderr, "Add reference exposure to coadd (without warping)"
+                                    coadd.addExposure(exposure)
+                                else:
+                                    print >> sys.stderr, "Warp exposure"
+                                    warpedExposure = warper.warpExposure(
+                                        destWcs = coadd.getWcs(),
+                                        srcExposure = exposure,
+                                        maxBBox = coadd.getBBox(),
+                                    )
+                                    if config.saveDebugImages:
+                                        warpedExposure.writeFits("warped%s.fits" % (expNum,))
+                                    
+                                    print >> sys.stederr, "Scale exposure to desired photometric zeropoint"
+                                    zpScaler.scaleExposure(warpedExposure)
+                
+                                    print >> sys.stderr, "Add warped exposure to coadd"
+                                    coadd.addExposure(warpedExposure)
+                
+                                    # ignore time for first exposure since nothing happens to it
+                                    deltaTime = time.time() - startTime
+                                    print >> sys.stderr, "Elapsed time for processing exposure: %0.1f sec" % (deltaTime,)
+                                    accumGoodTime += deltaTime
+                                numExposuresInCoadd += 1
+                            except Exception, e:
+                                print >> sys.stderr, "Exposure %s failed: %s" % (exposurePath, e)
+                                traceback.print_exc(file=sys.stderr)
+                                numExposuresFailed += 1
+                                continue
+                
+                    coaddExposure = coadd.getCoadd()
+                    coaddExposure.writeFits(coaddPath)
+                    print >> sys.stderr, "Wrote coadd: %s" % (coaddPath,)
+                    weightMap = coadd.getWeightMap()
+                    weightMap.writeFits(weightPath)
+                    print >> sys.stderr, "Wrote weightMap: %s" % (weightPath,)
+                
+                    print >> sys.stderr, "Coadded %d exposures and failed %d" % (numExposuresInCoadd, numExposuresFailed)
+                    if numExposuresInCoadd > 1:
+                        timePerGoodExposure = accumGoodTime / float(numExposuresInCoadd - 1)
+                        print >> sys.stderr, "Processing speed: %.1f seconds/exposure (ignoring first and failed)" % \
+                            (timePerGoodExposure,)
+                
+                if __name__ == "__main__":
+                    pexLog.Trace.setVerbosity('lsst.coadd', 3)
+                    helpStr = """Usage: warpAndCoadd.py coaddPath exposureListPath
+                
+                where:
+                - coaddPath is the desired name or path of the output coadd
+                - exposureListPath is a file containing a list of:
+                    pathToExposure
+                  where:
+                  - pathToExposure is the path to an Exposure
+                  - the first exposure listed is taken to be the reference exposure,
+                    which determines the size and WCS of the coadd
+                  - empty lines and lines that start with # are ignored.
+                """
+                    if len(sys.argv) != 3:
+                        print helpStr
+                        sys.exit(0)
+                    
+                    coaddPath = sys.argv[1]
+                    if os.path.exists(coaddPath):
+                        print >> sys.stderr, "Coadd file %s already exists" % (coaddPath,)
+                        sys.exit(1)
+                    
+                    exposureListPath = sys.argv[2]
+                    
+                    config = WarpAndCoaddConfig()
+                    
+                    warpAndCoadd(coaddPath, exposureListPath, config)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="ed585e86"/></a>ed585e86</h3>
+
+<pre>
+commit ed585e86a03b45122c97acb260bcf6bd28814b04
+Author: Russell Owen <rowen@uw.edu>
+Date:   Thu May 24 13:03:21 2012 -0500
+
+    Fix field name in example
+</pre>
+<h3><a name="a9b6402f"/></a>a9b6402f</h3>
+
+<pre>
+commit a9b6402f0765ae91165b78e6b2c0ef435fc12950
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Tue Mar 8 23:34:48 2011 +0000
+
+    Implement ticket #1556
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="fa470e8d"/></a>fa470e8d</h3>
+
+<pre>
+commit fa470e8dbeadd213877443d4dff057e84c498542
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Sep 10 17:25:28 2014 -0700
+
+    Use new default image origin of PARENT when possible
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_16"><a name="ups/coadd_utils.table"/></a>ups/coadd_utils.table</h1>
+
+<h3 id="toc_17">Diff:</h3>
+
+<pre>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#c62a98ad">c62a98ad</a> - setupRequired(afw >= 4.7.3.0)</div>
+              ?                  -----------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#dc430330">dc430330</a> + setupRequired(afw)</div>
+                setupRequired(pipe_base)
+                setupRequired(pex_config)
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+4    <a href="#62d66293">62d66293</a> + setupRequired(utils)</div>
+                setupOptional(afwdata)
+                
+                envPrepend(LD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+                envPrepend(DYLD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+                
+                envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="c62a98ad"/></a>c62a98ad</h3>
+
+<pre>
+commit c62a98ad8046914baf6372df89673e11f25eeb95
+Author: Serge Monkewitz <smm@ipac.caltech.edu>
+Date:   Tue Dec 13 08:01:04 2011 -0600
+
+    Adjust table file
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="62d66293"/></a>62d66293</h3>
+
+<pre>
+commit 62d66293eba68f21c0748bc8d9de191f90528fa0
+Author: Joshua Hoblitt <josh@hoblitt.com>
+Date:   Fri May 22 10:43:42 2015 -0700
+
+    replace eups.productDir() calls with lsst.utils.getPackageDir()
+</pre>
+<h3><a name="dc430330"/></a>dc430330</h3>
+
+<pre>
+commit dc43033058a5ef7db2655922a48e4d690382ff37
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:04 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_18"><a name="tests/testCopyGoodPixels.py"/></a>tests/testCopyGoodPixels.py</h1>
+
+<h3 id="toc_19">Diff:</h3>
+
+<pre>
+                #!/usr/bin/env python
+                
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+                """Test lsst.coadd.utils.copyGoodPixels
+                """
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+27   <a href="#99e65977">99e65977</a> - import os</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+28   <a href="#99e65977">99e65977</a> - import pdb # we may want to say pdb.set_trace()</div>
+                import unittest
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+30   <a href="#99e65977">99e65977</a> - import warnings</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+31   <a href="#99e65977">99e65977</a> - import sys</div>
+                
+                import numpy
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+35   <a href="#99e65977">99e65977</a> - import eups</div>
+                import lsst.afw.geom as afwGeom
+                import lsst.afw.image as afwImage
+                import lsst.afw.image.testUtils as imTestUtils
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+39   <a href="#99e65977">99e65977</a> - import lsst.afw.math as afwMath</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+40   <a href="#99e65977">99e65977</a> - import lsst.afw.display.ds9 as ds9</div>
+                import lsst.utils.tests as utilsTests
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+42   <a href="#99e65977">99e65977</a> - import lsst.pex.exceptions as pexExcept</div>
+                import lsst.pex.logging as pexLog
+                import lsst.coadd.utils as coaddUtils
+                
+                try:
+                    display
+                except NameError:
+                    display = False
+                    Verbosity = 0 # increase to see trace
+                
+                pexLog.Trace_setVerbosity("lsst.coadd.utils", Verbosity)
+                    
+                #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+                
+                def referenceCopyGoodPixelsImage(destImage, srcImage):
+                    """Reference implementation of lsst.coadd.utils.copyGoodPixels for Images
+                    
+                    Unlike lsst.coadd.utils.copyGoodPixels this one does not update the input destImage,
+                    but instead returns the new version
+                    
+                    Inputs:
+                    - destImage: source image before adding srcImage (a MaskedImage)
+                    - srcImage: masked image to add to destImage (a MaskedImage)
+                    - badPixelMask: mask of bad pixels to ignore (an int)
+                
+                    Returns:
+                    - destImage: new destImage
+                    - numGoodPix: number of good pixels
+                    """
+                    destImage = destImage.Factory(destImage, True) # make deep copy
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+73   <a href="#99e65977">99e65977</a> -     overlapBBox = destImage.getBBox(afwImage.PARENT)</div>
+              ?                                     ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+65   <a href="#fa470e8d">fa470e8d</a> +     overlapBBox = destImage.getBBox()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+74   <a href="#99e65977">99e65977</a> -     overlapBBox.clip(srcImage.getBBox(afwImage.PARENT))</div>
+              ?                                       ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+66   <a href="#fa470e8d">fa470e8d</a> +     overlapBBox.clip(srcImage.getBBox())</div>
+                    
+                    if overlapBBox.isEmpty():
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+77   <a href="#99e65977">99e65977</a> -         return (destImageArray, 0)</div>
+              ?                          -----
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+69   <a href="#fa470e8d">fa470e8d</a> +         return (destImage, 0)</div>
+                    
+                    destImageView = destImage.Factory(destImage, overlapBBox, afwImage.PARENT, False)
+                    destImageArray = destImageView.getArray()
+                
+                    srcImageView = srcImage.Factory(srcImage, overlapBBox, afwImage.PARENT, False)
+                    srcImageArray = srcImageView.getArray()
+                    
+                    isBadArray = numpy.isnan(srcImageArray)
+                
+                    destImageArray[:] = numpy.where(isBadArray, destImageArray, srcImageArray)
+                    numGoodPix = numpy.sum(numpy.logical_not(isBadArray))
+                    return destImage, numGoodPix
+                
+                def referenceCopyGoodPixelsMaskedImage(destImage, srcImage, badPixelMask):
+                    """Reference implementation of lsst.coadd.utils.copyGoodPixels for MaskedImages
+                    
+                    Unlike lsst.coadd.utils.copyGoodPixels this one does not update the input destImage,
+                    but instead returns an updated copy
+                    
+                    @param[in] destImage: source image before adding srcImage (a MaskedImage)
+                    @param[in] srcImage: masked image to add to destImage (a MaskedImage)
+                    @param[in] badPixelMask: mask of bad pixels to ignore (an int)
+                
+                    Returns:
+                    - destImage: new destImage
+                    - numGoodPix: number of good pixels
+                    """
+                    destImage = destImage.Factory(destImage, True) # make deep copy
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+107  <a href="#99e65977">99e65977</a> -     overlapBBox = destImage.getBBox(afwImage.PARENT)</div>
+              ?                                     ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+99   <a href="#fa470e8d">fa470e8d</a> +     overlapBBox = destImage.getBBox()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+108  <a href="#99e65977">99e65977</a> -     overlapBBox.clip(srcImage.getBBox(afwImage.PARENT))</div>
+              ?                                       ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+100  <a href="#fa470e8d">fa470e8d</a> +     overlapBBox.clip(srcImage.getBBox())</div>
+                    
+                    if overlapBBox.isEmpty():
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+111  <a href="#99e65977">99e65977</a> -         return (destImageArray, 0)</div>
+              ?                          -----
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+103  <a href="#fa470e8d">fa470e8d</a> +         return (destImage, 0)</div>
+                    
+                    destImageView = destImage.Factory(destImage, overlapBBox, afwImage.PARENT, False)
+                    destImageArrayList = destImageView.getArrays()
+                
+                    srcImageView = srcImage.Factory(srcImage, overlapBBox, afwImage.PARENT, False)
+                    srcImageArrayList = srcImageView.getArrays()
+                    
+                    isBadArray = (srcImageArrayList[1] & badPixelMask) != 0
+                    
+                    for ind in range(3):
+                        destImageView = destImageArrayList[ind]
+                        srcImageView = srcImageArrayList[ind]
+                        destImageView[:] = numpy.where(isBadArray, destImageView, srcImageView)
+                    numGoodPix = numpy.sum(numpy.logical_not(isBadArray))
+                    return destImage, numGoodPix
+                
+                
+                MaxMask = 0xFFFF
+                
+                class CopyGoodPixelsTestCase(unittest.TestCase):
+                    """A test case for copyGoodPixels
+                    """
+                    def getSolidMaskedImage(self, bbox, val, badMask=0):
+                        afwDim = bbox.getDimensions()
+                        npShape = (afwDim[1], afwDim[0])
+                
+                        numpy.random.seed(0)
+                        maskedImage = afwImage.MaskedImageF(bbox)
+                        imageArrays = maskedImage.getArrays()
+                        imageArrays[0][:] = val
+                        imageArrays[2][:] = val * 0.5
+                        imageArrays[1][:, 0:npShape[1]/2] = 0
+                        imageArrays[1][:, npShape[1]/2:] = badMask
+                        return maskedImage
+                
+                    def getRandomMaskedImage(self, bbox, excludeMask=0):
+                        """Get a randomly generated masked image
+                        """
+                        if excludeMask > MaxMask:
+                            raise RuntimeError("excludeMask = %s > %s = MaxMask" % (excludeMask, MaxMask))
+                        
+                        afwDim = bbox.getDimensions()
+                        npShape = (afwDim[1], afwDim[0])
+                
+                        numpy.random.seed(0)
+                        maskedImage = afwImage.MaskedImageF(bbox)
+                        imageArrays = maskedImage.getArrays()
+                        imageArrays[0][:] = numpy.random.normal(5000, 5000, npShape) # image
+                        imageArrays[2][:] = numpy.random.normal(3000, 3000, npShape) # variance
+                        imageArrays[1][:] = numpy.logical_and(numpy.random.random_integers(0, 7, npShape), ~excludeMask)
+                        return maskedImage
+                
+                    def getRandomImage(self, bbox, nanSigma=0):
+                        """Get a randomly generated image
+                        """
+                        afwDim = bbox.getDimensions()
+                        npShape = (afwDim[1], afwDim[0])
+                
+                        numpy.random.seed(0)
+                        image = afwImage.ImageF(bbox)
+                        imageArray = image.getArray()
+                        imageArray[:] = numpy.random.normal(5000, 5000, npShape)
+                        if nanSigma > 0:
+                            # add NaNs at nanSigma above mean of a test array
+                            nanTest = numpy.random.normal(0, 1, npShape)
+                            imageArray[:] = numpy.where(nanTest > nanSigma, numpy.nan, imageArray)
+                        return image
+                    
+                    def basicMaskedImageTest(self, srcImage, destImage, badMask):
+                        refDestImage, refNumGoodPix = referenceCopyGoodPixelsMaskedImage(destImage, srcImage, badMask)
+                        numGoodPix = coaddUtils.copyGoodPixels(destImage, srcImage, badMask)
+                        
+                        self.assertEqual(numGoodPix, refNumGoodPix)
+                    
+                        errStr = imTestUtils.maskedImagesDiffer(destImage.getArrays(), refDestImage.getArrays())
+                        if errStr:
+                            destImage.writeFits("destImage.fits")
+                            refDestImage.writeFits("refDestImage.fits")
+                            self.fail("image != reference image: %s" % (errStr,))
+                        
+                    def basicImageTest(self, srcImage, destImage):
+                        refDestImage, refNumGoodPix = referenceCopyGoodPixelsImage(destImage, srcImage)
+                        numGoodPix = coaddUtils.copyGoodPixels(destImage, srcImage)
+                    
+                        errStr = imTestUtils.imagesDiffer(destImage.getArray(), refDestImage.getArray())
+                        if errStr:
+                            destImage.writeFits("destImage.fits")
+                            refDestImage.writeFits("refDestImage.fits")
+                            self.fail("image != reference image: %s" % (errStr,))
+                        
+                        self.assertEqual(numGoodPix, refNumGoodPix)
+                        
+                    def testMaskedImage(self):
+                        """Test image version of copyGoodPixels"""
+                        srcBBox = afwGeom.Box2I(afwGeom.Point2I(2, 17), afwGeom.Point2I(100, 101))
+                        destBBox = afwGeom.Box2I(afwGeom.Point2I(13, 4), afwGeom.Point2I(95, 130))
+                        destXY0 = destBBox.getMin()
+                        
+                        srcImage = self.getRandomMaskedImage(srcBBox)
+                        for badMask in (0, 3, MaxMask):
+                            destImage = self.getRandomMaskedImage(destBBox, excludeMask=badMask)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+213  <a href="#8b3f4428">8b3f4428</a> -             destBBox = destImage.getBBox(afwImage.PARENT)</div>
+              ?                                          ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+205  <a href="#fa470e8d">fa470e8d</a> +             destBBox = destImage.getBBox()</div>
+                            self.basicMaskedImageTest(srcImage, destImage, badMask)
+                            
+                            for bboxStart in (destXY0, (50, 51)):
+                                for bboxDim in ((25, 36), (200, 200)):
+                                    destViewBox = afwGeom.Box2I(afwGeom.Point2I(*bboxStart), afwGeom.Extent2I(*bboxDim))
+                                    destViewBox.clip(destBBox)
+                                    destView = destImage.Factory(destImage, destViewBox, afwImage.PARENT, False)
+                                    self.basicMaskedImageTest(srcImage, destView, badMask)
+                    
+                    def testImage(self):
+                        """Test image version of copyGoodPixels"""
+                        srcBBox = afwGeom.Box2I(afwGeom.Point2I(2, 17), afwGeom.Point2I(100, 101))
+                        destBBox = afwGeom.Box2I(afwGeom.Point2I(13, 4), afwGeom.Point2I(95, 130))
+                        destXY0 = destBBox.getMin()
+                        
+                        srcImage = self.getRandomImage(srcBBox)
+                        for nanSigma in (0, 0.7, 2.0):
+                            destImage = self.getRandomImage(destBBox, nanSigma=nanSigma)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+232  <a href="#8b3f4428">8b3f4428</a> -             destBBox = destImage.getBBox(afwImage.PARENT)</div>
+              ?                                          ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+224  <a href="#fa470e8d">fa470e8d</a> +             destBBox = destImage.getBBox()</div>
+                            self.basicImageTest(srcImage, destImage)
+                            
+                            for bboxStart in (destXY0, (50, 51)):
+                                for bboxDim in ((25, 36), (200, 200)):
+                                    destViewBox = afwGeom.Box2I(afwGeom.Point2I(*bboxStart), afwGeom.Extent2I(*bboxDim))
+                                    destViewBox.clip(destBBox)
+                                    destView = destImage.Factory(destImage, destViewBox, afwImage.PARENT, False)
+                                    self.basicImageTest(srcImage, destView)
+                
+                
+                def suite():
+                    """Return a suite containing all the test cases in this module.
+                    """
+                    utilsTests.init()
+                
+                    suites = [unittest.makeSuite(CopyGoodPixelsTestCase)]
+                
+                    suites += unittest.makeSuite(utilsTests.MemoryTestCase)
+                
+                    return unittest.TestSuite(suites)
+                
+                
+                def run(shouldExit=False):
+                    """Run the tests"""
+                    utilsTests.run(suite(), shouldExit)
+                
+                if __name__ == "__main__":
+                    run(True)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="99e65977"/></a>99e65977</h3>
+
+<pre>
+commit 99e65977aa8686d57bf1ce0483728bc43195c3a2
+Author: Russell Owen <rowen@uw.edu>
+Date:   Thu Sep 27 15:47:41 2012 -0700
+
+    Basic code written. Working on unit test.
+</pre>
+<h3><a name="8b3f4428"/></a>8b3f4428</h3>
+
+<pre>
+commit 8b3f4428fcc968c6cf4a3b51b31b1427219a29cd
+Author: Russell Owen <rowen@uw.edu>
+Date:   Fri Sep 28 14:14:31 2012 -0700
+
+    Added a unit test for copyGoodPixels
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="fa470e8d"/></a>fa470e8d</h3>
+
+<pre>
+commit fa470e8dbeadd213877443d4dff057e84c498542
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Sep 10 17:25:28 2014 -0700
+
+    Use new default image origin of PARENT when possible
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_20"><a name="include/lsst/coadd/utils/addToCoadd.h"/></a>include/lsst/coadd/utils/addToCoadd.h</h1>
+
+<h3 id="toc_21">Diff:</h3>
+
+<pre>
+                // -*- LSST-C++ -*-
+                
+                /* 
+                 * LSST Data Management System
+                 * Copyright 2008, 2009, 2010 LSST Corporation.
+                 * 
+                 * This product includes software developed by the
+                 * LSST Project (http://www.lsst.org/).
+                 *
+                 * This program is free software: you can redistribute it and/or modify
+                 * it under the terms of the GNU General Public License as published by
+                 * the Free Software Foundation, either version 3 of the License, or
+                 * (at your option) any later version.
+                 * 
+                 * This program is distributed in the hope that it will be useful,
+                 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 * GNU General Public License for more details.
+                 * 
+                 * You should have received a copy of the LSST License Statement and 
+                 * the GNU General Public License along with this program.  If not, 
+                 * see <http://www.lsstcorp.org/LegalNotices/>.
+                 */
+                 
+                #ifndef LSST_COADD_UTILS_COPYGOODPIXELS_H
+                #define LSST_COADD_UTILS_COPYGOODPIXELS_H
+                /**
+                * @file
+                *
+                * @author Russell Owen
+                */
+                #include "boost/cstdint.hpp"
+                
+                #include "lsst/afw/geom.h"
+                #include "lsst/afw/image.h"
+                
+                namespace lsst {
+                namespace coadd {
+                namespace utils {
+                
+                    /**
+                    * @brief add good pixels from an image to a coadd and associated weight map
+                    *
+                    * The images are assumed to be registered to the same wcs and parent origin, thus:
+                    * coadd[i+coadd.x0, j+coadd.y0] += image[i+image.x0, j+image.y0]
+                    * weightMap[i+weightMap.x0, j+weightMap.y0] += weight
+                    * for all good image pixels that overlap a coadd pixel.
+                    * Good pixels are those that are not NaN (thus they do include +/- inf).
+                    *
+                    * @return overlapBBox: overlapping bounding box, relative to parent image (hence xy0 is taken into account)
+                    *
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+52   <a href="#ab281cf1">ab281cf1</a> -     * @throw pexExcept::InvalidParameterException if coadd and weightMap dimensions or xy0 do not match.</div>
+              ?                                          ^^^^^^ ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+52   <a href="#c6e9e0a1">c6e9e0a1</a> +     * @throw pexExcept::InvalidParameterError if coadd and weightMap dimensions or xy0 do not match.</div>
+              ?                                          ^^ ^
+                    */
+                    template<typename CoaddPixelT, typename WeightPixelT>
+                    lsst::afw::geom::Box2I addToCoadd(
+                        lsst::afw::image::Image<CoaddPixelT> &coadd,        ///< [in,out] coadd to be modified
+                        lsst::afw::image::Image<WeightPixelT> &weightMap,   ///< [in,out] weight map to be modified;
+                            ///< this is the sum of weights of all images contributing each pixel of the coadd
+                        lsst::afw::image::Image<CoaddPixelT> const &image,  ///< image to add to coadd
+                        WeightPixelT weight                                 ///< relative weight of this image
+                    );
+                
+                    /**
+                    * @brief add good pixels from a masked image to a coadd image and associated weight map
+                    *
+                    * The images are assumed to be registered to the same wcs and parent origin, thus:
+                    * coadd[i+coadd.x0, j+coadd.y0] += image[i+image.x0, j+image.y0]
+                    * weightMap[i+weightMap.x0, j+weightMap.y0] += weight
+                    * for all good image pixels that overlap a coadd pixel.
+                    * Good pixels are those for which mask & badPixelMask == 0.
+                    *
+                    * @return overlapBBox: overlapping bounding box, relative to parent image (hence xy0 is taken into account)
+                    *
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+74   <a href="#ab281cf1">ab281cf1</a> -     * @throw pexExcept::InvalidParameterException if coadd and weightMap dimensions or xy0 do not match.</div>
+              ?                                          ^^^^^^ ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+74   <a href="#c6e9e0a1">c6e9e0a1</a> +     * @throw pexExcept::InvalidParameterError if coadd and weightMap dimensions or xy0 do not match.</div>
+              ?                                          ^^ ^
+                    */
+                    template<typename CoaddPixelT, typename WeightPixelT>
+                    lsst::afw::geom::Box2I addToCoadd(
+                        lsst::afw::image::MaskedImage<CoaddPixelT, lsst::afw::image::MaskPixel,
+                            lsst::afw::image::VariancePixel> &coadd,        ///< [in,out] coadd to be modified
+                        lsst::afw::image::Image<WeightPixelT> &weightMap,   ///< [in,out] weight map to be modified;
+                            ///< this is the sum of weights of all images contributing each pixel of the coadd
+                        lsst::afw::image::MaskedImage<CoaddPixelT, lsst::afw::image::MaskPixel,
+                            lsst::afw::image::VariancePixel> const &maskedImage, ///< masked image to add to coadd
+                        lsst::afw::image::MaskPixel const badPixelMask, ///< skip input pixel if input mask & badPixelMask !=0
+                        WeightPixelT weight                             ///< relative weight of this image
+                    );
+                
+                }}} // lsst::coadd::utils
+                
+                #endif // !defined(LSST_COADD_UTILS_COPYGOODPIXELS_H)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="ab281cf1"/></a>ab281cf1</h3>
+
+<pre>
+commit ab281cf1f6833f991272008157777039db90c8d6
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Thu Oct 27 22:53:30 2011 +0000
+
+    Moved documentation to .h files as per new standard.
+    Gave intro section a unique name in documentation.
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="c6e9e0a1"/></a>c6e9e0a1</h3>
+
+<pre>
+commit c6e9e0a191915cbfdadae4b0753011e4b7523cc0
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Jun 17 16:15:51 2014 -0700
+
+    Renamed exceptions
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_22"><a name="python/lsst/coadd/utils/utilsLib.i"/></a>python/lsst/coadd/utils/utilsLib.i</h1>
+
+<h3 id="toc_23">Diff:</h3>
+
+<pre>
+                // -*- lsst-c++ -*-
+                
+                /* 
+                 * LSST Data Management System
+                 * Copyright 2008, 2009, 2010 LSST Corporation.
+                 * 
+                 * This product includes software developed by the
+                 * LSST Project (http://www.lsst.org/).
+                 *
+                 * This program is free software: you can redistribute it and/or modify
+                 * it under the terms of the GNU General Public License as published by
+                 * the Free Software Foundation, either version 3 of the License, or
+                 * (at your option) any later version.
+                 * 
+                 * This program is distributed in the hope that it will be useful,
+                 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 * GNU General Public License for more details.
+                 * 
+                 * You should have received a copy of the LSST License Statement and 
+                 * the GNU General Public License along with this program.  If not, 
+                 * see <http://www.lsstcorp.org/LegalNotices/>.
+                 */
+                 
+                %define utilsLib_DOCSTRING
+                "
+                Python interface to lsst::coadd::utils functions and classes
+                "
+                %enddef
+                
+                %feature("autodoc", "1");
+                %module(package="lsst.coadd.utils", docstring=utilsLib_DOCSTRING) utilsLib
+                
+                // Everything we will need in the _wrap.cc file
+                %{
+                #include "boost/cstdint.hpp"
+                #include "lsst/pex/logging.h"
+                #include "lsst/afw/cameraGeom.h"
+                #include "lsst/coadd/utils.h"
+                %}
+                
+                %include "lsst/p_lsstSwig.i"
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+43   <a href="#24c9771d">24c9771d</a> + %initializeNumPy(coadd_utils)</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+44   <a href="#24c9771d">24c9771d</a> + </div>
+                %import "lsst/afw/image/imageLib.i"
+                
+                %lsst_exceptions()
+                
+                %include "lsst/coadd/utils/copyGoodPixels.h"
+                %define %COPYGOODPIXELS(IMAGEPIXEL)
+                    %template(copyGoodPixels) lsst::coadd::utils::copyGoodPixels<IMAGEPIXEL>;
+                %enddef
+                %COPYGOODPIXELS(double);
+                %COPYGOODPIXELS(float);
+                %COPYGOODPIXELS(int);
+                %COPYGOODPIXELS(boost::uint16_t);
+                
+                %include "lsst/coadd/utils/addToCoadd.h"
+                %define %ADDTOCOADD(COADDPIXEL, WEIGHTPIXEL)
+                    %template(addToCoadd) lsst::coadd::utils::addToCoadd<COADDPIXEL, WEIGHTPIXEL>;
+                %enddef
+                %ADDTOCOADD(double, double);
+                %ADDTOCOADD(double, float);
+                %ADDTOCOADD(double, int);
+                %ADDTOCOADD(double, boost::uint16_t);
+                %ADDTOCOADD(float, double);
+                %ADDTOCOADD(float, float);
+                %ADDTOCOADD(float, int);
+                %ADDTOCOADD(float, boost::uint16_t);
+                
+                %include "lsst/coadd/utils/setCoaddEdgeBits.h"
+                %define %SETCOADDEDGEBITS(WEIGHTPIXEL)
+                    %template(setCoaddEdgeBits) lsst::coadd::utils::setCoaddEdgeBits<WEIGHTPIXEL>;
+                %enddef
+                %SETCOADDEDGEBITS(double);
+                %SETCOADDEDGEBITS(float);
+                %SETCOADDEDGEBITS(int);
+                %SETCOADDEDGEBITS(boost::uint16_t);
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="24c9771d"/></a>24c9771d</h3>
+
+<pre>
+commit 24c9771d033e7fd4f8a0fe0dfca7f3527d00d0af
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Apr 8 17:00:25 2015 -0400
+
+    Utilize new numeric scalar typemaps and NumPy initialization macro
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_24"><a name="python/lsst/coadd/utils/coadd.py"/></a>python/lsst/coadd/utils/coadd.py</h1>
+
+<h3 id="toc_25">Diff:</h3>
+
+<pre>
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010, 2011, 2012 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                import math
+                
+                import lsst.pex.config as pexConfig
+                from lsst.pex.logging import Log
+                import lsst.afw.image as afwImage
+                import lsst.afw.math as afwMath
+                from .utilsLib import addToCoadd, setCoaddEdgeBits
+                
+                __all__ = ["Coadd"]
+                
+                class CoaddConfig(pexConfig.Config):
+                    """Config for Coadd
+                    """
+                    badMaskPlanes = pexConfig.ListField(
+                        dtype = str,
+                        doc = "mask planes that, if set, the associated pixel should not be included in the coadd",
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+38   <a href="#ef2a52c2">ef2a52c2</a> -         default = ("NO_DATA", "SAT"),</div>
+              ?                     ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+38   <a href="#86e7cc5c">86e7cc5c</a> +         default = ("EDGE", "SAT"),</div>
+              ?                     ^ ^^
+                    )
+                
+                
+                class Coadd(object):
+                    """Coadd by weighted addition
+                    
+                    This class may be subclassed to implement other coadd techniques.
+                    Typically this is done by overriding addExposure.
+                    """
+                    ConfigClass = CoaddConfig
+                
+                    def __init__(self, bbox, wcs, badMaskPlanes, logName="coadd.utils.Coadd"):
+                        """Create a coadd
+                        
+                        @param[in] bbox: bounding box of coadd Exposure with respect to parent (lsst.afw.geom.Box2I):
+                            coadd dimensions = bbox.getDimensions(); xy0 = bbox.getMin()
+                        @param[in] wcs: WCS of coadd exposure (lsst.afw.math.Wcs)
+                        @param[in] badMaskPlanes: mask planes to pay attention to when rejecting masked pixels.
+                            Specify as a collection of names.
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+58   <a href="#ef2a52c2">ef2a52c2</a> -             badMaskPlanes should always include "NO_DATA".</div>
+              ?                                                  ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+58   <a href="#cf55494e">cf55494e</a> +             badMaskPlanes should always include "EDGE".</div>
+              ?                                                  ^ ^^
+                        @param[in] logName: name by which messages are logged
+                        """
+                        self._log = Log(Log.getDefaultLog(), logName)
+                        self._bbox = bbox
+                        self._wcs = wcs
+                        self._badPixelMask = afwImage.MaskU.getPlaneBitMask(badMaskPlanes)
+                        self._coadd = afwImage.ExposureF(bbox, wcs)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+66   <a href="#a9b6402f">a9b6402f</a> -         self._weightMap = afwImage.ImageF(bbox, afwImage.PARENT)</div>
+              ?                                               -----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+66   <a href="#fa470e8d">fa470e8d</a> +         self._weightMap = afwImage.ImageF(bbox)</div>
+                        self._filterDict = dict() # dict of filter name: filter object for all filters seen so far
+                
+                        self._statsControl = afwMath.StatisticsControl()
+                        self._statsControl.setNumSigmaClip(3.0)
+                        self._statsControl.setNumIter(2)
+                        self._statsControl.setAndMask(self._badPixelMask)
+                    
+                    @classmethod
+                    def fromConfig(cls, bbox, wcs, config, logName="coadd.utils.Coadd"):
+                        """Create a coadd
+                        
+                        @param[in] bbox: bounding box of coadd Exposure with respect to parent (lsst.afw.geom.Box2I):
+                            coadd dimensions = bbox.getDimensions(); xy0 = bbox.getMin()
+                        @param[in] wcs: WCS of coadd exposure (lsst.afw.math.Wcs)
+                        @param[in] config: coadd config; an instance of CoaddConfig
+                        @param[in] logName: name by which messages are logged
+                        """
+                        return cls(
+                            bbox = bbox,
+                            wcs = wcs,
+                            badMaskPlanes = config.badMaskPlanes,
+                            logName = logName,
+                        )
+                
+                    def addExposure(self, exposure, weightFactor=1.0):
+                        """Add an Exposure to the coadd
+                        
+                        @param[in] exposure: Exposure to add to coadd; this should be:
+                            - background-subtracted or background-matched to the other images being coadded
+                            - psf-matched to the desired PSF model (optional)
+                            - warped to match the coadd
+                            - photometrically scaled to the desired flux magnitude
+                        @param[in] weightFactor: extra weight factor for this exposure
+                
+                        @return
+                        - overlapBBox: region of overlap between exposure and coadd in parent coordinates (afwGeom.Box2I)
+                        - weight: weight with which exposure was added to coadd; weight = weightFactor / clipped mean variance
+                        
+                        Subclasses may override to preprocess the exposure or change the way it is added to the coadd.
+                        """
+                        maskedImage = exposure.getMaskedImage()
+                
+                        # compute the weight
+                        statObj = afwMath.makeStatistics(maskedImage.getVariance(), maskedImage.getMask(),
+                            afwMath.MEANCLIP, self._statsControl)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+112  <a href="#959e207c">959e207c</a> -         meanVar, meanVarErr = statObj.getResult(afwMath.MEANCLIP);</div>
+              ?                ------------                                      ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+112  <a href="#386602d0">386602d0</a> +         meanVar = statObj.getResult(afwMath.MEANCLIP)[0]</div>
+              ?                                                      ^^^
+                        weight = weightFactor / float(meanVar)
+                        if math.isnan(weight):
+                            raise RuntimeError("Weight is NaN (weightFactor=%s; mean variance=%s)" % (weightFactor, meanVar))
+                        
+                        # save filter info
+                        filter = exposure.getFilter()
+                        self._filterDict.setdefault(filter.getName(), filter)
+                
+                        self._log.log(Log.INFO, "Add exposure to coadd with weight=%0.3g" % (weight,))
+                
+                        overlapBBox = addToCoadd(self._coadd.getMaskedImage(), self._weightMap,
+                            maskedImage, self._badPixelMask, weight)
+                
+                        return overlapBBox, weight
+                
+                    def getCoadd(self):
+                        """Get the coadd exposure for all exposures you have coadded so far
+                        
+                        If all exposures in this coadd have the same-named filter then that filter is set in the coadd.
+                        Otherwise the coadd will have the default unknown filter.
+                        
+                        @warning: the Calib is not be set.
+                        """
+                        # make a deep copy so I can scale it
+                        coaddMaskedImage = self._coadd.getMaskedImage()
+                        scaledMaskedImage = coaddMaskedImage.Factory(coaddMaskedImage, True)
+                
+                        # set the edge pixels
+                        setCoaddEdgeBits(scaledMaskedImage.getMask(), self._weightMap)
+                        
+                        # scale non-edge pixels by weight map
+                        scaledMaskedImage /= self._weightMap
+                        
+                        scaledExposure = afwImage.makeExposure(scaledMaskedImage, self._wcs)
+                        if len(self._filterDict) == 1:
+                            scaledExposure.setFilter(self._filterDict.values()[0])
+                        return scaledExposure
+                    
+                    def getFilters(self):
+                        """Return a collection of all the filters seen so far in in addExposure
+                        """
+                        return self._filterDict.values()
+                    
+                    def getBadPixelMask(self):
+                        """Return the bad pixel mask
+                        """
+                        return self._badPixelMask
+                
+                    def getBBox(self):
+                        """Return the bounding box of the coadd
+                        """
+                        return self._bbox
+                
+                    def getWcs(self):
+                        """Return the wcs of the coadd
+                        """
+                        return self._wcs
+                        
+                    def getWeightMap(self):
+                        """Return the weight map for all exposures you have coadded so far
+                        
+                        The weight map is a float Image of the same dimensions as the coadd; the value of each pixel
+                        is the sum of the weights of all exposures that contributed to that pixel.
+                        """
+                        return self._weightMap
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="959e207c"/></a>959e207c</h3>
+
+<pre>
+commit 959e207cf99e710d29806d0fc1183e9ee5edebe4
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Wed Dec 1 22:26:50 2010 +0000
+
+    python/lsst/coadd/utils/coadd.py
+    - Added getDimensions and getWcs
+    - Pre-compute the stats control object
+    - Eliminate _basicAddExposure
+    
+    examples/warpAndCoadd.py
+    - Allow MEFs or non-MEFs as input.
+</pre>
+<h3><a name="ef2a52c2"/></a>ef2a52c2</h3>
+
+<pre>
+commit ef2a52c2365371eb39e632e53a57fb7ee8cc795e
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri May 23 15:05:00 2014 -0400
+
+    Adapt to new mask bit NO_DATA replacing EDGE (DM-669)
+    
+    NO_DATA means a warp/coadd pixel doesn't map to a CCD.
+    EDGE means a pixel is near the edge and couldn't be searched
+    for sources.
+</pre>
+<h3><a name="a9b6402f"/></a>a9b6402f</h3>
+
+<pre>
+commit a9b6402f0765ae91165b78e6b2c0ef435fc12950
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Tue Mar 8 23:34:48 2011 +0000
+
+    Implement ticket #1556
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="86e7cc5c"/></a>86e7cc5c</h3>
+
+<pre>
+commit 86e7cc5c271a0e31d5f15a80ad1d573374ff45e4
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Dec 20 17:18:12 2011 -0800
+
+    Added CoaddConfig object based on prototype pexConfig.
+    More to be done (update unit tests, examples and remove policy/)
+</pre>
+<h3><a name="cf55494e"/></a>cf55494e</h3>
+
+<pre>
+commit cf55494e0942fee6e1e2cce7a973431b861cc894
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Wed Jan 26 01:09:22 2011 +0000
+
+    Modified Coadd to take badMaskPlanes instead of allowedMaskPlanes
+    (since there are so few to avoid).
+    Added Coadd.fromPolicy and modified example to use it.
+    Updated the coadd policy dictionary.
+</pre>
+<h3><a name="386602d0"/></a>386602d0</h3>
+
+<pre>
+commit 386602d0a8616a100e60bb4c8d3f2c2881fb18f7
+Author: Russell Owen <rowen@uw.edu>
+Date:   Thu Jul 24 10:50:49 2014 -0700
+
+    Bug fix: CoaddDataIdContainer used argparse without importing it.
+    
+    Also fixed a typo (removed an extraneous semicolon) and stopped setting
+    variable meanVarErr from statObj.getResult, since it's always NaN.
+</pre>
+<h3><a name="fa470e8d"/></a>fa470e8d</h3>
+
+<pre>
+commit fa470e8dbeadd213877443d4dff057e84c498542
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Sep 10 17:25:28 2014 -0700
+
+    Use new default image origin of PARENT when possible
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_26"><a name="src/addToCoadd.cc"/></a>src/addToCoadd.cc</h1>
+
+<h3 id="toc_27">Diff:</h3>
+
+<pre>
+                // -*- LSST-C++ -*-
+                
+                /* 
+                 * LSST Data Management System
+                 * Copyright 2008, 2009, 2010 LSST Corporation.
+                 * 
+                 * This product includes software developed by the
+                 * LSST Project (http://www.lsst.org/).
+                 *
+                 * This program is free software: you can redistribute it and/or modify
+                 * it under the terms of the GNU General Public License as published by
+                 * the Free Software Foundation, either version 3 of the License, or
+                 * (at your option) any later version.
+                 * 
+                 * This program is distributed in the hope that it will be useful,
+                 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 * GNU General Public License for more details.
+                 * 
+                 * You should have received a copy of the LSST License Statement and 
+                 * the GNU General Public License along with this program.  If not, 
+                 * see <http://www.lsstcorp.org/LegalNotices/>.
+                 */
+                 
+                /**
+                * @file
+                *
+                * @author Russell Owen
+                */
+                #include <limits>
+                
+                #include "boost/format.hpp"
+                
+                #include "lsst/pex/exceptions.h"
+                #include "lsst/afw/geom.h"
+                #include "lsst/coadd/utils/addToCoadd.h"
+                
+                namespace pexExcept = lsst::pex::exceptions;
+                namespace afwGeom = lsst::afw::geom;
+                namespace afwImage = lsst::afw::image;
+                namespace coaddUtils = lsst::coadd::utils;
+                
+                namespace {
+                    /*
+                     * A boolean functor to test if a MaskedImage pixel is valid (mask & badPixel == 0)
+                     */
+                    struct CheckMask {
+                        CheckMask(lsst::afw::image::MaskPixel badPixel) : _badPixel(badPixel) {}
+                        
+                        template<typename T>
+                        bool operator()(T val) const {
+                            return ((val.mask() & _badPixel) == 0) ? true : false;
+                        }
+                    private:
+                        lsst::afw::image::MaskPixel _badPixel;
+                    };
+                    
+                    /*
+                     * A boolean functor to test if an Image pixel has known value (not NaN)
+                     */    
+                    struct CheckKnownValue {
+                        CheckKnownValue(lsst::afw::image::MaskPixel) {}
+                    
+                        template<typename T>
+                        bool operator()(T val) const {
+                            return !std::isnan(static_cast<float>(*val));
+                        }
+                    };
+                    
+                    /* 
+                     * Implementation of addToCoadd
+                     *
+                     * The template parameter isValidPixel is a functor with operator()
+                     * which returns true if a given image pixel is valid.
+                     * This allows us to support multiple image types including
+                     * MaskedImage with a mask bit and Image with a check for NaN.
+                     *
+                     * @return overlapping bounding box, relative to parent image
+                     */
+                    template <typename CoaddT, typename WeightPixelT, typename isValidPixel>
+                    static lsst::afw::geom::Box2I addToCoaddImpl(
+                        CoaddT &coadd,                                      ///< [in,out] coadd to be modified
+                        lsst::afw::image::Image<WeightPixelT> &weightMap,   ///< [in,out] weight map to be modified
+                        CoaddT const &image,                                ///< image to add to coadd
+                        lsst::afw::image::MaskPixel const badPixelMask,     ///< bad pixel mask; may be ignored
+                        WeightPixelT weight                                 ///< relative weight of this image
+                    ) {
+                        typedef typename afwImage::Image<WeightPixelT> WeightMapT;
+                        
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+90   <a href="#ab281cf1">ab281cf1</a> -         if (coadd.getBBox(afwImage::PARENT) != weightMap.getBBox(afwImage::PARENT)) {</div>
+              ?                           ----------------                       ----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+90   <a href="#fa470e8d">fa470e8d</a> +         if (coadd.getBBox() != weightMap.getBBox()) {</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+91   <a href="#ab281cf1">ab281cf1</a> -             throw LSST_EXCEPT(pexExcept::InvalidParameterException,</div>
+              ?                                                           ^^^^^^ ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+91   <a href="#c6e9e0a1">c6e9e0a1</a> +             throw LSST_EXCEPT(pexExcept::InvalidParameterError,</div>
+              ?                                                           ^^ ^
+                                (boost::format("coadd and weightMap parent bboxes differ: %s != %s") %
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+93   <a href="#ab281cf1">ab281cf1</a> -                 coadd.getBBox(afwImage::PARENT) % weightMap.getBBox(afwImage::PARENT)).str());</div>
+              ?                               ----------------                      ----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+93   <a href="#fa470e8d">fa470e8d</a> +                 coadd.getBBox() % weightMap.getBBox()).str());</div>
+                        }
+                        
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+96   <a href="#ab281cf1">ab281cf1</a> -         afwGeom::Box2I overlapBBox = coadd.getBBox(afwImage::PARENT);</div>
+              ?                                                    ----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+96   <a href="#fa470e8d">fa470e8d</a> +         afwGeom::Box2I overlapBBox = coadd.getBBox();</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+97   <a href="#ab281cf1">ab281cf1</a> -         overlapBBox.clip(image.getBBox(afwImage::PARENT));</div>
+              ?                                        ----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+97   <a href="#fa470e8d">fa470e8d</a> +         overlapBBox.clip(image.getBBox());</div>
+                        if (overlapBBox.isEmpty()) {
+                            return overlapBBox;
+                        }
+                    
+                        CoaddT coaddView(coadd, overlapBBox, afwImage::PARENT, false);
+                        WeightMapT weightMapView(weightMap, overlapBBox, afwImage::PARENT, false);
+                        CoaddT imageView(image, overlapBBox, afwImage::PARENT, false);
+                    
+                        isValidPixel const isValid(badPixelMask); // functor to check if a pixel is good
+                        for (int y = 0, endY = imageView.getHeight(); y != endY; ++y) {
+                            typename CoaddT::const_x_iterator imageIter = imageView.row_begin(y);
+                            typename CoaddT::const_x_iterator const imageEndIter = imageView.row_end(y);
+                            typename CoaddT::x_iterator coaddIter = coaddView.row_begin(y);
+                            typename WeightMapT::x_iterator weightMapIter = weightMapView.row_begin(y);
+                            for (; imageIter != imageEndIter; ++imageIter, ++coaddIter, ++weightMapIter) {
+                                if (isValid(imageIter)) {
+                                    typename CoaddT::SinglePixel pix = *imageIter;
+                                    pix *= typename CoaddT::Pixel(weight);
+                                    *coaddIter += pix;
+                                    *weightMapIter += weight;
+                                }
+                            }
+                        }
+                        return overlapBBox;
+                    }
+                } // anonymous namespace
+                
+                template <typename CoaddPixelT, typename WeightPixelT>
+                lsst::afw::geom::Box2I coaddUtils::addToCoadd(
+                    // spell out lsst:afw::image to make Doxygen happy
+                    lsst::afw::image::Image<CoaddPixelT> &coadd,
+                    lsst::afw::image::Image<WeightPixelT> &weightMap,
+                    lsst::afw::image::Image<CoaddPixelT> const &image,
+                    WeightPixelT weight
+                ) {
+                    typedef lsst::afw::image::Image<CoaddPixelT> Image;
+                    return addToCoaddImpl<Image, WeightPixelT, CheckKnownValue>(coadd, weightMap, image, 0x0, weight);
+                }
+                
+                template <typename CoaddPixelT, typename WeightPixelT>
+                lsst::afw::geom::Box2I coaddUtils::addToCoadd(
+                    // spell out lsst:afw::image to make Doxygen happy
+                    lsst::afw::image::MaskedImage<CoaddPixelT, lsst::afw::image::MaskPixel,
+                        lsst::afw::image::VariancePixel> &coadd,
+                    lsst::afw::image::Image<WeightPixelT> &weightMap,
+                    lsst::afw::image::MaskedImage<CoaddPixelT, lsst::afw::image::MaskPixel,
+                        lsst::afw::image::VariancePixel> const &maskedImage,
+                    lsst::afw::image::MaskPixel const badPixelMask,
+                    WeightPixelT weight
+                ) {
+                    typedef lsst::afw::image::MaskedImage<CoaddPixelT> Image;
+                    return addToCoaddImpl<Image,WeightPixelT,CheckMask>(coadd, weightMap, maskedImage, badPixelMask, weight);
+                }
+                
+                // Explicit instantiations
+                
+                /// \cond
+                #define MASKEDIMAGE(IMAGEPIXEL) afwImage::MaskedImage<IMAGEPIXEL, \
+                    afwImage::MaskPixel, afwImage::VariancePixel>
+                #define INSTANTIATE(COADDPIXEL, WEIGHTPIXEL) \
+                    template lsst::afw::geom::Box2I coaddUtils::addToCoadd<COADDPIXEL, WEIGHTPIXEL>( \
+                        afwImage::Image<COADDPIXEL> &coadd, \
+                        afwImage::Image<WEIGHTPIXEL> &weightMap, \
+                        afwImage::Image<COADDPIXEL> const &image,       \
+                        WEIGHTPIXEL weight \
+                    ); \
+                    \
+                    template lsst::afw::geom::Box2I coaddUtils::addToCoadd<COADDPIXEL, WEIGHTPIXEL>( \
+                        MASKEDIMAGE(COADDPIXEL) &coadd, \
+                        afwImage::Image<WEIGHTPIXEL> &weightMap, \
+                        MASKEDIMAGE(COADDPIXEL) const &image, \
+                        afwImage::MaskPixel const badPixelMask, \
+                        WEIGHTPIXEL weight \
+                    );
+                
+                INSTANTIATE(double, double);
+                INSTANTIATE(double, float);
+                INSTANTIATE(double, int);
+                INSTANTIATE(double, boost::uint16_t);
+                INSTANTIATE(float, double);
+                INSTANTIATE(float, float);
+                INSTANTIATE(float, int);
+                INSTANTIATE(float, boost::uint16_t);
+                /// \endcond
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="ab281cf1"/></a>ab281cf1</h3>
+
+<pre>
+commit ab281cf1f6833f991272008157777039db90c8d6
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Thu Oct 27 22:53:30 2011 +0000
+
+    Moved documentation to .h files as per new standard.
+    Gave intro section a unique name in documentation.
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="fa470e8d"/></a>fa470e8d</h3>
+
+<pre>
+commit fa470e8dbeadd213877443d4dff057e84c498542
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Sep 10 17:25:28 2014 -0700
+
+    Use new default image origin of PARENT when possible
+</pre>
+<h3><a name="c6e9e0a1"/></a>c6e9e0a1</h3>
+
+<pre>
+commit c6e9e0a191915cbfdadae4b0753011e4b7523cc0
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue Jun 17 16:15:51 2014 -0700
+
+    Renamed exceptions
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_28"><a name="tests/testCoadd.py"/></a>tests/testCoadd.py</h1>
+
+<h3 id="toc_29">Diff:</h3>
+
+<pre>
+                #!/usr/bin/env python
+                
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+                """Test lsst.coadd.utils.Coadd
+                """
+                import os
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+28   <a href="#a8111f83">a8111f83</a> - import pdb # we may want to say pdb.set_trace()</div>
+                import unittest
+                import warnings
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+31   <a href="#a8111f83">a8111f83</a> - import sys</div>
+                
+                import numpy
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+35   <a href="#a8111f83">a8111f83</a> - import eups</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+33   <a href="#62d66293">62d66293</a> + import lsst.utils</div>
+                import lsst.afw.geom as afwGeom
+                import lsst.afw.image as afwImage
+                import lsst.afw.image.utils as imageUtils
+                import lsst.afw.image.testUtils as imTestUtils
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+40   <a href="#a8111f83">a8111f83</a> - import lsst.afw.math as afwMath</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+41   <a href="#a8111f83">a8111f83</a> - import lsst.afw.display.ds9 as ds9</div>
+                import lsst.utils.tests as utilsTests
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+43   <a href="#a8111f83">a8111f83</a> - import lsst.pex.exceptions as pexExcept</div>
+                import lsst.pex.logging as pexLog
+                import lsst.coadd.utils as coaddUtils
+                import lsst.pex.policy as pexPolicy
+                
+                try:
+                    display
+                except NameError:
+                    display = False
+                    Verbosity = 0 # increase to see trace
+                
+                pexLog.Trace_setVerbosity("lsst.coadd.utils", Verbosity)
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+56   <a href="#a8111f83">a8111f83</a> - AfwDataDir = eups.productDir("afwdata")</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+51   <a href="#62d66293">62d66293</a> + try:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+52   <a href="#62d66293">62d66293</a> +     AfwDataDir = lsst.utils.getPackageDir('afwdata')</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+53   <a href="#62d66293">62d66293</a> + except Exception:</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+54   <a href="#62d66293">62d66293</a> +     AfwDataDir = None</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+55   <a href="#62d66293">62d66293</a> + </div>
+                if AfwDataDir != None:
+                    ImSimFile = os.path.join(AfwDataDir, "ImSim/calexp/v85408556-fr/R23/S11.fits")
+                    
+                #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+                
+                class CoaddTestCase(unittest.TestCase):
+                    """A test case for Coadd
+                    """
+                
+                    def testAddOne(self):
+                        """Add a single exposure; make sure coadd = input, appropriately scaled
+                        """
+                        inExp = afwImage.ExposureF(ImSimFile)
+                        inMaskedImage = inExp.getMaskedImage()
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+71   <a href="#a8111f83">a8111f83</a> -         bbox = inExp.getBBox(afwImage.PARENT)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+72   <a href="#a8111f83">a8111f83</a> -         wcs = inExp.getWcs()</div>
+                        for badMaskPlanes in (
+                            (),
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+75   <a href="#ef2a52c2">ef2a52c2</a> -             ("NO_DATA", "BAD"),</div>
+              ?               ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+72   <a href="#2dd35801">2dd35801</a> +             ("EDGE", "BAD"),</div>
+              ?               ^ ^^
+                        ):
+                            coadd = coaddUtils.Coadd(
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+78   <a href="#aaa9a24f">aaa9a24f</a> -                 bbox = inExp.getBBox(afwImage.PARENT),</div>
+              ?                                      ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+75   <a href="#fa470e8d">fa470e8d</a> +                 bbox = inExp.getBBox(),</div>
+                                wcs = inExp.getWcs(),
+                                badMaskPlanes = badMaskPlanes,
+                            )
+                            coadd.addExposure(inExp)
+                            coaddExp = coadd.getCoadd()
+                            coaddMaskedImage = coaddExp.getMaskedImage()
+                            
+                            inMaskArr = inMaskedImage.getMask().getArray()
+                            badMask = coadd.getBadPixelMask()
+                            skipMaskArr = inMaskArr & badMask != 0
+                    
+                            errStr = imTestUtils.maskedImagesDiffer(inMaskedImage.getArrays(), coaddMaskedImage.getArrays(),
+                                skipMaskArr=skipMaskArr)
+                            if errStr:
+                                self.fail("coadd != input exposure: %s" % (errStr,))
+                
+                    def assertWcsSame(self, wcs1, wcs2):
+                        for xPixPos in (0, 1000, 2000):
+                            for yPixPos in (0, 1000, 2000):
+                                fromPixPos = afwGeom.Point2D(xPixPos, yPixPos)
+                                sky1 = wcs1.pixelToSky(fromPixPos)
+                                sky2 = wcs2.pixelToSky(fromPixPos)
+                                if not numpy.allclose(sky1.getPosition(), sky2.getPosition()):
+                                    self.fail("wcs do not match at fromPixPos=%s: sky1=%s != sky2=%s" % \
+                                        (fromPixPos, sky1, sky2))
+                                toPixPos1 = wcs1.skyToPixel(sky1)
+                                toPixPos2 = wcs2.skyToPixel(sky1)
+                                if not numpy.allclose((xPixPos, yPixPos), toPixPos1):
+                                    self.fail("wcs do not match at sky1=%s: fromPixPos=%s != toPixPos1=%s" % \
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+108  <a href="#a8111f83">a8111f83</a> -                         (sky1, fromPixPos1, toPixPos1))</div>
+              ?                                          -
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+105  <a href="#03f57d30">03f57d30</a> +                         (sky1, fromPixPos, toPixPos1))</div>
+                                if not numpy.allclose(toPixPos1, toPixPos2):
+                                    self.fail("wcs do not match at fromPixPos=%s, sky1=%s: toPixPos1=%s != toPixPos2=%s" % \
+                                        (fromPixPos, sky1, toPixPos1, toPixPos2))
+                    
+                    def testGetters(self):
+                        """Test getters for coadd
+                        """
+                        inExp = afwImage.ExposureF(ImSimFile)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+117  <a href="#a8111f83">a8111f83</a> -         bbox = inExp.getBBox(afwImage.PARENT)</div>
+              ?                              ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+114  <a href="#fa470e8d">fa470e8d</a> +         bbox = inExp.getBBox()</div>
+                        wcs = inExp.getWcs()
+                        for badMaskPlanes, bbox in (
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+120  <a href="#ef2a52c2">ef2a52c2</a> -             (("NO_DATA",),         afwGeom.Box2I(afwGeom.Point2I(  1,    2), afwGeom.Extent2I(100, 102))),</div>
+              ?                ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+117  <a href="#2dd35801">2dd35801</a> +             (("EDGE",),         afwGeom.Box2I(afwGeom.Point2I(  1,    2), afwGeom.Extent2I(100, 102))),</div>
+              ?                ^ ^^
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+121  <a href="#ef2a52c2">ef2a52c2</a> -             (("NO_DATA", "BAD"),   afwGeom.Box2I(afwGeom.Point2I(  0,    0), afwGeom.Extent2I(100, 102))),</div>
+              ?                ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+118  <a href="#2dd35801">2dd35801</a> +             (("EDGE", "BAD"),   afwGeom.Box2I(afwGeom.Point2I(  0,    0), afwGeom.Extent2I(100, 102))),</div>
+              ?                ^ ^^
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+122  <a href="#ef2a52c2">ef2a52c2</a> -             (("NO_DATA",),         afwGeom.Box2I(afwGeom.Point2I(104,    0), afwGeom.Extent2I(  5,  10))),</div>
+              ?                ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+119  <a href="#2dd35801">2dd35801</a> +             (("EDGE",),         afwGeom.Box2I(afwGeom.Point2I(104,    0), afwGeom.Extent2I(  5,  10))),</div>
+              ?                ^ ^^
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+123  <a href="#ef2a52c2">ef2a52c2</a> -             (("NO_DATA",),         afwGeom.Box2I(afwGeom.Point2I(  0, 1020), afwGeom.Extent2I(100, 102))),</div>
+              ?                ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+120  <a href="#2dd35801">2dd35801</a> +             (("EDGE",),         afwGeom.Box2I(afwGeom.Point2I(  0, 1020), afwGeom.Extent2I(100, 102))),</div>
+              ?                ^ ^^
+                        ):
+                            coadd = coaddUtils.Coadd(
+                                bbox = bbox,
+                                wcs = wcs,
+                                badMaskPlanes = badMaskPlanes,
+                            )
+                            badPixelMask = 0
+                            for maskPlaneName in badMaskPlanes:
+                                badPixelMask += afwImage.MaskU.getPlaneBitMask(maskPlaneName)
+                            self.assertEquals(bbox, coadd.getBBox())
+                            self.assertEquals(badPixelMask, coadd.getBadPixelMask())
+                            self.assertWcsSame(wcs, coadd.getWcs())
+                
+                    def testFilters(self):
+                        """Test that the coadd filter is set correctly
+                        """
+                        filterPolicyFile = pexPolicy.DefaultPolicyFile("afw", "SdssFilters.paf", "tests")
+                        filterPolicy = pexPolicy.Policy.createPolicy(filterPolicyFile, filterPolicyFile.getRepositoryPath(), True)
+                        imageUtils.defineFiltersFromPolicy(filterPolicy, reset=True)
+                        
+                        unkFilter = afwImage.Filter()
+                        gFilter = afwImage.Filter("g")
+                        rFilter = afwImage.Filter("r")
+                        
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+148  <a href="#b32ddf03">b32ddf03</a> -         inExp = afwImage.ExposureF(ImSimFile, afwGeom.Box2I(afwGeom.Point2I(0,0), afwGeom.Extent2I(10, 10)))</div>
+              ?                                                                                                            ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+145  <a href="#03f57d30">03f57d30</a> +         inExp = afwImage.ExposureF(ImSimFile, afwGeom.Box2I(afwGeom.Point2I(0,0), afwGeom.Extent2I(10, 10)),</div>
+              ?                                                                                                            ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+146  <a href="#03f57d30">03f57d30</a> +             afwImage.PARENT)</div>
+                        coadd = coaddUtils.Coadd(
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+150  <a href="#637d65e1">637d65e1</a> -             bbox = inExp.getBBox(afwImage.PARENT),</div>
+              ?                                  ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+148  <a href="#fa470e8d">fa470e8d</a> +             bbox = inExp.getBBox(),</div>
+                            wcs = inExp.getWcs(),
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+152  <a href="#ef2a52c2">ef2a52c2</a> -             badMaskPlanes = ("NO_DATA", "BAD"),</div>
+              ?                               ^^^ ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+150  <a href="#637d65e1">637d65e1</a> +             badMaskPlanes = ("EDGE", "BAD"),</div>
+              ?                               ^ ^^
+                        )
+                
+                        inExp.setFilter(gFilter)
+                        coadd.addExposure(inExp)
+                        self.assertEqualFilters(coadd.getCoadd().getFilter(), gFilter)
+                        self.assertEqualFilterSets(coadd.getFilters(), (gFilter,))
+                        coadd.addExposure(inExp)
+                        self.assertEqualFilters(coadd.getCoadd().getFilter(), gFilter)
+                        self.assertEqualFilterSets(coadd.getFilters(), (gFilter,))
+                        
+                        inExp.setFilter(rFilter)
+                        coadd.addExposure(inExp)
+                        self.assertEqualFilters(coadd.getCoadd().getFilter(), unkFilter)
+                        self.assertEqualFilterSets(coadd.getFilters(), (gFilter, rFilter))
+                    
+                    def assertEqualFilters(self, f1, f2):
+                        """Compare two filters
+                        
+                        Right now compares only the name, but if == ever works for Filters (ticket #1744)
+                        then use == instead
+                        """
+                        self.assertEquals(f1.getName(), f2.getName())
+                    
+                    def assertEqualFilterSets(self, fs1, fs2):
+                        """Assert that two collections of filters are equal, ignoring order
+                        """
+                        self.assertEquals(set(f.getName() for f in fs1), set(f.getName() for f in fs2))
+                
+                def suite():
+                    """Return a suite containing all the test cases in this module.
+                    """
+                    utilsTests.init()
+                
+                    suites = []
+                
+                    if AfwDataDir:
+                        suites += unittest.makeSuite(CoaddTestCase)
+                    else:
+                        warnings.warn("Skipping some tests because afwdata is not setup")
+                    suites += unittest.makeSuite(utilsTests.MemoryTestCase)
+                
+                    return unittest.TestSuite(suites)
+                
+                
+                def run(shouldExit=False):
+                    """Run the tests"""
+                    utilsTests.run(suite(), shouldExit)
+                
+                if __name__ == "__main__":
+                    run(True)
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="637d65e1"/></a>637d65e1</h3>
+
+<pre>
+commit 637d65e1b8cebf62c3d7fd512bf7b690bd4d205c
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Wed Aug 10 20:56:13 2011 +0000
+
+    The coadd now has the filter set if all added exposures have the same filter name
+</pre>
+<h3><a name="b32ddf03"/></a>b32ddf03</h3>
+
+<pre>
+commit b32ddf03437741a0f89fbd7b99b889094ce90fc0
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Wed Nov 28 17:18:14 2012 -0500
+
+    update tests to latest afw
+</pre>
+<h3><a name="a8111f83"/></a>a8111f83</h3>
+
+<pre>
+commit a8111f83f882261142283971f459067685799c29
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Tue May 31 18:53:29 2011 +0000
+
+    Fixed a few bugs. It now passes all unit tests.
+</pre>
+<h3><a name="ef2a52c2"/></a>ef2a52c2</h3>
+
+<pre>
+commit ef2a52c2365371eb39e632e53a57fb7ee8cc795e
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri May 23 15:05:00 2014 -0400
+
+    Adapt to new mask bit NO_DATA replacing EDGE (DM-669)
+    
+    NO_DATA means a warp/coadd pixel doesn't map to a CCD.
+    EDGE means a pixel is near the edge and couldn't be searched
+    for sources.
+</pre>
+<h3><a name="aaa9a24f"/></a>aaa9a24f</h3>
+
+<pre>
+commit aaa9a24f2caf425cb406a2ce975ca90c363c3cac
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Wed Jul 13 23:56:49 2011 +0000
+
+    Fix and improve a unit test.
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="03f57d30"/></a>03f57d30</h3>
+
+<pre>
+commit 03f57d30bbc13846dd02f4ef0ba9e1728baaddcc
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Sep 10 12:11:10 2014 -0700
+
+    Added missing image origin specifier.
+</pre>
+<h3><a name="fa470e8d"/></a>fa470e8d</h3>
+
+<pre>
+commit fa470e8dbeadd213877443d4dff057e84c498542
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Sep 10 17:25:28 2014 -0700
+
+    Use new default image origin of PARENT when possible
+</pre>
+<h3><a name="637d65e1"/></a>637d65e1</h3>
+
+<pre>
+commit 637d65e1b8cebf62c3d7fd512bf7b690bd4d205c
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Wed Aug 10 20:56:13 2011 +0000
+
+    The coadd now has the filter set if all added exposures have the same filter name
+</pre>
+<h3><a name="62d66293"/></a>62d66293</h3>
+
+<pre>
+commit 62d66293eba68f21c0748bc8d9de191f90528fa0
+Author: Joshua Hoblitt <josh@hoblitt.com>
+Date:   Fri May 22 10:43:42 2015 -0700
+
+    replace eups.productDir() calls with lsst.utils.getPackageDir()
+</pre>
+<h3><a name="2dd35801"/></a>2dd35801</h3>
+
+<pre>
+commit 2dd35801d6cb01daa25f995819ffbbf9e0a549c9
+Author: Russell Owen <rowen@uw.edu>
+Date:   Thu May 17 18:20:41 2012 -0500
+
+    Separate scaling of photometric zeropoint from Coadd class
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<h1 id="toc_30"><a name="src/copyGoodPixels.cc"/></a>src/copyGoodPixels.cc</h1>
+
+<h3 id="toc_31">Diff:</h3>
+
+<pre>
+                // -*- LSST-C++ -*-
+                
+                /* 
+                 * LSST Data Management System
+                 * Copyright 2008, 2009, 2010 LSST Corporation.
+                 * 
+                 * This product includes software developed by the
+                 * LSST Project (http://www.lsst.org/).
+                 *
+                 * This program is free software: you can redistribute it and/or modify
+                 * it under the terms of the GNU General Public License as published by
+                 * the Free Software Foundation, either version 3 of the License, or
+                 * (at your option) any later version.
+                 * 
+                 * This program is distributed in the hope that it will be useful,
+                 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                 * GNU General Public License for more details.
+                 * 
+                 * You should have received a copy of the LSST License Statement and 
+                 * the GNU General Public License along with this program.  If not, 
+                 * see <http://www.lsstcorp.org/LegalNotices/>.
+                 */
+                 
+                /**
+                * @file
+                *
+                * @author Russell Owen
+                */
+                #include <limits>
+                
+                #include "boost/format.hpp"
+                
+                #include "lsst/pex/exceptions.h"
+                #include "lsst/afw/geom.h"
+                #include "lsst/coadd/utils/copyGoodPixels.h"
+                
+                namespace pexExcept = lsst::pex::exceptions;
+                namespace afwGeom = lsst::afw::geom;
+                namespace afwImage = lsst::afw::image;
+                namespace coaddUtils = lsst::coadd::utils;
+                
+                namespace {
+                    /*
+                     * A boolean functor to test if a MaskedImage pixel is valid (mask & badPixel == 0)
+                     */
+                    struct CheckMask {
+                        CheckMask(lsst::afw::image::MaskPixel badPixel) : _badPixel(badPixel) {}
+                        
+                        template<typename T>
+                        bool operator()(T val) const {
+                            return ((val.mask() & _badPixel) == 0) ? true : false;
+                        }
+                    private:
+                        lsst::afw::image::MaskPixel _badPixel;
+                    };
+                    
+                    /*
+                     * A boolean functor to test if an Image pixel has known value (not NaN)
+                     */    
+                    struct CheckKnownValue {
+                        CheckKnownValue(lsst::afw::image::MaskPixel) {}
+                    
+                        template<typename T>
+                        bool operator()(T val) const {
+                            return !std::isnan(static_cast<float>(*val));
+                        }
+                    };
+                    
+                    /* 
+                     * Implementation of copyGoodPixels
+                     *
+                     * The template parameter isValidPixel is a functor with operator()
+                     * which returns true if a given image pixel is valid.
+                     * This allows us to support multiple image types including
+                     * MaskedImage with a mask bit and Image with a check for NaN.
+                     *
+                     * @return overlapping bounding box, relative to parent image
+                     */
+                    template <typename ImageT, typename isValidPixel>
+                    int copyGoodPixelsImpl(
+                        ImageT &destImage,                                  ///< [in,out] image to modify
+                        ImageT const &srcImage,                             ///< image to copy
+                        lsst::afw::image::MaskPixel const badPixelMask      ///< bad pixel mask; may be ignored
+                    ) {
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+86   <a href="#99e65977">99e65977</a> -         afwGeom::Box2I overlapBBox = destImage.getBBox(afwImage::PARENT);</div>
+              ?                                                        ----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+86   <a href="#fa470e8d">fa470e8d</a> +         afwGeom::Box2I overlapBBox = destImage.getBBox();</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+87   <a href="#99e65977">99e65977</a> -         overlapBBox.clip(srcImage.getBBox(afwImage::PARENT));</div>
+              ?                                           ----------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+87   <a href="#fa470e8d">fa470e8d</a> +         overlapBBox.clip(srcImage.getBBox());</div>
+                        if (overlapBBox.isEmpty()) {
+                            return 0;
+                        }
+                    
+                        ImageT destView(destImage, overlapBBox, afwImage::PARENT, false);
+                        ImageT srcView(srcImage, overlapBBox, afwImage::PARENT, false);
+                    
+                        isValidPixel const isValid(badPixelMask); // functor to check if a pixel is good
+                        int numGoodPix = 0;
+                        for (int y = 0, endY = srcView.getHeight(); y != endY; ++y) {
+                            typename ImageT::const_x_iterator srcIter = srcView.row_begin(y);
+                            typename ImageT::const_x_iterator const srcEndIter = srcView.row_end(y);
+                            typename ImageT::x_iterator destIter = destView.row_begin(y);
+                            for (; srcIter != srcEndIter; ++srcIter, ++destIter) {
+                                if (isValid(srcIter)) {
+                                    *destIter = *srcIter;
+                //                     typename ImageT::SinglePixel pix = *srcIter;
+                //                     *destIter = pix;
+                                    ++numGoodPix;
+                                }
+                            }
+                        }
+                        return numGoodPix;
+                    }
+                } // anonymous namespace
+                
+                template <typename ImagePixelT>
+                int coaddUtils::copyGoodPixels(
+                    // spell out lsst:afw::image to make Doxygen happy
+                    lsst::afw::image::Image<ImagePixelT> &destImage,
+                    lsst::afw::image::Image<ImagePixelT> const &srcImage
+                ) {
+                    typedef lsst::afw::image::Image<ImagePixelT> Image;
+                    return copyGoodPixelsImpl<Image, CheckKnownValue>(destImage, srcImage, 0x0);
+                }
+                
+                template <typename ImagePixelT>
+                int coaddUtils::copyGoodPixels(
+                    // spell out lsst:afw::image to make Doxygen happy
+                    lsst::afw::image::MaskedImage<ImagePixelT, lsst::afw::image::MaskPixel,
+                        lsst::afw::image::VariancePixel> &destImage,
+                    lsst::afw::image::MaskedImage<ImagePixelT, lsst::afw::image::MaskPixel,
+                        lsst::afw::image::VariancePixel> const &srcImage,
+                    lsst::afw::image::MaskPixel const badPixelMask
+                ) {
+                    typedef lsst::afw::image::MaskedImage<ImagePixelT> Image;
+                    return copyGoodPixelsImpl<Image, CheckMask>(destImage, srcImage, badPixelMask);
+                }
+                
+                // Explicit instantiations
+                
+                /// \cond
+                #define MASKEDIMAGE(IMAGEPIXEL) afwImage::MaskedImage<IMAGEPIXEL, \
+                    afwImage::MaskPixel, afwImage::VariancePixel>
+                #define INSTANTIATE(IMAGEPIXEL) \
+                    template int coaddUtils::copyGoodPixels<IMAGEPIXEL>( \
+                        afwImage::Image<IMAGEPIXEL> &destImage, \
+                        afwImage::Image<IMAGEPIXEL> const &srcImage       \
+                    ); \
+                    \
+                    template int coaddUtils::copyGoodPixels<IMAGEPIXEL>( \
+                        MASKEDIMAGE(IMAGEPIXEL) &destImage, \
+                        MASKEDIMAGE(IMAGEPIXEL) const &srcImage, \
+                        afwImage::MaskPixel const badPixelMask \
+                    );
+                
+                INSTANTIATE(double);
+                INSTANTIATE(float);
+                INSTANTIATE(int);
+                INSTANTIATE(boost::uint16_t);
+                /// \endcond
+</pre>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/coadd_utils/</h2>
+<h3><a name="99e65977"/></a>99e65977</h3>
+
+<pre>
+commit 99e65977aa8686d57bf1ce0483728bc43195c3a2
+Author: Russell Owen <rowen@uw.edu>
+Date:   Thu Sep 27 15:47:41 2012 -0700
+
+    Basic code written. Working on unit test.
+</pre>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/coadd_utils/</h2>
+<h3><a name="fa470e8d"/></a>fa470e8d</h3>
+
+<pre>
+commit fa470e8dbeadd213877443d4dff057e84c498542
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Sep 10 17:25:28 2014 -0700
+
+    Use new default image origin of PARENT when possible
+</pre>
+</div>
+
+<p><a href="#homelist">Return to list</a></p>
+
+<script type="text/javascript">
+self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{};var Prism=function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{encode:function(e){return e instanceof n?new n(e.type,t.util.encode(e.content),e.alias):"Array"===t.util.type(e)?e.map(t.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=t.util.clone(e[r]));return a;case"Array":return e.map(function(e){return t.util.clone(e)})}return e}},languages:{extend:function(e,n){var a=t.util.clone(t.languages[e]);for(var r in n)a[r]=n[r];return a},insertBefore:function(e,n,a,r){r=r||t.languages;var i=r[e];if(2==arguments.length){a=arguments[1];for(var l in a)a.hasOwnProperty(l)&&(i[l]=a[l]);return i}var s={};for(var o in i)if(i.hasOwnProperty(o)){if(o==n)for(var l in a)a.hasOwnProperty(l)&&(s[l]=a[l]);s[o]=i[o]}return t.languages.DFS(t.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=s)}),r[e]=s},DFS:function(e,n,a){for(var r in e)e.hasOwnProperty(r)&&(n.call(e,r,e[r],a||r),"Object"===t.util.type(e[r])?t.languages.DFS(e[r],n):"Array"===t.util.type(e[r])&&t.languages.DFS(e[r],n,r))}},highlightAll:function(e,n){for(var a,r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'),i=0;a=r[i++];)t.highlightElement(a,e===!0,n)},highlightElement:function(a,r,i){for(var l,s,o=a;o&&!e.test(o.className);)o=o.parentNode;if(o&&(l=(o.className.match(e)||[,""])[1],s=t.languages[l]),s){a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=a.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var u=a.textContent;if(u){u=u.replace(/^(?:\r?\n|\r)/,"");var g={element:a,language:l,grammar:s,code:u};if(t.hooks.run("before-highlight",g),r&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){g.highlightedCode=n.stringify(JSON.parse(e.data),l),t.hooks.run("before-insert",g),g.element.innerHTML=g.highlightedCode,i&&i.call(g.element),t.hooks.run("after-highlight",g)},c.postMessage(JSON.stringify({language:g.language,code:g.code}))}else g.highlightedCode=t.highlight(g.code,g.grammar,g.language),t.hooks.run("before-insert",g),g.element.innerHTML=g.highlightedCode,i&&i.call(a),t.hooks.run("after-highlight",g)}}},highlight:function(e,a,r){var i=t.tokenize(e,a);return n.stringify(t.util.encode(i),r)},tokenize:function(e,n){var a=t.Token,r=[e],i=n.rest;if(i){for(var l in i)n[l]=i[l];delete n.rest}e:for(var l in n)if(n.hasOwnProperty(l)&&n[l]){var s=n[l];s="Array"===t.util.type(s)?s:[s];for(var o=0;o<s.length;++o){var u=s[o],g=u.inside,c=!!u.lookbehind,f=0,h=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var d=r[p];if(r.length>e.length)break e;if(!(d instanceof a)){u.lastIndex=0;var m=u.exec(d);if(m){c&&(f=m[1].length);var y=m.index-1+f,m=m[0].slice(f),v=m.length,k=y+v,b=d.slice(0,y+1),w=d.slice(k+1),N=[p,1];b&&N.push(b);var O=new a(l,g?t.tokenize(m,g):m,h);N.push(O),w&&N.push(w),Array.prototype.splice.apply(r,N)}}}}}return r},hooks:{all:{},add:function(e,n){var a=t.hooks.all;a[e]=a[e]||[],a[e].push(n)},run:function(e,n){var a=t.hooks.all[e];if(a&&a.length)for(var r,i=0;r=a[i++];)r(n)}}},n=t.Token=function(e,t,n){this.type=e,this.content=t,this.alias=n};if(n.stringify=function(e,a,r){if("string"==typeof e)return e;if("Array"===t.util.type(e))return e.map(function(t){return n.stringify(t,a,e)}).join("");var i={type:e.type,content:n.stringify(e.content,a,r),tag:"span",classes:["token",e.type],attributes:{},language:a,parent:r};if("comment"==i.type&&(i.attributes.spellcheck="true"),e.alias){var l="Array"===t.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(i.classes,l)}t.hooks.run("wrap",i);var s="";for(var o in i.attributes)s+=o+'="'+(i.attributes[o]||"")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'" '+s+">"+i.content+"</"+i.tag+">"},!self.document)return self.addEventListener?(self.addEventListener("message",function(e){var n=JSON.parse(e.data),a=n.language,r=n.code;self.postMessage(JSON.stringify(t.util.encode(t.tokenize(r,t.languages[a])))),self.close()},!1),self.Prism):self.Prism;var a=document.getElementsByTagName("script");return a=a[a.length-1],a&&(t.filename=a.src,document.addEventListener&&!a.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)),self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism);
+</script>
+</body>
+
+</html>

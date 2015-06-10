@@ -4,7 +4,7 @@
 <div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
 <h1>Summary of Repositories</h1>
 <p>
-Comparison run at 07:31PM on June 07, 2015<br>
+Comparison run at 11:11AM on June 09, 2015<br>
 There are <b>32</b> differences between the two repositories<br><br>
 Repository <b>/Users/nate/repos_hsc/base/</b> <br> Revision <b>019d7d34166bc13d8d93c8139e16abc08c2e1663</b><br> Branch <b>master</b><br>Last commit was on <b>2013-12-08 06:34:27 +0900</b><br><br>
 Repository <b>/Users/nate/repos_lsst/base/</b> <br> Revision <b>8080078c56ef7b263fa802b99239a3895db748a0</b><br> Branch <b>master</b><br>Last commit was on <b>2015-04-30 09:05:26 -0400</b><br><br>
@@ -2812,7 +2812,7 @@ Date:   Wed Mar 5 16:28:59 2014 -0600
                 *.cfgc
                 *.pyc
 <div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
-9    <a href="#c6d40fc6">c6d40fc6</a> + lib/libbase.*</div>
+9    <a href="#7194cb7c">7194cb7c</a> + lib/libbase.*</div>
                 python/lsst/base/version.py
                 python/lsst64defs.py
                 python/lsstcppimport.py
@@ -2838,14 +2838,14 @@ Date:   Wed Mar 5 16:28:59 2014 -0600
 <div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
 
 <h2>Commits in /Users/nate/repos_lsst/base/</h2>
-<h3><a name="c6d40fc6"/></a>c6d40fc6</h3>
+<h3><a name="7194cb7c"/></a>7194cb7c</h3>
 
 <pre>
-commit c6d40fc69effe3aeb220c84e2a562e8d5ed62897
-Author: Jim Bosch <jbosch@astro.princeton.edu>
-Date:   Wed Nov 16 16:47:53 2011 -0500
+commit 7194cb7ccc37f9e5ded621ba1525c89f952565cc
+Author: Robert Lupton the Good <rhl@astro.princeton.edu>
+Date:   Mon Jun 2 17:29:05 2014 -0400
 
-    added .gitignore, prepared for version introspection
+    Ignore libbase shared library
 </pre>
 </div>
 
@@ -2902,15 +2902,15 @@ Date:   Wed Nov 16 16:47:53 2011 -0500
                         Py_DECREF(mod);
                         return true;
 <div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
-47   <a href="#b273dffe">b273dffe</a> +     } else {</div>
+47   <a href="#a445737c">a445737c</a> +     } else {</div>
 <div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
-48   <a href="#b273dffe">b273dffe</a> +         // If the Python C API call returned a null pointer, it will</div>
+48   <a href="#a445737c">a445737c</a> +         // If the Python C API call returned a null pointer, it will</div>
 <div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
-49   <a href="#b273dffe">b273dffe</a> +         // also have set an exception.  We don't want that, because</div>
+49   <a href="#a445737c">a445737c</a> +         // also have set an exception.  We don't want that, because</div>
 <div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
-50   <a href="#b273dffe">b273dffe</a> +         // this isn't necessarily an error (that's up to the caller).</div>
+50   <a href="#a445737c">a445737c</a> +         // this isn't necessarily an error (that's up to the caller).</div>
 <div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
-51   <a href="#b273dffe">b273dffe</a> +         PyErr_Clear();</div>
+51   <a href="#a445737c">a445737c</a> +         PyErr_Clear();</div>
                     }
                     return false;
                 }
@@ -2938,17 +2938,20 @@ Date:   Wed Nov 16 16:47:53 2011 -0500
 <div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
 
 <h2>Commits in /Users/nate/repos_lsst/base/</h2>
-<h3><a name="b273dffe"/></a>b273dffe</h3>
+<h3><a name="a445737c"/></a>a445737c</h3>
 
 <pre>
-commit b273dffe406b45ab3f1b449048b102ab2ae9b7c1
+commit a445737c1f27d741399d2e38a77372c34f47fb0d
 Author: Jim Bosch <jbosch@astro.princeton.edu>
-Date:   Mon Mar 4 13:56:10 2013 -0500
+Date:   Wed Apr 29 16:30:18 2015 -0400
 
-    Add functionality to import Python modules from within pure C++ code (#2696).
+    Clear Python errors when module import fails.
     
-    This functionality is necessary for the table-based persistence framework, which needs to import Python modules to ensure the singleton registry of factories is populated before being searched.  It needs to go in the 'base' package (and outside the 'lsst' python package) because it needs to be imported by the lsstimport.py.
-    This change adds a C++ shared library to the base package, which is perhaps slightly unfortunate, especially as the library name is simply "base" according to our conventions.
+    Since we're tracking errors due to failure to import
+    via the return value of the function, we shouldn't be
+    leaving the Python global exception state set, as that
+    will cause confusingly unnecessary exceptions
+    downstream.
 </pre>
 </div>
 

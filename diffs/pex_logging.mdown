@@ -1,0 +1,104 @@
+# Comparison of the pex_logging repository
+
+
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of Repositories</h1>
+<p>
+Comparison run at 11:43AM on June 09, 2015<br>
+There are <b>0</b> differences between the two repositories<br><br>
+Repository <b>/Users/nate/repos_hsc/pex_logging/</b> <br> Revision <b>dd6ede9e04f7273ef167e5867fa1f8ae89ad0824</b><br> Branch <b>master</b><br>Last commit was on <b>2014-03-12 09:49:13 -1000</b><br><br>
+Repository <b>/Users/nate/repos_hsc/pex_logging/</b> <br> Revision <b>dd6ede9e04f7273ef167e5867fa1f8ae89ad0824</b><br> Branch <b>master</b><br>Last commit was on <b>2014-03-12 09:49:13 -1000</b><br><br>
+</p>
+</div>
+
+
+
+___
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/pex_logging/</h1>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/pex_logging/</h1>
+</div>
+
+
+
+
+# List of the files in common<a name="homelist"></a>
+Files without links do not differ
+
+* ```doc/doxygen.conf.in```
+* ```tests/testDebug.cc```
+* ```src/BlockTimingLog.cc```
+* ```tests/testDefLog.cc```
+* ```include/lsst/pex/logging/LogRecord.h```
+* ```include/lsst/pex/logging/Debug.h```
+* ```SConstruct```
+* ```include/lsst/pex/logging/PropertyPrinter.h```
+* ```examples/SConscript```
+* ```tests/SConscript```
+* ```tests/testLogDestination.py```
+* ```tests/verifyOutput.py```
+* ```tests/testTrace.cc```
+* ```src/LogDestination.cc```
+* ```tests/testBlockTimingLog.py```
+* ```.gitignore```
+* ```include/lsst/pex/logging/ScreenLog.h```
+* ```include/lsst/pex/logging/DualLog.h```
+* ```src/ScreenLog.cc```
+* ```ups/pex_logging.build```
+* ```examples/log.py```
+* ```src/PropertyPrinter.cc```
+* ```src/FileDestination.cc```
+* ```include/lsst/pex/logging/BlockTimingLog.h```
+* ```tests/testLog.cc```
+* ```include/lsst/pex/logging/FileDestination.h```
+* ```examples/debug.cc```
+* ```include/lsst/pex/logging/Log.h```
+* ```tests/testFileDest.cc```
+* ```src/Component.cc```
+* ```tests/testNoDebug.py```
+* ```ups/pex_logging.table```
+* ```tests/testPropertyPrinter.cc```
+* ```tests/testLogRecord.cc```
+* ```tests/testLog_1.py```
+* ```tests/timeSyscalls.cc```
+* ```tests/testLogDestination_correct.txt```
+* ```examples/trace.cc```
+* ```tests/testTrace_1.py```
+* ```include/lsst/pex/logging/Trace.h```
+* ```doc/SConscript```
+* ```include/lsst/pex/logging.h```
+* ```doc/howto.dox```
+* ```tests/testNoDebug.cc```
+* ```tests/testLog_correct.txt```
+* ```include/lsst/pex/logging/threshold/Memory.h```
+* ```examples/log.cc```
+* ```src/threshold/Memory.cc```
+* ```src/DualLog.cc```
+* ```tests/testLogDestination.cc```
+* ```tests/testBlockTimingLog.cc```
+* ```python/lsst/pex/logging/loggingLib.i```
+* ```src/LogRecord.cc```
+* ```include/lsst/pex/logging/LogClient.h```
+* ```tests/testNoDebug_correct.txt```
+* ```tests/testFileLog.py```
+* ```python/lsst/pex/logging/__init__.py```
+* ```python/lsst/pex/logging/SConscript```
+* ```src/Log.cc```
+* ```lib/SConscript```
+* ```python/lsst/__init__.py```
+* ```tests/testDebug_correct.txt```
+* ```doc/overview.dox```
+* ```tests/testNoTrace.cc```
+* ```tests/testLogFormatter.cc```
+* ```src/LogFormatter.cc```
+* ```python/lsst/pex/__init__.py```
+* ```include/lsst/pex/logging/LogFormatter.h```
+* ```ups/pex_logging.cfg```
+* ```tests/testThresholdMemory.cc```
+* ```include/lsst/pex/logging/Component.h```
+* ```include/lsst/pex/logging/LogDestination.h```
+* ```include/lsst/pex/logging/threshold/enum.h```
+

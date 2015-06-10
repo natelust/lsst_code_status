@@ -4,7 +4,7 @@
 <div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
 <h1>Summary of Repositories</h1>
 <p>
-Comparison run at 07:32PM on June 07, 2015<br>
+Comparison run at 11:11AM on June 09, 2015<br>
 There are <b>17</b> differences between the two repositories<br><br>
 Repository <b>/Users/nate/repos_hsc/ndarray/</b> <br> Revision <b>1e102dd4f775e3c6afcdc5930096552123c3689d</b><br> Branch <b>master</b><br>Last commit was on <b>2013-12-06 16:06:11 -0500</b><br><br>
 Repository <b>/Users/nate/repos_lsst/ndarray/</b> <br> Revision <b>7408a83a3aa3df1509bb22d61aa4438c65cef2b6</b><br> Branch <b>master</b><br>Last commit was on <b>2015-01-22 12:09:07 -0500</b><br><br>

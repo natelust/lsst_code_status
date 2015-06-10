@@ -1,0 +1,1888 @@
+# Comparison of the skymap repository
+
+
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of Repositories</h1>
+<p>
+Comparison run at 02:06PM on June 09, 2015<br>
+There are <b>202</b> differences between the two repositories<br><br>
+Repository <b>/Users/nate/repos_hsc/skymap/</b> <br> Revision <b>f7e2f036494afe382e653194c82bb15728c60fc3</b><br> Branch <b>master</b><br>Last commit was on <b>2014-05-13 11:09:03 +0900</b><br><br>
+Repository <b>/Users/nate/repos_lsst/skymap/</b> <br> Revision <b>8ff4092549790d886a8480a45e7c94ec46941bad</b><br> Branch <b>master</b><br>Last commit was on <b>2014-10-13 16:38:50 -0700</b><br><br>
+</p>
+</div>
+
+
+
+___
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/skymap/</h1>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_lsst/skymap/</h1>
+</div>
+
+
+
+
+# List of the files in common<a name="homelist"></a>
+Files without links do not differ
+
+* ```doc/doxygen.conf.in```
+* ```examples/plotDodecaSkyMap.py```
+* [```doc/main.dox```](#doc/main.dox)
+* ```doc/SConscript```
+* ```SConstruct```
+* ```python/lsst/skymap/dodecaSkyMap.py```
+* ```examples/SConscript```
+* ```python/lsst/skymap/skyMapRegistry.py```
+* ```tests/SConscript```
+* ```tests/testEquatSkyMap.py```
+* ```examples/plotSkyMap.py```
+* ```.gitignore```
+* ```python/lsst/skymap/detail/wcsFactory.py```
+* [```python/lsst/skymap/baseSkyMap.py```](#python/lsst/skymap/baseSkyMap.py)
+* ```tests/testDiscreteSkyMap.py```
+* ```python/lsst/skymap/detail/__init__.py```
+* ```tests/testHealpixSkyMap.py```
+* [```python/lsst/skymap/ringsSkyMap.py```](#python/lsst/skymap/ringsSkyMap.py)
+* ```ups/skymap.cfg```
+* ```python/lsst/skymap/discreteSkyMap.py```
+* ```python/lsst/skymap/patchInfo.py```
+* [```tests/SkyMapTestCase.py```](#tests/SkyMapTestCase.py)
+* ```python/lsst/skymap/__init__.py```
+* ```python/lsst/__init__.py```
+* ```python/lsst/skymap/cachingSkyMap.py```
+* ```examples/lsstSkyMap.py```
+* [```python/lsst/skymap/tractInfo.py```](#python/lsst/skymap/tractInfo.py)
+* ```python/lsst/skymap/detail/utils.py```
+* ```tests/testRingsSkyMap.py```
+* ```python/lsst/skymap/equatSkyMap.py```
+* ```ups/skymap.build```
+* [```python/lsst/skymap/healpixSkyMap.py```](#python/lsst/skymap/healpixSkyMap.py)
+* [```ups/skymap.table```](#ups/skymap.table)
+* ```python/lsst/skymap/detail/dodecahedron.py```
+* ```tests/testDodecaSkyMap.py```
+
+# <a name="doc/main.dox"/></a>doc/main.dox
+### Diff:
+
+<pre>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#f34636da">f34636da</a> + namespace lsst { namespace skymap {</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+2    <a href="#f34636da">f34636da</a> + </div>
+                /**
+                \mainpage lsst::skymap;  sky pixelization
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+4    <a href="#2ec06846">2ec06846</a> - \section secIntro Introduction</div>
+              ?           ^^^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+6    <a href="#f34636da">f34636da</a> + \section skyMap_introduction Introduction</div>
+              ?           ^^^^^^^    +++++++
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+6    <a href="#f97977a5">f97977a5</a> - Skymap describes image data that covers most or all of the sky.</div>
+              ? ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+8    <a href="#f34636da">f34636da</a> + A sky map describes a pixelization of image data that covers most or all of the sky.</div>
+              ? ^^^  +              ++++++++++++++++++
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+8    <a href="#fc951697">fc951697</a> - The imaging data is arranged as a sequence of large, rectangular, overlapping "tracts".</div>
+              ?                                                 ^ --            -------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+10   <a href="#f34636da">f34636da</a> + The imaging data is arranged as a sequence of overlapping rectangular "tracts".</div>
+              ?                                               ++++  ^^^^
+                Each tract is, in essence, a single large exposure. However, tracts are typically too large
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+10   <a href="#fc951697">fc951697</a> - to fit into memory, so tracts are subdivided into possibly overlapping patches. The patch size</div>
+              ?                                                                                ---------------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+12   <a href="#f34636da">f34636da</a> + to fit into memory, so tracts are subdivided into rectangular, possibly overlapping "patches".</div>
+              ?                                                  +++++++++++++                      +       +
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+11   <a href="#fc951697">fc951697</a> - is chosen to easily fit into memory.</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+13   <a href="#f34636da">f34636da</a> + The patch size is chosen to easily fit into memory.</div>
+              ? +++++++++++++++
+                
+                Tracts contain an inner region described by a collection of vertices. The inner regions exactly tile
+                the portion of sky covered by the sky map. All pixels beyond the inner region provide overlap
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+15   <a href="#fc951697">fc951697</a> - with neighboring tracts and a rectangular outer border.</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+17   <a href="#f34636da">f34636da</a> + with neighboring tracts.</div>
+                
+                Patches contain rectangular inner and outer regions. The inner regions exactly tile the tract,
+                and all patches in a tract have the same inner dimensions.
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+19   <a href="#fc951697">fc951697</a> - Each patch has a border around the inner region to provide some overlap with adjacent patches;</div>
+              ?                                                                                              ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+21   <a href="#f34636da">f34636da</a> + Each patch has a border around the inner region to provide some overlap with adjacent patches,</div>
+              ?                                                                                              ^
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+20   <a href="#fc951697">fc951697</a> - there is no border on patch edges that lie against tract boundaries.</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+22   <a href="#f34636da">f34636da</a> + but there is no border on patch edges that lie against tract boundaries.</div>
+              ? ++++
+                
+                Imaging data is saved as one FITS file per patch. To access a patch the butler requires the tract ID
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+23   <a href="#f97977a5">f97977a5</a> - and patch index. SkyMap.findTract(coord) finds a tract and returns its TractInfo,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+24   <a href="#f97977a5">f97977a5</a> - given a coord. TractInfo.findPatch(coord) finds a patch and returns its PatchInfo.</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+25   <a href="#f34636da">f34636da</a> + and patch index. \ref baseSkyMap.BaseSkyMap.findTract "BaseSkyMap.findTract(coord)" finds a tract</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+26   <a href="#f34636da">f34636da</a> + and returns its \ref tractInfo.TractInfo "TractInfo", given a \ref afw::coord::Coord "coord".</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+27   <a href="#f34636da">f34636da</a> + \ref tractInfo.TractInfo.findPatch "TractInfo.findPatch(coord)" finds a patch and returns its</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+28   <a href="#f34636da">f34636da</a> + \ref patchInfo.PatchInfo "PatchInfo".</div>
+                
+                Classes available from Python include:
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+28   <a href="#fc951697">fc951697</a> - @li lsst.skymap.BaseSkyMap: abstract base class for sky maps. Each subclass acts as an iterable</div>
+              ? ^^^^^ ^^^^  ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+32   <a href="#f34636da">f34636da</a> + - \ref baseSkyMap.BaseSkyMap "BaseSkyMap": abstract base class for sky maps. Each subclass acts as an iterable</div>
+              ? ^^^^^^^^^ ^^  ^             +++++++++++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+29   <a href="#f97977a5">f97977a5</a> - collection of Tracts.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+30   <a href="#fc951697">fc951697</a> - @li lsst.skymap.DodecaSkyMap: tracts are arranged as the faces of a dodecahedron covering the whole sky.</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+33   <a href="#f34636da">f34636da</a> +     collection of \ref tractInfo.TractInfo "TractInfo".</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+34   <a href="#f34636da">f34636da</a> + - \ref dodecaSkyMap.DodecaSkyMap "DodecaSkyMap": tracts are arranged as the faces of a dodecahedron</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+35   <a href="#f34636da">f34636da</a> +     covering the whole sky.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+31   <a href="#fc951697">fc951697</a> - @li lsst.skymap.EquatSkyMap: tracts are arranged in a band described by a declination range.</div>
+              ? ^^^^^^^ ^^  ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+36   <a href="#f34636da">f34636da</a> + - \ref equatSkyMap.EquatSkyMap "EquatSkyMap": tracts are arranged in a band described by a declination range.</div>
+              ? ^^^^^^^^^^^ ^  ^              ++++++++++++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+32   <a href="#d824fa55">d824fa55</a> - @li lsst.skymap.DiscreteSkyMap: tracts are placed at explicitly defined positions (e.g., for deep fields).</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+37   <a href="#f34636da">f34636da</a> + - \ref discreteSkyMap.DiscreteSkyMap "DiscreteSkyMap": tracts are placed at explicitly defined positions</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+38   <a href="#f34636da">f34636da</a> +     (e.g., for deep fields).</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+33   <a href="#55faff15">55faff15</a> - @li lsst.skymap.RingsSkyMap: square tracts are arranged in declination rings with polar caps.</div>
+              ? ^^ ^^ ^^^^  ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+39   <a href="#f34636da">f34636da</a> + - \ref ringsSkyMap.RingsSkyMap "RingsSkyMap": square tracts are arranged in declination rings with polar caps.</div>
+              ? ^^^^^^^^ ^^ ^  ^              ++++++++++++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+34   <a href="#43800705">43800705</a> - @li lsst.skymap.HealpixSkyMap: tracts are arranged as HEALPixels (requires healpy package).</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+40   <a href="#f34636da">f34636da</a> + - \ref healpixSkyMap.HealpixSkyMap "HealpixSkyMap": tracts are arranged as HEALPixels</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+41   <a href="#f34636da">f34636da</a> +     (requires the healpy package).</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+35   <a href="#fc951697">fc951697</a> - @li lsst.skymap.TractInfo: information about a tract, including a bounding box, WCS,</div>
+              ? ^^^^^^^ ^^^^^ ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+42   <a href="#f34636da">f34636da</a> + - \ref tractInfo.TractInfo "TractInfo": information about a tract, including a bounding box, WCS,</div>
+              ? ^^^^^^^ ^ ^^^^^^          ++++++++++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+36   <a href="#f97977a5">f97977a5</a> - vertices describing the inner region, and a collection of PatchInfo.</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+43   <a href="#f34636da">f34636da</a> +     vertices describing the inner region, and a collection of \ref patchInfo.PatchInfo "PatchInfo".</div>
+              ? ++++                                                          +++++++++++++++         ++++++++++++
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+37   <a href="#fc951697">fc951697</a> - @li lsst.skymap.PatchInfo: information about a patch, including index, inner and outer bounding boxes.</div>
+              ? ^^^^^^^ ^^^^^^^                                                                                -------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+44   <a href="#f34636da">f34636da</a> + - \ref patchInfo.PatchInfo "PatchInfo": information about a patch, including index, inner and outer bounding</div>
+              ? ^^^^^^^^^ ^^^^^^          ++++++++++++
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+45   <a href="#f34636da">f34636da</a> +     boxes.</div>
+                */
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+39   <a href="#2ec06846">2ec06846</a> - }}}</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+47   <a href="#f34636da">f34636da</a> + </div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+48   <a href="#f34636da">f34636da</a> + }} // namespace lsst::skymap</div>
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/skymap/</h2>
+<h3><a name="d824fa55"/></a>d824fa55</h3>
+
+<pre>
+commit d824fa5506872aee499ce5925b313eb8dd59d714
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Tue Jan 15 13:58:31 2013 -0500
+
+    Minor doc update: "explicitly defined" better than "nominated".
+    
+    In response to review of #2547.
+</pre>
+<h3><a name="43800705"/></a>43800705</h3>
+
+<pre>
+commit 4380070574e32705ca78ca948668099923405a2a
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Dec 7 13:25:10 2012 -0500
+
+    Add HealpixSkyMap to doc.
+</pre>
+<h3><a name="2ec06846"/></a>2ec06846</h3>
+
+<pre>
+commit 2ec068466b41662d21087164631d9b3edf8c065c
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Wed Aug 4 22:10:41 2010 +0000
+
+    Preliminary code. No persistence. No unit tests.
+</pre>
+<h3><a name="f97977a5"/></a>f97977a5</h3>
+
+<pre>
+commit f97977a590209ee3dcf51f05fee1bccee7bc7392
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue May 8 13:35:08 2012 -0700
+
+    Make coordFromVec publicly available.
+    Update doc/main.dox and some other doc strings.
+</pre>
+<h3><a name="55faff15"/></a>55faff15</h3>
+
+<pre>
+commit 55faff15998fddad1364b95a17f242179c3eb6df
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Mon Jan 14 18:07:47 2013 -0500
+
+    Add DiscreteSkyMap and RingsSkyMap to doc.
+</pre>
+<h3><a name="fc951697"/></a>fc951697</h3>
+
+<pre>
+commit fc951697aa553986ee1e4c853f4eb53f99f31032
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue May 8 13:50:25 2012 -0700
+
+    Tweak main doxygen page
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/skymap/</h2>
+<h3><a name="f34636da"/></a>f34636da</h3>
+
+<pre>
+commit f34636da46d191a1325fcfbe857c3777faec988d
+Author: Russell Owen <rowen@uw.edu>
+Date:   Wed Jul 23 10:51:15 2014 -0700
+
+    Improve the main documentation page, including making links work.
+</pre>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="python/lsst/skymap/baseSkyMap.py"/></a>python/lsst/skymap/baseSkyMap.py
+### Diff:
+
+<pre>
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                """
+                @todo
+                - Consider tweaking pixel scale so the average scale is as specified, rather than the scale at the center
+                """
+                import lsst.pex.config as pexConfig
+                import lsst.afw.geom as afwGeom
+                from . import detail
+                
+                __all__ = ["BaseSkyMap"]
+                
+                class BaseSkyMapConfig(pexConfig.Config):
+                    patchInnerDimensions = pexConfig.ListField(
+                        doc = "dimensions of inner region of patches (x,y pixels)",
+                        dtype = int,
+                        length = 2,
+                        default = (4000, 4000),
+                    )
+                    patchBorder = pexConfig.Field(
+                        doc = "border between patch inner and outer bbox (pixels)",
+                        dtype = int,
+                        default = 100,
+                    )
+                    tractOverlap = pexConfig.Field(
+                        doc = "minimum overlap between adjacent sky tracts, on the sky (deg)",
+                        dtype = float,
+                        default = 1.0,
+                    )
+                    pixelScale = pexConfig.Field(
+                        doc = "nominal pixel scale (arcsec/pixel)",
+                        dtype = float,
+                        default = 0.333
+                    )
+                    projection = pexConfig.Field(
+                        doc = """one of the FITS WCS projection codes, such as:
+                          - STG: stereographic projection
+                          - MOL: Molleweide's projection
+                          - TAN: tangent-plane projection
+                        """,
+                        dtype = str,
+                        default = "STG",
+                    )
+                    rotation = pexConfig.Field(
+                        doc = "Rotation for WCS (deg)",
+                        dtype = float,
+                        default = 0,
+                        )
+                        
+                
+                class BaseSkyMap(object):
+                    """A collection of overlapping Tracts that map part or all of the sky.
+                    
+                    See TractInfo for more information.
+                    
+                    BaseSkyMap is an abstract base class. Subclasses must do the following:
+                    @li define __init__ and have it construct the TractInfo objects and put them in _tractInfoList
+                    @li define __getstate__ and __setstate__ to allow pickling (the butler saves sky maps using pickle);
+                        see DodecaSkyMap for an example of how to do this. (Most of that code could be moved
+                        into this base class, but that would make it harder to handle older versions of pickle data.)
+                    """
+                    ConfigClass = BaseSkyMapConfig
+                    def __init__(self, config=None):
+                        """Construct a BaseSkyMap
+                        
+                        @param[in] config: an instance of self.ConfigClass; if None the default config is used
+                        """
+                        if config is None:
+                            config = self.ConfigClass()
+                        config.freeze() # just to be sure, e.g. for pickling
+                        self.config = config
+                        self._tractInfoList = []
+                        self._wcsFactory = detail.WcsFactory(
+                            pixelScale = afwGeom.Angle(self.config.pixelScale, afwGeom.arcseconds),
+                            projection = self.config.projection,
+                            rotation = afwGeom.Angle(self.config.rotation, afwGeom.degrees),
+                        )
+                    
+                    def findTract(self, coord):
+                        """Find the tract whose center is nearest the specified coord.
+                        
+                        @param[in] coord: sky coordinate (afwCoord.Coord)
+                        @return TractInfo of tract whose center is nearest the specified coord
+                        
+                        @warning:
+                        - if tracts do not cover the whole sky then the returned tract may not include the coord
+                        
+                        @note
+                        - This routine will be more efficient if coord is ICRS.
+                        - If coord is equidistant between multiple sky tract centers then one is arbitrarily chosen.
+                        - The default implementation is not very efficient; subclasses may wish to override.
+                        """
+                        icrsCoord = coord.toIcrs()
+                        distTractInfoList = []
+                        for tractInfo in self:
+                            angSep = icrsCoord.angularSeparation(tractInfo.getCtrCoord()).asDegrees()
+                            distTractInfoList.append((angSep, tractInfo))
+                        distTractInfoList.sort()
+                        return distTractInfoList[0][1]
+                    
+                    def findTractPatchList(self, coordList):
+                        """Find tracts and patches that overlap a region
+                        
+                        @param[in] coordList: list of sky coordinates (afwCoord.Coord)
+                        @return list of (TractInfo, list of PatchInfo) for tracts and patches that contain,
+                            or may contain, the specified region. The list will be empty if there is no overlap.
+                        
+                        @warning this uses a naive algorithm that may find some tracts and patches that do not overlap
+                            the region (especially if the region is not a rectangle aligned along patch x,y).
+                        """
+                        retList = []
+                        for tractInfo in self:
+                            patchList = tractInfo.findPatchList(coordList)
+                            if patchList:
+                                retList.append((tractInfo, patchList))
+                        return retList
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+136  <a href="#51a6b2e9">51a6b2e9</a> +     </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+136  <a href="#56476142">56476142</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+137  <a href="#56476142">56476142</a> -     def findClosestTractPatchList(self, coordList):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+138  <a href="#56476142">56476142</a> -         """Find closest tract and patches that overlap coordinates</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+139  <a href="#56476142">56476142</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+140  <a href="#56476142">56476142</a> -         @param[in] coordList: list of sky coordinates (afwCoord.Coord)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+141  <a href="#56476142">56476142</a> -         @return list of (TractInfo, list of PatchInfo) for tracts and patches that contain,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+142  <a href="#56476142">56476142</a> -             or may contain, the specified region. The list will be empty if there is no overlap.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+143  <a href="#56476142">56476142</a> -         """</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+144  <a href="#56476142">56476142</a> -         retList = []</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+145  <a href="#56476142">56476142</a> -         for coord in coordList:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+146  <a href="#56476142">56476142</a> -             tractInfo = self.findTract(coord)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+147  <a href="#56476142">56476142</a> -             patchList = tractInfo.findPatchList(coordList)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+148  <a href="#7e49c358">7e49c358</a> -             if patchList and not (tractInfo, patchList) in retList:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+149  <a href="#56476142">56476142</a> -                 retList.append((tractInfo, patchList))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+150  <a href="#56476142">56476142</a> -         return retList</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+151  <a href="#56476142">56476142</a> - </div>
+                    def __getitem__(self, ind):
+                        return self._tractInfoList[ind]
+                    
+                    def __iter__(self):
+                        return iter(self._tractInfoList)
+                    
+                    def __len__(self):
+                        return len(self._tractInfoList)
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/skymap/</h2>
+<h3><a name="7e49c358"/></a>7e49c358</h3>
+
+<pre>
+commit 7e49c358501f95ce4c0e1aa8f48103a24391fc22
+Author: Naoki Yasuda <yasudank@gmail.com>
+Date:   Fri May 9 09:40:07 2014 +0900
+
+    Add fast findTractPatchList() in RingsSkyMap.
+</pre>
+<h3><a name="56476142"/></a>56476142</h3>
+
+<pre>
+commit 56476142060bdb7d8c7fb59eacc383f0e0d5c85b
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Thu Mar 13 14:19:21 2014 -1000
+
+    move RingsSkyMap.findTractPatchList to BaseSkyMap.findClosestTractPatchlist
+    
+    Code implemented for RingsSkyMap.findTractPatchList does not find
+    *all* tracts for the provided coordinates, but only the closest (or best).
+    This is additional useful functionality, so moved it to the base class
+    with a more accurate name.  Added test for it.
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/skymap/</h2>
+<h3><a name="51a6b2e9"/></a>51a6b2e9</h3>
+
+<pre>
+commit 51a6b2e9477841d96ece1a848df2d5f1771daf3a
+Author: Russell Owen <rowen@uw.edu>
+Date:   Sat May 19 06:38:39 2012 -0700
+
+    Implement region search (untested)
+</pre>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="python/lsst/skymap/ringsSkyMap.py"/></a>python/lsst/skymap/ringsSkyMap.py
+### Diff:
+
+<pre>
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010, 2012 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+                import math
+                
+                from lsst.pex.config import Field
+                from lsst.afw.coord import IcrsCoord
+                import lsst.afw.geom as afwGeom
+                from .cachingSkyMap import CachingSkyMap
+                from .tractInfo import ExplicitTractInfo
+                
+                __all__ = ["RingsSkyMap"]
+                
+                class RingsSkyMapConfig(CachingSkyMap.ConfigClass):
+                    """Configuration for the RingsSkyMap"""
+                    numRings = Field(dtype=int, doc="Number of rings", check=lambda x: x > 0)
+                    raStart = Field(dtype=float, default=0.0, doc="Starting center RA for each ring (degrees)",
+                                    check=lambda x: x >= 0.0 and x < 360.0)
+                
+                
+                class RingsSkyMap(CachingSkyMap):
+                    """Rings sky map pixelization.
+                
+                    We divide the sphere into N rings of Declination, plus the two polar
+                    caps, which sets the size of the individual tracts.  The rings are
+                    divided in RA into an integral number of tracts of this size; this
+                    division is made at the Declination closest to zero so as to ensure
+                    full overlap.
+                    """
+                    ConfigClass = RingsSkyMapConfig
+                    _version = (1, 0) # for pickle
+                
+                    def __init__(self, config, version=0):
+                        """Constructor
+                
+                        @param[in] config: an instance of self.ConfigClass; if None the default config is used
+                        @param[in] version: software version of this class, to retain compatibility with old instances
+                        """
+                        # We count rings from south to north
+                        # Note: pole caps together count for one additional ring
+                        self._ringSize = math.pi / (config.numRings + 1) # Size of a ring in Declination (radians)
+                        self._ringNums = [] # Number of tracts for each ring
+                        for i in range(config.numRings):
+                            startDec = self._ringSize*(i + 0.5) - 0.5*math.pi
+                            stopDec = startDec + self._ringSize
+                            dec = min(math.fabs(startDec), math.fabs(stopDec)) # Declination for determining division in RA
+                            self._ringNums.append(int(2*math.pi*math.cos(dec)/self._ringSize) + 1)
+                        numTracts = sum(self._ringNums) + 2
+                        super(RingsSkyMap, self).__init__(numTracts, config, version)
+                
+                    def getRingIndices(self, index):
+                        """Calculate ring indices given a numerical index of a tract
+                
+                        The ring indices are the ring number and the tract number within
+                        the ring.
+                
+                        The ring number is -1 for the south polar cap and increases to the
+                        north.  The north polar cap has ring number = numRings.  The tract
+                        number is zero for either of the polar caps.
+                        """
+                        if index == 0: # South polar cap
+                            return -1, 0
+                        if index == self._numTracts - 1: # North polar cap
+                            return self.config.numRings, 0
+                        index -= 1
+                        ring = 0
+                        while ring < self.config.numRings and index > self._ringNums[ring]:
+                            index -= self._ringNums[ring]
+                            ring += 1
+                        return ring, index
+                
+                    def generateTract(self, index):
+                        """Generate the TractInfo for this index"""
+                        ringNum, tractNum = self.getRingIndices(index)
+                        if ringNum == -1: # South polar cap
+                            ra, dec = 0, -0.5*math.pi
+                        elif ringNum == self.config.numRings: # North polar cap
+                            ra, dec = 0, 0.5*math.pi
+                        else:
+                            dec = self._ringSize*(ringNum + 1) - 0.5*math.pi
+                            ra = math.fmod(self.config.raStart + 2*math.pi*tractNum/self._ringNums[ringNum], 2*math.pi)
+                
+                        center = IcrsCoord(ra*afwGeom.radians, dec*afwGeom.radians)
+                        wcs = self._wcsFactory.makeWcs(crPixPos=afwGeom.Point2D(0,0), crValCoord=center)
+                        return ExplicitTractInfo(index, self.config.patchInnerDimensions, self.config.patchBorder, center,
+                                                 0.5*self._ringSize*afwGeom.radians, self.config.tractOverlap*afwGeom.degrees,
+                                                 wcs)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+107  <a href="#761e915d">761e915d</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+108  <a href="#761e915d">761e915d</a> -     def findTract(self, coord):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+109  <a href="#761e915d">761e915d</a> -         """Find the tract whose center is nearest the specified coord.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+110  <a href="#761e915d">761e915d</a> -         </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+111  <a href="#761e915d">761e915d</a> -         @param[in] coord: sky coordinate (afwCoord.Coord)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+112  <a href="#761e915d">761e915d</a> -         @return TractInfo of tract whose center is nearest the specified coord</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+113  <a href="#761e915d">761e915d</a> -         </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+114  <a href="#761e915d">761e915d</a> -         @warning:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+115  <a href="#761e915d">761e915d</a> -         - if tracts do not cover the whole sky then the returned tract may not include the coord</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+116  <a href="#761e915d">761e915d</a> -         </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+117  <a href="#761e915d">761e915d</a> -         @note</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+118  <a href="#761e915d">761e915d</a> -         - This routine will be more efficient if coord is ICRS.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+119  <a href="#761e915d">761e915d</a> -         - If coord is equidistant between multiple sky tract centers then one is arbitrarily chosen.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+120  <a href="#761e915d">761e915d</a> -         - The default implementation is not very efficient; subclasses may wish to override.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+121  <a href="#761e915d">761e915d</a> -         """</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+122  <a href="#761e915d">761e915d</a> -         icrsCoord = coord.toIcrs()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+123  <a href="#761e915d">761e915d</a> -         ra = icrsCoord.getLongitude().asRadians()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+124  <a href="#761e915d">761e915d</a> -         dec = icrsCoord.getLatitude().asRadians()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+125  <a href="#761e915d">761e915d</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+126  <a href="#56476142">56476142</a> -         firstRingStart = self._ringSize*0.5 - 0.5*math.pi</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+127  <a href="#56476142">56476142</a> -         if dec < firstRingStart:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+128  <a href="#56476142">56476142</a> -             # Southern cap</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+129  <a href="#56476142">56476142</a> -             return self[0]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+130  <a href="#56476142">56476142</a> -         elif dec > firstRingStart*-1:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+131  <a href="#56476142">56476142</a> -             # Northern cap</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+132  <a href="#56476142">56476142</a> -             return self[-1]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+133  <a href="#56476142">56476142</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+134  <a href="#f202a778">f202a778</a> -         ringNum = int((dec - firstRingStart) / self._ringSize)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+135  <a href="#56476142">56476142</a> -         tractNum =int(math.fmod(ra - self.config.raStart, 2*math.pi) /</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+136  <a href="#56476142">56476142</a> -                       (2*math.pi/self._ringNums[ringNum]) + 0.5)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+137  <a href="#56476142">56476142</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+138  <a href="#56476142">56476142</a> -         index = tractNum + 1 # Allow 1 for south pole</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+139  <a href="#761e915d">761e915d</a> -         for i in range(ringNum):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+140  <a href="#761e915d">761e915d</a> -             index += self._ringNums[i]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+141  <a href="#761e915d">761e915d</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+142  <a href="#761e915d">761e915d</a> -         return self[index]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+143  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+144  <a href="#7e49c358">7e49c358</a> -     def findAllTract(self, coord):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+145  <a href="#7e49c358">7e49c358</a> -         """Find all tracts which include the specified coord.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+146  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+147  <a href="#7e49c358">7e49c358</a> -         @param[in] coord: sky coordinate (afwCoord.Coord)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+148  <a href="#7e49c358">7e49c358</a> -         @return List of TractInfo of tracts which include the specified coord</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+149  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+150  <a href="#7e49c358">7e49c358</a> -         @note</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+151  <a href="#7e49c358">7e49c358</a> -         - This routine will be more efficient if coord is ICRS.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+152  <a href="#7e49c358">7e49c358</a> -         """</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+153  <a href="#7e49c358">7e49c358</a> -         icrsCoord = coord.toIcrs()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+154  <a href="#7e49c358">7e49c358</a> -         ra = icrsCoord.getLongitude().asRadians()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+155  <a href="#7e49c358">7e49c358</a> -         dec = icrsCoord.getLatitude().asRadians()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+156  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+157  <a href="#7e49c358">7e49c358</a> -         firstRingStart = self._ringSize*0.5 - 0.5*math.pi</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+158  <a href="#7e49c358">7e49c358</a> -         ringNum = int((dec - firstRingStart) / self._ringSize)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+159  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+160  <a href="#7e49c358">7e49c358</a> -         tractList = list()</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+161  <a href="#7e49c358">7e49c358</a> -         # ringNum denotes the closest ring to the specified coord</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+162  <a href="#7e49c358">7e49c358</a> -         # I will check adjacent rings which may include the specified coord</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+163  <a href="#f7e2f036">f7e2f036</a> -         for r in [ringNum - 1, ringNum, ringNum + 1]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+164  <a href="#f7e2f036">f7e2f036</a> -             if r < 0 or r > self.config.numRings - 1:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+165  <a href="#7e49c358">7e49c358</a> -                 continue</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+166  <a href="#7e49c358">7e49c358</a> -             tractNum =int(math.fmod(ra - self.config.raStart, 2*math.pi) /</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+167  <a href="#7e49c358">7e49c358</a> -                           (2*math.pi/self._ringNums[r]) + 0.5)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+168  <a href="#7e49c358">7e49c358</a> -             # Adjacent tracts will also be checked.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+169  <a href="#f7e2f036">f7e2f036</a> -             for t in [tractNum - 1, tractNum, tractNum + 1]:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+170  <a href="#841b0c9e">841b0c9e</a> -                 # Wrap over raStart</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+171  <a href="#841b0c9e">841b0c9e</a> -                 if t < 0:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+172  <a href="#841b0c9e">841b0c9e</a> -                     t = t + self._ringNums[r]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+173  <a href="#f7e2f036">f7e2f036</a> -                 elif t > self._ringNums[r] - 1:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+174  <a href="#841b0c9e">841b0c9e</a> -                     t = t - self._ringNums[r]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+175  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+176  <a href="#7e49c358">7e49c358</a> -                 index = t + 1 # Allow 1 for south pole</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+177  <a href="#7e49c358">7e49c358</a> -                 for i in range(r):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+178  <a href="#7e49c358">7e49c358</a> -                     index += self._ringNums[i]</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+179  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+180  <a href="#7e49c358">7e49c358</a> -                 try:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+181  <a href="#7e49c358">7e49c358</a> -                     patch = self[index].findPatch(coord)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+182  <a href="#7e49c358">7e49c358</a> -                     tractList.append(self[index])</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+183  <a href="#7e49c358">7e49c358</a> -                 except Exception, e:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+184  <a href="#7e49c358">7e49c358</a> -                     pass</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+185  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+186  <a href="#841b0c9e">841b0c9e</a> -         # Always check tracts at poles</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+187  <a href="#841b0c9e">841b0c9e</a> -         # Southern cap</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+188  <a href="#841b0c9e">841b0c9e</a> -         try:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+189  <a href="#841b0c9e">841b0c9e</a> -             patch = self[0].findPatch(coord)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+190  <a href="#841b0c9e">841b0c9e</a> -             tractList.append(self[0])</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+191  <a href="#841b0c9e">841b0c9e</a> -         except Exception, e:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+192  <a href="#841b0c9e">841b0c9e</a> -             pass</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+193  <a href="#841b0c9e">841b0c9e</a> -         # Northern cap</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+194  <a href="#841b0c9e">841b0c9e</a> -         try:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+195  <a href="#841b0c9e">841b0c9e</a> -             patch = self[-1].findPatch(coord)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+196  <a href="#841b0c9e">841b0c9e</a> -             tractList.append(self[-1])</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+197  <a href="#841b0c9e">841b0c9e</a> -         except Exception, e:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+198  <a href="#841b0c9e">841b0c9e</a> -             pass</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+199  <a href="#841b0c9e">841b0c9e</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+200  <a href="#7e49c358">7e49c358</a> -         return tractList</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+201  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+202  <a href="#7e49c358">7e49c358</a> -     def findTractPatchList(self, coordList):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+203  <a href="#7e49c358">7e49c358</a> -         """Find tracts and patches that overlap a region</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+204  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+205  <a href="#7e49c358">7e49c358</a> -         @param[in] coordList: list of sky coordinates (afwCoord.Coord)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+206  <a href="#7e49c358">7e49c358</a> -         @return list of (TractInfo, list of PatchInfo) for tracts and patches that contain,</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+207  <a href="#7e49c358">7e49c358</a> -             or may contain, the specified region. The list will be empty if there is no overlap.</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+208  <a href="#7e49c358">7e49c358</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+209  <a href="#7e49c358">7e49c358</a> -         @warning this uses a naive algorithm that may find some tracts and patches that do not overlap</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+210  <a href="#7e49c358">7e49c358</a> -             the region (especially if the region is not a rectangle aligned along patch x,y).</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+211  <a href="#7e49c358">7e49c358</a> -         """</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+212  <a href="#7e49c358">7e49c358</a> -         retList = []</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+213  <a href="#7e49c358">7e49c358</a> -         for coord in coordList:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+214  <a href="#7e49c358">7e49c358</a> -             for tractInfo in self.findAllTract(coord):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+215  <a href="#7e49c358">7e49c358</a> -                 patchList = tractInfo.findPatchList(coordList)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+216  <a href="#7e49c358">7e49c358</a> -                 if patchList and not (tractInfo, patchList) in retList:</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+217  <a href="#7e49c358">7e49c358</a> -                     retList.append((tractInfo, patchList))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+218  <a href="#7e49c358">7e49c358</a> -         return retList</div>
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/skymap/</h2>
+<h3><a name="761e915d"/></a>761e915d</h3>
+
+<pre>
+commit 761e915dde25ce8ed5622c2d84b83793e9580fd7
+Author: Naoki Yasuda <yasudank@gmail.com>
+Date:   Tue Nov 12 23:53:29 2013 +0900
+
+    Add findTract() and findTractPatchList() in ringsSkyMap.
+</pre>
+<h3><a name="7e49c358"/></a>7e49c358</h3>
+
+<pre>
+commit 7e49c358501f95ce4c0e1aa8f48103a24391fc22
+Author: Naoki Yasuda <yasudank@gmail.com>
+Date:   Fri May 9 09:40:07 2014 +0900
+
+    Add fast findTractPatchList() in RingsSkyMap.
+</pre>
+<h3><a name="f202a778"/></a>f202a778</h3>
+
+<pre>
+commit f202a7780ebb89166f03479d7447ace1555027c1
+Author: Naoki Yasuda <yasudank@gmail.com>
+Date:   Thu Apr 17 13:37:04 2014 +0900
+
+    Small bug fix for RingsSkyMap.findTract().
+</pre>
+<h3><a name="56476142"/></a>56476142</h3>
+
+<pre>
+commit 56476142060bdb7d8c7fb59eacc383f0e0d5c85b
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Thu Mar 13 14:19:21 2014 -1000
+
+    move RingsSkyMap.findTractPatchList to BaseSkyMap.findClosestTractPatchlist
+    
+    Code implemented for RingsSkyMap.findTractPatchList does not find
+    *all* tracts for the provided coordinates, but only the closest (or best).
+    This is additional useful functionality, so moved it to the base class
+    with a more accurate name.  Added test for it.
+</pre>
+<h3><a name="841b0c9e"/></a>841b0c9e</h3>
+
+<pre>
+commit 841b0c9eda7462a7a4f182b7971d5e8e81478bfe
+Author: Naoki Yasuda <yasudank@gmail.com>
+Date:   Tue May 13 11:03:46 2014 +0900
+
+    Fixed the problems regarding poles and RA wrap.
+</pre>
+<h3><a name="f7e2f036"/></a>f7e2f036</h3>
+
+<pre>
+commit f7e2f036494afe382e653194c82bb15728c60fc3
+Author: Naoki Yasuda <yasudank@gmail.com>
+Date:   Tue May 13 11:09:03 2014 +0900
+
+    Add spaces around '+' and '-' to match LSST standard coding style.
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/skymap/</h2>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="tests/SkyMapTestCase.py"/></a>tests/SkyMapTestCase.py
+### Diff:
+
+<pre>
+                #!/usr/bin/env python
+                
+                #
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010, 2012 LSST Corporation.
+                #
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                #
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and
+                # the GNU General Public License along with this program.  If not,
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+                import os
+                import sys
+                import math
+                import pickle
+                import unittest
+                import itertools
+                
+                import numpy
+                
+                import lsst.utils.tests as utilsTests
+                import lsst.afw.coord as afwCoord
+                import lsst.afw.geom as afwGeom
+                from lsst.skymap import skyMapRegistry
+                
+                class SkyMapTestCase(unittest.TestCase):
+                    """An abstract base class for testing a SkyMap.
+                
+                    To use, subclass and set the following class variables:
+                    _SkyMapClass: the particular SkyMap subclass to test
+                    _SkyMapConfig: a SkyMapConfig instance to use in the test, or None to use _SkyMapClass.ConfigClass()
+                    _SkyMapName: the name of the particular SkyMap class in the registry
+                    _NumTracts: the number of tracts to expect (for the default configuration)
+                    _NeighborAngularSeparation: Expected angular separation between tracts
+                    _numNeighbors: Number of neighbors that should be within the expected angular separation
+                    """
+                    _SkyMapConfig = None
+                
+                    def getSkyMap(self, config=None):
+                        """Provide an instance of the skymap"""
+                        if config is None:
+                            config = self.getConfig()
+                        return self._SkyMapClass(config=config)
+                
+                    def getConfig(self):
+                        """Provide an instance of the configuration class"""
+                        if self._SkyMapConfig is None:
+                            return self._SkyMapClass.ConfigClass()
+                        # Want to return a copy of self._SkyMapConfig, so it can be modified.
+                        # However, there is no Config.copy() method, so this is more complicated than desirable.
+                        return pickle.loads(pickle.dumps(self._SkyMapConfig))
+                
+                    def testRegistry(self):
+                        """Confirm that the skymap can be retrieved from the registry"""
+                        self.assertEqual(skyMapRegistry[self._SkyMapName], self._SkyMapClass)
+                
+                    def testBasicAttributes(self):
+                        """Confirm that constructor attributes are available
+                        """
+                        for tractOverlap in (0.0, 0.01, 0.1): # degrees
+                            config = self.getConfig()
+                            config.tractOverlap = tractOverlap
+                            skyMap = self.getSkyMap(config)
+                            for tractInfo in skyMap:
+                                self.assertAlmostEqual(tractInfo.getTractOverlap().asDegrees(), tractOverlap)
+                            self.assertEqual(len(skyMap), self._NumTracts)
+                
+                        for patchBorder in (0, 101):
+                            config = self.getConfig()
+                            config.patchBorder = patchBorder
+                            skyMap = self.getSkyMap(config)
+                            for tractInfo in skyMap:
+                                self.assertEqual(tractInfo.getPatchBorder(), patchBorder)
+                            self.assertEqual(len(skyMap), self._NumTracts)
+                 
+                        for xInnerDim in (1005, 5062):
+                            for yInnerDim in (2032, 5431):
+                                config = self.getConfig()
+                                config.patchInnerDimensions = (xInnerDim, yInnerDim)
+                                skyMap = self.getSkyMap(config)
+                                for tractInfo in skyMap:
+                                    self.assertEqual(tuple(tractInfo.getPatchInnerDimensions()), (xInnerDim, yInnerDim))
+                                self.assertEqual(len(skyMap), self._NumTracts)
+                
+                    def assertUnpickledTractInfo(self, unpickled, original, patchBorder):
+                        """Assert that an unpickled TractInfo is functionally identical to the original
+                
+                        @param unpickled      The unpickled TractInfo
+                        @param original       The original TractInfo
+                        @param patchBorder    Border around each patch, from SkyMap.config.patchBorder
+                        """
+                        for getterName in ("getBBox",
+                                           "getCtrCoord",
+                                           "getId",
+                                           "getNumPatches",
+                                           "getPatchBorder",
+                                           "getPatchInnerDimensions",
+                                           "getTractOverlap",
+                                           "getVertexList",
+                                           "getWcs",
+                                           ):
+                            self.assertEqual(getattr(original, getterName)(), getattr(unpickled, getterName)())
+                
+                        # test WCS at a few locations
+                        wcs = original.getWcs()
+                        unpickledWcs = unpickled.getWcs()
+                        for x in (-1000.0, 0.0, 1000.0):
+                            for y in (-532.5, 0.5, 532.5):
+                                pixelPos = afwGeom.Point2D(x, y)
+                                skyPos = wcs.pixelToSky(pixelPos)
+                                unpickledSkyPos = unpickledWcs.pixelToSky(pixelPos)
+                                self.assertEqual(skyPos, unpickledSkyPos)
+                
+                        # compare a few patches
+                        numPatches = original.getNumPatches()
+                        for xInd in (0, 1, numPatches[0]/2, numPatches[0]-2, numPatches[0]-1):
+                            for yInd in (0, 1, numPatches[1]/2, numPatches[1]-2, numPatches[1]-1):
+                                patchInfo = original.getPatchInfo((xInd, yInd))
+                                unpickledPatchInfo = unpickled.getPatchInfo((xInd, yInd))
+                                self.assertEqual(patchInfo, unpickledPatchInfo)
+                
+                                # check inner and outer bbox (nothing to do with pickle,
+                                # but a convenient place for the test)
+                                innerBBox = patchInfo.getInnerBBox()
+                                outerBBox = patchInfo.getOuterBBox()
+                
+                                if xInd == 0:
+                                    self.assertEqual(innerBBox.getMinX(), outerBBox.getMinX())
+                                else:
+                                    self.assertEqual(innerBBox.getMinX() - patchBorder, outerBBox.getMinX())
+                                if yInd == 0:
+                                    self.assertEqual(innerBBox.getMinY(), outerBBox.getMinY())
+                                else:
+                                    self.assertEqual(innerBBox.getMinY() - patchBorder, outerBBox.getMinY())
+                
+                                if xInd == numPatches[0] - 1:
+                                    self.assertEqual(innerBBox.getMaxX(), outerBBox.getMaxX())
+                                else:
+                                    self.assertEqual(innerBBox.getMaxX() + patchBorder, outerBBox.getMaxX())
+                                if yInd == numPatches[1] - 1:
+                                    self.assertEqual(innerBBox.getMaxY(), outerBBox.getMaxY())
+                                else:
+                                    self.assertEqual(innerBBox.getMaxY() + patchBorder, outerBBox.getMaxY())
+                
+                    def testPickle(self):
+                        """Test that pickling and unpickling restores the original exactly
+                        """
+                        skyMap = self.getSkyMap()
+                        pickleStr = pickle.dumps(skyMap)
+                        unpickledSkyMap = pickle.loads(pickleStr)
+                        self.assertEqual(len(skyMap), len(unpickledSkyMap))
+                        self.assertEqual(unpickledSkyMap.config, skyMap.config)
+                        for tractInfo, unpickledTractInfo in itertools.izip(skyMap, unpickledSkyMap):
+                            self.assertUnpickledTractInfo(unpickledTractInfo, tractInfo, skyMap.config.patchBorder)
+                
+                    def testTractSeparation(self):
+                        """Confirm that each sky tract has the proper distance to other tracts
+                        """
+                        skyMap = self.getSkyMap()
+                        for tractId, tractInfo in enumerate(skyMap):
+                            self.assertEqual(tractInfo.getId(), tractId)
+                        
+                            ctrCoord = tractInfo.getCtrCoord()
+                            distList = []
+                            for tractInfo1 in skyMap:
+                                otherCtrCoord = tractInfo1.getCtrCoord()
+                                distList.append(ctrCoord.angularSeparation(otherCtrCoord))
+                            distList.sort()
+                            self.assertEquals(distList[0], 0.0)
+                            for dist in distList[1:self._numNeighbors]:
+                                self.assertAlmostEqual(dist, self._NeighborAngularSeparation)
+                    
+                    def testFindPatchList(self):
+                        """Test findTract.findPatchList
+                        """
+                        skyMap = self.getSkyMap()
+                        for tractId in (0, 5):
+                            tractInfo = skyMap[tractId]
+                            wcs = tractInfo.getWcs()
+                            numPatches = tractInfo.getNumPatches()
+                            border = tractInfo.getPatchBorder()
+                            for patchInd in ((0, 0),
+                                             (0, 1),
+                                             (5, 0),
+                                             (5, 6),
+                                             (numPatches[0] - 2, numPatches[1] - 1),
+                                             (numPatches[0] - 1, numPatches[1] - 2),
+                                             (numPatches[0] - 1, numPatches[1] - 1),
+                                             ):
+                                patchInfo = tractInfo.getPatchInfo(patchInd)
+                                patchIndex = patchInfo.getIndex()
+                                bbox = patchInfo.getInnerBBox()
+                                bbox.grow(-(border+1))
+                                coordList = getCornerCoords(wcs = wcs, bbox = bbox)
+                                patchInfoList = tractInfo.findPatchList(coordList)
+                                self.assertEqual(len(patchInfoList), 1)
+                                self.assertEqual(patchInfoList[0].getIndex(), patchIndex)
+                                
+                                # grow to include neighbors and test again
+                                bbox.grow(2)
+                                predFoundIndexSet = set()
+                                for dx in (-1, 0, 1):
+                                    nbrX = patchIndex[0] + dx
+                                    if not 0 <= nbrX < numPatches[0]:
+                                        continue
+                                    for dy in (-1, 0, 1):
+                                        nbrY = patchIndex[1] + dy
+                                        if not 0 <= nbrY < numPatches[1]:
+                                            continue
+                                        nbrInd = (nbrX, nbrY)
+                                        predFoundIndexSet.add(nbrInd)
+                                coordList = getCornerCoords(wcs = wcs, bbox = bbox)
+                                patchInfoList = tractInfo.findPatchList(coordList)
+                                self.assertEqual(len(patchInfoList), len(predFoundIndexSet))
+                                foundIndexSet = set(patchInfo.getIndex() for patchInfo in patchInfoList)
+                                self.assertEqual(foundIndexSet, predFoundIndexSet)
+                    
+                    def testFindTractPatchList(self):
+                        """Test findTractPatchList
+                        
+                        Note: this test uses single points for speed and to avoid really large regions.
+                        Note that findPatchList is being tested elsewhere.
+                        """
+                        skyMap = self.getSkyMap()
+                        for tractId in (1, 3, 7):
+                            tractInfo = skyMap[tractId]
+                            self.assertTractPatchListOk(
+                                skyMap = skyMap,
+                                coordList = [tractInfo.getCtrCoord()],
+                                knownTractId = tractId,
+                            )
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+245  <a href="#56476142">56476142</a> -             self.assertClosestTractPatchList(skyMap, [tractInfo.getCtrCoord()], tractId)</div>
+                
+                            vertices = tractInfo.getVertexList()
+                            if len(vertices) > 0:
+                                self.assertTractPatchListOk(
+                                    skyMap = skyMap,
+                                    coordList = [tractInfo.getVertexList()[0]],
+                                    knownTractId = tractId,
+                                )
+                
+                            if len(vertices) > 2:
+                                self.assertTractPatchListOk(
+                                    skyMap = skyMap,
+                                    coordList = [tractInfo.getVertexList()[2]],
+                                    knownTractId = tractId,
+                                )
+                    
+                    def assertTractPatchListOk(self, skyMap, coordList, knownTractId):
+                        """Assert that findTractPatchList produces the correct results
+                        
+                        @param[in] skyMap: sky map to test
+                        @param[in] coordList: coordList of region to search for
+                        @param[in] knownTractId: this tractId must appear in the found list
+                        """
+                        tractPatchList = skyMap.findTractPatchList(coordList)
+                        tractPatchDict = dict((tp[0].getId(), tp[1]) for tp in tractPatchList)
+                        self.assertTrue(knownTractId in tractPatchDict)
+                        for tractInfo in skyMap:
+                            tractId = tractInfo.getId()
+                            patchList = tractInfo.findPatchList(coordList)
+                            if patchList:
+                                self.assertTrue(tractId in tractPatchDict)
+                                self.assertTrue(len(patchList) == len(tractPatchDict[tractId]))
+                            else:
+                                self.assertTrue(tractId not in tractPatchDict)
+                
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+281  <a href="#56476142">56476142</a> -     def assertClosestTractPatchList(self, skyMap, coordList, knownTractId):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+282  <a href="#56476142">56476142</a> -         if not hasattr(skyMap, "findClosestTractPatchList"):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+283  <a href="#56476142">56476142</a> -             self.skipTest("This skymap doesn't implement findClosestTractPatchList")</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+284  <a href="#56476142">56476142</a> -         tractPatchList = skyMap.findClosestTractPatchList(coordList)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+285  <a href="#56476142">56476142</a> -         self.assertEqual(len(coordList), len(tractPatchList)) # One tract+patchList per coordinate</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+286  <a href="#56476142">56476142</a> -         for coord, (tract, patchList) in zip(coordList, tractPatchList):</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+287  <a href="#56476142">56476142</a> -             self.assertEqual(tract.getId(), knownTractId)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+288  <a href="#56476142">56476142</a> -             self.assertEqual(patchList, tract.findPatchList([coord]))</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+289  <a href="#56476142">56476142</a> - </div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+290  <a href="#56476142">56476142</a> - </div>
+                
+                ##############################################################################################################
+                
+                def getCornerCoords(wcs, bbox):
+                    """Return the coords of the four corners of a bounding box
+                    """
+                    bbox = afwGeom.Box2D(bbox) # mak
+                    cornerPosList = (
+                        bbox.getMin(),
+                        afwGeom.Point2D(bbox.getMaxX(), bbox.getMinY()),
+                        bbox.getMax(),
+                        afwGeom.Point2D(bbox.getMinX(), bbox.getMaxY()),
+                    )
+                    return [wcs.pixelToSky(cp).toIcrs() for cp in cornerPosList]
+                    
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/skymap/</h2>
+<h3><a name="56476142"/></a>56476142</h3>
+
+<pre>
+commit 56476142060bdb7d8c7fb59eacc383f0e0d5c85b
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Thu Mar 13 14:19:21 2014 -1000
+
+    move RingsSkyMap.findTractPatchList to BaseSkyMap.findClosestTractPatchlist
+    
+    Code implemented for RingsSkyMap.findTractPatchList does not find
+    *all* tracts for the provided coordinates, but only the closest (or best).
+    This is additional useful functionality, so moved it to the base class
+    with a more accurate name.  Added test for it.
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/skymap/</h2>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="python/lsst/skymap/tractInfo.py"/></a>python/lsst/skymap/tractInfo.py
+### Diff:
+
+<pre>
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+22   <a href="#8fba5b2a">8fba5b2a</a> - from lsst.pex.exceptions import LsstCppException</div>
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+22   <a href="#af1a0123">af1a0123</a> + import lsst.pex.exceptions</div>
+                import lsst.afw.coord as afwCoord
+                import lsst.afw.geom as afwGeom
+                import lsst.afw.image as afwImage
+                from .patchInfo import PatchInfo
+                
+                __all__ = ["TractInfo"]
+                
+                class TractInfo(object):
+                    """Information about a tract in a SkyMap sky pixelization
+                    
+                    The tract is subdivided into rectangular patches. Each patch has the following properties:
+                    - An inner region defined by an inner bounding. The inner regions of the patches exactly tile the tract,
+                      and all inner regions have the same dimensions. The tract is made larger as required to make this work.
+                    - An outer region defined by an outer bounding box. The outer region extends beyond the inner region
+                      by patchBorder pixels in all directions, except there is no border at the edges of the tract.
+                      Thus patches overlap each other but never extend off the tract. If you do not want any overlap
+                      between adjacent patches then set patchBorder to 0.
+                    - An index that consists of a pair of integers:
+                        0 <= x index < numPatches[0]
+                        0 <= y index < numPatches[1]
+                      Patch 0,0 is at the minimum corner of the tract bounding box.
+                    """
+                    def __init__(self, id, patchInnerDimensions, patchBorder, ctrCoord, vertexCoordList, tractOverlap, wcs):
+                        """Construct a TractInfo
+                
+                        @param[in] id: tract ID
+                        @param[in] patchInnerDimensions: dimensions of inner region of patches (x,y pixels)
+                        @param[in] patchBorder: overlap between adjacent patches (in pixels, one int)
+                        @param[in] ctrCoord: sky coordinate of center of inner region of tract, as an afwCoord.Coord;
+                            also used as the CRVAL for the WCS.
+                        @param[in] vertexCoordList: list of sky coordinates (afwCoord.Coord)
+                            of vertices that define the boundaries of the inner region
+                        @param[in] tractOverlap: minimum overlap between adjacent sky tracts; an afwGeom.Angle;
+                            this defines the minimum distance the tract extends beyond the inner region in all directions
+                        @param[in,out] wcs: an afwImage.Wcs; the reference pixel will be shifted as required
+                            so that the lower left-hand pixel (index 0,0) has pixel position 0.0, 0.0
+                        
+                        @warning
+                        - It is not enforced that ctrCoord is the center of vertexCoordList, but SkyMap relies on it
+                        - vertexCoordList will likely become a geom SphericalConvexPolygon someday.
+                        """
+                        self._id = id
+                        try:
+                            assert len(patchInnerDimensions) == 2
+                            self._patchInnerDimensions = afwGeom.Extent2I(*(int(val) for val in patchInnerDimensions))
+                        except:
+                            raise TypeError("patchInnerDimensions=%s; must be two ints" % (patchInnerDimensions,))
+                        self._patchBorder = int(patchBorder)
+                        self._ctrCoord = ctrCoord
+                        self._vertexCoordList = tuple(coord.clone() for coord in vertexCoordList)
+                        self._tractOverlap = tractOverlap
+                        
+                        minBBox = self._minimumBoundingBox(wcs)
+                        initialBBox, self._numPatches = self._setupPatches(minBBox, wcs)
+                        self._bbox, self._wcs = self._finalOrientation(initialBBox, wcs)
+                
+                
+                    def _minimumBoundingBox(self, wcs):
+                        """Calculate the minimum bounding box for the tract, given the WCS
+                
+                        The bounding box is created in the frame of the supplied WCS,
+                        so that it's OK if the coordinates are negative.
+                
+                        We compute the bounding box that holds all the vertices and the
+                        desired overlap.
+                        """
+                        minBBoxD = afwGeom.Box2D()
+                        halfOverlap = self._tractOverlap / 2.0
+                        for vertexCoord in self._vertexCoordList:
+                            vertexDeg = vertexCoord.getPosition(afwGeom.degrees)
+                            if self._tractOverlap == 0:
+                                minBBoxD.include(wcs.skyToPixel(vertexCoord))
+                            else:
+                                numAngles = 24
+                                angleIncr = afwGeom.Angle(360.0, afwGeom.degrees) / float(numAngles)
+                                for i in range(numAngles):
+                                    offAngle = angleIncr * i
+                                    offCoord = vertexCoord.clone()
+                                    offCoord.offset(offAngle, halfOverlap)
+                                    pixPos = wcs.skyToPixel(offCoord)
+                                    minBBoxD.include(pixPos)
+                        return minBBoxD
+                
+                    def _setupPatches(self, minBBox, wcs):
+                        """Setup for patches of a particular size.
+                
+                        We grow the bounding box to hold an exact multiple of
+                        the desired size (patchInnerDimensions), while keeping
+                        the center roughly the same.  We return the final
+                        bounding box, and the number of patches in each dimension
+                        (as an Extent2I).
+                
+                        @param minBBox     Minimum bounding box for tract
+                        @param wcs         Wcs object
+                        @return final bounding box, number of patches
+                        """
+                        bbox = afwGeom.Box2I(minBBox)
+                        bboxMin = bbox.getMin()
+                        bboxDim = bbox.getDimensions()
+                        numPatches = afwGeom.Extent2I(0, 0)
+                        for i, innerDim in enumerate(self._patchInnerDimensions):
+                            num =  (bboxDim[i] + innerDim - 1) // innerDim # round up
+                            deltaDim = (innerDim * num) - bboxDim[i]
+                            if deltaDim > 0:
+                                bboxDim[i] = innerDim * num
+                                bboxMin[i] -= deltaDim // 2
+                            numPatches[i] = num
+                        bbox = afwGeom.Box2I(bboxMin, bboxDim)
+                        return bbox, numPatches
+                
+                
+                    def _finalOrientation(self, bbox, wcs):
+                        """Determine the final orientation
+                
+                        We offset everything so the lower-left corner is at 0,0
+                        and compute the final Wcs.
+                
+                        @param bbox   Current bounding box
+                        @param wcs    Current Wcs
+                        @return revised bounding box, revised Wcs
+                        """
+                        finalBBox = afwGeom.Box2I(afwGeom.Point2I(0, 0), bbox.getDimensions())
+                        # shift the WCS by the same amount as the bbox; extra code is required
+                        # because simply subtracting makes an Extent2I
+                        pixPosOffset = afwGeom.Extent2D(finalBBox.getMinX() - bbox.getMinX(),
+                                                        finalBBox.getMinY() - bbox.getMinY())
+                        wcs.shiftReferencePixel(pixPosOffset)
+                        return finalBBox, wcs
+                
+                
+                    def findPatch(self, coord):
+                        """Find the patch containing the specified coord
+                
+                        @param[in] coord: sky coordinate (afwCoord.Coord)
+                        @return PatchInfo of patch whose inner bbox contains the specified coord
+                        
+                        @raise LookupError if coord is not in tract
+                        
+                        @note This routine will be more efficient if coord is ICRS.
+                        """
+                        pixelInd = afwGeom.Point2I(self.getWcs().skyToPixel(coord.toIcrs()))
+                        if not self.getBBox().contains(pixelInd):
+                            raise LookupError("coord %s is not in tract %s" % (coord, self.getId()))
+                        patchInd = tuple(int(pixelInd[i]/self._patchInnerDimensions[i]) for i in range(2))
+                        return self.getPatchInfo(patchInd)
+                    
+                    def findPatchList(self, coordList):
+                        """Find patches containing the specified list of coords
+                        
+                        @param[in] coordList: list of sky coordinates (afwCoord.Coord)
+                        @return list of PatchInfo for patches that contain, or may contain, the specified region.
+                            The list will be empty if there is no overlap.
+                        
+                        @warning:
+                        * This may give incorrect answers on regions that are larger than a tract
+                        * This uses a naive algorithm that may find some patches that do not overlap the region
+                            (especially if the region is not a rectangle aligned along patch x,y).
+                        """
+                        box2D = afwGeom.Box2D()
+                        for coord in coordList:
+                            try:
+                                pixelPos = self.getWcs().skyToPixel(coord.toIcrs())
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+185  <a href="#8fba5b2a">8fba5b2a</a> -             except LsstCppException:</div>
+              ?                    ^   ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+185  <a href="#af1a0123">af1a0123</a> +             except lsst.pex.exceptions.Exception:</div>
+              ?                    ^   ^ +++++++ ++++++
+                                # the point is so far off the tract that its pixel position cannot be computed
+                                continue
+                            box2D.include(pixelPos)
+                        bbox = afwGeom.Box2I(box2D)
+                        bbox.grow(self.getPatchBorder())
+                        bbox.clip(self.getBBox())
+                        if bbox.isEmpty():
+                            return ()
+                
+                        llPatchInd = tuple(int(bbox.getMin()[i]/self._patchInnerDimensions[i]) for i in range(2))
+                        urPatchInd = tuple(int(bbox.getMax()[i]/self._patchInnerDimensions[i]) for i in range(2))
+                        return tuple(self.getPatchInfo((xInd, yInd))
+                            for xInd in range(llPatchInd[0], urPatchInd[0]+1)
+                            for yInd in range(llPatchInd[1], urPatchInd[1]+1))
+                
+                    def getBBox(self):
+                        """Get bounding box of tract (as an afwGeom.Box2I)
+                        """
+                        return afwGeom.Box2I(self._bbox)
+                    
+                    def getCtrCoord(self):
+                        """Get sky coordinate of center of tract (as an afwCoord.Coord)
+                        """
+                        return self._ctrCoord
+                
+                    def getId(self):
+                        """Get ID of tract
+                        """
+                        return self._id
+                    
+                    def getNumPatches(self):
+                        """Get the number of patches in x, y
+                        
+                        @return the number of patches in x, y
+                        """
+                        return self._numPatches
+                
+                    def getPatchBorder(self):
+                        """Get batch border
+                        
+                        @return patch border (pixels)
+                        """
+                        return self._patchBorder
+                    
+                    def getPatchInfo(self, index):
+                        """Return information for the specified patch
+                        
+                        @param[in] index: index of patch, as a pair of ints
+                        @return patch info, an instance of PatchInfo
+                
+                        @raise IndexError if index is out of range
+                        """
+                        if (not 0 <= index[0] < self._numPatches[0]) \
+                            or (not 0 <= index[1] < self._numPatches[1]):
+                            raise IndexError("Patch index %s is not in range [0-%d, 0-%d]" % \
+                                (index, self._numPatches[0]-1, self._numPatches[1]-1))
+                        innerMin = afwGeom.Point2I(*[index[i] * self._patchInnerDimensions[i] for i in range(2)])
+                        innerBBox = afwGeom.Box2I(innerMin, self._patchInnerDimensions)
+                        if not self._bbox.contains(innerBBox):
+                            raise RuntimeError(
+                                "Bug: patch index %s valid but inner bbox=%s not contained in tract bbox=%s" % \
+                                (index, innerBBox, self._bbox))
+                        outerBBox = afwGeom.Box2I(innerBBox)
+                        outerBBox.grow(self.getPatchBorder())
+                        outerBBox.clip(self._bbox)
+                        return PatchInfo(
+                            index = index,
+                            innerBBox = innerBBox,
+                            outerBBox = outerBBox,
+                        )
+                
+                    def getPatchInnerDimensions(self):
+                        """Get dimensions of inner region of the patches (all are the same)
+                        
+                        @return dimensions of inner region of the patches (as an afwGeom Extent2I)
+                        """
+                        return self._patchInnerDimensions
+                    
+                    def getTractOverlap(self):
+                        """Get minimum overlap of adjacent sky tracts
+                        
+                        @return minimum overlap between adjacent sky tracts, as an afwGeom Angle
+                        """
+                        return self._tractOverlap
+                
+                    def getVertexList(self):
+                        """Get list of sky coordinates of vertices that define the boundary of the inner region
+                        
+                        @warning: this is not a deep copy
+                        @warning vertexCoordList will likely become a geom SphericalConvexPolygon someday.
+                        """
+                        return self._vertexCoordList
+                    
+                    def getWcs(self):
+                        """Get WCS of tract
+                        
+                        @warning: this is not a deep copy
+                        """
+                        return self._wcs
+                
+                    def __str__(self):
+                        return "TractInfo(id=%s)" % (self._id,)
+                    
+                    def __repr__(self):
+                        return "TractInfo(id=%s, ctrCoord=%s)" % (self._id, self._ctrCoord.getVector())
+                
+                    def __iter__(self):
+                        xNum, yNum = self.getNumPatches()
+                        for y in range(yNum):
+                            for x in range(xNum):
+                                yield self.getPatchInfo((x,y))
+                
+                    def __len__(self):
+                        xNum, yNum = self.getNumPatches()
+                        return xNum*yNum
+                
+                    def __getitem__(self, index):
+                        return self.getPatchInfo(index)
+                
+                
+                class ExplicitTractInfo(TractInfo):
+                    """Information for a tract specified explicitly
+                
+                    A tract is placed at the explicitly defined coordinates, with the nominated
+                    radius.  The tracts are square (i.e., the radius is really a half-size).
+                    """
+                    def __init__(self, ident, patchInnerDimensions, patchBorder, ctrCoord, radius, tractOverlap, wcs):
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+313  <a href="#f83f7171">f83f7171</a> -         # We don't want TractInfo setting the bbox on the basis of vertices, but on the radius.</div>
+                        vertexList = []
+                        self._radius = radius
+                        super(ExplicitTractInfo, self).__init__(ident, patchInnerDimensions, patchBorder, ctrCoord,
+                                                                vertexList, tractOverlap, wcs)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+318  <a href="#f83f7171">f83f7171</a> -         # Now we know what the vertices are</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+319  <a href="#f83f7171">f83f7171</a> -         self._vertexCoordList = [wcs.pixelToSky(afwGeom.Point2D(p)) for p in self.getBBox().getCorners()]</div>
+                
+                    def _minimumBoundingBox(self, wcs):
+                        """The minimum bounding box is calculated using the nominated radius"""
+                        bbox = afwGeom.Box2D()
+                        for i in range(4):
+                            coord = self._ctrCoord.clone()
+                            coord.offset(i * 90 * afwGeom.degrees, self._radius + self._tractOverlap)
+                            pixPos = wcs.skyToPixel(coord)
+                            bbox.include(pixPos)
+                        return bbox
+                
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/skymap/</h2>
+<h3><a name="f83f7171"/></a>f83f7171</h3>
+
+<pre>
+commit f83f71718eac5307d575d3113ee3757a63a16de2
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Tue Feb 26 16:56:08 2013 +0900
+
+    Set vertex list in ExplicitTractInfo.
+</pre>
+<h3><a name="8fba5b2a"/></a>8fba5b2a</h3>
+
+<pre>
+commit 8fba5b2a56b2a38fd47c83b579c3f96339e162f8
+Author: Russell Owen <rowen@uw.edu>
+Date:   Tue May 22 10:04:20 2012 -0700
+
+    Added a unit test for findTractPatchList and fixed a bug that it found.
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/skymap/</h2>
+<h3><a name="af1a0123"/></a>af1a0123</h3>
+
+<pre>
+commit af1a0123b6303e8861431645b8d767406fc2db06
+Author: Jim Bosch <jbosch@astro.princeton.edu>
+Date:   Thu Jul 17 16:26:10 2014 -0400
+
+    Adapt to changes in exception Python wrappers (DM-827)
+</pre>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="python/lsst/skymap/healpixSkyMap.py"/></a>python/lsst/skymap/healpixSkyMap.py
+### Diff:
+
+<pre>
+                # 
+                # LSST Data Management System
+                # Copyright 2008, 2009, 2010, 2012 LSST Corporation.
+                # 
+                # This product includes software developed by the
+                # LSST Project (http://www.lsst.org/).
+                #
+                # This program is free software: you can redistribute it and/or modify
+                # it under the terms of the GNU General Public License as published by
+                # the Free Software Foundation, either version 3 of the License, or
+                # (at your option) any later version.
+                # 
+                # This program is distributed in the hope that it will be useful,
+                # but WITHOUT ANY WARRANTY; without even the implied warranty of
+                # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                # GNU General Public License for more details.
+                # 
+                # You should have received a copy of the LSST License Statement and 
+                # the GNU General Public License along with this program.  If not, 
+                # see <http://www.lsstcorp.org/LegalNotices/>.
+                #
+                
+                import numpy
+                
+                # We want to register the HealpixSkyMap, but want "healpy" to be an
+                # optional dependency.  However, the HealpixSkyMap requires the use
+                # of healpy.  Therefore, we'll only raise an exception on the healpy
+                # import when it comes time to using it.
+                try:
+                    import healpy
+                except Exception, e:
+                    class DummyHealpy(object):
+                        """An object which blows up when we try to read it"""
+                        def __getattr__(self, name):
+                            raise RuntimeError("Was unable to import healpy: %s" % e)
+                    healpy = DummyHealpy()
+                
+                from lsst.pex.config import Field
+                from lsst.afw.coord import IcrsCoord
+                import lsst.afw.geom as afwGeom
+                from .cachingSkyMap import CachingSkyMap
+                from .tractInfo import TractInfo
+                
+                
+                def angToCoord(thetaphi):
+                    """Convert healpy's ang to an afw Coord
+                
+                    The ang is provided as a single object, thetaphi, so the output
+                    of healpy functions can be directed to this function without
+                    additional translation.
+                    """
+                    return IcrsCoord(float(thetaphi[1])*afwGeom.radians, float(thetaphi[0] - 0.5*numpy.pi)*afwGeom.radians)
+                
+                def coordToAng(coord):
+                    """Convert an afw Coord to a healpy ang (theta, phi)"""
+                    return (coord.getLatitude().asRadians() - 0.5*numpy.pi, coord.getLongitude().asRadians())
+                
+                class HealpixTractInfo(TractInfo):
+                    """Tract for the HealpixSkyMap"""
+                    def __init__(self, nSide, ident, nest, patchInnerDimensions, patchBorder, ctrCoord, tractOverlap, wcs):
+                        """Set vertices from nside, ident, nest"""
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+62   <a href="#23fa28f8">23fa28f8</a> -         theta, phi = healpy.vec2ang(numpy.transpose(healpy.boundary(nSide, ident, nest=nest)))</div>
+              ?                                                                   ^
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+62   <a href="#8ff40925">8ff40925</a> +         theta, phi = healpy.vec2ang(numpy.transpose(healpy.boundaries(nSide, ident, nest=nest)))</div>
+              ?                                                                   ^^^
+                        vertexList = [angToCoord(thetaphi) for thetaphi in zip(theta,phi)]
+                        super(HealpixTractInfo, self).__init__(ident, patchInnerDimensions, patchBorder, ctrCoord,
+                                                               vertexList, tractOverlap, wcs)
+                
+                
+                class HealpixSkyMapConfig(CachingSkyMap.ConfigClass):
+                    """Configuration for the HealpixSkyMap"""
+                    log2NSide = Field(dtype=int, default=0, doc="Number of sides, expressed in powers of 2")
+                    nest = Field(dtype=bool, default=False, doc="Use NEST ordering instead of RING?")
+                    def setDefaults(self):
+                        self.rotation = 45 # HEALPixels are oriented at 45 degrees
+                
+                class HealpixSkyMap(CachingSkyMap):
+                    """HEALPix-based sky map pixelization.
+                
+                    We put a Tract at the position of each HEALPixel.
+                    """
+                    ConfigClass = HealpixSkyMapConfig
+                    _version = (1, 0) # for pickle
+                    numAngles = 4 # Number of angles for vertices
+                
+                    def __init__(self, config, version=0):
+                        """Constructor
+                
+                        @param[in] config: an instance of self.ConfigClass; if None the default config is used
+                        @param[in] version: software version of this class, to retain compatibility with old instances
+                        """
+                        self._nside = 1 << config.log2NSide
+                        numTracts = healpy.nside2npix(self._nside)
+                        super(HealpixSkyMap, self).__init__(numTracts, config, version)
+                
+                    def findTract(self, coord):
+                        """Find the tract whose inner region includes the coord."""
+                        theta, phi = coordToAng(coord.toIcrs())
+                        index = healpy.ang2pix(self._nside, theta, phi, nest=self.config.nest)
+                        return self[index]
+                
+                    def generateTract(self, index):
+                        """Get the TractInfo for a particular index"""
+                        center = angToCoord(healpy.pix2ang(self._nside, index, nest=self.config.nest))
+                        wcs = self._wcsFactory.makeWcs(crPixPos=afwGeom.Point2D(0,0), crValCoord=center)
+                        return HealpixTractInfo(self._nside, index, self.config.nest, self.config.patchInnerDimensions,
+                                                self.config.patchBorder, center, self.config.tractOverlap*afwGeom.degrees,
+                                                wcs)
+                
+                
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/skymap/</h2>
+<h3><a name="23fa28f8"/></a>23fa28f8</h3>
+
+<pre>
+commit 23fa28f8cf4a38eeaf82a0c571a3a903860f0ee4
+Author: Paul Price <price@astro.princeton.edu>
+Date:   Fri Dec 7 10:10:43 2012 -0500
+
+    Generate tracts on demand, using vertices from new healpy.boundary function.
+    That function is not yet available (current version 1.4.1), but I hope it
+    will be soon (see https://github.com/healpy/healpy/pull/68).
+    Tracts should be generated rotated at 45 degrees from North-up, so they
+    look like HEALPixels.
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/skymap/</h2>
+<h3><a name="8ff40925"/></a>8ff40925</h3>
+
+<pre>
+commit 8ff4092549790d886a8480a45e7c94ec46941bad
+Author: Simon Krughoff <simon.krughoff@gmail.com>
+Date:   Mon Oct 13 16:38:50 2014 -0700
+
+    Fixes use of missing method boundary
+    
+    The code used healpy.boundary, but this method
+    does not exist in healpy 1.7.4 (the version distributed)
+    with v9_2.  Changing the name to boundaries causes
+    the unit tests to pass.
+</pre>
+</div>
+
+
+[Return to list](#homelist)
+# <a name="ups/skymap.table"/></a>ups/skymap.table
+### Diff:
+
+<pre>
+                setupRequired(numpy)
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+2    <a href="#2ec06846">2ec06846</a> - setupRequired(afw >= 3.6.0)</div>
+              ?                  ---------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+2    <a href="#64b750c0">64b750c0</a> + setupRequired(afw)</div>
+                setupOptional(healpy)
+                
+                envPrepend(LD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+                envPrepend(DYLD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+                
+                envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/skymap/</h2>
+<h3><a name="2ec06846"/></a>2ec06846</h3>
+
+<pre>
+commit 2ec068466b41662d21087164631d9b3edf8c065c
+Author: rowen <rowen@git.lsstcorp.org>
+Date:   Wed Aug 4 22:10:41 2010 +0000
+
+    Preliminary code. No persistence. No unit tests.
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/skymap/</h2>
+<h3><a name="64b750c0"/></a>64b750c0</h3>
+
+<pre>
+commit 64b750c066682fc026ea613a657c8d999809041e
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:38 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+
+
+[Return to list](#homelist)

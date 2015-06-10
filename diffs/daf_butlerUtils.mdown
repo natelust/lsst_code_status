@@ -1,0 +1,63 @@
+# Comparison of the daf_butlerUtils repository
+
+
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of Repositories</h1>
+<p>
+Comparison run at 02:13PM on June 09, 2015<br>
+There are <b>0</b> differences between the two repositories<br><br>
+Repository <b>/Users/nate/repos_hsc/daf_butlerUtils/</b> <br> Revision <b>9b45301dfa5f96c05382033a2bedeec2d517cedf</b><br> Branch <b>master</b><br>Last commit was on <b>2014-12-22 21:05:46 -0500</b><br><br>
+Repository <b>/Users/nate/repos_hsc/daf_butlerUtils/</b> <br> Revision <b>9b45301dfa5f96c05382033a2bedeec2d517cedf</b><br> Branch <b>master</b><br>Last commit was on <b>2014-12-22 21:05:46 -0500</b><br><br>
+</p>
+</div>
+
+
+
+___
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/daf_butlerUtils/</h1>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/daf_butlerUtils/</h1>
+</div>
+
+
+
+
+# List of the files in common<a name="homelist"></a>
+Files without links do not differ
+
+* ```policy/ExposureMappingDictionary.paf```
+* ```python/lsst/daf/butlerUtils/__init__.py```
+* ```python/lsst/daf/butlerUtils/mapping.py```
+* ```policy/CalibrationMappingDictionary.paf```
+* ```ups/daf_butlerUtils.cfg```
+* ```doc/doxygen.conf.in```
+* ```tests/registry.sqlite3```
+* ```SConstruct```
+* ```tests/SConscript```
+* ```tests/MinMapper2.paf```
+* ```ups/daf_butlerUtils.build```
+* ```.gitignore```
+* ```README```
+* ```tests/cameraMapper.py```
+* ```doc/SConscript```
+* ```python/lsst/daf/butlerUtils/registries.py```
+* ```tests/ticket1580.py```
+* ```policy/DatasetMappingDictionary.paf```
+* ```ups/daf_butlerUtils.table```
+* ```policy/ImageMappingDictionary.paf```
+* ```python/lsst/__init__.py```
+* ```policy/datatypeDictionary.paf```
+* ```python/lsst/daf/butlerUtils/cameraMapper.py```
+* ```tests/calibRegistry.sqlite3```
+* ```tests/MinMapper1.paf```
+* ```tests/bar-35.fits```
+* ```python/lsst/daf/__init__.py```
+* ```python/lsst/daf/butlerUtils/fsScanner.py```
+* ```tests/ticket1640.py```
+* ```tests/outputRoot.py```
+* ```policy/MapperDictionary.paf```
+* ```tests/cfhtls.sqlite3```
+

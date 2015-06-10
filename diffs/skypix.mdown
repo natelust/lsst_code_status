@@ -1,0 +1,116 @@
+# Comparison of the skypix repository
+
+
+<div style="background-color:Aquamarine; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Summary of Repositories</h1>
+<p>
+Comparison run at 02:05PM on June 09, 2015<br>
+There are <b>8</b> differences between the two repositories<br><br>
+Repository <b>/Users/nate/repos_hsc/skypix/</b> <br> Revision <b>ff146215e6736847e438a723c118caf419cf0144</b><br> Branch <b>master</b><br>Last commit was on <b>2013-02-20 17:47:18 +0900</b><br><br>
+Repository <b>/Users/nate/repos_lsst/skypix/</b> <br> Revision <b>1157bf09aee6dda8cdefede4395220da4b46d0fe</b><br> Branch <b>master</b><br>Last commit was on <b>2014-03-07 12:53:31 -0600</b><br><br>
+</p>
+</div>
+
+
+
+___
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_hsc/skypix/</h1>
+</div>
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+<h1>Files only in /Users/nate/repos_lsst/skypix/</h1>
+</div>
+
+
+
+
+# List of the files in common<a name="homelist"></a>
+Files without links do not differ
+
+* [```ups/skypix.table```](#ups/skypix.table)
+* ```doc/doxygen.conf.in```
+* ```python/lsst/skypix/quadsphere.py```
+* ```python/lsst/skypix/__init__.py```
+* ```doc/SConscript```
+* ```.gitignore```
+* ```python/lsst/__init__.py```
+* ```ups/skypix.cfg```
+* ```policy/QuadSpherePixelizationDictionary.paf```
+* ```tests/quadsphere.py```
+* ```SConstruct```
+* ```ups/skypix.build```
+* ```tests/SConscript```
+
+# <a name="ups/skypix.table"/></a>ups/skypix.table
+### Diff:
+
+<pre>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#a97e4f8e">a97e4f8e</a> - setupRequired(utils >= 4.6.0.0)</div>
+              ?                    -----------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+1    <a href="#ea335924">ea335924</a> + setupRequired(utils)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+2    <a href="#3a589092">3a589092</a> - setupRequired(pex_policy >= 4.6.0.0)</div>
+              ?                         -----------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+2    <a href="#ea335924">ea335924</a> + setupRequired(pex_policy)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+3    <a href="#a97e4f8e">a97e4f8e</a> - setupRequired(geom >= 4.6.0.0)</div>
+              ?                   -----------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+3    <a href="#ea335924">ea335924</a> + setupRequired(geom)</div>
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+4    <a href="#a97e4f8e">a97e4f8e</a> - setupRequired(afw >= 4.6.0.0)</div>
+              ?                  -----------
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+4    <a href="#ea335924">ea335924</a> + setupRequired(afw)</div>
+                
+                envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)
+</pre>
+[Return to list](#homelist)
+
+
+<div style="background-color:Khaki; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_hsc/skypix/</h2>
+<h3><a name="a97e4f8e"/></a>a97e4f8e</h3>
+
+<pre>
+commit a97e4f8ee63acb22c8492aa28be6791f74c95ca8
+Author: jbosch <jbosch@git.lsstcorp.org>
+Date:   Thu Oct 27 19:51:30 2011 +0000
+
+    Winter2012a skypix - updated to new sconsUtils
+</pre>
+<h3><a name="3a589092"/></a>3a589092</h3>
+
+<pre>
+commit 3a5890923e688c08bdcea47c5e8e04b45be81dab
+Author: Serge Monkewitz <smm@ipac.caltech.edu>
+Date:   Sat Apr 14 23:27:12 2012 -0500
+
+    Revert "use pex_config instead of pex_policy in skypix", which breaks processCcdLsstSim.py.
+    
+    This reverts commit 2d3e199f98c67dc5e32d657430c58a4ef86f284f.
+</pre>
+</div>
+
+
+<div style="background-color:LightBlue; margin-left: 20px; margin-right: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
+
+<h2>Commits in /Users/nate/repos_lsst/skypix/</h2>
+<h3><a name="ea335924"/></a>ea335924</h3>
+
+<pre>
+commit ea33592463e92e0d875d0dc6c39d221798be9adf
+Author: Mario Juric <mjuric@lsst.org>
+Date:   Wed Mar 5 16:29:39 2014 -0600
+
+    removed explicit versions from the table file.
+</pre>
+</div>
+
+
+[Return to list](#homelist)
